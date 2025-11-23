@@ -1,7 +1,7 @@
 {
-  "name": "my-website",
+  "name": "portafolio",
   "private": true,
-  "homepage": "https://norellanac.github.io/myWebsite/",
+  "homepage": "https://pandvictor.github.io/portafolio/",
   "type": "module",
   "scripts": {
     "dev": "vite",
