@@ -1,15 +1,30 @@
-import * as React from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Avatar, Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Menu, MenuItem, Toolbar, Button } from '@mui/material';
+import * as React from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Container,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Button,
+} from "@mui/material";
 
-import { UserAvatar } from '../molecules';
-import { publicPath } from '../../constants/gloabals';
-import { LinkItem } from '../atoms';
-import { useLanguage } from '../../context/LanguageContext';
-import i18n from '../../utils/i18n';
+import { UserAvatar } from "../molecules";
+import { publicPath } from "../../constants/gloabals";
+import { LinkItem } from "../atoms";
+import { useLanguage } from "../../context/LanguageContext";
+import i18n from "../../utils/i18n";
 
-const pages = ['resume'];
-const basePath = (import.meta.env.BASE_URL || '/');
+const pages = ["resume"];
+const basePath = import.meta.env.BASE_URL || "/";
 
 export const DrawerAppBar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -33,91 +48,129 @@ export const DrawerAppBar = () => {
   };
 
   const handleDrawerToggle = () => {
-    console.error('handleDrawerToggle');
+    console.error("handleDrawerToggle");
     setMobileOpen((prevState) => !prevState);
   };
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
+        vertical: "top",
+        horizontal: "right",
       }}
       id={mobileMenuId}
       keepMounted
       transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
+        vertical: "top",
+        horizontal: "right",
       }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
-        <Button color="inherit" onClick={() => handleLanguageChange('en')}> English </Button>
+        <Button color='inherit' onClick={() => handleLanguageChange("en")}>
+          {" "}
+          English{" "}
+        </Button>
       </MenuItem>
       <MenuItem>
-        <Button color="inherit" onClick={() => handleLanguageChange('es')}> Español </Button>
+        <Button color='inherit' onClick={() => handleLanguageChange("es")}>
+          {" "}
+          Español{" "}
+        </Button>
       </MenuItem>
     </Menu>
   );
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', marginTop: 5 }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", marginTop: 5 }}>
       <UserAvatar />
       <List>
         {pages.map((page) => (
-          <LinkItem key={page} to={`${basePath}${page}`} color="inherit" relative="path">
+          <LinkItem
+            key={page}
+            to={`${basePath}${page}`}
+            color='inherit'
+            relative='path'>
             <ListItem key={page} disablePadding>
-              <ListItemButton sx={{ textAlign: 'center' }}>
-                <ListItemText primary={i18n.t(page + '.title')} />
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={i18n.t(page + ".title")} />
               </ListItemButton>
             </ListItem>
           </LinkItem>
         ))}
-        <Button variant="outlined" color='secondary' sx={{ textTransform: 'none', marginTop: 1.5 }} size='small' href={`${publicPath}/files/resume-alexis-orellana-${language}.pdf`}>{i18n.t('download')}</Button>
+        <Button
+          variant='outlined'
+          color='secondary'
+          sx={{ textTransform: "none", marginTop: 1.5 }}
+          size='small'
+          href={`${publicPath}/files/resume-victor-hernandez-${language}.pdf`}>
+          {i18n.t("download")}
+        </Button>
       </List>
     </Box>
   );
 
   return (
     <>
-      <AppBar color="default" sx={{ boxShadow: 0 }}>
-        <Container maxWidth="xl">
+      <AppBar color='default' sx={{ boxShadow: 0 }}>
+        <Container maxWidth='xl'>
           <Toolbar disableGutters>
             <UserAvatar />
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
-                <LinkItem key={page} to={`${basePath}${page}`} color="inherit" relative="path">
-                  <Button key={page} color="inherit" style={{ textTransform: 'none' }} >{i18n.t(page + '.title')}</Button>
+                <LinkItem
+                  key={page}
+                  to={`${basePath}${page}`}
+                  color='inherit'
+                  relative='path'>
+                  <Button
+                    key={page}
+                    color='inherit'
+                    style={{ textTransform: "none" }}>
+                    {i18n.t(page + ".title")}
+                  </Button>
                 </LinkItem>
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 0, display: 'flex', marginLeft: { xs: 15 } }}>
-              <IconButton >
-                <Button variant="outlined" color='secondary' sx={{ display: { xs: 'none', md: 'flex' }, textTransform: 'none' }} size='small' href={`${publicPath}/files/resume-alexis-orellana-${language}.pdf`}>{i18n.t('download')}</Button>
+            <Box sx={{ flexGrow: 0, display: "flex", marginLeft: { xs: 15 } }}>
+              <IconButton>
+                <Button
+                  variant='outlined'
+                  color='secondary'
+                  sx={{
+                    display: { xs: "none", md: "flex" },
+                    textTransform: "none",
+                  }}
+                  size='small'
+                  href={`${publicPath}/files/resume-victor-hernandez-${language}.pdf`}>
+                  {i18n.t("download")}
+                </Button>
               </IconButton>
 
               <IconButton
-                size="large"
-                aria-label="show more"
+                size='large'
+                aria-label='show more'
                 aria-controls={mobileMenuId}
-                aria-haspopup="true"
+                aria-haspopup='true'
                 onClick={handleMobileMenuOpen}
-                color="inherit"
-              >
-                <Avatar alt="Language" src={`${publicPath}/images/icons/locale.svg`} />
+                color='inherit'>
+                <Avatar
+                  alt='Language'
+                  src={`${publicPath}/images/icons/locale.svg`}
+                />
               </IconButton>
               <IconButton
-                size="small"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
+                size='small'
+                aria-controls='menu-appbar'
+                aria-haspopup='true'
                 onClick={handleDrawerToggle}
-                color="inherit"
-                sx={{ display: { xs: 'block', md: 'none' } }}
-              >
+                color='inherit'
+                sx={{ display: { xs: "block", md: "none" } }}>
                 <MenuIcon />
               </IconButton>
             </Box>
@@ -126,21 +179,20 @@ export const DrawerAppBar = () => {
       </AppBar>
       <nav>
         <Drawer
-          variant="temporary"
+          variant='temporary'
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: "100%" },
-          }}
-        >
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": { boxSizing: "border-box", width: "100%" },
+          }}>
           {drawer}
         </Drawer>
       </nav>
       {renderMobileMenu}
     </>
   );
-}
+};
