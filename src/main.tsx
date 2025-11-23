@@ -14,11 +14,11 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/myWebsite",
+    path: "/portafolio",
     element: <HomePage />,
   },
   {
-    path: "/myWebsite/",
+    path: "/portafolio/",
     element: <HomePage />,
   },
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element: <ResumePage />,
   },
   {
-    path: "/myWebsite/resume",
+    path: "/portafolio/resume",
     element: <ResumePage />,
   },
   {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     element: <ResumePrintPage />,
   },
   {
-    path: "/myWebsite/printResume",
+    path: "/portafolio/printResume",
     element: <ResumePrintPage />,
   },
   {
