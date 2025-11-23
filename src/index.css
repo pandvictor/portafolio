@@ -1,0 +1,10 @@
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensures buttons are on top of other content */
+  }
+  
+  .floating-button {
+    margin: 8px;
+  }

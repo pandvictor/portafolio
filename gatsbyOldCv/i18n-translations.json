@@ -1,0 +1,480 @@
+{
+  "en": {
+    "data": {
+      "summary": "I possess a diverse skill set encompassing the analysis, design, and development of robust software applications. My current area of specialization revolves around creating innovative and high-performing mobile applications using React Native. With over five years of experience in software development, I have accumulated extensive knowledge in various technologies, including the Laravel Framework, Git, Linux, PHP, Docker, MySQL, AWS (EC2), OAuth, Redux, and TypeScript. This breadth of expertise enables me to tackle complex challenges and deliver tailored solutions that exceed client expectations. In addition to my technical prowess, I am highly proficient in problem-solving and possess a keen eye for detail.",
+      "work_history": [
+        {
+          "start_date": "2022-03-28",
+          "end_date": "",
+          "is_current": true,
+          "company": "AlphaPoint",
+          "position": "React Native Software Engineer",
+          "description": "The El Salvadoran government partnered with AlphaPoint to develop the frontend and backend infrastructure that powers the Chivo bitcoin wallet, the world’s first national crypto wallet.",
+          "tasks": [
+            "Develop new features and maintain existing features",
+            "Diagnose and resolve software issues",
+            "Production Deployment on AppStores (Hauwei, Google, Apple) and OTA Updates.",
+            "Team code reviews and merge requests proccess"
+          ],
+          "achievements": [
+            {
+              "title": "Chivo Wallet",
+              "description": "Crypto Wallet",
+              "url": "www.chivowallet.com"
+            }
+          ]
+        },
+        {
+          "start_date": "2020-08-01",
+          "end_date": "2022-02-20",
+          "is_current": false,
+          "company": "IdeaCodex",
+          "position": "IT project leader.",
+          "description": "In addition to technical responsibilities, I excel at coaching and supporting junior developers, ensuring their growth and success within the team. I am adept at communicating with customers and providing support throughout the software development project lifecycle.",
+          "tasks": [
+            "Implement React Hooks Lifecycle, Push Notifications with Expo's Push API",
+            "Implement EcmaScript6 (ES6) arrow functions, constants, block-scope variables",
+            "Couching and support to junior developers",
+            "Comunication with customers and support to the team on software development projects life cycle"
+          ],
+          "achievements": [
+            {
+              "title": "Web Human Resources System magnament",
+              "description": "Web and responsive application for Human Resources System magnament, coded with Laravel Framework, MySQL, and deployed on AWS EC2",
+              "url": "www.rrhhpayroll.com"
+            }, {
+              "title": "Tecun App",
+              "description": "Mobile application for Tecun Human Resources System magnament, coded with React Native, Redux, and deployed on Google Play Store",
+              "url": "https://play.google.com/store/apps/details?id=com.grupotecun.gtm.tecunapp"
+            }
+          ]
+        },
+        {
+          "start_date": "2018-11-01",
+          "end_date": "2020-08-01",
+          "is_current": false,
+          "company": "10x informatica",
+          "position": "Full Stack Developer",
+          "description": "We build an app for our customers, using react native, following the whole software process, requirements, analysis, design and development. We coding the mobile app and deploy on google play store. Today there is more than 500 users in the app enjoying our product experience.",
+          "tasks": [
+             "React: Good understanding and usage of states and props",
+            "Implement React Native Navigation flows, validating user permissions and roles",
+             "Develop Restful Services and APIs. A full user authentication flow",
+             "Analysis, design, and development of web applications, administration of open source software, Magento, Moodle, and WordPress."
+          ],
+          "achievements": [
+            {
+              "title": "Canjeaton App",
+              "description": "Mobile application and web administration for Canjeaton, coded with Laravel,  React Native, Redux, and deployed on production and staging servers",
+              "url": "https://play.google.com/store/apps/details?id=com.tenxinformatica.gt.canjeaton"
+            }
+          ]
+        }
+      ],
+      "education": {
+        "start_date": "2012-02-01",
+        "end_date": "2020-06-30",
+        "title": "Software Engineer",
+        "school": "Universidad Mariano Gálvez | Guatemala"
+      },
+      "tech_skills": [
+        {
+          "title": "Mobile Development",
+          "tools": [
+            "React Native",
+            "Redux",
+            "Expo",
+            "React Navigation",
+            "React Hooks",
+            "NativeBase UI Library"
+          ],
+          "stars": 5
+        },
+        {
+          "title": "Web Development",
+          "tools": [
+            "PHP",
+            "Laravel",
+            "MySQL",
+            "JavaScript"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Programming Languages",
+          "tools": [
+            "JavaScript",
+            "PHP",
+            "Java"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Version Control",
+          "tools": [
+            "Git",
+            "GitHub",
+            "GitLab",
+            "Bitbucket"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Tools",
+          "tools": [
+            "Docker",
+            "Postman",
+            "Xcode"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Testing",
+          "tools": [
+            "Jest",
+            "PHPUnit",
+            "Appium",
+            "jest",
+            "webdriverio",
+            "detox"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "OS",
+          "description": "",
+          "tools": [
+            "Linux",
+            "Windows",
+            "MacOS"
+          ],
+          "stars": 4
+        }
+      ],
+      "phone": "50233120413",
+      "email": "alexis_oc@yahoo.es",
+      "languages": [
+        {
+          "language": "Spanish",
+          "level": "Native"
+        },
+        {
+          "language": "English",
+          "level": "B2"
+        }
+      ],
+      "contact_url": [
+        {
+          "title": "LinkedIn",
+          "url": "https://www.linkedin.com/in/alexis-orellana-3612888b/"
+        },
+        {
+          "title": "GitHub",
+          "url": "https://github.com/norellanac"
+        },
+        {"title": "Instagram",
+          "url": "https://www.instagram.com/norellanac/"
+        },
+        {
+          "title": "Facebook",
+          "url": "https://m.facebook.com/alexis.orellana2"
+        },
+        {
+          "title": "Whatsapp",
+          "url": "https://api.whatsapp.com/send?phone=50233120413"
+        }
+      ]
+    },
+    "welcome-on-our-website": "Welcome on our multi-language website",
+    "hello-world": "Hello World!",
+    "about-us": "About us",
+    "learn-more-about-us": "Learn more about us",
+    "homepage": "Homepage",
+    "resume": "Resume",
+    "phone": "Phone",
+    "email": "E-mail",
+    "address": "Address",
+    "website": "Website",
+    "education": "Education",
+    "skills": "Skills",
+    "servers": "Servers",
+    "experience": "Work History",
+    "lenguages": "Lenguages",
+    "exp-t1": "IT project leader.",
+    "exp-t2": "Web Developer",
+    "exp-t3": "Computer Operator.",
+    "exp-t4": "Technical support agent - Help Desk.",
+    "exp-date-1": "Aug 2020 - Dec 2021 | 1 yr 4 mos",
+    "exp-date-2": "Nov 2018 - Aug 2020 | 1 yr 10 mos",
+    "exp-date-3": "May 2016 - Oct 2018 | 2 yrs 6 mos",
+    "exp-date-4": "Sep 2012 - Apr 2016 | 3 yrs 8 mos",
+    "exp-cont-1": "Technical leader in software development project. Analysis, design, development, implementation and maintenance of software.",
+    "exp-cont-2": "Analysis, design and development of web applications, administration of open source software, Magento, Moodle and WordPress",
+    "exp-cont-3": "IBM systems (AS400, 390), execution and review of processes and transactions in testing projects, including logs and reports.",
+    "exp-cont-4": "Technical support in configuration of mobile devices; Apple IOS, Google Andoid and Windows Phone.",
+    "exp-details-1": "The El Salvadoran government partnered with AlphaPoint to develop the frontend and backend infrastructure that powers the Chivo bitcoin wallet, the world’s first national crypto wallet.",
+    "exp-details-2": "We build an app for our customers, using react native, following the whole software process, requirements, analysis, design and development. We coding the mobile app and deploy on google play store. Today there is more than 500 users in the app enjoying our product experience.",
+    "exp-details-3": "We build a React Native application for a customer, this application helped the company to share internal communication and information. We implemented the application using expo for a fast development process.  The application uses push notifications, local storage and secure storage to keep the user authentication token, we implemented Redux and ReactNativeNavigation to manage the application screens and data.",
+    "exp-details-4": "Sistemas IBM (AS400, 390), ejecución  de procesos y proyectos de pruebas, bitácoras y reportes.",
+    "projects_title": "Projects And Mobile Android Apps",
+    "github_experience": "Github Repositories",
+    "years_experience": "Years of development experience",
+    "managed_projects": "Managed Projects",
+    "mobile_apps": "Mobile Android Apps",
+    "portfolio": "Portfolio",
+    "post_label1": "Mobile Application | React Native",
+    "post_title1": "Mobile application with React Native, available on Google Play, using Redux, class components, backend with Laravel",
+    "post_date1": "JUL, 2019",
+    "post_label2": "Android | React Native",
+    "post_title2": "Mobile application with React Native, using Redux, permissions and push notifications, backend with Laravel",
+    "post_date2": "AUG, 2020",
+    "post_label3": "Laravel | React native",
+    "post_title3": "Web and mobile application | Using Laravel Framework, authentication services with oauth in APIs, migrations and authentication methods with LDAP",
+    "post_date3": "JAN, 2021",
+    "education_title": "Software Engineer",
+    "education_date": "JUN 2020",
+    "education_description": "College",
+    "specific-experience": "React Native Experience",
+    "example": "example",
+    "contact_info": "Personal Info"
+  },
+  "es": {
+    "data": {
+      "summary": "Poseo un conjunto diverso de habilidades que abarcan el análisis, diseño y desarrollo de aplicaciones de software robustas. Mi área actual de especialización se centra en la creación de aplicaciones móviles innovadoras y de alto rendimiento utilizando React Native. Con más de cinco años de experiencia en desarrollo de software, he acumulado un amplio conocimiento en diversas tecnologías, incluyendo el Framework Laravel, Git, Linux, PHP, Docker, MySQL, AWS (EC2), OAuth, Redux y TypeScript. Esta amplitud de experiencia me permite abordar desafíos complejos y ofrecer soluciones personalizadas que superan las expectativas del cliente. Además de mis habilidades técnicas, soy altamente competente en la resolución de problemas y poseo un ojo agudo para los detalles.",
+      "work_history": [
+        {
+          "start_date": "2022-03-28",
+          "end_date": "",
+          "is_current": true,
+          "company": "AlphaPoint",
+          "position": "Ingeniero de Software React Native",
+          "description": "El gobierno de El Salvador se asoció con AlphaPoint para desarrollar la infraestructura frontend y backend que alimenta la billetera de bitcoin Chivo, la primera billetera de cryptomonedas nacional del mundo.",
+          "tasks": [
+            "Desarrollar nuevas características y mantener las características existentes",
+            "Diagnosticar y resolver problemas de software",
+            "Implementación de producción en tiendas de aplicaciones (Hauwei, Google, Apple) y actualizaciones OTA.",
+            "Revisiones de código en equipo y proceso de solicitudes de combinación"
+          ],
+          "achievements": [
+            {
+              "title": "Chivo Wallet",
+              "description": "Billetera de cryptomonedas",
+              "url": "www.chivowallet.com"
+            }
+          ]
+        },
+        {
+          "start_date": "2020-08-01",
+          "end_date": "2022-02-20",
+          "is_current": false,
+          "company": "IdeaCodex",
+          "position": "Líder de Proyecto de TI",
+          "description": "Como líder técnico, tengo experiencia en diversas áreas del desarrollo de software. Destaco en brindar capacitación y apoyo a desarrolladores junior, asegurando su crecimiento y éxito dentro del equipo. Tengo habilidades para comunicarme con los clientes y brindar soporte durante todo el ciclo de vida del proyecto de desarrollo de software.",
+          "tasks": [
+            "Implementar el ciclo de vida de los React Hooks, notificaciones push con la API Push de Expo",
+            "Implementar funciones de flecha EcmaScript6 (ES6), constantes, variables de ámbito de bloque",
+            "Entrenamiento y apoyo a desarrolladores junior",
+            "Comunicación con los clientes y apoyo al equipo en el ciclo de vida de los proyectos de desarrollo de software"
+          ],
+          "achievements": [
+             {
+              "title": "Sistema de Gestión de Recursos Humanos en la Web",
+              "description": "Aplicación web y responsive para la gestión de recursos humanos, codificada con Laravel Framework, MySQL e implementada en AWS, EC2",
+              "url": "www.rrhhpayroll.com"
+            },
+             {
+              "title": "Tecun App",
+              "description": "Aplicación móvil para el sistema de gestión de recursos humanos de Tecun, codificada con React Native, Redux e implementada en Google Play Store",
+              "url": "https://play.google.com/store/apps/details?id=com.grupotecun.gtm.tecunapp"
+            }
+          ]
+        },
+        {
+          "start_date": "2018-11-01",
+          "end_date": "2020-08-01",
+          "is_current": false,
+          "company": "10x informatica",
+          "position": "Desarrollador Full Stack",
+          "description": "Creamos una aplicación para nuestros clientes, utilizando React Native, siguiendo todo el proceso de software, desde los requisitos, el análisis, el diseño y el desarrollo. Codificamos la aplicación móvil y la implementamos en Google Play Store. Hoy en día, hay más de 500 usuarios en la aplicación disfrutando de nuestra experiencia de producto.",
+          "tasks": [
+            "React: Buen entendimiento y uso de estados y props",
+            "Implementar flujos de navegación de React Native, validando permisos y roles de usuario",
+            "Desarrollar servicios y APIs RESTful. Un flujo completo de autenticación de usuarios",
+            "Análisis, diseño y desarrollo de aplicaciones web, administración de software de código abierto, Magento, Moodle y WordPress."
+          ],
+          "achievements": [
+             {
+              "title": "Canjeaton App",
+              "description": "Aplicación móvil y administración web para Canjeaton, codificada con Laravel, React Native, Redux e implementada en servidores de producción y preproducción",
+              "url": "https://play.google.com/store/apps/details?id=com.tenxinformatica.gt.canjeaton"
+            }
+          ]
+        }
+      ],
+      "education": {
+        "start_date": "2012-02-01",
+        "end_date": "2020-06-30",
+        "title": "Ingeniero de Software",
+        "school": "Universidad Mariano Gálvez | Guatemala"
+      },
+      "tech_skills": [
+        {
+          "title": "Desarrollo Móvil",
+          "tools": [
+            "React Native",
+            "Redux",
+            "Expo",
+            "React Navigation",
+            "React Hooks",
+            "Biblioteca de interfaz de usuario NativeBase"
+          ],
+          "stars": 5
+        },
+        {
+          "title": "Desarrollo Web",
+          "tools": [
+            "PHP",
+            "Laravel",
+            "MySQL",
+            "JavaScript"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Lenguajes de Programación",
+          "tools": [
+            "JavaScript",
+            "PHP",
+            "Java"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Control de Versiones",
+          "tools": [
+            "Git",
+            "GitHub",
+            "GitLab",
+            "Bitbucket"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Herramientas",
+          "tools": [
+            "Docker",
+            "Postman",
+            "Xcode"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Pruebas",
+          "tools": [
+            "Jest",
+            "PHPUnit",
+            "Appium",
+            "jest",
+            "webdriverio",
+            "detox"
+          ],
+          "stars": 4
+        },
+        {
+          "title": "Sistemas Operativos",
+          "description": "",
+          "tools": [
+            "Linux",
+            "Windows",
+            "MacOS"
+          ],
+          "stars": 4
+        }
+      ],
+      "phone": "50233120413",
+      "email": "alexis_oc@yahoo.es",
+      "languages": [
+        {
+          "language": "Español",
+          "level": "Nativo"
+        },
+        {
+          "language": "Inglés",
+          "level": "B2"
+        }
+      ],
+      "contact_url": [
+        {
+          "title": "LinkedIn",
+          "url": "https://www.linkedin.com/in/alexis-orellana-3612888b/"
+        },
+        {
+          "title": "GitHub",
+          "url": "https://github.com/norellanac"
+        },
+        {"title": "Instagram",
+          "url": "https://www.instagram.com/norellanac/"
+        },
+        {
+          "title": "Facebook",
+          "url": "https://m.facebook.com/alexis.orellana2"
+        },
+        {
+          "title": "Whatsapp",
+          "url": "https://api.whatsapp.com/send?phone=50233120413"
+        }
+      ]
+    },
+    "welcome-on-our-website": "Bienvenido a nuestro sitio web multilingüe",
+    "hello-world": "Hola, mundo.",
+    "about-us": "Sobre nosotros",
+    "learn-more-about-us": "Más información sobre nosotros",
+    "homepage": "Página web",
+    "resume": "Hoja de vida",
+    "phone": "Celular",
+    "email": "E-mail",
+    "address": "Dirección",
+    "website": "Sitio web",
+    "education": "Educación",
+    "skills": "Habilidades",
+    "servers": "Servidores",
+    "experience": "Empresas que formaron mi experiencia",
+    "lenguages": "Idiomas",
+    "exp-t1": "Líder de proyectos de IT.",
+    "exp-t2": "Desarollador Web",
+    "exp-t3": "Operador De Computo.",
+    "exp-t4": "Agente de soporte técnico.",
+    "exp-date-1": "Ago 2020 - Dic 2021 | 1 año 4 meses",
+    "exp-date-2": "Nov 2018 - Ago 2020 | 1 año 10 meses",
+    "exp-date-3": "May 2016 - Oct 2018 | 2 años 6 meses",
+    "exp-date-4": "Sep 2012 - Abr 2016 | 3 años 8 meses",
+    "exp-cont-1": "Líder técnico en proyecto de desarrollo de software. Análisis, diseño, desarrollo, implementación y mantenimiento de software.",
+    "exp-cont-2": "Análisis, diseño y desarrollo de aplicaciones web, administración de software open source, Magento, Moodle y WordPress",
+    "exp-cont-3": "Sistemas IBM (AS400, 390), ejecución  de procesos y proyectos de pruebas, bitácoras y reportes.",
+    "exp-cont-4": "Soporte técnico en configuración de dispositivos móviles; Apple IOS, Google Andoid y Windows Phone.",
+    "exp-details-1": "El gobierno de El Salvador se asoció con AlphaPoint para desarrollar la infraestructura de front-end y back-end que alimenta el monedero de bitcoins Chivo, el primer monedero nacional de criptomonedas del mundo.",
+    "exp-details-2": "Creamos una aplicación para nuestros clientes, utilizando react native, siguiendo todo el proceso de software, requisitos, análisis, diseño y desarrollo. Codificamos la aplicación móvil y la implementamos en Google Play Store. Hoy existe más de 500 usuarios en la aplicación disfrutando de nuestra experiencia con el producto. ",
+    "exp-details-3": "Creamos una aplicación React Native para un cliente, esta aplicación ayudó a la empresa a compartir información y comunicación interna. Implementamos la aplicación usando expo para un proceso de desarrollo rápido. La aplicación usa notificaciones push, locales almacenamiento y almacenamiento seguro para mantener el token de autenticación del usuario, implementamos Redux y ReactNativeNavigation para administrar las pantallas y los datos de la aplicación. ",
+    "exp-details-4": "Sistemas IBM (AS400, 390), ejecución de procesos y proyectos de pruebas, bitácoras y reportes.",
+    "projects_title": "Aplicaciones móviles y proyectos",
+    "github_experience": "Repositorios en Github",
+    "years_experience": "Años de experiencia",
+    "managed_projects": "Proyectos Administrados",
+    "mobile_apps": "Aplicaciones moviles",
+    "portfolio": "Portafolio",
+    "post_label1": "Aplicación Móvil | React Native",
+    "post_title1": "Aplicación móvil con React Native, disponible en Google Play, utilizando Redux, componentes de clases, backend con Laravel",
+    "post_date1": "JUL, 2019",
+    "post_label2": "Android | React Native",
+    "post_title2": "Aplicación móvil con React Native,utilizando Redux, permisos y notificaciónes push, backend con Laravel",
+    "post_date2": "AGO, 2020",
+    "post_label3": "Laravel | React Native",
+    "post_title3": "Aplicación Web y móvil | Utilizando Laravel Framework, servicios de autenticacion con oauth en APIs, migraciones y metodos de autenticacion con LDAP",
+    "post_date3": "ENE, 2021",
+    "education_title": "Ingeniería en Sistemas de Información",
+    "education_date": "JUN - 2020",
+    "education_description": "Cierre de pénsum",
+    "specific-experience": "Expereiencia con React Native",
+    "contact_info": "Informacion de contacto"
+  }
+}
