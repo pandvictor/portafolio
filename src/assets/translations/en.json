@@ -1,0 +1,407 @@
+{
+  "hello": "Hello!",
+  "download": "Download CV",
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Digital solutions for fintech, government and international organizations"
+  },
+  "resume": {
+    "title": "Resume",
+    "name": "Victor",
+    "full_name": "Victor Hernández",
+    "position": "Lead & Senior Software Developer",
+    "experience": "Experience",
+    "education": "Education",
+    "languages_title": "Languages",
+    "skills": "Skills",
+    "contact": "Contact",
+    "summary": "Senior developer with 19+ years delivering technology solutions for fintech, government and international organizations. Specialized in React Native, React, TypeScript, Node.js and AWS. Proven ability to lead teams, define architecture and launch high-impact products such as CHIVO Wallet and the APEX trading platform.",
+    "work_history": [
+      {
+        "start_date": "2023-06-01",
+        "end_date": "",
+        "is_current": true,
+        "company": "AlphaPoint",
+        "company_image": "alphapoint.png",
+        "position": "Lead & Senior Software Developer",
+        "description": "Led the mobile and web frontend for CHIVO Wallet and the APEX platform, ensuring feature parity and continuous releases for fintech clients.",
+        "tasks": [
+          "Technical leadership for web and mobile Bitcoin products.",
+          "Built reusable components and critical flows in React Native and React.",
+          "Optimized performance and real-time user experiences.",
+          "Active collaboration in architecture decisions and continuous improvement."
+        ],
+        "achievements": [
+          {
+            "title": "CHIVO Wallet & APEX",
+            "description": "Mobile and web applications for Bitcoin payments and institutional trading, with real-time modules and monitoring.",
+            "image": "chivo2.png",
+            "url": "https://www.chivowallet.com",
+            "date": "2024-01-01",
+            "tech_stack": [
+              { "name": "React Native", "icon": "react.svg" },
+              { "name": "React", "icon": "react.svg" },
+              { "name": "TypeScript", "icon": "javascript.svg" },
+              { "name": "AWS", "icon": "aws.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2022-12-01",
+        "end_date": "2023-12-31",
+        "is_current": false,
+        "company": "IOM & Social Welfare Secretariat",
+        "company_image": "payroll.jpg",
+        "position": "Technical Lead & Senior Developer",
+        "description": "Technical owner of the Angel Ariel program, coordinating React and Node.js teams for government projects.",
+        "tasks": [
+          "Defined architecture and dev guidelines for social platforms.",
+          "Stakeholder management and functional follow-up with international agencies.",
+          "Mentored teams and supported deployments built with React and Node.js.",
+          "Automated reporting and integrations with cloud services."
+        ],
+        "achievements": [
+          {
+            "title": "Angel Ariel Platform",
+            "description": "Web and mobile portal supporting Quedate and Casa Joven programs with dashboards for field staff.",
+            "image": "payroll2.jpg",
+            "url": "https://www.iom.int",
+            "date": "2023-06-01",
+            "tech_stack": [
+              { "name": "React", "icon": "react.svg" },
+              { "name": "Node.js", "icon": "javascript.svg" },
+              { "name": "AWS", "icon": "aws.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2023-01-01",
+        "end_date": "2023-05-31",
+        "is_current": false,
+        "company": "WizeDevs",
+        "company_image": "canjeaton2.png",
+        "position": "Senior Mobile Developer",
+        "description": "Complete reconstruction of a legacy mobile application with major UX and performance improvements.",
+        "tasks": [
+          "Refactored the entire codebase using React Native best practices.",
+          "Integrated Linka smart locks through their SDK.",
+          "Optimized layouts for multiple resolutions and dark mode.",
+          "Automated QA and store releases."
+        ],
+        "achievements": [
+          {
+            "title": "Residential Security Relaunch",
+            "description": "Shipped a new version with secure flows, notifications and OTA updates.",
+            "image": "canjeaton.png",
+            "url": "https://wizedevs.com",
+            "date": "2023-05-01",
+            "tech_stack": [
+              { "name": "React Native", "icon": "react.svg" },
+              { "name": "Expo", "icon": "expo.svg" },
+              { "name": "Redux", "icon": "redux.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2022-10-01",
+        "end_date": "2022-12-31",
+        "is_current": false,
+        "company": "Asofarma Pharma",
+        "company_image": "payroll.jpg",
+        "position": "Tech Lead & Full-Stack",
+        "description": "Full-stack implementation and AWS deployment of the Qatar 2022 World Cup pool platform.",
+        "tasks": [
+          "Built frontend and backend modules for bracket administration.",
+          "Automated infrastructure with AWS managed services.",
+          "Provided operational support and monitoring during the tournament.",
+          "Produced technical documentation for regional teams."
+        ],
+        "achievements": [
+          {
+            "title": "Qatar 2022 Pool",
+            "description": "Gamified corporate portal with secure authentication and live reporting.",
+            "image": "payroll2.jpg",
+            "url": "https://www.asofarma.com",
+            "date": "2022-12-01",
+            "tech_stack": [
+              { "name": "React", "icon": "react.svg" },
+              { "name": "Node.js", "icon": "javascript.svg" },
+              { "name": "AWS", "icon": "aws.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2022-08-01",
+        "end_date": "2022-12-31",
+        "is_current": false,
+        "company": "Quinielas Live",
+        "company_image": "canjeaton1.png",
+        "position": "Tech Lead & Full-Stack",
+        "description": "Delivered the full-stack experience and AWS infrastructure for the live World Cup contest platform.",
+        "tasks": [
+          "Developed services and shared components for real-time play.",
+          "Managed CI/CD and observability.",
+          "Coordinated responsive UX with design teams.",
+          "Provided 24/7 support during the competition."
+        ],
+        "achievements": [
+          {
+            "title": "Live Contest Platform",
+            "description": "Scalable application with live leaderboards and prize management.",
+            "image": "canjeaton2.png",
+            "url": "https://www.quinielas.live",
+            "date": "2022-11-01",
+            "tech_stack": [
+              { "name": "React", "icon": "react.svg" },
+              { "name": "AWS", "icon": "aws.svg" },
+              { "name": "Docker", "icon": "docker.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2022-02-01",
+        "end_date": "2022-10-31",
+        "is_current": false,
+        "company": "Cognits",
+        "company_image": "10x.png",
+        "position": "Senior Full-Stack",
+        "description": "Supported the LEND platform by adding new features, technology migrations and Dev/QA improvements.",
+        "tasks": [
+          "Implemented React components and lending flows.",
+          "Migrated Jython modules to modern stacks.",
+          "Improved QA and DevOps environments.",
+          "Championed code reviews and best practices."
+        ],
+        "achievements": [
+          {
+            "title": "LEND Platform",
+            "description": "Financial solution with modular components and automated deployments.",
+            "image": "payroll.jpg",
+            "url": "https://www.cognits.co",
+            "date": "2022-09-01",
+            "tech_stack": [
+              { "name": "React", "icon": "react.svg" },
+              { "name": "Redux", "icon": "redux.svg" },
+              { "name": "Docker", "icon": "docker.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2022-01-01",
+        "end_date": "2022-12-31",
+        "is_current": false,
+        "company": "Bullseye Locations",
+        "company_image": "ideacodex.jpeg",
+        "position": "Senior Full-Stack Engineer",
+        "description": "Developed map-based applications with Google Maps and Mapbox for retail customers.",
+        "tasks": [
+          "Integrated geospatial data and analytical dashboards.",
+          "Migrated .NET modules to React and React Native.",
+          "Kick-started mobile development using React Native.",
+          "Coordinated directly with U.S. business stakeholders."
+        ],
+        "achievements": [
+          {
+            "title": "Location Intelligence Suite",
+            "description": "Web and mobile apps for site analysis with interactive maps.",
+            "image": "10x.png",
+            "url": "https://bullseyeapps.com",
+            "date": "2022-10-01",
+            "tech_stack": [
+              { "name": "React", "icon": "react.svg" },
+              { "name": "React Native", "icon": "react.svg" },
+              { "name": "AWS", "icon": "aws.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2021-05-01",
+        "end_date": "2021-10-31",
+        "is_current": false,
+        "company": "International Organization for Migration",
+        "company_image": "payroll2.jpg",
+        "position": "Tech Lead & Senior Full-Stack",
+        "description": "Analyzed and redesigned the Temporary Visa System (IGM), coordinating teams and documentation.",
+        "tasks": [
+          "Led hybrid teams in Guatemala and remote locations.",
+          "Produced functional and technical documentation for migration processes.",
+          "Integrated government services and data analysis pipelines.",
+          "Supported security audits and compliance."
+        ],
+        "achievements": [
+          {
+            "title": "Temporary Visa System",
+            "description": "Modernized backend and front office with traceable flows and reporting.",
+            "image": "chivo.png",
+            "url": "https://www.migracion.gob.gt",
+            "date": "2021-08-01",
+            "tech_stack": [
+              { "name": "React", "icon": "react.svg" },
+              { "name": "Node.js", "icon": "javascript.svg" },
+              { "name": "AWS", "icon": "aws.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2016-01-01",
+        "end_date": "2020-12-31",
+        "is_current": false,
+        "company": "FAO UN & SIECA",
+        "company_image": "alphapoint.png",
+        "position": "Tech Lead & Senior Full-Stack",
+        "description": "Delivered regional agricultural market platforms and customs dashboards for Central America and the Caribbean.",
+        "tasks": [
+          "Coordinated multinational teams and regional rollouts.",
+          "Designed trade and logistics dashboards.",
+          "Developed multi-platform web and mobile portals.",
+          "Maintained FYDUCA systems and RFID reporting."
+        ],
+        "achievements": [
+          {
+            "title": "Regional Agricultural Market",
+            "description": "Platform used across Central America to track prices and supply.",
+            "image": "canjeaton1.png",
+            "url": "https://www.sieca.int",
+            "date": "2019-06-01",
+            "tech_stack": [
+              { "name": "React", "icon": "react.svg" },
+              { "name": "Docker", "icon": "docker.svg" },
+              { "name": "AWS", "icon": "aws.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2012-01-01",
+        "end_date": "2016-12-31",
+        "is_current": false,
+        "company": "IOM, Xchange & INFORNET",
+        "company_image": "10x.png",
+        "position": "Full-Stack Developer",
+        "description": "Built platforms for statistics, surveys, ecommerce, mobile apps, dashboards and nutrition systems for UN programs.",
+        "tasks": [
+          "Developed mobile apps, dashboards and inventory services.",
+          "Integrated surveys and payment modules for international projects.",
+          "Maintained Java + PHP + Oracle solutions.",
+          "Implemented data services and reporting APIs."
+        ],
+        "achievements": [
+          {
+            "title": "Multinational platforms",
+            "description": "Suite of UN solutions with field monitoring and secure backoffice.",
+            "image": "payroll.jpg",
+            "url": "https://www.un.org",
+            "date": "2015-05-01",
+            "tech_stack": [
+              { "name": "React", "icon": "react.svg" },
+              { "name": "Laravel", "icon": "laravel.svg" },
+              { "name": "MySQL", "icon": "mysql-database.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2006-01-01",
+        "end_date": "2013-12-31",
+        "is_current": false,
+        "company": "SAT Guatemala",
+        "company_image": "10x.png",
+        "position": "Full-Stack Developer",
+        "description": "Modernized taxation and customs systems using Java, OAS, Spring and Oracle.",
+        "tasks": [
+          "Developed internal fiscal applications.",
+          "Integrated web services and authentication flows.",
+          "Migrated legacy modules to web architectures.",
+          "Provided continuous support for key users."
+        ],
+        "achievements": [
+          {
+            "title": "Tax systems",
+            "description": "Internal platforms for filing and tracking tax information.",
+            "image": "canjeaton.png",
+            "url": "https://portal.sat.gob.gt",
+            "date": "2013-01-01",
+            "tech_stack": [
+              { "name": "Java", "icon": "javascript.svg" },
+              { "name": "SQL", "icon": "mysql-database.svg" },
+              { "name": "Linux", "icon": "linux.svg" }
+            ]
+          }
+        ]
+      }
+    ],
+    "university": {
+      "start_date": "2002",
+      "end_date": "2006",
+      "title": "Computer Engineering",
+      "school": "Universidad de San Carlos de Guatemala"
+    },
+    "tech_skills": [
+      {
+        "title": "Frontend & Mobile",
+        "tools": ["React", "React Native", "TypeScript", "Redux", "Expo"],
+        "stars": 5
+      },
+      {
+        "title": "Backend & Cloud",
+        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "stars": 4
+      },
+      {
+        "title": "Databases",
+        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
+        "stars": 4
+      },
+      {
+        "title": "Tools & DevOps",
+        "tools": ["GitLab", "Bitbucket", "Jira", "AWS Amplify", "CloudFormation"],
+        "stars": 4
+      }
+    ],
+    "languages": [
+      {
+        "language": "Spanish",
+        "level": "Native"
+      },
+      {
+        "language": "English",
+        "level": "Advanced"
+      }
+    ],
+    "contact_info": [
+      {
+        "title": "avhergo@gmail.com",
+        "icon": "email.svg",
+        "url": "mailto:avhergo@gmail.com"
+      },
+      {
+        "title": "+50255286714",
+        "icon": "phone.svg",
+        "url": "tel:+50255286714"
+      },
+      {
+        "title": "LinkedIn",
+        "icon": "linkedin.svg",
+        "url": "https://www.linkedin.com/in/avhergo/"
+      },
+      {
+        "title": "GitHub",
+        "icon": "github.svg",
+        "url": "https://github.com/avhergo"
+      },
+      {
+        "title": "WhatsApp",
+        "icon": "whatsapp.svg",
+        "url": "https://wa.me/50255286714"
+      }
+    ]
+  }
+}
