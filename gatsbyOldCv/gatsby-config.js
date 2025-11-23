@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "Nery Alexis Orellana | SoftWare Engineer",
+    title: "Victor A. Hernandez Gomez | SoftWare Engineer",
   },
   pathPrefix: "/myWebsite",
   plugins: [

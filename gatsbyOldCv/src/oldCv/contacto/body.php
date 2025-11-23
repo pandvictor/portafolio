@@ -3,7 +3,7 @@
   <div class="collapse$ text-center" id="nery">
   <div class="card">
   <div class="card-header">
-    Nery Alexis Orellana
+    Victor A. Hernandez Gomez
   </div>
   <div class="card-group" id="">
 <!--      paneles    -->
@@ -21,7 +21,7 @@
 <div class="card " id="">
     <img class=" img-fluid img-thumbnail " src="https://scontent.fgua1-1.fna.fbcdn.net/v/t1.0-9/p960x960/58381346_2381846368494908_8865519789863337984_o.jpg?_nc_cat=104&_nc_ohc=MzopWnZeaPoAQlX-ZgI59ietpfUaa7yPqQaUSRIJdjzlflBsAnn6siYiA&_nc_ht=scontent.fgua1-1.fna&oh=6e2464e3bf789bd6b8dcd9d76f7e2216&oe=5E89F1FA" alt="Imagen de perfil">
     <div class="card-body">
-      <h5 class="card-title">Nery Alexis Orellana Cuy</h5>
+      <h5 class="card-title">Victor A. Hernandez Gomez Cuy</h5>
     </div>
   </div>
 

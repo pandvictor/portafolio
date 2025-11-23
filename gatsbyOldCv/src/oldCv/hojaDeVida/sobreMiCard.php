@@ -3,7 +3,7 @@
   <div class="collapse# text-center" id="nery">
     <div class="card">
       <div class="card-header">
-        <a href="index.php">Nery Alexis Orellana</a>
+        <a href="index.php">Victor A. Hernandez Gomez</a>
       </div>
       <div class="card-group" id="">
         <!--      paneles    -->
