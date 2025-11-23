@@ -21,25 +21,54 @@
         "start_date": "2023-06-01",
         "end_date": "",
         "is_current": true,
-        "company": "AlphaPoint",
-        "company_image": "alphapoint.png",
+        "company": "CHIVO Wallet (AlphaPoint)",
+        "company_image": "chivo.png",
         "position": "Lead & Senior Software Developer",
-        "description": "Lideré el frontend móvil y web para la billetera CHIVO y la plataforma APEX, asegurando paridad funcional y entregas continuas para clientes fintech.",
+        "description": "Lideré la experiencia móvil y web de la billetera Bitcoin de El Salvador, entregando pagos, cash-in/out y remesas.",
         "tasks": [
-          "Dirección técnica de los equipos móviles y web para productos Bitcoin.",
-          "Construcción de componentes reutilizables y flujos críticos en React Native y React.",
-          "Optimización del rendimiento y la experiencia de usuario en tiempo real.",
-          "Participación activa en decisiones de arquitectura y mejoras continuas."
+          "Entregué flujos de billetera, remesas y on/off-ramp en React Native y React, integrando Lightning y servicios on-chain.",
+          "Coordiné releases con producto y compliance para mantener KYC, kioscos de cash-in y POS alineados a regulación.",
+          "Construí componentes UI compartidos, monitoreo de errores y bases de performance para móvil y web.",
+          "Mentoricé al equipo en TypeScript, pruebas y observabilidad mientras ordenaba backlog y deuda técnica."
         ],
         "achievements": [
           {
-            "title": "CHIVO Wallet & APEX",
-            "description": "Aplicaciones móviles y web para pagos e inversión en Bitcoin, integradas con módulos de trading y monitoreo en vivo.",
+            "title": "Relanzamiento CHIVO Wallet",
+            "description": "Billetera Bitcoin/LN con pagos QR, remesas, POS para comercios, descuentos de combustible y manejo de efectivo en más de 200 cajeros.",
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
             "tech_stack": [
               { "name": "React Native", "icon": "react.svg" },
+              { "name": "React", "icon": "react.svg" },
+              { "name": "TypeScript", "icon": "javascript.svg" },
+              { "name": "AWS", "icon": "aws.svg" }
+            ]
+          }
+        ]
+      },
+      {
+        "start_date": "2024-01-01",
+        "end_date": "",
+        "is_current": true,
+        "company": "APEX Exchange (AlphaPoint)",
+        "company_image": "alphapoint.png",
+        "position": "Lead Frontend Engineer",
+        "description": "Responsable del front web de trading de la solución white-label APEX de AlphaPoint para bancos e instituciones.",
+        "tasks": [
+          "Implementé UI de trading responsive (order books, gráficas avanzadas, RFQ/OTC) consumiendo WebSockets y APIs REST.",
+          "Integré módulos de cuentas, wallets y custodia multi-activo con administración por roles y flujos de cumplimiento.",
+          "Optimicé latencia y render de actualizaciones de alta frecuencia (profundidad, trades, balances) con virtualización y memoización.",
+          "Trabajé con producto y clientes para localizar y tematizar la experiencia white-label en múltiples despliegues institucionales."
+        ],
+        "achievements": [
+          {
+            "title": "Lanzamiento APEX Exchange",
+            "description": "Plataforma de intercambio institucional con conectividad al matching engine, herramientas de liquidez y UX white-label personalizable.",
+            "image": "alphapoint.png",
+            "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
+            "date": "2024-05-01",
+            "tech_stack": [
               { "name": "React", "icon": "react.svg" },
               { "name": "TypeScript", "icon": "javascript.svg" },
               { "name": "AWS", "icon": "aws.svg" }
