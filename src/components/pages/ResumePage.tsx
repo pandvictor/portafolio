@@ -27,11 +27,20 @@ export function ResumePage() {
   };
 
   const stars = (num: number) => {
-    let renderStars = "";
-    for (let i = 0; i < num; i++) {
-      renderStars += "★";
-    }
-    return <span> {renderStars} </span>;
+    return (
+      <Box
+        component='span'
+        sx={{
+          color: "#f5c518",
+          ml: 1,
+          fontSize: 18,
+          letterSpacing: "0.5px",
+          fontWeight: 700,
+        }}
+        aria-label={`${num} star rating`}>
+        {"★".repeat(num)}
+      </Box>
+    );
   };
 
   const workHistory = resume?.work_history?.map((work) => (
@@ -167,9 +176,25 @@ export function ResumePage() {
               <hr />
               <Stack direction='column' spacing={1}>
                 {resume.languages.map((item, index) => (
-                  <Typography key={index} variant='h6'>
-                    {item.language} | {item.level}
-                  </Typography>
+                  <Stack
+                    key={index}
+                    direction='row'
+                    spacing={1}
+                    alignItems='center'>
+                    <Typography variant='h6'>{item.language}</Typography>
+                    <Box
+                      component='span'
+                      sx={{
+                        color: "text.disabled",
+                        fontWeight: 700,
+                        mx: 0.5,
+                      }}>
+                      |
+                    </Box>
+                    <Typography variant='body1' color='text.secondary'>
+                      {item.level}
+                    </Typography>
+                  </Stack>
                 ))}
               </Stack>
             </section>
@@ -182,14 +207,26 @@ export function ResumePage() {
                     {item.title}
                     {stars(item.stars)}
                   </Typography>
-                  <Stack display='inline' spacing={1}>
-                    {item.tools.map((tool, index) => (
-                      <Typography
-                        key={index}
-                        variant='body2'
-                        display='inline-block'>
-                        {tool} |
-                      </Typography>
+                  <Stack direction='row' spacing={1} flexWrap='wrap'>
+                    {item.tools.map((tool, idx) => (
+                      <Stack
+                        key={`${tool}-${idx}`}
+                        direction='row'
+                        spacing={1}
+                        alignItems='center'
+                        sx={{ mr: 1, mb: 0.5 }}>
+                        <Typography variant='body2'>{tool}</Typography>
+                        {idx < item.tools.length - 1 && (
+                          <Box
+                            component='span'
+                            sx={{
+                              color: "text.disabled",
+                              fontWeight: 700,
+                            }}>
+                            |
+                          </Box>
+                        )}
+                      </Stack>
                     ))}
                   </Stack>
                 </section>
