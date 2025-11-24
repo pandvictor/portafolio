@@ -376,7 +376,14 @@
     "tech_skills": [
       {
         "title": "Frontend & Mobile",
-        "tools": ["React", "React Native", "TypeScript", "Redux", "Expo"],
+        "tools": [
+          "React",
+          "React Native",
+          "TypeScript",
+          "Redux",
+          "Redux Tool Kit Query",
+          "Expo"
+        ],
         "stars": 5
       },
       {
