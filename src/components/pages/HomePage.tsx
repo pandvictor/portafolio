@@ -7,12 +7,25 @@ import i18n from "../../utils/i18n";
 
 type RenderProjectsProps = {
   projects: Project[];
+  companyImage?: string;
+  companyName?: string;
+  companyUrl?: string;
 };
 
-const RenderProjects = ({ projects }: RenderProjectsProps) => {
+const RenderProjects = ({
+  projects,
+  companyImage,
+  companyName,
+  companyUrl,
+}: RenderProjectsProps) => {
   return projects.map((element: Project, index) => (
     <Grid item xs={12} md={6} lg={4} key={index}>
-      <CardItem data={element} />
+      <CardItem
+        data={element}
+        companyImage={companyImage}
+        companyName={companyName}
+        companyUrl={companyUrl}
+      />
     </Grid>
   ));
 };
@@ -26,7 +39,12 @@ export default function HomePage() {
       <Grid container spacing={3}>
         {works &&
           works?.map((element: WorkHistory) => (
-            <RenderProjects projects={element.achievements} />
+            <RenderProjects
+              projects={element.achievements}
+              companyImage={element.company_image}
+              companyName={element.company}
+              companyUrl={element.achievements?.[0]?.url}
+            />
           ))}
       </Grid>
       {/* <Grid container spacing={3}>

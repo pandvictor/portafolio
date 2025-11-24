@@ -39,10 +39,18 @@
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
             "tech_stack": [
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "React", "icon": "react.svg" },
-              { "name": "TypeScript", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -69,9 +77,15 @@
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "TypeScript", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -98,9 +112,15 @@
             "url": "https://www.iom.int",
             "date": "2023-06-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -127,9 +147,15 @@
             "url": "https://wizedevs.com",
             "date": "2023-05-01",
             "tech_stack": [
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "Expo", "icon": "expo.svg" },
-              { "name": "Redux", "icon": "redux.svg" }
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "Redux"
+              }
             ]
           }
         ]
@@ -156,9 +182,15 @@
             "url": "https://www.asofarma.com",
             "date": "2022-12-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -185,9 +217,15 @@
             "url": "https://www.quinielas.live",
             "date": "2022-11-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "AWS", "icon": "aws.svg" },
-              { "name": "Docker", "icon": "docker.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Docker"
+              }
             ]
           }
         ]
@@ -214,9 +252,15 @@
             "url": "https://www.cognits.co",
             "date": "2022-09-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Redux", "icon": "redux.svg" },
-              { "name": "Docker", "icon": "docker.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "Docker"
+              }
             ]
           }
         ]
@@ -243,9 +287,15 @@
             "url": "https://bullseyeapps.com",
             "date": "2022-10-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -272,9 +322,15 @@
             "url": "https://www.migracion.gob.gt",
             "date": "2021-08-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -301,9 +357,15 @@
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Docker", "icon": "docker.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -330,9 +392,15 @@
             "url": "https://www.un.org",
             "date": "2015-05-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Laravel", "icon": "laravel.svg" },
-              { "name": "MySQL", "icon": "mysql-database.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Laravel"
+              },
+              {
+                "name": "MySQL"
+              }
             ]
           }
         ]
@@ -359,9 +427,15 @@
             "url": "https://portal.sat.gob.gt",
             "date": "2013-01-01",
             "tech_stack": [
-              { "name": "Java", "icon": "javascript.svg" },
-              { "name": "SQL", "icon": "mysql-database.svg" },
-              { "name": "Linux", "icon": "linux.svg" }
+              {
+                "name": "Java"
+              },
+              {
+                "name": "SQL"
+              },
+              {
+                "name": "Linux"
+              }
             ]
           }
         ]
@@ -376,17 +450,34 @@
     "tech_skills": [
       {
         "title": "Frontend & Mobile",
-        "tools": ["React", "React Native", "TypeScript", "Redux", "Expo"],
+        "tools": [
+          "React",
+          "React Native",
+          "TypeScript",
+          "Redux",
+          "Expo"
+        ],
         "stars": 5
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Databases",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
+        "tools": [
+          "MySQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle"
+        ],
         "stars": 4
       },
       {

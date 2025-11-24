@@ -22,8 +22,8 @@
         "end_date": "",
         "is_current": true,
         "company": "CHIVO Wallet (AlphaPoint)",
-        "company_image": "chivo.png",
-        "position": "Lead & Senior Software Developer",
+        "company_image": "alphapoint.png",
+        "position": "Senior Software Developer",
         "description": "Led the mobile and web experience for El Salvador’s national Bitcoin wallet, delivering payment, cash-in/out and remittance flows.",
         "tasks": [
           "Delivered wallet, remittance and on/off-ramp flows in React Native and React, integrating Lightning and on-chain services.",
@@ -33,16 +33,27 @@
         ],
         "achievements": [
           {
-            "title": "CHIVO Wallet relaunch",
+            "title": "CHIVO Wallet",
             "description": "Bitcoin/LN wallet with QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
             "tech_stack": [
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "React", "icon": "react.svg" },
-              { "name": "TypeScript", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -65,13 +76,28 @@
           {
             "title": "APEX Exchange rollout",
             "description": "Institutional-grade exchange platform with matching engine connectivity, liquidity tools, and branded white-label UX.",
-            "image": "alphapoint.png",
+            "image": "apex.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "TypeScript", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "MySQL"
+              }
             ]
           }
         ]
@@ -98,9 +124,15 @@
             "url": "https://www.iom.int",
             "date": "2023-06-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -127,9 +159,15 @@
             "url": "https://wizedevs.com",
             "date": "2023-05-01",
             "tech_stack": [
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "Expo", "icon": "expo.svg" },
-              { "name": "Redux", "icon": "redux.svg" }
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "Redux"
+              }
             ]
           }
         ]
@@ -156,9 +194,15 @@
             "url": "https://www.asofarma.com",
             "date": "2022-12-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -185,9 +229,15 @@
             "url": "https://www.quinielas.live",
             "date": "2022-11-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "AWS", "icon": "aws.svg" },
-              { "name": "Docker", "icon": "docker.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Docker"
+              }
             ]
           }
         ]
@@ -214,9 +264,15 @@
             "url": "https://www.cognits.co",
             "date": "2022-09-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Redux", "icon": "redux.svg" },
-              { "name": "Docker", "icon": "docker.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "Docker"
+              }
             ]
           }
         ]
@@ -243,9 +299,15 @@
             "url": "https://bullseyeapps.com",
             "date": "2022-10-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -272,9 +334,15 @@
             "url": "https://www.migracion.gob.gt",
             "date": "2021-08-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -301,9 +369,15 @@
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Docker", "icon": "docker.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
         ]
@@ -330,9 +404,15 @@
             "url": "https://www.un.org",
             "date": "2015-05-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Laravel", "icon": "laravel.svg" },
-              { "name": "MySQL", "icon": "mysql-database.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Laravel"
+              },
+              {
+                "name": "MySQL"
+              }
             ]
           }
         ]
@@ -342,7 +422,7 @@
         "end_date": "2013-12-31",
         "is_current": false,
         "company": "SAT Guatemala",
-        "company_image": "10x.png",
+        "company_image": "sat_logo.png",
         "position": "Full-Stack Developer",
         "description": "Modernized taxation and customs systems using Java, OAS, Spring and Oracle.",
         "tasks": [
@@ -355,13 +435,19 @@
           {
             "title": "Tax systems",
             "description": "Internal platforms for filing and tracking tax information.",
-            "image": "canjeaton.png",
+            "image": "sat_logo.png",
             "url": "https://portal.sat.gob.gt",
             "date": "2013-01-01",
             "tech_stack": [
-              { "name": "Java", "icon": "javascript.svg" },
-              { "name": "SQL", "icon": "mysql-database.svg" },
-              { "name": "Linux", "icon": "linux.svg" }
+              {
+                "name": "Java"
+              },
+              {
+                "name": "SQL"
+              },
+              {
+                "name": "Linux"
+              }
             ]
           }
         ]

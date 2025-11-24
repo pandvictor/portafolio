@@ -16,7 +16,7 @@ export type Project = {
 
 export type TechStack = {
     name: string;
-    icon: string;
+    icon?: string;
 }
 
 export type Resume = {
