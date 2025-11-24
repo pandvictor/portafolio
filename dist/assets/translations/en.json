@@ -391,7 +391,13 @@
       },
       {
         "title": "Tools & DevOps",
-        "tools": ["GitLab", "Bitbucket", "Jira", "AWS Amplify", "CloudFormation"],
+        "tools": [
+          "GitLab",
+          "Bitbucket",
+          "Jira",
+          "AWS Amplify",
+          "CloudFormation"
+        ],
         "stars": 4
       }
     ],
@@ -407,9 +413,9 @@
     ],
     "contact_info": [
       {
-        "title": "avhergo@gmail.com",
+        "title": "avihergo@gmail.com",
         "icon": "email.svg",
-        "url": "mailto:avhergo@gmail.com"
+        "url": "mailto:avihergo@gmail.com"
       },
       {
         "title": "+50255286714",
