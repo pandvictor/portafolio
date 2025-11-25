@@ -59,7 +59,7 @@
                 "name": "Git"
               },
               {
-                "name": "MySQL"
+                "name": "GitLab"
               },
               {
                 "name": "TypeScript"
@@ -108,28 +108,41 @@
             "date": "2024-05-01",
             "tech_stack": [
               {
-                "name": "React"
-              },
-              {
                 "name": "React Native"
               },
               {
+                "name": "React"
+              },
+              {
                 "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
               },
               {
                 "name": "TypeScript"
               },
               {
                 "name": "AWS"
-              },
-              {
-                "name": "MySQL"
               }
             ],
             "modal_details": [
               {
                 "image": "alphapoint.png",
                 "description": "Experiencia web de trading con libros en tiempo real, gráficos y herramientas de liquidez para clientes institucionales."
+              },
+              {
+                "image": "apex-mobile.png",
+                "description": "App móvil para comprar cripto y hacer trading con gráficos en vivo, profundidad y gestión de órdenes."
               }
             ]
           }
@@ -507,12 +520,23 @@
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Bases de Datos",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
+        "tools": [
+          "MySQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle"
+        ],
         "stars": 4
       },
       {

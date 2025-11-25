@@ -59,6 +59,9 @@
                 "name": "Git"
               },
               {
+                "name": "GitLab"
+              },
+              {
                 "name": "TypeScript"
               },
               {
@@ -66,9 +69,18 @@
               }
             ],
             "modal_details": [
-              { "image": "chivo2.png", "description": "Experiencia móvil para pagos Lightning/on-chain, remesas y flujos QR." },
-              { "image": "chivo.png", "description": "POS para comercios y manejo de efectivo en kioscos/cajeros con flujos alineados a compliance." },
-              { "image": "chivo-benefits.png", "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento." }
+              {
+                "image": "chivo2.png",
+                "description": "Experiencia móvil para pagos Lightning/on-chain, remesas y flujos QR."
+              },
+              {
+                "image": "chivo.png",
+                "description": "POS para comercios y manejo de efectivo en kioscos/cajeros con flujos alineados a compliance."
+              },
+              {
+                "image": "chivo-benefits.png",
+                "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento."
+              }
             ]
           }
         ]
@@ -96,7 +108,25 @@
             "date": "2024-05-01",
             "tech_stack": [
               {
+                "name": "React Native"
+              },
+              {
                 "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
               },
               {
                 "name": "TypeScript"
@@ -106,7 +136,14 @@
               }
             ],
             "modal_details": [
-              { "image": "alphapoint.png", "description": "Experiencia web de trading con libros en tiempo real, gráficos y herramientas de liquidez para clientes institucionales." }
+              {
+                "image": "alphapoint.png",
+                "description": "Experiencia web de trading con libros en tiempo real, gráficos y herramientas de liquidez para clientes institucionales."
+              },
+              {
+                "image": "apex-mobile.png",
+                "description": "App móvil para comprar cripto y hacer trading con gráficos en vivo, profundidad y gestión de órdenes."
+              }
             ]
           }
         ]

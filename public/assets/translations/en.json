@@ -34,7 +34,6 @@
         ],
         "achievements": [
           {
-            "title": "CHIVO Wallet relaunch",
             "title": "CHIVO Wallet",
             "description": "Bitcoin/LN wallet with QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
             "image": "chivo2.png",
@@ -60,7 +59,7 @@
                 "name": "Git"
               },
               {
-                "name": "MySQL"
+                "name": "GitLab"
               },
               {
                 "name": "TypeScript"
@@ -70,9 +69,18 @@
               }
             ],
             "modal_details": [
-              { "image": "chivo2.png", "description": "Mobile experience for Lightning and on-chain payments, remittances, and QR flows." },
-              { "image": "chivo.png", "description": "Merchant POS and cash management across kiosks/ATMs with compliance-ready flows." },
-              { "image": "chivo-benefits.png", "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time." }
+              {
+                "image": "chivo2.png",
+                "description": "Mobile experience for Lightning and on-chain payments, remittances, and QR flows."
+              },
+              {
+                "image": "chivo.png",
+                "description": "Merchant POS and cash management across kiosks/ATMs with compliance-ready flows."
+              },
+              {
+                "image": "chivo-benefits.png",
+                "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
+              }
             ]
           }
         ]
@@ -100,7 +108,25 @@
             "date": "2024-05-01",
             "tech_stack": [
               {
+                "name": "React Native"
+              },
+              {
                 "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
               },
               {
                 "name": "TypeScript"
@@ -110,7 +136,14 @@
               }
             ],
             "modal_details": [
-              { "image": "alphapoint.png", "description": "Web trading experience with real-time books, charts, and liquidity tools for institutional clients." }
+              {
+                "image": "alphapoint.png",
+                "description": "Web trading experience with real-time books, charts, and liquidity tools for institutional clients."
+              },
+              {
+                "image": "apex-mobile.png",
+                "description": "Mobile trading app for buying crypto and executing trades with live charts, depth, and order management."
+              }
             ]
           }
         ]

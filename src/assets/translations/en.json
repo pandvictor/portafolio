@@ -59,7 +59,7 @@
                 "name": "Git"
               },
               {
-                "name": "MySQL"
+                "name": "GitLab"
               },
               {
                 "name": "TypeScript"
@@ -108,28 +108,41 @@
             "date": "2024-05-01",
             "tech_stack": [
               {
-                "name": "React"
-              },
-              {
                 "name": "React Native"
               },
               {
+                "name": "React"
+              },
+              {
                 "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
               },
               {
                 "name": "TypeScript"
               },
               {
                 "name": "AWS"
-              },
-              {
-                "name": "MySQL"
               }
             ],
             "modal_details": [
               {
                 "image": "alphapoint.png",
                 "description": "Web trading experience with real-time books, charts, and liquidity tools for institutional clients."
+              },
+              {
+                "image": "apex-mobile.png",
+                "description": "Mobile trading app for buying crypto and executing trades with live charts, depth, and order management."
               }
             ]
           }
@@ -445,6 +458,9 @@
               },
               {
                 "name": "MySQL"
+              },
+              {
+                "name": "GitLab"
               }
             ]
           }
@@ -507,12 +523,24 @@
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Databases",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle", "SqlServer"],
+        "tools": [
+          "MySQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle",
+          "SqlServer"
+        ],
         "stars": 4
       },
       {
