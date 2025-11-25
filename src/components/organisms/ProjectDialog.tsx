@@ -28,26 +28,40 @@ type Props = {
 export const ProjectDialog = ({ open, payload, onClose }: Props) => (
   <Dialog open={open} onClose={onClose} maxWidth='sm' fullWidth>
     <DialogTitle>
-      <Stack direction='row' spacing={1} alignItems='center' justifyContent='space-between'>
-        <Stack direction='row' spacing={1} alignItems='center'>
-          {payload?.companyImage && (
-            <Avatar
-              src={`${publicPath}/images/${payload.companyImage}`}
-              alt={payload.companyName}
-              sx={{ width: 36, height: 36 }}
-            />
-          )}
-          <div>
-            <Typography variant='h6'>{payload?.project.title}</Typography>
-            <Typography variant='body2' color='text.secondary'>
-              {payload?.companyName}
-            </Typography>
-          </div>
+        <Stack direction='row' spacing={1} alignItems='center' justifyContent='space-between'>
+          <Stack direction='row' spacing={1} alignItems='center'>
+            {(payload?.companyImages && payload.companyImages.length > 0
+              ? payload.companyImages
+              : payload?.companyImage
+              ? [payload.companyImage]
+              : []
+            ).map((img, idx) => (
+              <Avatar
+                key={`${img}-${idx}`}
+                src={`${publicPath}/images/${img}`}
+                alt={payload?.companyName}
+                sx={{
+                  width: 36,
+                  height: 36,
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                  "&:hover": {
+                    transform: "scale(1.12)",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                  },
+                }}
+              />
+            ))}
+            <div>
+              <Typography variant='h6'>{payload?.project.title}</Typography>
+              <Typography variant='body2' color='text.secondary'>
+                {payload?.companyName}
+              </Typography>
+            </div>
+          </Stack>
+          <IconButton aria-label='close' onClick={onClose} size='small'>
+            <CloseIcon />
+          </IconButton>
         </Stack>
-        <IconButton aria-label='close' onClick={onClose} size='small'>
-          <CloseIcon />
-        </IconButton>
-      </Stack>
     </DialogTitle>
     <DialogContent dividers>
       <Typography paragraph>{payload?.project.description}</Typography>
@@ -79,22 +93,27 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
           );
         })}
       </Stack>
-      {payload?.project.modal_details && payload.project.modal_details.length > 0 && (
-        <Grid container spacing={2} sx={{ mt: 2 }}>
-          {payload.project.modal_details.map((item, idx) => (
-            <Grid item xs={12} key={`${item.image}-${idx}`}>
-              <Card variant='outlined'>
-                <CardMedia
-                  component='img'
-                  height='180'
-                  image={`${publicPath}/images/${item.image}`}
-                  alt={payload.project.title}
-                />
-                <CardContent>
-                  <Typography variant='body2' color='text.secondary'>
-                    {item.description}
-                  </Typography>
-                </CardContent>
+          {payload?.project.modal_details && payload.project.modal_details.length > 0 && (
+            <Grid container spacing={2} sx={{ mt: 2 }}>
+              {payload.project.modal_details.map((item, idx) => (
+                <Grid item xs={12} key={`${item.image}-${idx}`}>
+                  <Card variant='outlined'>
+                    <CardMedia
+                      component='img'
+                      image={`${publicPath}/images/${item.image}`}
+                      alt={payload.project.title}
+                      sx={{
+                        width: '100%',
+                        maxHeight: 260,
+                        objectFit: 'contain',
+                        backgroundColor: '#f7f7f7',
+                      }}
+                    />
+                    <CardContent>
+                      <Typography variant='body2' color='text.secondary'>
+                        {item.description}
+                      </Typography>
+                    </CardContent>
               </Card>
             </Grid>
           ))}

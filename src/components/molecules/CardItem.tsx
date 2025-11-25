@@ -20,12 +20,14 @@ import {
   Stack,
   Tooltip,
   Button,
+  Chip,
 } from "@mui/material";
 import i18n from "../../utils/i18n";
 
 interface RecipeReviewCardProps {
   data: Project;
   companyImage?: string;
+  companyImages?: string[];
   companyName?: string;
   companyUrl?: string;
   onOpen?: (payload: ProjectModalPayload) => void;
@@ -49,6 +51,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 export const CardItem: React.FC<RecipeReviewCardProps> = ({
   data,
   companyImage,
+  companyImages,
   companyName,
   companyUrl,
   onOpen,
@@ -61,32 +64,13 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
   };
 
   const renderActionIcons = () => {
-    return tech_stack.map((item) => {
-      const icon = resolveTechIconFromStack(item);
-      return (
-        <Tooltip key={item.name} title={item.name} arrow placement='top'>
-          <IconButton
-            sx={{
-              backgroundColor: "#ffffffad",
-              borderRadius: "8px",
-              margin: 1,
-            }}>
-            <img
-              src={`${publicPath}/images/icons/${icon}`}
-              height={25}
-              width={25}
-              alt={item.name}
-            />
-          </IconButton>
-        </Tooltip>
-      );
-    });
+    return null;
   };
 
   return (
     <Card sx={{ maxWidth: 800, borderRadius: "28px", height: "100%" }}>
       <ImageIcons
-        actionIcons={<Box sx={{ padding: 1 }}>{renderActionIcons()}</Box>}
+        actionIcons={null}
         image={{
           src: `${publicPath}/images/${image}`,
           srcSet: "",
@@ -94,17 +78,66 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
         }}
       />
       <CardContent>
-        <Stack direction='row' spacing={1} alignItems='center'>
-          {companyImage && (
+        <Stack
+          direction='row'
+          spacing={1}
+          alignItems='center'
+          sx={{
+            backgroundColor: "rgba(0,0,0,0.02)",
+            p: 1,
+            borderRadius: 2,
+          }}>
+          {(companyImages && companyImages.length > 0
+            ? companyImages
+            : companyImage
+              ? [companyImage]
+              : []
+          ).map((img, idx) => (
             <Avatar
-              src={`${publicPath}/images/${companyImage}`}
+              key={`${img}-${idx}`}
+              src={`${publicPath}/images/${img}`}
               alt={companyName || title}
-              sx={{ width: 36, height: 36 }}
+              sx={{
+                width: 36,
+                height: 36,
+                transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                "&:hover": {
+                  transform: "scale(1.12)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                },
+              }}
             />
-          )}
+          ))}
           <Typography variant='h5' component='div'>
             {title}
           </Typography>
+        </Stack>
+        <Stack direction='row' spacing={1} flexWrap='wrap' sx={{ mt: 1 }}>
+          {tech_stack.slice(0, 4).map((tech, idx) => {
+            const icon = resolveTechIconFromStack(tech);
+            return (
+              <Chip
+                key={`${tech.name}-${idx}`}
+                size='small'
+                label={tech.name}
+                avatar={
+                  <Avatar
+                    src={`${publicPath}/images/icons/${icon}`}
+                    alt={tech.name}
+                    sx={{ width: 22, height: 22 }}
+                  />
+                }
+                sx={{ mr: 0.5, mb: 0.5, borderRadius: 2 }}
+              />
+            );
+          })}
+          {tech_stack.length > 4 && (
+            <Chip
+              size='small'
+              label={`+${tech_stack.length - 4}`}
+              sx={{ mr: 0.5, mb: 0.5, borderRadius: 2 }}
+            />
+          )}
         </Stack>
       </CardContent>
       <CardActions disableSpacing>
@@ -117,7 +150,13 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
         <Button
           size='small'
           onClick={() =>
-            onOpen?.({ project: data, companyImage, companyName, companyUrl })
+            onOpen?.({
+              project: data,
+              companyImage,
+              companyImages,
+              companyName,
+              companyUrl,
+            })
           }>
           {i18n.t("more_info")}
         </Button>

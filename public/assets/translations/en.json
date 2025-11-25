@@ -68,6 +68,12 @@
                 "name": "Scrum"
               },
               {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
                 "name": "TypeScript"
               },
               {
@@ -138,6 +144,15 @@
                 "name": "GitLab"
               },
               {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
                 "name": "TypeScript"
               },
               {
@@ -162,7 +177,10 @@
         "end_date": "2023-12-31",
         "is_current": false,
         "company": "IOM & Social Welfare Secretariat",
-        "company_image": "payroll.jpg",
+        "company_image": [
+          "oim.jpeg",
+          "sbs.png"
+        ],
         "position": "Technical Lead & Senior Developer",
         "description": "Technical owner of the Angel Ariel program, coordinating React and Node.js teams for government projects.",
         "tasks": [
@@ -175,7 +193,7 @@
           {
             "title": "Angel Ariel Platform",
             "description": "Web and mobile portal supporting Quedate and Casa Joven programs with dashboards for field staff.",
-            "image": "payroll2.jpg",
+            "image": "angel-ariel.png",
             "url": "https://www.iom.int",
             "date": "2023-06-01",
             "tech_stack": [
@@ -187,6 +205,21 @@
               },
               {
                 "name": "AWS"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "MongoDB"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Scrum"
               }
             ]
           }
@@ -442,7 +475,7 @@
         "end_date": "2016-12-31",
         "is_current": false,
         "company": "IOM, Xchange & INFORNET",
-        "company_image": "10x.png",
+        "company_image": "oim.jpeg",
         "position": "Full-Stack Developer",
         "description": "Built platforms for statistics, surveys, ecommerce, mobile apps, dashboards and nutrition systems for UN programs.",
         "tasks": [

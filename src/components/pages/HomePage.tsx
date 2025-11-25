@@ -12,6 +12,7 @@ export type ModalPayload = ProjectModalPayload;
 type RenderProjectsProps = {
   projects: Project[];
   companyImage?: string;
+  companyImages?: string[];
   companyName?: string;
   companyUrl?: string;
   onOpen?: (payload: ModalPayload) => void;
@@ -20,6 +21,7 @@ type RenderProjectsProps = {
 const RenderProjects = ({
   projects,
   companyImage,
+  companyImages,
   companyName,
   companyUrl,
   onOpen,
@@ -29,6 +31,7 @@ const RenderProjects = ({
       <CardItem
         data={element}
         companyImage={companyImage}
+        companyImages={companyImages}
         companyName={companyName}
         companyUrl={companyUrl}
         onOpen={onOpen}
@@ -49,7 +52,18 @@ export default function HomePage() {
           works?.map((element: WorkHistory) => (
             <RenderProjects
               projects={element.achievements}
-              companyImage={element.company_image}
+              companyImage={
+                Array.isArray(element.company_image)
+                  ? element.company_image[0]
+                  : element.company_image
+              }
+              companyImages={
+                Array.isArray(element.company_image)
+                  ? element.company_image
+                  : element.company_image
+                  ? [element.company_image]
+                  : []
+              }
               companyName={element.company}
               companyUrl={element.achievements?.[0]?.url}
               onOpen={(payload) => setSelected(payload)}
