@@ -15,7 +15,7 @@ export const UserAvatar = () => {
       <LinkItem to={`${basePath}`} color='inherit' relative='path'>
         <Typography
           noWrap
-          component='a'
+          component='span'
           sx={{
             mr: 2,
             display: "flex",
