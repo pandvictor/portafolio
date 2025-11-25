@@ -95,6 +95,14 @@
               {
                 "image": "chivo-benefits.png",
                 "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento."
+              },
+              {
+                "image": "chivo-login.png",
+                "description": "Validación de usuarios, onboarding seguro y verificaciones KYC para nuevos registros e ingresos."
+              },
+              {
+                "image": "chivo-otp.png",
+                "description": "Inicio de sesión por teléfono con envío de OTP al usuario para acceso seguro."
               }
             ],
             "coins": [
