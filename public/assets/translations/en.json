@@ -1,7 +1,7 @@
 {
   "hello": "Hello!",
   "download": "Download CV",
-  "more_info": "More info",
+  "more_info": "Overview",
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Digital solutions for fintech, government and international organizations"
@@ -122,7 +122,7 @@
         "company": "APEX Exchange (AlphaPoint)",
         "company_image": "alphapoint.svg",
         "position": "Lead Frontend Engineer",
-        "description": "Own the web trading experience for AlphaPoint’s white-label APEX exchange for banks and institutions.",
+        "description": "Developed core features for a nationwide digital service designed to serve over 6 million citizens. Owned the web trading experience for AlphaPoint’s white-label APEX exchange for banks and institutions.",
         "tasks": [
           "Implemented responsive trading UI (order books, advanced charts, RFQ/OTC) consuming WebSocket feeds and REST APIs.",
           "Integrated account, wallet and multi-asset custody modules with role-based admin and compliance workflows.",
@@ -200,6 +200,10 @@
               {
                 "image": "apex-alerts.png",
                 "description": "In-app alerts and notifications for portfolio risk and balance changes."
+              },
+              {
+                "image": "apex-webtrading.png",
+                "description": "Web trading platform for multiple cryptos with live order book, trades, and advanced order entry."
               }
             ],
             "coins": [
