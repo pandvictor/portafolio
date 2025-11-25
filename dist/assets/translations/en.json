@@ -23,7 +23,7 @@
         "end_date": "",
         "is_current": true,
         "company": "CHIVO Wallet",
-        "company_image": "alphapoint.svg",
+        "company_image": "alphapoint.png",
         "position": "Senior Software Developer",
         "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint), owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
         "tasks": [
@@ -112,7 +112,7 @@
         "end_date": "",
         "is_current": true,
         "company": "APEX Exchange (AlphaPoint)",
-        "company_image": "alphapoint.svg",
+        "company_image": "alphapoint.png",
         "position": "Lead Frontend Engineer",
         "description": "Own the web trading experience for AlphaPoint’s white-label APEX exchange for banks and institutions.",
         "tasks": [

@@ -95,6 +95,14 @@
               {
                 "image": "chivo-benefits.png",
                 "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
+              },
+              {
+                "image": "chivo-login.png",
+                "description": "User validation, secure onboarding, and KYC checks for new registrations and logins."
+              },
+              {
+                "image": "chivo-otp.png",
+                "description": "Phone-based login with OTP sent to the user for secure access."
               }
             ],
             "coins": [

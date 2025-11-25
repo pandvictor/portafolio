@@ -23,7 +23,7 @@
         "end_date": "",
         "is_current": true,
         "company": "CHIVO Wallet",
-        "company_image": "alphapoint.svg",
+        "company_image": "alphapoint.png",
         "position": "Senior Software Developer",
         "description": "Lideré la billetera Bitcoin nacional de El Salvador (AlphaPoint), tomando la experiencia web y móvil para pagos, remesas, cash-in/out y POS para comercios.",
         "tasks": [
@@ -112,7 +112,7 @@
         "end_date": "",
         "is_current": true,
         "company": "APEX Exchange (AlphaPoint)",
-        "company_image": "alphapoint.svg",
+        "company_image": "alphapoint.png",
         "position": "Lead Frontend Engineer",
         "description": "Responsable del front web de trading de la solución white-label APEX de AlphaPoint para bancos e instituciones.",
         "tasks": [
