@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="scrumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#53b3ff"/>
+      <stop offset="100%" stop-color="#1b7bdc"/>
+    </linearGradient>
+  </defs>
+  <circle cx="90" cy="90" r="60" fill="none" stroke="url(#scrumGrad)" stroke-width="16"/>
+  <path d="M150 150h-34c-15 0-26-11-26-26s11-26 26-26h32" fill="none" stroke="#1b7bdc" stroke-width="12" stroke-linecap="round"/>
+  <path d="M140 78l16 20-16 20" fill="none" stroke="#1b7bdc" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 110c-12 0-22 10-22 22s10 22 22 22h30" fill="none" stroke="#53b3ff" stroke-width="12" stroke-linecap="round"/>
+  <path d="M62 74c-10-7-16-18-16-30 0-9 3-17 8-24" fill="none" stroke="#1b7bdc" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="130" cy="60" r="6" fill="#1b7bdc"/>
+</svg>
