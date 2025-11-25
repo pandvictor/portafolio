@@ -44,7 +44,16 @@ export default function HomePage() {
   useLanguage();
   const [selected, setSelected] = useState<ModalPayload | null>(null);
 
-  const works = i18n.t("resume.work_history") as WorkHistory[];
+  const worksRaw = i18n.t("resume.work_history") as WorkHistory[];
+  const works = (worksRaw || [])
+    .map((w, idx) => ({ ...(w as WorkHistory), _origIndex: idx } as WorkHistory & { _origIndex: number }))
+    .filter((w) => w.show_on_home !== false)
+    .sort((a, b) => {
+      const aOrder = a.home_order ?? a._origIndex;
+      const bOrder = b.home_order ?? b._origIndex;
+      if (aOrder !== bOrder) return aOrder - bOrder;
+      return a._origIndex - b._origIndex;
+    });
   return (
     <MainTemplate>
       <Grid container spacing={3}>

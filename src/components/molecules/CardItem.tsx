@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ImageIcons } from "./ImageIcons";
 import { publicPath } from "../../constants/gloabals";
@@ -57,6 +55,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
   onOpen,
 }) => {
   const { title, description, image, tech_stack } = data;
+  const coins = data.coins || [];
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -93,20 +92,33 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
               ? [companyImage]
               : []
           ).map((img, idx) => (
-            <Avatar
+            <Box
               key={`${img}-${idx}`}
-              src={`${publicPath}/images/${img}`}
-              alt={companyName || title}
               sx={{
-                width: 36,
-                height: 36,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minWidth: 60,
+                maxWidth: 140,
+                maxHeight: 42,
                 transition: "transform 0.2s ease, box-shadow 0.2s ease",
                 "&:hover": {
-                  transform: "scale(1.12)",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                  transform: "scale(1.05)",
                 },
-              }}
-            />
+              }}>
+              <img
+                src={`${publicPath}/images/${img}`}
+                alt={companyName || title}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  maxWidth: 140,
+                  maxHeight: 42,
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            </Box>
           ))}
           <Typography variant='h5' component='div'>
             {title}
@@ -139,14 +151,37 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
             />
           )}
         </Stack>
+        {coins.length > 0 && (
+          <Stack direction='row' spacing={1} flexWrap='wrap' sx={{ mt: 1 }}>
+            {coins.slice(0, 4).map((coin, idx) => {
+              const icon = resolveTechIconFromStack(coin);
+              return (
+                <Chip
+                  key={`${coin.name}-${idx}`}
+                  size='small'
+                  label={coin.name}
+                  avatar={
+                    <Avatar
+                      src={`${publicPath}/images/icons/${icon}`}
+                      alt={coin.name}
+                      sx={{ width: 22, height: 22 }}
+                    />
+                  }
+                  sx={{ mr: 0.5, mb: 0.5, borderRadius: 2, bgcolor: "rgba(0,0,0,0.03)" }}
+                />
+              );
+            })}
+            {coins.length > 4 && (
+              <Chip
+                size='small'
+                label={`+${coins.length - 4}`}
+                sx={{ mr: 0.5, mb: 0.5, borderRadius: 2, bgcolor: "rgba(0,0,0,0.03)" }}
+              />
+            )}
+          </Stack>
+        )}
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label='add to favorites'>
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label='share'>
-          <ShareIcon />
-        </IconButton>
         <Button
           size='small'
           onClick={() =>

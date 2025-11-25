@@ -12,6 +12,7 @@ export type Project = {
     url:         string;
     date:        string;
     tech_stack:  TechStack[];
+    coins?:      TechStack[];
     modal_details?: ModalDetail[];
 }
 
@@ -81,6 +82,8 @@ export type WorkHistory = {
     is_current:   boolean;
     company:      string;
     company_image: string | string[];
+    show_on_home?: boolean;
+    home_order?: number;
     position:     string;
     description:  string;
     tasks:        string[];
