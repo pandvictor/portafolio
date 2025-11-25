@@ -16,7 +16,6 @@ import {
   Typography,
   Avatar,
   Stack,
-  Tooltip,
   Button,
   Chip,
 } from "@mui/material";
@@ -60,10 +59,6 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
-  };
-
-  const renderActionIcons = () => {
-    return null;
   };
 
   return (
@@ -167,7 +162,12 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
                       sx={{ width: 22, height: 22 }}
                     />
                   }
-                  sx={{ mr: 0.5, mb: 0.5, borderRadius: 2, bgcolor: "rgba(0,0,0,0.03)" }}
+                  sx={{
+                    mr: 0.5,
+                    mb: 0.5,
+                    borderRadius: 2,
+                    bgcolor: "rgba(0,0,0,0.03)",
+                  }}
                 />
               );
             })}
@@ -175,7 +175,12 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
               <Chip
                 size='small'
                 label={`+${coins.length - 4}`}
-                sx={{ mr: 0.5, mb: 0.5, borderRadius: 2, bgcolor: "rgba(0,0,0,0.03)" }}
+                sx={{
+                  mr: 0.5,
+                  mb: 0.5,
+                  borderRadius: 2,
+                  bgcolor: "rgba(0,0,0,0.03)",
+                }}
               />
             )}
           </Stack>

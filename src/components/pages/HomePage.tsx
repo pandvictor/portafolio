@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { MainTemplate } from "../templates";
-import { CardItem, CardClients } from "../molecules";
+import { CardItem } from "../molecules";
 import { Project, ProjectModalPayload, WorkHistory } from "../../types/types";
 import { useLanguage } from "../../context/LanguageContext";
 import i18n from "../../utils/i18n";
