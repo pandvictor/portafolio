@@ -1,7 +1,7 @@
 {
   "hello": "¡Hola!",
   "download": "Descargar CV",
-  "more_info": "Más info",
+  "more_info": "Overview",
   "portfolio": {
     "title": "Portafolio",
     "subtitle": "Soluciones digitales para fintech, gobierno y organizaciones internacionales"
@@ -114,7 +114,7 @@
         "company": "APEX Exchange (AlphaPoint)",
         "company_image": "alphapoint.png",
         "position": "Lead Frontend Engineer",
-        "description": "Responsable del front web de trading de la solución white-label APEX de AlphaPoint para bancos e instituciones.",
+        "description": "Desarrollé funcionalidades núcleo para un servicio digital nacional diseñado para más de 6 millones de ciudadanos. Responsable del front web de trading de la solución white-label APEX de AlphaPoint para bancos e instituciones.",
         "tasks": [
           "Implementé UI de trading responsive (order books, gráficas avanzadas, RFQ/OTC) consumiendo WebSockets y APIs REST.",
           "Integré módulos de cuentas, wallets y custodia multi-activo con administración por roles y flujos de cumplimiento.",

@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import { styled } from "@mui/material/styles";
-import IconButton, { IconButtonProps } from "@mui/material/IconButton";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import React from "react";
 import { ImageIcons } from "./ImageIcons";
 import { publicPath } from "../../constants/gloabals";
 import { Project, ProjectModalPayload } from "../../types/types";
@@ -11,8 +8,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  Collapse,
-  Theme as MuiTheme,
   Typography,
   Avatar,
   Stack,
@@ -30,21 +25,6 @@ interface RecipeReviewCardProps {
   onOpen?: (payload: ProjectModalPayload) => void;
 }
 
-interface ExpandMoreProps extends IconButtonProps {
-  expand: boolean;
-}
-
-const ExpandMore = styled((props: ExpandMoreProps) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }: { theme: MuiTheme; expand: boolean }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
-
 export const CardItem: React.FC<RecipeReviewCardProps> = ({
   data,
   companyImage,
@@ -53,16 +33,18 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
   companyUrl,
   onOpen,
 }) => {
-  const { title, description, image, tech_stack } = data;
+  const { title, image, tech_stack } = data;
   const coins = data.coins || [];
-  const [expanded, setExpanded] = useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
-    <Card sx={{ maxWidth: 800, borderRadius: "28px", height: "100%" }}>
+    <Card
+      sx={{
+        maxWidth: 800,
+        borderRadius: "28px",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}>
       <ImageIcons
         actionIcons={null}
         image={{
@@ -71,7 +53,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
           alt: "",
         }}
       />
-      <CardContent>
+      <CardContent sx={{ flexGrow: 1 }}>
         <Stack
           direction='row'
           spacing={1}
@@ -186,9 +168,29 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
           </Stack>
         )}
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions
+        disableSpacing
+        sx={{
+          px: 2,
+          pb: 2,
+          pt: 0,
+        }}>
         <Button
           size='small'
+          fullWidth
+          variant='contained'
+          color='inherit'
+          sx={{
+            borderRadius: 2,
+            fontWeight: 700,
+            bgcolor: "#e0e0e0",
+            color: "#1f1f1f",
+            boxShadow: "none",
+            "&:hover": {
+              bgcolor: "#d5d5d5",
+              boxShadow: "0 6px 14px rgba(0,0,0,0.1)",
+            },
+          }}
           onClick={() =>
             onOpen?.({
               project: data,
@@ -200,19 +202,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
           }>
           {i18n.t("more_info")}
         </Button>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label='show more'>
-          <ExpandMoreIcon />
-        </ExpandMore>
       </CardActions>
-      <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent>
-          <Typography paragraph>{description}</Typography>
-        </CardContent>
-      </Collapse>
     </Card>
   );
 };
