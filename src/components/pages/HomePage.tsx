@@ -46,7 +46,12 @@ export default function HomePage() {
 
   const worksRaw = i18n.t("resume.work_history") as WorkHistory[];
   const works = (worksRaw || [])
-    .map((w, idx) => ({ ...(w as WorkHistory), _origIndex: idx } as WorkHistory & { _origIndex: number }))
+    .map(
+      (w, idx) =>
+        ({ ...(w as WorkHistory), _origIndex: idx }) as WorkHistory & {
+          _origIndex: number;
+        }
+    )
     .filter((w) => w.show_on_home !== false)
     .sort((a, b) => {
       const aOrder = a.home_order ?? a._origIndex;
@@ -70,8 +75,8 @@ export default function HomePage() {
                 Array.isArray(element.company_image)
                   ? element.company_image
                   : element.company_image
-                  ? [element.company_image]
-                  : []
+                    ? [element.company_image]
+                    : []
               }
               companyName={element.company}
               companyUrl={element.achievements?.[0]?.url}
@@ -86,10 +91,10 @@ export default function HomePage() {
           </Grid>
         ))}
       </Grid> */}
-      <Grid container spacing={3} sx={{ marginY: 5 }}>
+      {/* <Grid container spacing={3} sx={{ marginY: 5 }}>
         {works &&
           works.map((_item: WorkHistory) => <CardClients data={_item} />)}
-      </Grid>
+      </Grid> */}
       <ProjectDialog
         open={Boolean(selected)}
         payload={selected}
