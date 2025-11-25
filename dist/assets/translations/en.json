@@ -95,6 +95,14 @@
               {
                 "image": "chivo-benefits.png",
                 "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
+              },
+              {
+                "image": "chivo-login.png",
+                "description": "User validation, secure onboarding, and KYC checks for new registrations and logins."
+              },
+              {
+                "image": "chivo-otp.png",
+                "description": "Phone-based login with OTP sent to the user for secure access."
               }
             ],
             "coins": [
@@ -104,7 +112,7 @@
             ]
           }
         ],
-        "home_order": 1,
+        "home_order": 2,
         "show_on_home": true
       },
       {
@@ -112,9 +120,9 @@
         "end_date": "",
         "is_current": true,
         "company": "APEX Exchange (AlphaPoint)",
-        "company_image": "alphapoint.png",
+        "company_image": "alphapoint.svg",
         "position": "Lead Frontend Engineer",
-        "description": "Developed core features for a nationwide digital service designed to serve over 6 million citizens. Owned the web trading experience for AlphaPoint’s white-label APEX exchange for banks and institutions.",
+        "description": "• Developed core features for a nationwide digital service designed to serve over 6 million citizens.\n• Contributed to backend architecture supporting 10k+ TPS at peak usage.",
         "tasks": [
           "Implemented responsive trading UI (order books, advanced charts, RFQ/OTC) consuming WebSocket feeds and REST APIs.",
           "Integrated account, wallet and multi-asset custody modules with role-based admin and compliance workflows.",
@@ -123,8 +131,8 @@
         ],
         "achievements": [
           {
-            "title": "APEX Exchange rollout",
-            "description": "Institutional-grade exchange platform with matching engine connectivity, liquidity tools, and branded white-label UX.",
+            "title": "APEX Exchange",
+            "description": "• Developed core features for a nationwide digital service designed to serve over 6 million citizens.\n• Contributed to backend architecture supporting 10k+ TPS at peak usage.",
             "image": "alphapoint.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
@@ -180,6 +188,22 @@
               {
                 "image": "apex-mobile.png",
                 "description": "Mobile trading app for buying crypto and executing trades with live charts, depth, and order management."
+              },
+              {
+                "image": "apex-trading.png",
+                "description": "Trading module for multiple crypto pairs with market/limit/conditional orders, TP/SL and leverage."
+              },
+              {
+                "image": "apex-realtime.png",
+                "description": "Realtime market buys across multiple crypto pairs with fees and borrowing breakdowns."
+              },
+              {
+                "image": "apex-alerts.png",
+                "description": "In-app alerts and notifications for portfolio risk and balance changes."
+              },
+              {
+                "image": "apex-webtrading.png",
+                "description": "Web trading platform for multiple cryptos with live order book, trades, and advanced order entry."
               }
             ],
             "coins": [
@@ -204,7 +228,7 @@
             ]
           }
         ],
-        "home_order": 2,
+        "home_order": 1,
         "show_on_home": true
       },
       {
@@ -706,17 +730,22 @@
       {
         "title": "LinkedIn",
         "icon": "linkedin.svg",
-        "url": "https://www.linkedin.com/in/avhergo/"
+        "url": "https://www.linkedin.com/in/avihergo/"
       },
       {
         "title": "GitHub",
         "icon": "github.svg",
-        "url": "https://github.com/avhergo"
+        "url": "https://github.com/avihergo"
       },
       {
         "title": "WhatsApp",
         "icon": "whatsapp.svg",
         "url": "https://wa.me/50255286714"
+      },
+      {
+        "title": "GitHub 2",
+        "icon": "github.svg",
+        "url": "https://github.com/pandvictor"
       }
     ]
   }

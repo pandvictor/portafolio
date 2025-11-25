@@ -95,6 +95,14 @@
               {
                 "image": "chivo-benefits.png",
                 "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento."
+              },
+              {
+                "image": "chivo-login.png",
+                "description": "Validación de usuarios, onboarding seguro y verificaciones KYC para nuevos registros e ingresos."
+              },
+              {
+                "image": "chivo-otp.png",
+                "description": "Inicio de sesión por teléfono con envío de OTP al usuario para acceso seguro."
               }
             ],
             "coins": [
@@ -104,7 +112,7 @@
             ]
           }
         ],
-        "home_order": 1,
+        "home_order": 2,
         "show_on_home": true
       },
       {
@@ -112,9 +120,9 @@
         "end_date": "",
         "is_current": true,
         "company": "APEX Exchange (AlphaPoint)",
-        "company_image": "alphapoint.png",
+        "company_image": "alphapoint.svg",
         "position": "Lead Frontend Engineer",
-        "description": "Desarrollé funcionalidades núcleo para un servicio digital nacional diseñado para más de 6 millones de ciudadanos. Responsable del front web de trading de la solución white-label APEX de AlphaPoint para bancos e instituciones.",
+        "description": "• Desarrollé funcionalidades núcleo para un servicio digital nacional diseñado para más de 6 millones de ciudadanos.\n• Contribuí a la arquitectura backend que soporta más de 10,000 transacciones por segundo (TPS) en picos de uso.",
         "tasks": [
           "Implementé UI de trading responsive (order books, gráficas avanzadas, RFQ/OTC) consumiendo WebSockets y APIs REST.",
           "Integré módulos de cuentas, wallets y custodia multi-activo con administración por roles y flujos de cumplimiento.",
@@ -123,8 +131,8 @@
         ],
         "achievements": [
           {
-            "title": "Lanzamiento APEX Exchange",
-            "description": "Plataforma de intercambio institucional con conectividad al matching engine, herramientas de liquidez y UX white-label personalizable.",
+            "title": "APEX Exchange",
+            "description": "• Desarrollé funcionalidades núcleo para un servicio digital nacional diseñado para más de 6 millones de ciudadanos.\n• Contribuí a la arquitectura backend que soporta más de 10,000 transacciones por segundo (TPS) en picos de uso.",
             "image": "alphapoint.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
@@ -180,6 +188,22 @@
               {
                 "image": "apex-mobile.png",
                 "description": "App móvil para comprar cripto y hacer trading con gráficos en vivo, profundidad y gestión de órdenes."
+              },
+              {
+                "image": "apex-trading.png",
+                "description": "Módulo de trading para múltiples pares cripto con órdenes market/limit/condicionales, TP/SL y apalancamiento."
+              },
+              {
+                "image": "apex-realtime.png",
+                "description": "Compras en tiempo real de múltiples pares cripto con desglose de fees y préstamos."
+              },
+              {
+                "image": "apex-alerts.png",
+                "description": "Alertas y notificaciones en la app para riesgo de portafolio y cambios de balance."
+              },
+              {
+                "image": "apex-webtrading.png",
+                "description": "Plataforma web de trading para múltiples cripto con order book en vivo, trades y entrada de órdenes avanzada."
               }
             ],
             "coins": [
@@ -204,7 +228,7 @@
             ]
           }
         ],
-        "home_order": 2,
+        "home_order": 1,
         "show_on_home": true
       },
       {
@@ -706,17 +730,22 @@
       {
         "title": "LinkedIn",
         "icon": "linkedin.svg",
-        "url": "https://www.linkedin.com/in/avhergo/"
+        "url": "https://www.linkedin.com/in/avihergo/"
       },
       {
         "title": "GitHub",
         "icon": "github.svg",
-        "url": "https://github.com/avhergo"
+        "url": "https://github.com/avihergo"
       },
       {
         "title": "WhatsApp",
         "icon": "whatsapp.svg",
         "url": "https://wa.me/50255286714"
+      },
+      {
+        "title": "GitHub 2",
+        "icon": "github.svg",
+        "url": "https://github.com/pandvictor"
       }
     ]
   }

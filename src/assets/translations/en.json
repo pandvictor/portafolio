@@ -23,7 +23,7 @@
         "end_date": "",
         "is_current": true,
         "company": "CHIVO Wallet",
-        "company_image": "alphapoint.svg",
+        "company_image": "alphapoint.png",
         "position": "Senior Software Developer",
         "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint), owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
         "tasks": [
@@ -122,7 +122,7 @@
         "company": "APEX Exchange (AlphaPoint)",
         "company_image": "alphapoint.svg",
         "position": "Lead Frontend Engineer",
-        "description": "Developed core features for a nationwide digital service designed to serve over 6 million citizens. Owned the web trading experience for AlphaPoint’s white-label APEX exchange for banks and institutions.",
+        "description": "• Developed core features for a nationwide digital service designed to serve over 6 million citizens.\n• Contributed to backend architecture supporting 10k+ TPS at peak usage.",
         "tasks": [
           "Implemented responsive trading UI (order books, advanced charts, RFQ/OTC) consuming WebSocket feeds and REST APIs.",
           "Integrated account, wallet and multi-asset custody modules with role-based admin and compliance workflows.",
@@ -131,8 +131,8 @@
         ],
         "achievements": [
           {
-            "title": "APEX Exchange rollout",
-            "description": "Institutional-grade exchange platform with matching engine connectivity, liquidity tools, and branded white-label UX.",
+            "title": "APEX Exchange",
+            "description": "• Developed core features for a nationwide digital service designed to serve over 6 million citizens.\n• Contributed to backend architecture supporting 10k+ TPS at peak usage.",
             "image": "apex.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
