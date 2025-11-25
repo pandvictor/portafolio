@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2684ff"/>
+      <stop offset="100%" stop-color="#0052cc"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#grad)" fill-rule="evenodd">
+    <path d="M40 40h82l-41 41c-4.8 4.8-4.8 12.6 0 17.4l41 41H40c-6.6 0-12-5.4-12-12V52c0-6.6 5.4-12 12-12z"/>
+    <path d="M134 40h82l-41 41c-4.8 4.8-4.8 12.6 0 17.4l41 41h-82l-41-41c-4.8-4.8-4.8-12.6 0-17.4l41-41z" opacity=".85"/>
+    <path d="M134 134h82l-41 41c-4.8 4.8-4.8 12.6 0 17.4l17.6 17.6H134l-41-41c-4.8-4.8-4.8-12.6 0-17.4l41-41z" opacity=".7"/>
+  </g>
+</svg>

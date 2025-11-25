@@ -6,7 +6,8 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ImageIcons } from "./ImageIcons";
 import { publicPath } from "../../constants/gloabals";
-import { Project, TechStack } from "../../types/types";
+import { Project, ProjectModalPayload } from "../../types/types";
+import { resolveTechIconFromStack } from "../../utils/techIcons";
 import {
   Box,
   Card,
@@ -18,14 +19,16 @@ import {
   Avatar,
   Stack,
   Tooltip,
+  Button,
 } from "@mui/material";
-import { LinkItem } from "../atoms";
+import i18n from "../../utils/i18n";
 
 interface RecipeReviewCardProps {
   data: Project;
   companyImage?: string;
   companyName?: string;
   companyUrl?: string;
+  onOpen?: (payload: ProjectModalPayload) => void;
 }
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -48,33 +51,18 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
   companyImage,
   companyName,
   companyUrl,
+  onOpen,
 }) => {
-  const { title, description, image, url, tech_stack } = data;
+  const { title, description, image, tech_stack } = data;
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  const techIconFromName = (tech: TechStack) => {
-    if (tech.icon) return tech.icon;
-    const key = tech.name.toLowerCase();
-    if (key.includes("react")) return "react.svg";
-    if (key.includes("react native")) return "react-native.svg";
-    if (key.includes("expo")) return "expo.svg";
-    if (key.includes("redux")) return "redux.svg";
-    if (key.includes("aws")) return "aws.svg";
-    if (key.includes("docker")) return "docker.svg";
-    if (key.includes("kubernetes")) return "kubernetes.svg";
-    if (key.includes("node")) return "javascript.svg";
-    if (key.includes("typescript")) return "typescript.png";
-    if (key.includes("javascript")) return "javascript.svg";
-    return "javascript.svg";
-  };
-
   const renderActionIcons = () => {
     return tech_stack.map((item) => {
-      const icon = techIconFromName(item);
+      const icon = resolveTechIconFromStack(item);
       return (
         <Tooltip key={item.name} title={item.name} arrow placement='top'>
           <IconButton
@@ -115,12 +103,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
             />
           )}
           <Typography variant='h5' component='div'>
-            <LinkItem
-              to={companyUrl || url}
-              target='_blank'
-              rel='noopener noreferrer'>
-              {title}
-            </LinkItem>
+            {title}
           </Typography>
         </Stack>
       </CardContent>
@@ -131,6 +114,13 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
         <IconButton aria-label='share'>
           <ShareIcon />
         </IconButton>
+        <Button
+          size='small'
+          onClick={() =>
+            onOpen?.({ project: data, companyImage, companyName, companyUrl })
+          }>
+          {i18n.t("more_info")}
+        </Button>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
