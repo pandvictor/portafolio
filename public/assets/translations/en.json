@@ -112,7 +112,7 @@
             ]
           }
         ],
-        "home_order": 1,
+        "home_order": 2,
         "show_on_home": true
       },
       {
@@ -188,6 +188,18 @@
               {
                 "image": "apex-mobile.png",
                 "description": "Mobile trading app for buying crypto and executing trades with live charts, depth, and order management."
+              },
+              {
+                "image": "apex-trading.png",
+                "description": "Trading module for multiple crypto pairs with market/limit/conditional orders, TP/SL and leverage."
+              },
+              {
+                "image": "apex-realtime.png",
+                "description": "Realtime market buys across multiple crypto pairs with fees and borrowing breakdowns."
+              },
+              {
+                "image": "apex-alerts.png",
+                "description": "In-app alerts and notifications for portfolio risk and balance changes."
               }
             ],
             "coins": [
@@ -212,7 +224,7 @@
             ]
           }
         ],
-        "home_order": 2,
+        "home_order": 1,
         "show_on_home": true
       },
       {

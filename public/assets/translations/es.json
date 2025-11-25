@@ -112,7 +112,7 @@
             ]
           }
         ],
-        "home_order": 1,
+        "home_order": 2,
         "show_on_home": true
       },
       {
@@ -188,6 +188,18 @@
               {
                 "image": "apex-mobile.png",
                 "description": "App móvil para comprar cripto y hacer trading con gráficos en vivo, profundidad y gestión de órdenes."
+              },
+              {
+                "image": "apex-trading.png",
+                "description": "Módulo de trading para múltiples pares cripto con órdenes market/limit/condicionales, TP/SL y apalancamiento."
+              },
+              {
+                "image": "apex-realtime.png",
+                "description": "Compras en tiempo real de múltiples pares cripto con desglose de fees y préstamos."
+              },
+              {
+                "image": "apex-alerts.png",
+                "description": "Alertas y notificaciones en la app para riesgo de portafolio y cambios de balance."
               }
             ],
             "coins": [
@@ -212,7 +224,7 @@
             ]
           }
         ],
-        "home_order": 2,
+        "home_order": 1,
         "show_on_home": true
       },
       {
