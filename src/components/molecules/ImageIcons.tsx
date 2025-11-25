@@ -12,13 +12,30 @@ interface ImageIconsProps {
 
 export const ImageIcons: React.FC<ImageIconsProps> = ({ image, actionIcons }) => {
   return (
-    <ImageListItem sx={{padding: 1}}>
+    <ImageListItem
+      sx={{
+        m: 1,
+        p: 0,
+        position: 'relative',
+        pt: '56.25%', // 16:9 ratio
+        overflow: 'hidden',
+        borderRadius: '18px',
+      }}>
       <img
         src={image.src}
         srcSet={image.srcSet}
         alt={image.alt}
         loading="lazy"
-        style={{ borderRadius: '18px', width: '100%', height: '280px'}}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          display: 'block',
+        }}
       />
       <ImageListItemBar
         sx={{

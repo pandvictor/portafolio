@@ -28,6 +28,7 @@ export type ModalDetail = {
 export type ProjectModalPayload = {
     project: Project;
     companyImage?: string;
+    companyImages?: string[];
     companyName?: string;
     companyUrl?: string;
 };
@@ -79,7 +80,7 @@ export type WorkHistory = {
     end_date:     string;
     is_current:   boolean;
     company:      string;
-    company_image: string;
+    company_image: string | string[];
     position:     string;
     description:  string;
     tasks:        string[];

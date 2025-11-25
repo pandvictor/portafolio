@@ -12,12 +12,15 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("jira")) return "jira.svg";
   if (key.includes("gitlab")) return "gitlab.svg";
   if (key.includes("git")) return "git.svg";
+  if (key.includes("mongo")) return "mongodb.svg";
   if (key.includes("scrum") || key.includes("agile")) return "scrum.svg";
+  if (key.includes("android")) return "android.svg";
   if (key.includes("aws")) return "aws.svg";
+  if (key.includes("ios")) return "ios.svg";
   if (key.includes("docker")) return "docker.svg";
   if (key.includes("kubernetes")) return "kubernetes.svg";
   if (key.includes("mysql")) return "mysql-database.svg";
-  if (key.includes("node")) return "javascript.svg";
+  if (key.includes("node")) return "nodejs.svg";
   if (key.includes("typescript") || key === "ts") return "typescript.png";
   if (key.includes("javascript")) return "javascript.svg";
   return DEFAULT_ICON;
