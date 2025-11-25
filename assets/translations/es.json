@@ -1,6 +1,7 @@
 {
   "hello": "¡Hola!",
   "download": "Descargar CV",
+  "more_info": "Más info",
   "portfolio": {
     "title": "Portafolio",
     "subtitle": "Soluciones digitales para fintech, gobierno y organizaciones internacionales"
@@ -21,38 +22,200 @@
         "start_date": "2023-06-01",
         "end_date": "",
         "is_current": true,
-        "company": "AlphaPoint",
-        "company_image": "alphapoint.png",
-        "position": "Lead & Senior Software Developer",
-        "description": "Lideré el frontend móvil y web para la billetera CHIVO y la plataforma APEX, asegurando paridad funcional y entregas continuas para clientes fintech.",
+        "company": "CHIVO Wallet",
+        "company_image": "alphapoint.svg",
+        "position": "Senior Software Developer",
+        "description": "Lideré la billetera Bitcoin nacional de El Salvador (AlphaPoint), tomando la experiencia web y móvil para pagos, remesas, cash-in/out y POS para comercios.",
         "tasks": [
-          "Dirección técnica de los equipos móviles y web para productos Bitcoin.",
-          "Construcción de componentes reutilizables y flujos críticos en React Native y React.",
-          "Optimización del rendimiento y la experiencia de usuario en tiempo real.",
-          "Participación activa en decisiones de arquitectura y mejoras continuas."
+          "Entregué flujos de billetera, remesas y on/off-ramp en React Native y React, integrando Lightning y servicios on-chain.",
+          "Coordiné releases con producto y compliance para mantener KYC, kioscos de cash-in y POS alineados a regulación.",
+          "Construí componentes UI compartidos, monitoreo de errores y bases de performance para móvil y web.",
+          "Mentoricé al equipo en TypeScript, pruebas y observabilidad mientras ordenaba backlog y deuda técnica."
         ],
         "achievements": [
           {
-            "title": "CHIVO Wallet & APEX",
-            "description": "Aplicaciones móviles y web para pagos e inversión en Bitcoin, integradas con módulos de trading y monitoreo en vivo.",
+            "title": "Relanzamiento CHIVO Wallet",
+            "description": "Billetera Bitcoin/LN con pagos QR, remesas, POS para comercios, descuentos de combustible y manejo de efectivo en más de 200 cajeros.",
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
             "tech_stack": [
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "React", "icon": "react.svg" },
-              { "name": "TypeScript", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "chivo2.png",
+                "description": "Experiencia móvil para pagos Lightning/on-chain, remesas y flujos QR."
+              },
+              {
+                "image": "chivo.png",
+                "description": "POS para comercios y manejo de efectivo en kioscos/cajeros con flujos alineados a compliance."
+              },
+              {
+                "image": "chivo-benefits.png",
+                "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              }
             ]
           }
-        ]
+        ],
+        "home_order": 1,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2024-01-01",
+        "end_date": "",
+        "is_current": true,
+        "company": "APEX Exchange (AlphaPoint)",
+        "company_image": "alphapoint.svg",
+        "position": "Lead Frontend Engineer",
+        "description": "Responsable del front web de trading de la solución white-label APEX de AlphaPoint para bancos e instituciones.",
+        "tasks": [
+          "Implementé UI de trading responsive (order books, gráficas avanzadas, RFQ/OTC) consumiendo WebSockets y APIs REST.",
+          "Integré módulos de cuentas, wallets y custodia multi-activo con administración por roles y flujos de cumplimiento.",
+          "Optimicé latencia y render de actualizaciones de alta frecuencia (profundidad, trades, balances) con virtualización y memoización.",
+          "Trabajé con producto y clientes para localizar y tematizar la experiencia white-label en múltiples despliegues institucionales."
+        ],
+        "achievements": [
+          {
+            "title": "Lanzamiento APEX Exchange",
+            "description": "Plataforma de intercambio institucional con conectividad al matching engine, herramientas de liquidez y UX white-label personalizable.",
+            "image": "alphapoint.png",
+            "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
+            "date": "2024-05-01",
+            "tech_stack": [
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "alphapoint.png",
+                "description": "Experiencia web de trading con libros en tiempo real, gráficos y herramientas de liquidez para clientes institucionales."
+              },
+              {
+                "image": "apex-mobile.png",
+                "description": "App móvil para comprar cripto y hacer trading con gráficos en vivo, profundidad y gestión de órdenes."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              },
+              {
+                "name": "XRP"
+              },
+              {
+                "name": "USDT"
+              },
+              {
+                "name": "ETH"
+              },
+              {
+                "name": "DASH"
+              },
+              {
+                "name": "ADA"
+              }
+            ]
+          }
+        ],
+        "home_order": 2,
+        "show_on_home": true
       },
       {
         "start_date": "2022-12-01",
         "end_date": "2023-12-31",
         "is_current": false,
         "company": "IOM & Secretaría de Bienestar Social",
-        "company_image": "payroll.jpg",
+        "company_image": [
+          "oim.jpeg",
+          "sbs.png"
+        ],
         "position": "Technical Lead & Senior Developer",
         "description": "Responsable técnico del programa Angel Ariel, coordinando equipos React y Node.js para proyectos gubernamentales.",
         "tasks": [
@@ -65,16 +228,39 @@
           {
             "title": "Plataforma Angel Ariel",
             "description": "Portal y app de apoyo para Quedate y Casa Joven, con paneles para personal de campo y analistas.",
-            "image": "payroll2.jpg",
+            "image": "angel-ariel.png",
             "url": "https://www.iom.int",
             "date": "2023-06-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "MongoDB"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Scrum"
+              }
             ]
           }
-        ]
+        ],
+        "home_order": 4,
+        "show_on_home": true
       },
       {
         "start_date": "2023-01-01",
@@ -98,12 +284,19 @@
             "url": "https://wizedevs.com",
             "date": "2023-05-01",
             "tech_stack": [
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "Expo", "icon": "expo.svg" },
-              { "name": "Redux", "icon": "redux.svg" }
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "Redux"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2022-10-01",
@@ -127,12 +320,19 @@
             "url": "https://www.asofarma.com",
             "date": "2022-12-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2022-08-01",
@@ -156,12 +356,19 @@
             "url": "https://www.quinielas.live",
             "date": "2022-11-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "AWS", "icon": "aws.svg" },
-              { "name": "Docker", "icon": "docker.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Docker"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2022-02-01",
@@ -185,19 +392,26 @@
             "url": "https://www.cognits.co",
             "date": "2022-09-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Redux", "icon": "redux.svg" },
-              { "name": "Docker", "icon": "docker.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "Docker"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2022-01-01",
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "ideacodex.jpeg",
+        "company_image": "bullseye.svg",
         "position": "Senior Full-Stack Engineer",
         "description": "Desarrollo de aplicaciones basadas en mapas con Google Maps y Mapbox para clientes retail.",
         "tasks": [
@@ -210,16 +424,67 @@
           {
             "title": "Suites de localización",
             "description": "Web y mobile apps para análisis de ubicaciones con mapas interactivos.",
-            "image": "10x.png",
+            "image": "bullseye-banner.png",
             "url": "https://bullseyeapps.com",
             "date": "2022-10-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "C#"
+              },
+              {
+                "name": ".NET Core"
+              },
+              {
+                "name": "IIS"
+              },
+              {
+                "name": "SQL Server"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Scrum"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bullseye-locator.png",
+                "description": "Generación automática de locators según solicitud del cliente."
+              },
+              {
+                "image": "bullseye-nearby.png",
+                "description": "Ubicación cercana automática según la posición actual del usuario."
+              },
+              {
+                "image": "bullseye-search.png",
+                "description": "Búsqueda de tiendas en mapas con geolocalización y filtros."
+              },
+              {
+                "image": "bullseye-page.png",
+                "description": "Generación de páginas dinámicas a partir de JSON de entrada para crear landing pages de eventos/ubicaciones."
+              },
+              {
+                "image": "bullseye-form.png",
+                "description": "Generación de formularios dinámicos a partir de JSON de entrada para solicitudes de ceremonias/tiendas."
+              }
             ]
           }
-        ]
+        ],
+        "home_order": 3,
+        "show_on_home": true
       },
       {
         "start_date": "2021-05-01",
@@ -243,12 +508,19 @@
             "url": "https://www.migracion.gob.gt",
             "date": "2021-08-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2016-01-01",
@@ -272,19 +544,26 @@
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Docker", "icon": "docker.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2012-01-01",
         "end_date": "2016-12-31",
         "is_current": false,
         "company": "IOM, Xchange & INFORNET",
-        "company_image": "10x.png",
+        "company_image": "oim.jpeg",
         "position": "Full-Stack Developer",
         "description": "Desarrollo de plataformas para estadísticas migratorias, encuestas, ecommerce y sistemas de nutrición.",
         "tasks": [
@@ -301,12 +580,19 @@
             "url": "https://www.un.org",
             "date": "2015-05-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Laravel", "icon": "laravel.svg" },
-              { "name": "MySQL", "icon": "mysql-database.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Laravel"
+              },
+              {
+                "name": "MySQL"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2006-01-01",
@@ -330,12 +616,19 @@
             "url": "https://portal.sat.gob.gt",
             "date": "2013-01-01",
             "tech_stack": [
-              { "name": "Java", "icon": "javascript.svg" },
-              { "name": "SQL", "icon": "mysql-database.svg" },
-              { "name": "Linux", "icon": "linux.svg" }
+              {
+                "name": "Java"
+              },
+              {
+                "name": "SQL"
+              },
+              {
+                "name": "Linux"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       }
     ],
     "university": {
@@ -347,22 +640,45 @@
     "tech_skills": [
       {
         "title": "Frontend & Mobile",
-        "tools": ["React", "React Native", "TypeScript", "Redux", "Expo"],
+        "tools": [
+          "React",
+          "React Native",
+          "TypeScript",
+          "Redux",
+          "Expo"
+        ],
         "stars": 5
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Bases de Datos",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
+        "tools": [
+          "MySQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle"
+        ],
         "stars": 4
       },
       {
         "title": "Herramientas y DevOps",
-        "tools": ["GitLab", "Bitbucket", "Jira", "AWS Amplify", "CloudFormation"],
+        "tools": [
+          "GitLab",
+          "Bitbucket",
+          "Jira",
+          "AWS Amplify",
+          "CloudFormation"
+        ],
         "stars": 4
       }
     ],
@@ -378,9 +694,9 @@
     ],
     "contact_info": [
       {
-        "title": "avhergo@gmail.com",
+        "title": "avihergo@gmail.com",
         "icon": "email.svg",
-        "url": "mailto:avhergo@gmail.com"
+        "url": "mailto:avihergo@gmail.com"
       },
       {
         "title": "+50255286714",

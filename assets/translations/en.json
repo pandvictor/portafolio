@@ -1,6 +1,7 @@
 {
   "hello": "Hello!",
   "download": "Download CV",
+  "more_info": "More info",
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Digital solutions for fintech, government and international organizations"
@@ -21,38 +22,200 @@
         "start_date": "2023-06-01",
         "end_date": "",
         "is_current": true,
-        "company": "AlphaPoint",
-        "company_image": "alphapoint.png",
-        "position": "Lead & Senior Software Developer",
-        "description": "Led the mobile and web frontend for CHIVO Wallet and the APEX platform, ensuring feature parity and continuous releases for fintech clients.",
+        "company": "CHIVO Wallet",
+        "company_image": "alphapoint.svg",
+        "position": "Senior Software Developer",
+        "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint), owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
         "tasks": [
-          "Technical leadership for web and mobile Bitcoin products.",
-          "Built reusable components and critical flows in React Native and React.",
-          "Optimized performance and real-time user experiences.",
-          "Active collaboration in architecture decisions and continuous improvement."
+          "Delivered wallet, remittance and on/off-ramp flows in React Native and React, integrating Lightning and on-chain services.",
+          "Coordinated releases with product and compliance to keep KYC, cash-in kiosks and merchant POS aligned with regulations.",
+          "Built shared UI components, error monitoring and performance baselines for both mobile and web clients.",
+          "Mentored engineers on TypeScript, testing and observability while grooming backlog and technical debt."
         ],
         "achievements": [
           {
-            "title": "CHIVO Wallet & APEX",
-            "description": "Mobile and web applications for Bitcoin payments and institutional trading, with real-time modules and monitoring.",
+            "title": "CHIVO Wallet",
+            "description": "Bitcoin/LN wallet with QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
             "tech_stack": [
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "React", "icon": "react.svg" },
-              { "name": "TypeScript", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "chivo2.png",
+                "description": "Mobile experience for Lightning and on-chain payments, remittances, and QR flows."
+              },
+              {
+                "image": "chivo.png",
+                "description": "Merchant POS and cash management across kiosks/ATMs with compliance-ready flows."
+              },
+              {
+                "image": "chivo-benefits.png",
+                "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              }
             ]
           }
-        ]
+        ],
+        "home_order": 1,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2024-01-01",
+        "end_date": "",
+        "is_current": true,
+        "company": "APEX Exchange (AlphaPoint)",
+        "company_image": "alphapoint.svg",
+        "position": "Lead Frontend Engineer",
+        "description": "Own the web trading experience for AlphaPoint’s white-label APEX exchange for banks and institutions.",
+        "tasks": [
+          "Implemented responsive trading UI (order books, advanced charts, RFQ/OTC) consuming WebSocket feeds and REST APIs.",
+          "Integrated account, wallet and multi-asset custody modules with role-based admin and compliance workflows.",
+          "Optimized latency and rendering for high-frequency updates (depth, trades, balances) using virtualization and memoization.",
+          "Partnered with product and clients to localize and theme the white-label experience for multiple institutional rollouts."
+        ],
+        "achievements": [
+          {
+            "title": "APEX Exchange rollout",
+            "description": "Institutional-grade exchange platform with matching engine connectivity, liquidity tools, and branded white-label UX.",
+            "image": "alphapoint.png",
+            "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
+            "date": "2024-05-01",
+            "tech_stack": [
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "alphapoint.png",
+                "description": "Web trading experience with real-time books, charts, and liquidity tools for institutional clients."
+              },
+              {
+                "image": "apex-mobile.png",
+                "description": "Mobile trading app for buying crypto and executing trades with live charts, depth, and order management."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              },
+              {
+                "name": "XRP"
+              },
+              {
+                "name": "USDT"
+              },
+              {
+                "name": "ETH"
+              },
+              {
+                "name": "DASH"
+              },
+              {
+                "name": "ADA"
+              }
+            ]
+          }
+        ],
+        "home_order": 2,
+        "show_on_home": true
       },
       {
         "start_date": "2022-12-01",
         "end_date": "2023-12-31",
         "is_current": false,
         "company": "IOM & Social Welfare Secretariat",
-        "company_image": "payroll.jpg",
+        "company_image": [
+          "oim.jpeg",
+          "sbs.png"
+        ],
         "position": "Technical Lead & Senior Developer",
         "description": "Technical owner of the Angel Ariel program, coordinating React and Node.js teams for government projects.",
         "tasks": [
@@ -65,16 +228,39 @@
           {
             "title": "Angel Ariel Platform",
             "description": "Web and mobile portal supporting Quedate and Casa Joven programs with dashboards for field staff.",
-            "image": "payroll2.jpg",
+            "image": "angel-ariel.png",
             "url": "https://www.iom.int",
             "date": "2023-06-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "MongoDB"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Scrum"
+              }
             ]
           }
-        ]
+        ],
+        "home_order": 4,
+        "show_on_home": true
       },
       {
         "start_date": "2023-01-01",
@@ -98,12 +284,19 @@
             "url": "https://wizedevs.com",
             "date": "2023-05-01",
             "tech_stack": [
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "Expo", "icon": "expo.svg" },
-              { "name": "Redux", "icon": "redux.svg" }
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "Redux"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2022-10-01",
@@ -127,12 +320,19 @@
             "url": "https://www.asofarma.com",
             "date": "2022-12-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2022-08-01",
@@ -156,12 +356,19 @@
             "url": "https://www.quinielas.live",
             "date": "2022-11-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "AWS", "icon": "aws.svg" },
-              { "name": "Docker", "icon": "docker.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Docker"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2022-02-01",
@@ -185,19 +392,26 @@
             "url": "https://www.cognits.co",
             "date": "2022-09-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Redux", "icon": "redux.svg" },
-              { "name": "Docker", "icon": "docker.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "Docker"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2022-01-01",
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "ideacodex.jpeg",
+        "company_image": "bullseye.svg",
         "position": "Senior Full-Stack Engineer",
         "description": "Developed map-based applications with Google Maps and Mapbox for retail customers.",
         "tasks": [
@@ -210,16 +424,67 @@
           {
             "title": "Location Intelligence Suite",
             "description": "Web and mobile apps for site analysis with interactive maps.",
-            "image": "10x.png",
-            "url": "https://bullseyeapps.com",
+            "image": "bullseye-banner.png",
+            "url": "https://www.bullseyelocations.com/",
             "date": "2022-10-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "React Native", "icon": "react.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "C#"
+              },
+              {
+                "name": ".NET Core"
+              },
+              {
+                "name": "IIS"
+              },
+              {
+                "name": "SQL Server"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Scrum"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bullseye-locator.png",
+                "description": "Automatic locator generation driven by client requests for store and kiosk discovery on maps."
+              },
+              {
+                "image": "bullseye-nearby.png",
+                "description": "Automatic nearby locations based on current user position."
+              },
+              {
+                "image": "bullseye-search.png",
+                "description": "Store search in maps with geolocation and filters."
+              },
+              {
+                "image": "bullseye-page.png",
+                "description": "Dynamic page generation from inbound JSON to build event/location landing pages."
+              },
+              {
+                "image": "bullseye-form.png",
+                "description": "Dynamic form generation from JSON input for ceremony/store submissions."
+              }
             ]
           }
-        ]
+        ],
+        "home_order": 3,
+        "show_on_home": true
       },
       {
         "start_date": "2021-05-01",
@@ -243,12 +508,19 @@
             "url": "https://www.migracion.gob.gt",
             "date": "2021-08-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Node.js", "icon": "javascript.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2016-01-01",
@@ -272,19 +544,26 @@
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Docker", "icon": "docker.svg" },
-              { "name": "AWS", "icon": "aws.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "AWS"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2012-01-01",
         "end_date": "2016-12-31",
         "is_current": false,
         "company": "IOM, Xchange & INFORNET",
-        "company_image": "10x.png",
+        "company_image": "oim.jpeg",
         "position": "Full-Stack Developer",
         "description": "Built platforms for statistics, surveys, ecommerce, mobile apps, dashboards and nutrition systems for UN programs.",
         "tasks": [
@@ -301,12 +580,19 @@
             "url": "https://www.un.org",
             "date": "2015-05-01",
             "tech_stack": [
-              { "name": "React", "icon": "react.svg" },
-              { "name": "Laravel", "icon": "laravel.svg" },
-              { "name": "MySQL", "icon": "mysql-database.svg" }
+              {
+                "name": "React"
+              },
+              {
+                "name": "Laravel"
+              },
+              {
+                "name": "MySQL"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       },
       {
         "start_date": "2006-01-01",
@@ -330,12 +616,19 @@
             "url": "https://portal.sat.gob.gt",
             "date": "2013-01-01",
             "tech_stack": [
-              { "name": "Java", "icon": "javascript.svg" },
-              { "name": "SQL", "icon": "mysql-database.svg" },
-              { "name": "Linux", "icon": "linux.svg" }
+              {
+                "name": "Java"
+              },
+              {
+                "name": "SQL"
+              },
+              {
+                "name": "Linux"
+              }
             ]
           }
-        ]
+        ],
+        "show_on_home": false
       }
     ],
     "university": {
@@ -347,22 +640,45 @@
     "tech_skills": [
       {
         "title": "Frontend & Mobile",
-        "tools": ["React", "React Native", "TypeScript", "Redux", "Expo"],
+        "tools": [
+          "React",
+          "React Native",
+          "TypeScript",
+          "Redux",
+          "Expo"
+        ],
         "stars": 5
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Databases",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
+        "tools": [
+          "MySQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle"
+        ],
         "stars": 4
       },
       {
         "title": "Tools & DevOps",
-        "tools": ["GitLab", "Bitbucket", "Jira", "AWS Amplify", "CloudFormation"],
+        "tools": [
+          "GitLab",
+          "Bitbucket",
+          "Jira",
+          "AWS Amplify",
+          "CloudFormation"
+        ],
         "stars": 4
       }
     ],
@@ -378,9 +694,9 @@
     ],
     "contact_info": [
       {
-        "title": "avhergo@gmail.com",
+        "title": "avihergo@gmail.com",
         "icon": "email.svg",
-        "url": "mailto:avhergo@gmail.com"
+        "url": "mailto:avihergo@gmail.com"
       },
       {
         "title": "+50255286714",
