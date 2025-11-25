@@ -44,6 +44,9 @@
                 "name": "React Native"
               },
               {
+                "name": "Expo"
+              },
+              {
                 "name": "React"
               },
               {
@@ -60,6 +63,9 @@
               },
               {
                 "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
               },
               {
                 "name": "TypeScript"
@@ -109,6 +115,9 @@
             "tech_stack": [
               {
                 "name": "React Native"
+              },
+              {
+                "name": "Expo"
               },
               {
                 "name": "React"

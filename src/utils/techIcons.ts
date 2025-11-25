@@ -12,6 +12,7 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("jira")) return "jira.svg";
   if (key.includes("gitlab")) return "gitlab.svg";
   if (key.includes("git")) return "git.svg";
+  if (key.includes("scrum") || key.includes("agile")) return "scrum.svg";
   if (key.includes("aws")) return "aws.svg";
   if (key.includes("docker")) return "docker.svg";
   if (key.includes("kubernetes")) return "kubernetes.svg";
