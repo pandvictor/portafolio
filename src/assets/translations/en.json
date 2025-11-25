@@ -23,7 +23,7 @@
         "end_date": "",
         "is_current": true,
         "company": "CHIVO Wallet",
-        "company_image": "alphapoint.png",
+        "company_image": "alphapoint.svg",
         "position": "Senior Software Developer",
         "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint), owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
         "tasks": [
@@ -78,6 +78,9 @@
               },
               {
                 "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
               }
             ],
             "modal_details": [
@@ -93,16 +96,23 @@
                 "image": "chivo-benefits.png",
                 "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
               }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              }
             ]
           }
-        ]
+        ],
+        "home_order": 1,
+        "show_on_home": true
       },
       {
         "start_date": "2024-01-01",
         "end_date": "",
         "is_current": true,
         "company": "APEX Exchange (AlphaPoint)",
-        "company_image": "alphapoint.png",
+        "company_image": "alphapoint.svg",
         "position": "Lead Frontend Engineer",
         "description": "Own the web trading experience for AlphaPoint’s white-label APEX exchange for banks and institutions.",
         "tasks": [
@@ -157,6 +167,9 @@
               },
               {
                 "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
               }
             ],
             "modal_details": [
@@ -168,9 +181,31 @@
                 "image": "apex-mobile.png",
                 "description": "Mobile trading app for buying crypto and executing trades with live charts, depth, and order management."
               }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              },
+              {
+                "name": "XRP"
+              },
+              {
+                "name": "USDT"
+              },
+              {
+                "name": "ETH"
+              },
+              {
+                "name": "DASH"
+              },
+              {
+                "name": "ADA"
+              }
             ]
           }
-        ]
+        ],
+        "home_order": 2,
+        "show_on_home": true
       },
       {
         "start_date": "2022-12-01",
@@ -223,7 +258,9 @@
               }
             ]
           }
-        ]
+        ],
+        "home_order": 4,
+        "show_on_home": true
       },
       {
         "start_date": "2023-01-01",
@@ -370,7 +407,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "ideacodex.jpeg",
+        "company_image": "bullseye.svg",
         "position": "Senior Full-Stack Engineer",
         "description": "Developed map-based applications with Google Maps and Mapbox for retail customers.",
         "tasks": [
@@ -383,7 +420,7 @@
           {
             "title": "Location Intelligence Suite",
             "description": "Web and mobile apps for site analysis with interactive maps.",
-            "image": "10x.png",
+            "image": "bullseye-banner.png",
             "url": "https://bullseyeapps.com",
             "date": "2022-10-01",
             "tech_stack": [
@@ -391,14 +428,59 @@
                 "name": "React"
               },
               {
+                "name": "Redux"
+              },
+              {
                 "name": "React Native"
               },
               {
                 "name": "AWS"
+              },
+              {
+                "name": "C#"
+              },
+              {
+                "name": ".NET Core"
+              },
+              {
+                "name": "IIS"
+              },
+              {
+                "name": "SQL Server"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Scrum"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bullseye-locator.png",
+                "description": "Automatic locator generation driven by client requests for store and kiosk discovery on maps."
+              },
+              {
+                "image": "bullseye-nearby.png",
+                "description": "Automatic nearby locations based on current user position."
+              },
+              {
+                "image": "bullseye-search.png",
+                "description": "Store search in maps with geolocation and filters."
+              },
+              {
+                "image": "bullseye-page.png",
+                "description": "Dynamic page generation from inbound JSON to build event/location landing pages."
+              },
+              {
+                "image": "bullseye-form.png",
+                "description": "Dynamic form generation from JSON input for ceremony/store submissions."
               }
             ]
           }
-        ]
+        ],
+        "home_order": 3,
+        "show_on_home": true
       },
       {
         "start_date": "2021-05-01",

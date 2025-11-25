@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <circle cx="128" cy="128" r="128" fill="#627eea"/>
+  <path fill="#fff" d="M128 26v95l-70 20z"/>
+  <path fill="#c1ccf7" d="M128 121v86l-70-101z"/>
+  <path fill="#fff" d="M128 26v95l70 20z"/>
+  <path fill="#c1ccf7" d="M128 121v86l70-101z"/>
+  <path fill="#8193f4" d="M128 144 58 123l70 84z"/>
+  <path fill="#4a5ab7" d="M128 144 198 123l-70 84z"/>
+</svg>

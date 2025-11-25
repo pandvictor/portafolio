@@ -6,13 +6,13 @@ import {
   Button,
   Typography,
   Stack,
-  Avatar,
   Tooltip,
   IconButton,
   Grid,
   Card,
   CardMedia,
   CardContent,
+  Box,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { publicPath } from "../../constants/gloabals";
@@ -36,20 +36,32 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
               ? [payload.companyImage]
               : []
             ).map((img, idx) => (
-              <Avatar
+              <Box
                 key={`${img}-${idx}`}
-                src={`${publicPath}/images/${img}`}
-                alt={payload?.companyName}
                 sx={{
-                  width: 36,
-                  height: 36,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minWidth: 60,
+                  maxWidth: 140,
+                  maxHeight: 42,
                   transition: "transform 0.2s ease, box-shadow 0.2s ease",
                   "&:hover": {
-                    transform: "scale(1.12)",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                    transform: "scale(1.05)",
                   },
-                }}
-              />
+                }}>
+                <img
+                  src={`${publicPath}/images/${img}`}
+                  alt={payload?.companyName}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    maxWidth: 140,
+                    maxHeight: 42,
+                    objectFit: "contain",
+                  }}
+                />
+              </Box>
             ))}
             <div>
               <Typography variant='h6'>{payload?.project.title}</Typography>
