@@ -27,7 +27,7 @@ export const CardClients = ({ data }: CardClientsProps) => {
   };
 
   return data.achievements.map((item: Project, index) => (
-    <Grid item xs={12} md={6} lg={4} key={index}>
+    <Grid item xs={12} md={6} lg={4} key={`${data.company}-${item.title}-${index}`}>
       <Card sx={{ maxWidth: 800, borderRadius: "28px", height: "100%" }}>
         <CardHeader
           avatar={

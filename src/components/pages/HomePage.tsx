@@ -63,8 +63,9 @@ export default function HomePage() {
     <MainTemplate>
       <Grid container spacing={3}>
         {works &&
-          works?.map((element: WorkHistory) => (
+          works?.map((element: WorkHistory, idx: number) => (
             <RenderProjects
+              key={`${element.company}-${idx}`}
               projects={element.achievements}
               companyImage={
                 Array.isArray(element.company_image)
