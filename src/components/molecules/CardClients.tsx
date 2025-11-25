@@ -34,7 +34,11 @@ export const CardClients = ({ data }: CardClientsProps) => {
             <Avatar
               sx={{ display: "flex", mr: 1, height: 60, width: 60 }}
               alt={data.company}
-              src={`${publicPath}/images/${data.company_image}`}
+              src={
+                Array.isArray(data.company_image)
+                  ? `${publicPath}/images/${data.company_image[0]}`
+                  : `${publicPath}/images/${data.company_image}`
+              }
             />
           }
           title={data.company}
