@@ -731,17 +731,22 @@
       {
         "title": "LinkedIn",
         "icon": "linkedin.svg",
-        "url": "https://www.linkedin.com/in/avhergo/"
+        "url": "https://www.linkedin.com/in/avihergo/"
       },
       {
         "title": "GitHub",
         "icon": "github.svg",
-        "url": "https://github.com/avhergo"
+        "url": "https://github.com/avihergo"
       },
       {
         "title": "WhatsApp",
         "icon": "whatsapp.svg",
         "url": "https://wa.me/50255286714"
+      },
+      {
+        "title": "GitHub 2",
+        "icon": "github.svg",
+        "url": "https://github.com/pandvictor"
       }
     ]
   }
