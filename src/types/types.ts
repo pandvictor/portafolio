@@ -12,12 +12,25 @@ export type Project = {
     url:         string;
     date:        string;
     tech_stack:  TechStack[];
+    modal_details?: ModalDetail[];
 }
 
 export type TechStack = {
     name: string;
     icon?: string;
 }
+
+export type ModalDetail = {
+    image: string;
+    description: string;
+}
+
+export type ProjectModalPayload = {
+    project: Project;
+    companyImage?: string;
+    companyName?: string;
+    companyUrl?: string;
+};
 
 export type Resume = {
     name:            string;

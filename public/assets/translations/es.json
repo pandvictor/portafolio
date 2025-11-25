@@ -1,6 +1,7 @@
 {
   "hello": "¡Hola!",
   "download": "Descargar CV",
+  "more_info": "Más info",
   "portfolio": {
     "title": "Portafolio",
     "subtitle": "Soluciones digitales para fintech, gobierno y organizaciones internacionales"
@@ -21,10 +22,10 @@
         "start_date": "2023-06-01",
         "end_date": "",
         "is_current": true,
-        "company": "CHIVO Wallet (AlphaPoint)",
-        "company_image": "chivo.png",
-        "position": "Lead & Senior Software Developer",
-        "description": "Lideré la experiencia móvil y web de la billetera Bitcoin de El Salvador, entregando pagos, cash-in/out y remesas.",
+        "company": "CHIVO Wallet",
+        "company_image": "alphapoint.png",
+        "position": "Senior Software Developer",
+        "description": "Lideré la billetera Bitcoin nacional de El Salvador (AlphaPoint), tomando la experiencia web y móvil para pagos, remesas, cash-in/out y POS para comercios.",
         "tasks": [
           "Entregué flujos de billetera, remesas y on/off-ramp en React Native y React, integrando Lightning y servicios on-chain.",
           "Coordiné releases con producto y compliance para mantener KYC, kioscos de cash-in y POS alineados a regulación.",
@@ -46,11 +47,31 @@
                 "name": "React"
               },
               {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
                 "name": "TypeScript"
               },
               {
                 "name": "AWS"
               }
+            ],
+            "modal_details": [
+              { "image": "chivo2.png", "description": "Experiencia móvil para pagos Lightning/on-chain, remesas y flujos QR." },
+              { "image": "chivo.png", "description": "POS para comercios y manejo de efectivo en kioscos/cajeros con flujos alineados a compliance." },
+              { "image": "chivo-benefits.png", "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento." }
             ]
           }
         ]
@@ -86,6 +107,9 @@
               {
                 "name": "AWS"
               }
+            ],
+            "modal_details": [
+              { "image": "alphapoint.png", "description": "Experiencia web de trading con libros en tiempo real, gráficos y herramientas de liquidez para clientes institucionales." }
             ]
           }
         ]
