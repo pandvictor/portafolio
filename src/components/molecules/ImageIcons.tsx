@@ -32,9 +32,10 @@ export const ImageIcons: React.FC<ImageIconsProps> = ({ image, actionIcons }) =>
           left: 0,
           width: '100%',
           height: '100%',
-          objectFit: 'cover',
+          objectFit: 'contain',
           objectPosition: 'center',
           display: 'block',
+          padding: '12px',
         }}
       />
       <ImageListItemBar

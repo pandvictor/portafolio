@@ -18,6 +18,7 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("eth") || key.includes("ethereum")) return "eth.svg";
   if (key.includes("dash")) return "dash.svg";
   if (key.includes("ada") || key.includes("cardano")) return "ada.svg";
+  if (key.includes("java")) return "java.svg";
   if (key.includes("c#") || key.includes("csharp") || key === "c#") return "csharp.svg";
   if (key.includes(".net") || key.includes("dotnet")) return "dotnetcore.svg";
   if (key.includes("iis")) return "iis.svg";

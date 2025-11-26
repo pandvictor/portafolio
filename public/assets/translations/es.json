@@ -103,6 +103,10 @@
               {
                 "image": "chivo-otp.png",
                 "description": "Inicio de sesión por teléfono con envío de OTP al usuario para acceso seguro."
+              },
+              {
+                "image": "chivo-admin.png",
+                "description": "Consola web para administrar usuarios, cuentas, saldos y posiciones."
               }
             ],
             "coins": [
@@ -204,6 +208,10 @@
               {
                 "image": "apex-webtrading.png",
                 "description": "Plataforma web de trading para múltiples cripto con order book en vivo, trades y entrada de órdenes avanzada."
+              },
+              {
+                "image": "apex-admin.png",
+                "description": "Portal de administración para gestionar usuarios, cuentas, saldos y monitoreo de riesgo."
               }
             ],
             "coins": [
@@ -551,7 +559,7 @@
         "end_date": "2020-12-31",
         "is_current": false,
         "company": "FAO ONU & SIECA",
-        "company_image": "alphapoint.png",
+        "company_image": ["fao.png", "sieca.png"],
         "position": "Tech Lead & Senior Full-Stack",
         "description": "Implementación de mercados agrícolas regionales y tableros aduaneros para Centroamérica y el Caribe.",
         "tasks": [
@@ -564,7 +572,7 @@
           {
             "title": "Mercado agrícola regional",
             "description": "Plataforma usada en Centroamérica para seguimiento de precios y oferta agrícola.",
-            "image": "canjeaton1.png",
+            "image": "red-regional.jpeg",
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "tech_stack": [
@@ -576,11 +584,52 @@
               },
               {
                 "name": "AWS"
+              },
+              {
+                "name": "Java"
+              },
+              {
+                "name": "IIS"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "MongoDB"
+              },
+              {
+                "name": ".NET"
+              },
+              {
+                "name": "C#"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "simmagro.png",
+                "description": "Portal web para visualizar precios mayoristas en todos los países, con módulos de comercio y producción."
+              },
+              {
+                "image": "simmagro-search.png",
+                "description": "Búsqueda avanzada con filtros por periodo, flujo, país, socios y productos para análisis de comercio regional."
+              },
+              {
+                "image": "simmagro-compare.png",
+                "description": "Comparativa de precios entre países para importaciones y exportaciones por producto y país de origen."
+              },
+              {
+                "image": "simmagro-charts.png",
+                "description": "Gráficos estadísticos interactivos para comparar precios entre países y productos."
+              },
+              {
+                "image": "simmagro-alerts.png",
+                "description": "Alertas en tiempo real y verificación de frescura para actualizaciones de precios en los mercados."
               }
             ]
           }
         ],
-        "show_on_home": false
+        "home_order": 3,
+        "show_on_home": true
       },
       {
         "start_date": "2012-01-01",
