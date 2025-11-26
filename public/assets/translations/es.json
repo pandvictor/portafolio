@@ -624,6 +624,10 @@
               {
                 "image": "simmagro-alerts.png",
                 "description": "Alertas en tiempo real y verificación de frescura para actualizaciones de precios en los mercados."
+              },
+              {
+                "image": "simmagro-timeline.png",
+                "description": "Series de tiempo de precios por país con comparativas paralelas entre mercados."
               }
             ]
           }

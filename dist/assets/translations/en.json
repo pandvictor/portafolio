@@ -620,6 +620,10 @@
               {
                 "image": "simmagro-charts.png",
                 "description": "Interactive statistical charts comparing prices across countries and products."
+              },
+              {
+                "image": "simmagro-timeline.png",
+                "description": "Time-series price charts by country with side-by-side comparisons across markets."
               }
             ]
           }

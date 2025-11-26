@@ -617,6 +617,10 @@
               {
                 "image": "simmagro-charts.png",
                 "description": "Gráficos estadísticos interactivos para comparar precios entre países y productos."
+              },
+              {
+                "image": "simmagro-timeline.png",
+                "description": "Series de tiempo de precios por país con comparativas paralelas entre mercados."
               }
             ]
           }
