@@ -56,48 +56,63 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
       <CardContent sx={{ flexGrow: 1 }}>
         <Stack
           direction='row'
-          spacing={1}
           alignItems='center'
+          spacing={2}
           sx={{
             backgroundColor: "rgba(0,0,0,0.02)",
-            p: 1,
+            p: 1.2,
             borderRadius: 2,
+            gap: 2,
           }}>
-          {(companyImages && companyImages.length > 0
-            ? companyImages
-            : companyImage
-              ? [companyImage]
-              : []
-          ).map((img, idx) => (
-            <Box
-              key={`${img}-${idx}`}
-              sx={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                minWidth: 60,
-                maxWidth: 140,
-                maxHeight: 42,
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                },
-              }}>
-              <img
-                src={`${publicPath}/images/${img}`}
-                alt={companyName || title}
-                style={{
-                  width: "100%",
-                  height: "100%",
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              flexShrink: 0,
+            }}>
+            {(companyImages && companyImages.length > 0
+              ? companyImages
+              : companyImage
+                ? [companyImage]
+                : []
+            ).map((img, idx) => (
+              <Box
+                key={`${img}-${idx}`}
+                sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: 42,
                   maxWidth: 140,
-                  maxHeight: 42,
-                  objectFit: "contain",
-                  display: "block",
-                }}
-              />
-            </Box>
-          ))}
-          <Typography variant='h5' component='div'>
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                  },
+                }}>
+                <img
+                  src={`${publicPath}/images/${img}`}
+                  alt={companyName || title}
+                  style={{
+                    height: "100%",
+                    width: "auto",
+                    maxWidth: 140,
+                    objectFit: "contain",
+                    display: "block",
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
+          <Typography
+            variant='h6'
+            component='div'
+            sx={{
+              fontWeight: 700,
+              lineHeight: 1.2,
+              flexGrow: 1,
+              color: "text.primary",
+            }}>
             {title}
           </Typography>
         </Stack>
