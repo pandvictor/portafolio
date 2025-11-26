@@ -624,6 +624,10 @@
               {
                 "image": "simmagro-alerts.png",
                 "description": "Real-time alerts and freshness checks for price updates across markets."
+              },
+              {
+                "image": "simmagro-timeline.png",
+                "description": "Time-series price charts by country with side-by-side comparisons across markets."
               }
             ]
           }
