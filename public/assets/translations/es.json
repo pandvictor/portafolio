@@ -23,7 +23,7 @@
         "end_date": "",
         "is_current": true,
         "company": "CHIVO Wallet",
-        "company_image": "alphapoint.png",
+        "company_image": "alphapoint-logo.png",
         "position": "Senior Software Developer",
         "description": "Lideré la billetera Bitcoin nacional de El Salvador (AlphaPoint), tomando la experiencia web y móvil para pagos, remesas, cash-in/out y POS para comercios.",
         "tasks": [
@@ -124,7 +124,7 @@
         "end_date": "",
         "is_current": true,
         "company": "APEX Exchange (AlphaPoint)",
-        "company_image": "alphapoint.svg",
+        "company_image": "alphapoint-logo.png",
         "position": "Lead Frontend Engineer",
         "description": "• Desarrollé funcionalidades núcleo para un servicio digital nacional diseñado para más de 6 millones de ciudadanos.\n• Contribuí a la arquitectura backend que soporta más de 10,000 transacciones por segundo (TPS) en picos de uso.",
         "tasks": [
@@ -137,7 +137,7 @@
           {
             "title": "APEX Exchange",
             "description": "• Desarrollé funcionalidades núcleo para un servicio digital nacional diseñado para más de 6 millones de ciudadanos.\n• Contribuí a la arquitectura backend que soporta más de 10,000 transacciones por segundo (TPS) en picos de uso.",
-            "image": "alphapoint.png",
+            "image": "apex-hero.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
             "tech_stack": [
@@ -244,10 +244,7 @@
         "end_date": "2023-12-31",
         "is_current": false,
         "company": "IOM & Secretaría de Bienestar Social",
-        "company_image": [
-          "oim.jpeg",
-          "sbs.png"
-        ],
+        "company_image": ["oim.jpeg", "sbs.png"],
         "position": "Technical Lead & Senior Developer",
         "description": "Responsable técnico del programa Angel Ariel, coordinando equipos React y Node.js para proyectos gubernamentales.",
         "tasks": [
@@ -443,7 +440,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "bullseye.svg",
+        "company_image": "bullseye-logo.png",
         "position": "Senior Full-Stack Engineer",
         "description": "Desarrollo de aplicaciones basadas en mapas con Google Maps y Mapbox para clientes retail.",
         "tasks": [
@@ -717,34 +714,17 @@
     "tech_skills": [
       {
         "title": "Frontend & Mobile",
-        "tools": [
-          "React",
-          "React Native",
-          "TypeScript",
-          "Redux",
-          "Expo"
-        ],
+        "tools": ["React", "React Native", "TypeScript", "Redux", "Expo"],
         "stars": 5
       },
       {
         "title": "Backend & Cloud",
-        "tools": [
-          "Node.js",
-          "Java",
-          ".NET",
-          "AWS",
-          "Docker"
-        ],
+        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
         "stars": 4
       },
       {
         "title": "Bases de Datos",
-        "tools": [
-          "MySQL",
-          "MongoDB",
-          "DynamoDB",
-          "Oracle"
-        ],
+        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
         "stars": 4
       },
       {
