@@ -103,6 +103,10 @@
               {
                 "image": "chivo-otp.png",
                 "description": "Phone-based login with OTP sent to the user for secure access."
+              },
+              {
+                "image": "chivo-admin.png",
+                "description": "Web console to administer users, accounts, balances, and positions."
               }
             ],
             "coins": [
@@ -204,6 +208,10 @@
               {
                 "image": "apex-webtrading.png",
                 "description": "Web trading platform for multiple cryptos with live order book, trades, and advanced order entry."
+              },
+              {
+                "image": "apex-admin.png",
+                "description": "Admin web to manage users, accounts, balances, and risk monitoring."
               }
             ],
             "coins": [
@@ -551,7 +559,7 @@
         "end_date": "2020-12-31",
         "is_current": false,
         "company": "FAO UN & SIECA",
-        "company_image": "alphapoint.png",
+        "company_image": ["fao.png", "sieca.png"],
         "position": "Tech Lead & Senior Full-Stack",
         "description": "Delivered regional agricultural market platforms and customs dashboards for Central America and the Caribbean.",
         "tasks": [
@@ -564,7 +572,7 @@
           {
             "title": "Regional Agricultural Market",
             "description": "Platform used across Central America to track prices and supply.",
-            "image": "canjeaton1.png",
+            "image": "red-regional.jpeg",
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "tech_stack": [
@@ -576,11 +584,52 @@
               },
               {
                 "name": "AWS"
+              },
+              {
+                "name": "Java"
+              },
+              {
+                "name": "IIS"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "MongoDB"
+              },
+              {
+                "name": ".NET"
+              },
+              {
+                "name": "C#"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "simmagro.png",
+                "description": "Web portal to visualize wholesale prices across countries with modules for trade and production."
+              },
+              {
+                "image": "simmagro-search.png",
+                "description": "Advanced search with filters by period, flow, country, partners and products for regional trade analytics."
+              },
+              {
+                "image": "simmagro-compare.png",
+                "description": "Cross-country price comparisons for imports/exports by product and origin."
+              },
+              {
+                "image": "simmagro-charts.png",
+                "description": "Interactive statistical charts comparing prices across countries and products."
+              },
+              {
+                "image": "simmagro-alerts.png",
+                "description": "Real-time alerts and freshness checks for price updates across markets."
               }
             ]
           }
         ],
-        "show_on_home": false
+        "home_order": 3,
+        "show_on_home": true
       },
       {
         "start_date": "2012-01-01",

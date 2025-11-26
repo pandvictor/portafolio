@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Java">
+  <defs>
+    <linearGradient id="steam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff4b4b"/>
+      <stop offset="100%" stop-color="#c62828"/>
+    </linearGradient>
+    <linearGradient id="cup" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2b6cb0"/>
+      <stop offset="100%" stop-color="#1e4f8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" fill="none" rx="8" ry="8"/>
+  <g transform="translate(8 6)">
+    <path d="M24 0c3 3.5-3 6.5-1 10s7 3.5 5 8" fill="none" stroke="url(#steam)" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M32 2c2.2 2.6-2.5 4.7-1.2 7.2 1.2 2.4 5.5 2.4 4.2 5.6" fill="none" stroke="url(#steam)" stroke-width="2.4" stroke-linecap="round"/>
+    <ellipse cx="24" cy="33" rx="16" ry="4.5" fill="url(#cup)" opacity="0.9"/>
+    <path d="M11 28h26l-2 6c-6 2.5-16 2.5-22 0z" fill="url(#cup)"/>
+    <path d="M30 28c4 0 7.5-1 7.5-4 0-2.5-3-4-7-4" fill="none" stroke="url(#cup)" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <text x="32" y="58" font-family="Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#d32f2f">Java</text>
+</svg>
