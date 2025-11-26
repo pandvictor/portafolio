@@ -35,7 +35,7 @@
         "achievements": [
           {
             "title": "CHIVO Wallet",
-            "description": "Bitcoin/LN wallet with QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
+            "description": "Bitcoin/LN wallet with 500k+ active users, 10k+ daily transactions, QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
@@ -288,6 +288,56 @@
             ]
           }
         ],
+        "home_order": 6,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2013-01-01",
+        "end_date": "2014-12-31",
+        "is_current": false,
+        "company": "FantasyGol",
+        "company_image": "fantasygol-logo.png",
+        "position": "Full-Stack Developer",
+        "description": "• Built a fantasy football platform with 10+ international leagues and 10k+ concurrent players.\n• Monetized peer betting with a 10% house fee and grew fast enough to be acquired post-World Cup.",
+        "tasks": [
+          "Designed the platform from zero: data model, ER diagrams, backend services and frontend UI/UX.",
+          "Implemented secure payments, prize module and automated fee collection (10% house cut).",
+          "Integrated live match data feeds for real-time lineups, odds and scoring.",
+          "Built AWS infrastructure (compute, storage, networking) with CI/CD for rapid releases.",
+          "Created SEO-friendly landing pages to boost organic acquisition.",
+          "Optimized performance to sustain 10k+ concurrent users during peak World Cup traffic."
+        ],
+        "achievements": [
+          {
+            "title": "FantasyGol Platform",
+            "description": "Fantasy platform with 10+ international leagues and 10k+ concurrent players; users created their own leagues to play and compete with friends.",
+            "image": "fantasygol-card.png",
+            "url": "",
+            "date": "2014-12-01",
+            "tech_stack": [
+              { "name": "PHP" },
+              { "name": "PayPal" },
+              { "name": "AWS" },
+              { "name": "MySQL" },
+              { "name": "Git" },
+              { "name": "GitLab" }
+            ],
+            "modal_details": [
+              {
+                "image": "fantasygol-lobby.png",
+                "description": "Lobby of fantasy leagues with filters, entry fees, prizes and quick entry to play."
+              },
+              {
+                "image": "fantasygol-onboarding.png",
+                "description": "Sign up with social accounts or email to join leagues and start playing in minutes."
+              },
+              {
+                "image": "fantasygol-team.png",
+                "description": "Easy team builder with salaries, formations and live match data to draft your squad."
+              }
+            ]
+          }
+        ],
         "home_order": 4,
         "show_on_home": true
       },
@@ -512,7 +562,7 @@
             ]
           }
         ],
-        "home_order": 3,
+        "home_order": 4,
         "show_on_home": true
       },
       {
@@ -636,7 +686,7 @@
         "start_date": "2012-01-01",
         "end_date": "2016-12-31",
         "is_current": false,
-        "company": "IOM, Xchange & INFORNET",
+        "company": "IOM",
         "company_image": "oim.jpeg",
         "position": "Full-Stack Developer",
         "description": "Built platforms for statistics, surveys, ecommerce, mobile apps, dashboards and nutrition systems for UN programs.",

@@ -34,6 +34,8 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("node")) return "nodejs.svg";
   if (key.includes("typescript") || key === "ts") return "typescript.png";
   if (key.includes("javascript")) return "javascript.svg";
+  if (key.includes("php")) return "php.svg";
+  if (key.includes("paypal")) return "paypal.svg";
   return DEFAULT_ICON;
 };
 

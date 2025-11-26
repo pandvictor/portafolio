@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 64" role="img" aria-label="PayPal">
+  <defs>
+    <linearGradient id="ppGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#253b80"/>
+      <stop offset="100%" stop-color="#1b2d66"/>
+    </linearGradient>
+    <linearGradient id="ppGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#179bd7"/>
+      <stop offset="100%" stop-color="#1285b3"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="8" width="124" height="48" rx="10" fill="#eef4fb"/>
+  <g transform="translate(12 10) scale(0.82)">
+    <path d="M32 12h14c6 0 10.5 4.5 9.4 10.5-1 6-5.5 10.5-11.5 10.5H38l-2 12h-9.2L32 12Z" fill="url(#ppGrad1)"/>
+    <path d="M46 12h11.5c5.8 0 9.7 4.4 8.6 10-1.2 6-5.4 10-11.8 10H51l-1.8 11h-9.4L46 12Z" fill="url(#ppGrad2)"/>
+    <text x="70" y="32" font-family="Arial, sans-serif" font-weight="700" font-size="24" fill="#253b80">Pay</text>
+    <text x="108" y="32" font-family="Arial, sans-serif" font-weight="700" font-size="24" fill="#179bd7">Pal</text>
+  </g>
+</svg>
