@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+import { keyframes } from "@mui/system";
 import { MainTemplate } from "../templates";
 import { CardItem } from "../molecules";
 import { Project, ProjectModalPayload, WorkHistory } from "../../types/types";
@@ -8,6 +9,11 @@ import { useState } from "react";
 import { ProjectDialog } from "../organisms/ProjectDialog";
 
 export type ModalPayload = ProjectModalPayload;
+
+const fadeInUp = keyframes`
+  0% { opacity: 0; transform: translateY(18px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+`;
 
 type RenderProjectsProps = {
   projects: Project[];
@@ -27,7 +33,17 @@ const RenderProjects = ({
   onOpen,
 }: RenderProjectsProps) => {
   return projects.map((element: Project, index) => (
-    <Grid item xs={12} md={6} lg={4} key={index}>
+    <Grid
+      item
+      xs={12}
+      md={6}
+      lg={4}
+      key={index}
+      sx={{
+        opacity: 0,
+        animation: `${fadeInUp} 0.7s ease ${(index + 1) * 0.08}s forwards`,
+        transformOrigin: "center",
+      }}>
       <CardItem
         data={element}
         companyImage={companyImage}

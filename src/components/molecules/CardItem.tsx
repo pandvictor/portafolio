@@ -44,6 +44,17 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
         height: "100%",
         display: "flex",
         flexDirection: "column",
+        position: "relative",
+        overflow: "hidden",
+        background:
+          "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, #f9fbff 100%)",
+        border: "1px solid rgba(226, 232, 240, 0.8)",
+        boxShadow: "0 18px 40px rgba(15, 23, 42, 0.05)",
+        transition: "transform 0.25s ease, box-shadow 0.25s ease",
+        "&:hover": {
+          transform: "translateY(-6px)",
+          boxShadow: "0 24px 60px rgba(15, 23, 42, 0.12)",
+        },
       }}>
       <ImageIcons
         actionIcons={null}
