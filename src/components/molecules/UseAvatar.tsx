@@ -1,31 +1,62 @@
-import { Avatar, Button, Typography } from "@mui/material";
+import { Avatar, Button, Stack, Typography } from "@mui/material";
 import { publicPath } from "../../constants/gloabals";
 import { LinkItem } from "../atoms";
 import i18n from "../../utils/i18n";
 
 const basePath = import.meta.env.BASE_URL || "/";
 export const UserAvatar = () => {
+  const fullName = i18n.t("resume.full_name");
+  const position = i18n.t("resume.position");
   return (
-    <Button sx={{ p: 0, textTransform: "none" }} color='inherit'>
+    <Button
+      component={LinkItem}
+      to={`${basePath}`}
+      relative='path'
+      color='inherit'
+      sx={{
+        p: 0,
+        textTransform: "none",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 1,
+        color: "inherit",
+        borderRadius: 999,
+        transition: "transform 0.2s ease, filter 0.2s ease",
+        "&:hover": {
+          transform: "translateY(-1px)",
+          filter: "drop-shadow(0 6px 18px rgba(0,0,0,0.08))",
+          backgroundColor: "transparent",
+        },
+      }}>
       <Avatar
-        sx={{ display: "flex", mr: 1, flexGrow: 1 }}
+        sx={{
+          display: "flex",
+          flexGrow: 1,
+          width: 42,
+          height: 42,
+          border: "2px solid rgba(0,0,0,0.04)",
+        }}
         alt='A'
         src={`${publicPath}/images/vic.jpeg`}
       />
-      <LinkItem to={`${basePath}`} color='inherit' relative='path'>
+      <Stack spacing={0.15} alignItems='flex-start'>
         <Typography
           noWrap
           component='span'
           sx={{
-            mr: 2,
             display: "flex",
-            fontFamily: "monospace",
             fontWeight: 700,
-            textDecoration: "none",
+            letterSpacing: "0.02em",
           }}>
-          {i18n.t("resume.name")}
+          {fullName}
         </Typography>
-      </LinkItem>
+        <Typography
+          component='span'
+          variant='caption'
+          sx={{ color: "text.secondary", lineHeight: 1.3 }}>
+          {position}
+        </Typography>
+      </Stack>
     </Button>
   );
 };
