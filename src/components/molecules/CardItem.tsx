@@ -35,6 +35,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
 }) => {
   const { title, image, tech_stack } = data;
   const coins = data.coins || [];
+  const hasCoins = coins.length > 0;
 
   return (
     <Card
@@ -51,9 +52,40 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
         border: "1px solid rgba(226, 232, 240, 0.8)",
         boxShadow: "0 18px 40px rgba(15, 23, 42, 0.05)",
         transition: "transform 0.25s ease, box-shadow 0.25s ease",
+        "&:before": {
+          content: "''",
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(110% 75% at 50% 100%, rgba(79,70,229,0.16), transparent 60%)",
+          opacity: 0,
+          transition: "opacity 0.3s ease",
+          pointerEvents: "none",
+        },
+        "&:after": {
+          content: "''",
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: 6,
+          background:
+            "linear-gradient(90deg, rgba(79,70,229,0.4), rgba(16,185,129,0.5))",
+          opacity: 0,
+          transform: "translateY(6px)",
+          transition: "opacity 0.3s ease, transform 0.3s ease",
+          pointerEvents: "none",
+        },
         "&:hover": {
           transform: "translateY(-6px)",
           boxShadow: "0 24px 60px rgba(15, 23, 42, 0.12)",
+          "&:before": {
+            opacity: 1,
+          },
+          "&:after": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
         },
       }}>
       <ImageIcons
@@ -154,8 +186,17 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
             />
           )}
         </Stack>
-        {coins.length > 0 && (
-          <Stack direction='row' spacing={1} flexWrap='wrap' sx={{ mt: 1 }}>
+        {hasCoins && (
+          <Stack
+            direction='row'
+            spacing={1}
+            flexWrap='wrap'
+            sx={{
+              mt: 1,
+              p: 1,
+              borderRadius: 2,
+              backgroundColor: "rgba(79,70,229,0.04)",
+            }}>
             {coins.slice(0, 4).map((coin, idx) => {
               const icon = resolveTechIconFromStack(coin);
               return (
@@ -174,7 +215,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
                     mr: 0.5,
                     mb: 0.5,
                     borderRadius: 2,
-                    bgcolor: "rgba(0,0,0,0.03)",
+                    bgcolor: "rgba(79,70,229,0.04)",
                   }}
                 />
               );
@@ -187,7 +228,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
                   mr: 0.5,
                   mb: 0.5,
                   borderRadius: 2,
-                  bgcolor: "rgba(0,0,0,0.03)",
+                  bgcolor: "rgba(79,70,229,0.04)",
                 }}
               />
             )}
