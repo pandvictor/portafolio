@@ -98,6 +98,14 @@ export default function HomePage() {
     { src: "bullseye-logo.png", alt: "Bullseye" },
     { src: "fantasygol-logo.png", alt: "FantasyGol" },
   ];
+  const skillIcons = [
+    { src: "react.svg", alt: "React" },
+    { src: "react-native.svg", alt: "React Native" },
+    { src: "typescript.png", alt: "TypeScript" },
+    { src: "nodejs.svg", alt: "Node.js" },
+    { src: "aws.svg", alt: "AWS" },
+    { src: "bitcoin.svg", alt: "Bitcoin" },
+  ];
 
   const worksRaw = i18n.t("resume.work_history") as WorkHistory[];
   const works = (worksRaw || [])
@@ -254,6 +262,38 @@ export default function HomePage() {
                   {language === "es" ? "Hablemos" : "Let's talk"}
                 </Button>
               )}
+            </Stack>
+            <Stack
+              direction='row'
+              spacing={1}
+              flexWrap='wrap'
+              alignItems='center'
+              sx={{ pt: 2 }}>
+              {skillIcons.map((item) => (
+                <Box
+                  key={item.alt}
+                  sx={{
+                    width: 38,
+                    height: 38,
+                    borderRadius: 2,
+                    backgroundColor: "rgba(0,0,0,0.03)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    boxShadow: "0 10px 20px rgba(0,0,0,0.04)",
+                    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                    "&:hover": {
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 14px 26px rgba(0,0,0,0.08)",
+                    },
+                  }}>
+                  <img
+                    src={`${publicPath}/images/icons/${item.src}`}
+                    alt={item.alt}
+                    style={{ width: 22, height: 22, objectFit: "contain" }}
+                  />
+                </Box>
+              ))}
             </Stack>
           </Stack>
           <Box
