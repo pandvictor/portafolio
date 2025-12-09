@@ -167,11 +167,22 @@ export default function HomePage() {
           alignItems='center'
           sx={{
             position: "relative",
-            px: { xs: 3, md: 5 },
-            py: { xs: 4, md: 6 },
+            px: { xs: 2.5, sm: 3, md: 5 },
+            py: { xs: 3.5, md: 6 },
           }}>
-          <Stack spacing={2.5} sx={{ flex: 1, minWidth: 0 }}>
-            <Stack direction='row' spacing={1} alignItems='center'>
+          <Stack
+            spacing={2.5}
+            sx={{
+              flex: 1,
+              minWidth: 0,
+              textAlign: { xs: "center", md: "left" },
+              alignItems: { xs: "center", md: "flex-start" },
+            }}>
+            <Stack
+              direction='row'
+              spacing={1}
+              alignItems='center'
+              sx={{ flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" } }}>
               <Chip
                 label={
                   language === "es"
@@ -222,7 +233,8 @@ export default function HomePage() {
                   key={`${item}-${idx}`}
                   direction='row'
                   spacing={1.5}
-                  alignItems='center'>
+                  alignItems='center'
+                  sx={{ justifyContent: { xs: "center", md: "flex-start" } }}>
                   <Box
                     sx={{
                       width: 10,
@@ -243,7 +255,11 @@ export default function HomePage() {
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={1.5}
-              sx={{ pt: 1 }}>
+              sx={{
+                pt: 1,
+                alignItems: { xs: "stretch", sm: "center" },
+                justifyContent: { xs: "center", sm: "flex-start" },
+              }}>
               <Button
                 variant='contained'
                 color='secondary'
@@ -268,7 +284,11 @@ export default function HomePage() {
               spacing={1}
               flexWrap='wrap'
               alignItems='center'
-              sx={{ pt: 2 }}>
+              sx={{
+                pt: 2,
+                justifyContent: { xs: "center", md: "flex-start" },
+                gap: 1,
+              }}>
               {skillIcons.map((item) => (
                 <Box
                   key={item.alt}
@@ -318,8 +338,8 @@ export default function HomePage() {
               alt={resumeData?.full_name}
               src={`${publicPath}/images/vic.jpeg`}
               sx={{
-                width: { xs: 240, sm: 280, md: 300 },
-                height: { xs: 240, sm: 280, md: 300 },
+                width: { xs: 200, sm: 240, md: 300 },
+                height: { xs: 200, sm: 240, md: 300 },
                 borderRadius: "28px",
                 border: "6px solid rgba(255,255,255,0.8)",
                 boxShadow: "0 18px 50px rgba(15,23,42,0.18)",

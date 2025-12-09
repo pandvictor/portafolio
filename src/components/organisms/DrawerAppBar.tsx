@@ -110,7 +110,8 @@ export const DrawerAppBar = () => {
             key={page}
             to={`${basePath}${page}`}
             color='inherit'
-            relative='path'>
+            relative='path'
+            className='nav-link'>
             <ListItem key={page} disablePadding>
               <ListItemButton
                 sx={{
@@ -190,13 +191,25 @@ export const DrawerAppBar = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: 0.75,
+                "& a.nav-link": {
+                  padding: "4px",
+                  borderRadius: 10,
+                },
+                "& a.nav-link.active": {
+                  backgroundColor: "rgba(79,70,229,0.1)",
+                },
+                "& a.nav-link.active button": {
+                  color: "secondary.main",
+                  fontWeight: 700,
+                },
               }}>
               {pages.map((page) => (
                 <LinkItem
                   key={page}
                   to={`${basePath}${page}`}
                   color='inherit'
-                  relative='path'>
+                  relative='path'
+                  className='nav-link'>
                   <Button
                     key={page}
                     color='inherit'
