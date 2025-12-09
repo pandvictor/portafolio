@@ -97,6 +97,11 @@ export default function HomePage() {
     { src: "sat_logo.png", alt: "SAT" },
     { src: "bullseye-logo.png", alt: "Bullseye" },
     { src: "fantasygol-logo.png", alt: "FantasyGol" },
+    { src: "fao.png", alt: "FAO" },
+    { src: "oim.jpeg", alt: "OIM" },
+    { src: "sbs.png", alt: "SBS" },
+    { src: "sieca.png", alt: "SIECA" },
+    { src: "red-regional.png", alt: "Red Regional" },
   ];
   const skillIcons = [
     { src: "react.svg", alt: "React" },
