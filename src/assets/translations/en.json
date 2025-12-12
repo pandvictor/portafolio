@@ -9,134 +9,37 @@
   "resume": {
     "title": "Resume",
     "name": "Victor",
-    "full_name": "Victor Hernández",
+    "full_name": "Victor Hern\u00e1ndez",
     "position": "Lead & Senior Software Developer",
     "experience": "Experience",
     "education": "Education",
     "languages_title": "Languages",
     "skills": "Skills",
     "contact": "Contact",
-    "summary": "Senior developer with 19+ years delivering technology solutions for fintech, government and international organizations. Specialized in React Native, React, TypeScript, Node.js and AWS. Proven ability to lead teams, define architecture and launch high-impact products such as CHIVO Wallet and the APEX trading platform.",
+    "summary": "Engineering Leader with 19+ years building large-scale, mission-critical platforms across fintech, crypto, and public-sector organizations. Led end-to-end development of CHIVO Wallet and the APEX trading platform, improving scalability, real-time performance, and system reliability for millions of users. Expert in React Native, React, Node.js, and AWS, with a strong track record guiding engineering teams, defining architecture, and delivering high-impact products under fast-paced and high-stakes environments.",
     "work_history": [
       {
-        "start_date": "2023-06-01",
-        "end_date": "",
-        "is_current": true,
-        "company": "CHIVO Wallet",
+        "start_date": "2024-07-01",
+        "end_date": "2025-11-30",
+        "is_current": false,
+        "company": "AlphaPoint (APEX Trading Platform)",
         "company_image": "alphapoint-logo.png",
-        "position": "Senior Software Developer",
-        "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint), owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
+        "position": "Lead Software Engineer",
+        "description": "Led mobile engineering and web features for APEX, improving real-time trading performance and platform reliability.",
         "tasks": [
-          "Delivered wallet, remittance and on/off-ramp flows in React Native and React, integrating Lightning and on-chain services.",
-          "Coordinated releases with product and compliance to keep KYC, cash-in kiosks and merchant POS aligned with regulations.",
-          "Built shared UI components, error monitoring and performance baselines for both mobile and web clients.",
-          "Mentored engineers on TypeScript, testing and observability while grooming backlog and technical debt."
-        ],
-        "achievements": [
-          {
-            "title": "CHIVO Wallet",
-            "description": "Bitcoin/LN wallet with 500k+ active users, 10k+ daily transactions, QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
-            "image": "chivo2.png",
-            "url": "https://www.chivowallet.com",
-            "date": "2024-01-01",
-            "tech_stack": [
-              {
-                "name": "React Native"
-              },
-              {
-                "name": "Expo"
-              },
-              {
-                "name": "React"
-              },
-              {
-                "name": "Redux"
-              },
-              {
-                "name": "RTK Query"
-              },
-              {
-                "name": "Jira"
-              },
-              {
-                "name": "Git"
-              },
-              {
-                "name": "GitLab"
-              },
-              {
-                "name": "Scrum"
-              },
-              {
-                "name": "iOS"
-              },
-              {
-                "name": "Android"
-              },
-              {
-                "name": "TypeScript"
-              },
-              {
-                "name": "AWS"
-              },
-              {
-                "name": "Bitcoin"
-              }
-            ],
-            "modal_details": [
-              {
-                "image": "chivo2.png",
-                "description": "Mobile experience for Lightning and on-chain payments, remittances, and QR flows."
-              },
-              {
-                "image": "chivo.png",
-                "description": "Merchant POS and cash management across kiosks/ATMs with compliance-ready flows."
-              },
-              {
-                "image": "chivo-benefits.png",
-                "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
-              },
-              {
-                "image": "chivo-login.png",
-                "description": "User validation, secure onboarding, and KYC checks for new registrations and logins."
-              },
-              {
-                "image": "chivo-otp.png",
-                "description": "Phone-based login with OTP sent to the user for secure access."
-              },
-              {
-                "image": "chivo-admin.png",
-                "description": "Web console to administer users, accounts, balances, and positions."
-              }
-            ],
-            "coins": [
-              {
-                "name": "Bitcoin"
-              }
-            ]
-          }
-        ],
-        "home_order": 2,
-        "show_on_home": true
-      },
-      {
-        "start_date": "2024-01-01",
-        "end_date": "",
-        "is_current": true,
-        "company": "APEX Exchange (AlphaPoint)",
-        "company_image": "alphapoint-logo.png",
-        "position": "Lead Frontend Engineer",
-        "description": "• Developed core features for a nationwide digital service designed to serve over 6 million citizens.\n• Contributed to backend architecture supporting 10k+ TPS at peak usage.",
-        "tasks": [
-          "Implemented responsive trading UI (order books, advanced charts, RFQ/OTC) consuming WebSocket feeds and REST APIs.",
-          "Integrated account, wallet and multi-asset custody modules with role-based admin and compliance workflows.",
-          "Optimized latency and rendering for high-frequency updates (depth, trades, balances) using virtualization and memoization.",
-          "Partnered with product and clients to localize and theme the white-label experience for multiple institutional rollouts."
+          "Led the mobile engineering efforts for APEX, delivering and enhancing features for Trading, Margin, and Account Management, ensuring seamless real-time interaction for high-volume trading operations.",
+          "Architected and implemented real-time trading flows using WebSockets, API Gateway, improving trade execution and update latency by 60%.",
+          "Designed and built the mobile experience for complex financial modules, including margin calculations, risk indicators, leverage controls, and order management UIs.",
+          "On the web platform, developed new features for Trading UI, Margin, and Futures, contributing to both the user-facing platform and an admin portal used for system monitoring, configuration, and operational management.",
+          "Created a reusable cross-platform component library for mobile and web, reducing duplicated code by 35% and improving long-term maintainability.",
+          "Optimized mobile performance (cold-start \u219340%, crash rate \u219325%) through architectural adjustments and targeted profiling.",
+          "Mentored engineers, introduced engineering standards, and significantly reduced code review cycle times (4 days \u2192 1.5 days).",
+          "Participated in on-call rotations and incident response, helping increase system availability to 99.95%."
         ],
         "achievements": [
           {
             "title": "APEX Exchange",
-            "description": "• Developed core features for a nationwide digital service designed to serve over 6 million citizens.\n• Contributed to backend architecture supporting 10k+ TPS at peak usage.",
+            "description": "Trading and margin platform with real-time books, charts and admin controls.",
             "image": "apex-hero.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
@@ -240,19 +143,127 @@
         "show_on_home": true
       },
       {
+        "start_date": "2023-06-01",
+        "end_date": "2024-06-30",
+        "is_current": false,
+        "company": "AlphaPoint (CHIVO Wallet)",
+        "company_image": "alphapoint-logo.png",
+        "position": "Software Engineer",
+        "description": "Modernized CHIVO Wallet for millions of users, improving stability, performance, and real-time responsiveness.",
+        "tasks": [
+          "Modernized and refactored the legacy CHIVO Wallet codebase from an outdated React architecture into a modern React + Hooks approach, improving maintainability, readability, and performance across critical modules.",
+          "Upgraded large portions of mobile and web code built on legacy patterns, reducing technical debt and enabling faster feature delivery across the engineering organization.",
+          "Developed and optimized mission-critical user flows in React Native, React, Node.js, and TypeScript, ensuring stable financial operations and consistent cross-platform behavior.",
+          "Improved real-time responsiveness by enhancing WebSocket integrations for market data, account updates, and transaction processing.",
+          "Collaborated closely with backend, QA, and product teams to ship reliable features under tight timelines and high-traffic conditions.",
+          "Strengthened platform performance and stability, contributing to increased reliability for millions of users."
+        ],
+        "achievements": [
+          {
+            "title": "CHIVO Wallet",
+            "description": "Bitcoin/LN wallet with 500k+ active users, 10k+ daily transactions, QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
+            "image": "chivo2.png",
+            "url": "https://www.chivowallet.com",
+            "date": "2024-01-01",
+            "tech_stack": [
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "chivo2.png",
+                "description": "Mobile experience for Lightning and on-chain payments, remittances, and QR flows."
+              },
+              {
+                "image": "chivo.png",
+                "description": "Merchant POS and cash management across kiosks/ATMs with compliance-ready flows."
+              },
+              {
+                "image": "chivo-benefits.png",
+                "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
+              },
+              {
+                "image": "chivo-login.png",
+                "description": "User validation, secure onboarding, and KYC checks for new registrations and logins."
+              },
+              {
+                "image": "chivo-otp.png",
+                "description": "Phone-based login with OTP sent to the user for secure access."
+              },
+              {
+                "image": "chivo-admin.png",
+                "description": "Web console to administer users, accounts, balances, and positions."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              }
+            ]
+          }
+        ],
+        "home_order": 2,
+        "show_on_home": true
+      },
+      {
         "start_date": "2022-12-01",
         "end_date": "2023-12-31",
         "is_current": false,
         "company": "IOM & Social Welfare Secretariat",
-        "company_image": ["oim.jpeg", "sbs.png"],
-        "position": "Technical Lead & Senior Developer",
-        "description": "Technical owner of the Angel Ariel program, coordinating React and Node.js teams for government projects.",
-        "tasks": [
-          "Defined architecture and dev guidelines for social platforms.",
-          "Stakeholder management and functional follow-up with international agencies.",
-          "Mentored teams and supported deployments built with React and Node.js.",
-          "Automated reporting and integrations with cloud services."
+        "company_image": [
+          "oim.jpeg",
+          "sbs.png"
         ],
+        "position": "Technical Lead & Senior Developer",
+        "description": "Principal architect and developer for the \u00c1ngel Ariel project and social platforms.",
+        "tasks": [
+          "Principal architect and developer for \u00c1ngel Ariel.",
+          "Management platform for Qu\u00e9date and Casa Joven Centers built with React and Node.js.",
+          "Stakeholder coordination with functional teams.",
+          "Owned technical delivery and standards."
+        ],
+        "home_order": 6,
+        "show_on_home": true,
         "achievements": [
           {
             "title": "Angel Ariel Platform",
@@ -287,59 +298,7 @@
               }
             ]
           }
-        ],
-        "home_order": 6,
-        "show_on_home": true
-      },
-      {
-        "start_date": "2013-01-01",
-        "end_date": "2014-12-31",
-        "is_current": false,
-        "company": "FantasyGol",
-        "company_image": "fantasygol-logo.png",
-        "position": "Full-Stack Developer",
-        "description": "• Built a fantasy football platform with 10+ international leagues and 10k+ concurrent players.\n• Monetized peer betting with a 10% house fee and grew fast enough to be acquired post-World Cup.",
-        "tasks": [
-          "Designed the platform from zero: data model, ER diagrams, backend services and frontend UI/UX.",
-          "Implemented secure payments, prize module and automated fee collection (10% house cut).",
-          "Integrated live match data feeds for real-time lineups, odds and scoring.",
-          "Built AWS infrastructure (compute, storage, networking) with CI/CD for rapid releases.",
-          "Created SEO-friendly landing pages to boost organic acquisition.",
-          "Optimized performance to sustain 10k+ concurrent users during peak World Cup traffic."
-        ],
-        "achievements": [
-          {
-            "title": "FantasyGol Platform",
-            "description": "Fantasy platform with 10+ international leagues and 10k+ concurrent players; users created their own leagues to play and compete with friends.",
-            "image": "fantasygol-card.png",
-            "url": "",
-            "date": "2014-12-01",
-            "tech_stack": [
-              { "name": "PHP" },
-              { "name": "PayPal" },
-              { "name": "AWS" },
-              { "name": "MySQL" },
-              { "name": "Git" },
-              { "name": "GitLab" }
-            ],
-            "modal_details": [
-              {
-                "image": "fantasygol-lobby.png",
-                "description": "Lobby of fantasy leagues with filters, entry fees, prizes and quick entry to play."
-              },
-              {
-                "image": "fantasygol-onboarding.png",
-                "description": "Sign up with social accounts or email to join leagues and start playing in minutes."
-              },
-              {
-                "image": "fantasygol-team.png",
-                "description": "Easy team builder with salaries, formations and live match data to draft your squad."
-              }
-            ]
-          }
-        ],
-        "home_order": 4,
-        "show_on_home": true
+        ]
       },
       {
         "start_date": "2023-01-01",
@@ -348,34 +307,18 @@
         "company": "WizeDevs",
         "company_image": "canjeaton2.png",
         "position": "Senior Mobile Developer",
-        "description": "Complete reconstruction of a legacy mobile application with major UX and performance improvements.",
+        "description": "Refactored a legacy React Native app, integrated smart locks, and improved performance.",
         "tasks": [
-          "Refactored the entire codebase using React Native best practices.",
-          "Integrated Linka smart locks through their SDK.",
-          "Optimized layouts for multiple resolutions and dark mode.",
-          "Automated QA and store releases."
+          "Led a full refactor of a legacy React Native codebase, modernizing UI components, navigation flows, and state management to align with current React Native and Hooks best practices.",
+          "Rewrote critical screens and modularized reusable components, improving maintainability, consistency, and long-term scalability of the app.",
+          "Successfully integrated Linka Smart Lock SDK, implementing secure Bluetooth communication, device pairing, authentication flows, and lock/unlock operations.",
+          "Designed and optimized user flows for smart-lock control, reducing connection failures and improving interaction responsiveness across supported devices.",
+          "Improved app startup time, reduced UI lag, and resolved long-standing performance issues through profiling, bundle optimization, and component-level refactors.",
+          "Collaborated with backend and product teams to ensure seamless device provisioning, user permissions, and real-time status updates.",
+          "Strengthened app reliability by identifying and resolving edge cases related to Bluetooth sync, device state transitions, and offline handling."
         ],
-        "achievements": [
-          {
-            "title": "Residential Security Relaunch",
-            "description": "Shipped a new version with secure flows, notifications and OTA updates.",
-            "image": "canjeaton.png",
-            "url": "https://wizedevs.com",
-            "date": "2023-05-01",
-            "tech_stack": [
-              {
-                "name": "React Native"
-              },
-              {
-                "name": "Expo"
-              },
-              {
-                "name": "Redux"
-              }
-            ]
-          }
-        ],
-        "show_on_home": false
+        "show_on_home": false,
+        "achievements": []
       },
       {
         "start_date": "2022-10-01",
@@ -384,34 +327,14 @@
         "company": "Asofarma Pharma",
         "company_image": "payroll.jpg",
         "position": "Tech Lead & Full-Stack",
-        "description": "Full-stack implementation and AWS deployment of the Qatar 2022 World Cup pool platform.",
+        "description": "Development of the Qatar 2022 World Cup pool platform with AWS architecture.",
         "tasks": [
-          "Built frontend and backend modules for bracket administration.",
-          "Automated infrastructure with AWS managed services.",
-          "Provided operational support and monitoring during the tournament.",
-          "Produced technical documentation for regional teams."
+          "Full-stack build of bracket and scoring modules.",
+          "AWS infrastructure design and deployment.",
+          "Operational support during the World Cup."
         ],
-        "achievements": [
-          {
-            "title": "Qatar 2022 Pool",
-            "description": "Gamified corporate portal with secure authentication and live reporting.",
-            "image": "payroll2.jpg",
-            "url": "https://www.asofarma.com",
-            "date": "2022-12-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "Node.js"
-              },
-              {
-                "name": "AWS"
-              }
-            ]
-          }
-        ],
-        "show_on_home": false
+        "show_on_home": false,
+        "achievements": []
       },
       {
         "start_date": "2022-08-01",
@@ -420,34 +343,14 @@
         "company": "Quinielas Live",
         "company_image": "canjeaton1.png",
         "position": "Tech Lead & Full-Stack",
-        "description": "Delivered the full-stack experience and AWS infrastructure for the live World Cup contest platform.",
+        "description": "Full-stack development and AWS deployment for World Cup live platform.",
         "tasks": [
-          "Developed services and shared components for real-time play.",
+          "Built services and real-time play components.",
           "Managed CI/CD and observability.",
-          "Coordinated responsive UX with design teams.",
-          "Provided 24/7 support during the competition."
+          "Provided 24/7 support during competition."
         ],
-        "achievements": [
-          {
-            "title": "Live Contest Platform",
-            "description": "Scalable application with live leaderboards and prize management.",
-            "image": "canjeaton2.png",
-            "url": "https://www.quinielas.live",
-            "date": "2022-11-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "AWS"
-              },
-              {
-                "name": "Docker"
-              }
-            ]
-          }
-        ],
-        "show_on_home": false
+        "show_on_home": false,
+        "achievements": []
       },
       {
         "start_date": "2022-02-01",
@@ -456,34 +359,14 @@
         "company": "Cognits",
         "company_image": "10x.png",
         "position": "Senior Full-Stack",
-        "description": "Supported the LEND platform by adding new features, technology migrations and Dev/QA improvements.",
+        "description": "Support for the LEND project with React, migrations, and Dev/QA improvements.",
         "tasks": [
-          "Implemented React components and lending flows.",
-          "Migrated Jython modules to modern stacks.",
-          "Improved QA and DevOps environments.",
-          "Championed code reviews and best practices."
+          "Developed new functionalities in React.",
+          "Migrated components written in Jython.",
+          "Enhancements in Dev/QA environments."
         ],
-        "achievements": [
-          {
-            "title": "LEND Platform",
-            "description": "Financial solution with modular components and automated deployments.",
-            "image": "payroll.jpg",
-            "url": "https://www.cognits.co",
-            "date": "2022-09-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "Redux"
-              },
-              {
-                "name": "Docker"
-              }
-            ]
-          }
-        ],
-        "show_on_home": false
+        "show_on_home": false,
+        "achievements": []
       },
       {
         "start_date": "2022-01-01",
@@ -492,13 +375,14 @@
         "company": "Bullseye Locations",
         "company_image": "bullseye-logo.png",
         "position": "Senior Full-Stack Engineer",
-        "description": "Developed map-based applications with Google Maps and Mapbox for retail customers.",
+        "description": "Map-based applications with Google Maps and MapBox; migration from .NET to React and React Native.",
         "tasks": [
-          "Integrated geospatial data and analytical dashboards.",
+          "Built geospatial web/mobile apps for site analysis.",
           "Migrated .NET modules to React and React Native.",
-          "Kick-started mobile development using React Native.",
-          "Coordinated directly with U.S. business stakeholders."
+          "Started mobile development with React Native."
         ],
+        "home_order": 4,
+        "show_on_home": true,
         "achievements": [
           {
             "title": "Location Intelligence Suite",
@@ -561,9 +445,7 @@
               }
             ]
           }
-        ],
-        "home_order": 4,
-        "show_on_home": true
+        ]
       },
       {
         "start_date": "2021-05-01",
@@ -571,50 +453,35 @@
         "is_current": false,
         "company": "International Organization for Migration",
         "company_image": "payroll2.jpg",
-        "position": "Tech Lead & Senior Full-Stack",
-        "description": "Analyzed and redesigned the Temporary Visa System (IGM), coordinating teams and documentation.",
+        "position": "Tech Lead",
+        "description": "Led analysis and architectural design for the Temporary Visa System (IGM).",
         "tasks": [
-          "Led hybrid teams in Guatemala and remote locations.",
-          "Produced functional and technical documentation for migration processes.",
-          "Integrated government services and data analysis pipelines.",
-          "Supported security audits and compliance."
+          "Complete technical analysis and architecture for IGM Temporary Visa System.",
+          "Produced technical specs, process diagrams, requirements, and roadmap.",
+          "Coordinated with government/legal stakeholders to validate requirements.",
+          "Delivered modernization proposal for scalability, security, UX, and efficiency."
         ],
-        "achievements": [
-          {
-            "title": "Temporary Visa System",
-            "description": "Modernized backend and front office with traceable flows and reporting.",
-            "image": "chivo.png",
-            "url": "https://www.migracion.gob.gt",
-            "date": "2021-08-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "Node.js"
-              },
-              {
-                "name": "AWS"
-              }
-            ]
-          }
-        ],
-        "show_on_home": false
+        "show_on_home": false,
+        "achievements": []
       },
       {
-        "start_date": "2016-01-01",
-        "end_date": "2020-12-31",
+        "start_date": "2016-11-01",
+        "end_date": "2020-01-31",
         "is_current": false,
         "company": "FAO UN & SIECA",
-        "company_image": ["fao.png", "sieca.png"],
-        "position": "Tech Lead & Senior Full-Stack",
-        "description": "Delivered regional agricultural market platforms and customs dashboards for Central America and the Caribbean.",
-        "tasks": [
-          "Coordinated multinational teams and regional rollouts.",
-          "Designed trade and logistics dashboards.",
-          "Developed multi-platform web and mobile portals.",
-          "Maintained FYDUCA systems and RFID reporting."
+        "company_image": [
+          "fao.png",
+          "sieca.png"
         ],
+        "position": "Tech Lead & Senior Full-Stack Developer",
+        "description": "Regional agricultural market platform and multinational coordination.",
+        "tasks": [
+          "Regional agricultural market platform for Central America and Dominican Republic.",
+          "Coordination of multinational technical teams.",
+          "Web and mobile development."
+        ],
+        "home_order": 3,
+        "show_on_home": true,
         "achievements": [
           {
             "title": "Regional Agricultural Market",
@@ -678,84 +545,99 @@
               }
             ]
           }
-        ],
-        "home_order": 3,
-        "show_on_home": true
+        ]
       },
       {
-        "start_date": "2012-01-01",
-        "end_date": "2016-12-31",
+        "start_date": "2016-06-01",
+        "end_date": "2019-12-31",
         "is_current": false,
-        "company": "IOM",
-        "company_image": "oim.jpeg",
-        "position": "Full-Stack Developer",
-        "description": "Built platforms for statistics, surveys, ecommerce, mobile apps, dashboards and nutrition systems for UN programs.",
+        "company": "SIECA",
+        "company_image": "sieca.png",
+        "position": "Senior Full-Stack Developer",
+        "description": "RFID dashboard for customs, FYDUCA maintenance, and cross-country integrations.",
         "tasks": [
-          "Developed mobile apps, dashboards and inventory services.",
-          "Integrated surveys and payment modules for international projects.",
-          "Maintained Java + PHP + Oracle solutions.",
-          "Implemented data services and reporting APIs."
+          "RFID dashboard for customs.",
+          "FYDUCA system maintenance.",
+          "System integrations across countries."
         ],
+        "show_on_home": false,
+        "achievements": []
+      },
+      {
+        "start_date": "2012-06-01",
+        "end_date": "2016-07-31",
+        "is_current": false,
+        "company": "FantasyGol",
+        "company_image": "fantasygol-logo.png",
+        "position": "Full-Stack Developer",
+        "description": "Development of multiple platforms: migration statistics, surveys, ecommerce, mobile apps, dashboards, nutrition systems, and fantasy sports.",
+        "home_order": 4,
+        "show_on_home": true,
         "achievements": [
           {
-            "title": "Multinational platforms",
-            "description": "Suite of UN solutions with field monitoring and secure backoffice.",
-            "image": "payroll.jpg",
-            "url": "https://www.un.org",
-            "date": "2015-05-01",
+            "title": "FantasyGol Platform",
+            "description": "Fantasy platform with 10+ international leagues and 10k+ concurrent players; users created their own leagues to play and compete with friends.",
+            "image": "fantasygol-card.png",
+            "url": "",
+            "date": "2014-12-01",
             "tech_stack": [
               {
-                "name": "React"
+                "name": "PHP"
               },
               {
-                "name": "Laravel"
+                "name": "PayPal"
+              },
+              {
+                "name": "AWS"
               },
               {
                 "name": "MySQL"
               },
               {
+                "name": "Git"
+              },
+              {
                 "name": "GitLab"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "fantasygol-lobby.png",
+                "description": "Lobby of fantasy leagues with filters, entry fees, prizes and quick entry to play."
+              },
+              {
+                "image": "fantasygol-onboarding.png",
+                "description": "Sign up with social accounts or email to join leagues and start playing in minutes."
+              },
+              {
+                "image": "fantasygol-team.png",
+                "description": "Easy team builder with salaries, formations and live match data to draft your squad."
               }
             ]
           }
-        ],
-        "show_on_home": false
+        ]
       },
       {
-        "start_date": "2006-01-01",
-        "end_date": "2013-12-31",
+        "start_date": "2012-01-01",
+        "end_date": "2014-12-31",
+        "is_current": false,
+        "company": "Xchange",
+        "company_image": "red-regional.png",
+        "position": "Full-Stack Developer",
+        "description": "Product-exchange systems, electronic invoicing, Java, PHP, Oracle systems, web services, and backend data services.",
+        "show_on_home": false,
+        "achievements": []
+      },
+      {
+        "start_date": "2006-02-01",
+        "end_date": "2013-08-31",
         "is_current": false,
         "company": "SAT Guatemala",
         "company_image": "sat_logo.png",
         "position": "Full-Stack Developer",
-        "description": "Modernized taxation and customs systems using Java, OAS, Spring and Oracle.",
-        "tasks": [
-          "Developed internal fiscal applications.",
-          "Integrated web services and authentication flows.",
-          "Migrated legacy modules to web architectures.",
-          "Provided continuous support for key users."
-        ],
-        "achievements": [
-          {
-            "title": "Tax systems",
-            "description": "Internal platforms for filing and tracking tax information.",
-            "image": "sat_logo.png",
-            "url": "https://portal.sat.gob.gt",
-            "date": "2013-01-01",
-            "tech_stack": [
-              {
-                "name": "Java"
-              },
-              {
-                "name": "SQL"
-              },
-              {
-                "name": "Linux"
-              }
-            ]
-          }
-        ],
-        "show_on_home": false
+        "description": "Internal applications for customs and taxation; modernization of legacy systems using Java, OAS, Spring, Hibernate, and Oracle.",
+        "show_on_home": false,
+        "achievements": []
       }
     ],
     "university": {
@@ -779,12 +661,24 @@
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Databases",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle", "SqlServer"],
+        "tools": [
+          "MySQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle",
+          "SqlServer"
+        ],
         "stars": 4
       },
       {

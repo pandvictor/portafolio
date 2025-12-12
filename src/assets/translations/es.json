@@ -16,21 +16,23 @@
     "languages_title": "Idiomas",
     "skills": "Habilidades",
     "contact": "Contacto",
-    "summary": "Desarrollador senior con más de 19 años entregando soluciones tecnológicas para fintech, gobierno y organizaciones internacionales. Especializado en React Native, React, TypeScript, Node.js y AWS. Experiencia comprobada liderando equipos, definiendo arquitecturas y lanzando productos de alto impacto como CHIVO Wallet y la plataforma APEX.",
+    "summary": "Líder de ingeniería con 19+ años construyendo plataformas a gran escala y de misión crítica en fintech, cripto y sector público. Lideré el desarrollo end-to-end de CHIVO Wallet y la plataforma de trading APEX, mejorando escalabilidad, performance en tiempo real y confiabilidad para millones de usuarios. Experto en React Native, React, Node.js y AWS, con un historial sólido guiando equipos, definiendo arquitectura y entregando productos de alto impacto en entornos de alta velocidad y alta exigencia.",
     "work_history": [
       {
         "start_date": "2023-06-01",
-        "end_date": "",
-        "is_current": true,
+        "end_date": "2024-06-30",
+        "is_current": false,
         "company": "CHIVO Wallet",
         "company_image": "alphapoint-logo.png",
-        "position": "Senior Software Developer",
-        "description": "Lideré la billetera Bitcoin nacional de El Salvador (AlphaPoint), tomando la experiencia web y móvil para pagos, remesas, cash-in/out y POS para comercios.",
+        "position": "Software Engineer",
+        "description": "Modernicé CHIVO Wallet para millones de usuarios, mejorando estabilidad, rendimiento y respuesta en tiempo real.",
         "tasks": [
-          "Entregué flujos de billetera, remesas y on/off-ramp en React Native y React, integrando Lightning y servicios on-chain.",
-          "Coordiné releases con producto y compliance para mantener KYC, kioscos de cash-in y POS alineados a regulación.",
-          "Construí componentes UI compartidos, monitoreo de errores y bases de performance para móvil y web.",
-          "Mentoricé al equipo en TypeScript, pruebas y observabilidad mientras ordenaba backlog y deuda técnica."
+          "Modernicé y refactoricé la codebase legacy de CHIVO Wallet de React antiguo a React + Hooks, mejorando mantenibilidad, legibilidad y performance en módulos críticos.",
+          "Actualicé grandes porciones de código móvil y web construido con patrones legacy, reduciendo deuda técnica y habilitando entregas más rápidas.",
+          "Desarrollé y optimicé flujos críticos en React Native, React, Node.js y TypeScript, asegurando operaciones financieras estables y comportamiento consistente cross-platform.",
+          "Mejoré la respuesta en tiempo real al fortalecer integraciones WebSocket para datos de mercado, cuentas y procesamiento de transacciones.",
+          "Colaboré de cerca con backend, QA y producto para entregar features confiables en tiempos ajustados y alto tráfico.",
+          "Robustecí performance y estabilidad, contribuyendo a mayor confiabilidad para millones de usuarios."
         ],
         "achievements": [
           {
@@ -120,18 +122,22 @@
         "show_on_home": true
       },
       {
-        "start_date": "2024-01-01",
-        "end_date": "",
-        "is_current": true,
+        "start_date": "2024-07-01",
+        "end_date": "2025-11-30",
+        "is_current": false,
         "company": "APEX Exchange (AlphaPoint)",
         "company_image": "alphapoint-logo.png",
-        "position": "Lead Frontend Engineer",
-        "description": "• Desarrollé funcionalidades núcleo para un servicio digital nacional diseñado para más de 6 millones de ciudadanos.\n• Contribuí a la arquitectura backend que soporta más de 10,000 transacciones por segundo (TPS) en picos de uso.",
+        "position": "Lead Software Engineer",
+        "description": "Lideré la ingeniería móvil y features web para APEX, mejorando el rendimiento en tiempo real y la fiabilidad de la plataforma de trading.",
         "tasks": [
-          "Implementé UI de trading responsive (order books, gráficas avanzadas, RFQ/OTC) consumiendo WebSockets y APIs REST.",
-          "Integré módulos de cuentas, wallets y custodia multi-activo con administración por roles y flujos de cumplimiento.",
-          "Optimicé latencia y render de actualizaciones de alta frecuencia (profundidad, trades, balances) con virtualización y memoización.",
-          "Trabajé con producto y clientes para localizar y tematizar la experiencia white-label en múltiples despliegues institucionales."
+          "Lideré los esfuerzos de ingeniería móvil para APEX, entregando y mejorando Trading, Margin y Account Management con interacción en tiempo real para operaciones de alto volumen.",
+          "Diseñé e implementé flujos de trading en tiempo real con WebSockets y API Gateway, mejorando la latencia de ejecución y actualización en 60%.",
+          "Diseñé y construí la experiencia móvil para módulos financieros complejos, incluyendo cálculos de margen, indicadores de riesgo, controles de apalancamiento y UIs de órdenes.",
+          "En web, desarrollé nuevas funciones de Trading UI, Margin y Futures, aportando al front de usuario y a un portal admin para monitoreo y operación.",
+          "Creé una librería de componentes reutilizable para móvil y web, reduciendo código duplicado en 35% y mejorando la mantenibilidad.",
+          "Optimizé performance móvil (cold-start ↓40%, crash rate ↓25%) con ajustes de arquitectura y perfiles dirigidos.",
+          "Mentoricé ingenieros, introduje estándares y reduje los ciclos de code review (4 días → 1.5 días).",
+          "Participé en guardias e incidentes, elevando la disponibilidad a 99.95%."
         ],
         "achievements": [
           {
@@ -244,14 +250,17 @@
         "end_date": "2023-12-31",
         "is_current": false,
         "company": "IOM & Secretaría de Bienestar Social",
-        "company_image": ["oim.jpeg", "sbs.png"],
+        "company_image": [
+          "oim.jpeg",
+          "sbs.png"
+        ],
         "position": "Technical Lead & Senior Developer",
-        "description": "Responsable técnico del programa Angel Ariel, coordinando equipos React y Node.js para proyectos gubernamentales.",
+        "description": "Arquitecto y desarrollador principal del programa Ángel Ariel y plataformas sociales.",
         "tasks": [
-          "Definición de arquitectura y lineamientos de desarrollo para plataformas sociales.",
-          "Gestión de stakeholders y seguimiento funcional con organismos internacionales.",
-          "Mentoría de equipos y soporte a despliegues basados en React y Node.js.",
-          "Automatización de reportes e integración con servicios en la nube."
+          "Arquitecto y desarrollador principal de Ángel Ariel.",
+          "Plataforma de gestión para Centros Quédate y Casa Joven construida con React y Node.js.",
+          "Coordinación con stakeholders y equipos funcionales.",
+          "Propietario técnico y estándares de entrega."
         ],
         "achievements": [
           {
@@ -298,33 +307,17 @@
         "company": "WizeDevs",
         "company_image": "canjeaton2.png",
         "position": "Senior Mobile Developer",
-        "description": "Reconstrucción completa de una app móvil heredada, optimizando el rendimiento y la experiencia de usuario.",
+        "description": "Refactor total de una app React Native legacy, integración de smart locks y mejoras de performance.",
         "tasks": [
-          "Refactorización total del código basándose en buenas prácticas de React Native.",
-          "Integración con cerraduras inteligentes Linka mediante su SDK.",
-          "Optimización visual para múltiples resoluciones y dark mode.",
-          "Automatización de QA y liberaciones en tiendas."
+          "Lideré un refactor completo de una app React Native legacy, modernizando UI, navegación y estado con buenas prácticas de Hooks.",
+          "Reescribí pantallas críticas y modularicé componentes reutilizables, mejorando mantenibilidad, consistencia y escalabilidad.",
+          "Integré Linka Smart Lock SDK, implementando comunicación Bluetooth segura, pairing, autenticación y lock/unlock.",
+          "Diseñé y optimicé flujos para control de cerraduras, reduciendo fallas de conexión y mejorando respuesta.",
+          "Mejoré tiempos de arranque, reduje lag de UI y resolví issues de performance con profiling y optimización de bundle.",
+          "Colaboré con backend y producto para aprovisionamiento, permisos y estados en tiempo real.",
+          "Fortalecí confiabilidad resolviendo edge cases de sincronización Bluetooth, transiciones de estado y manejo offline."
         ],
-        "achievements": [
-          {
-            "title": "Reingeniería App Residencial",
-            "description": "Lanzamiento de una nueva versión con flujos seguros, notificaciones y soporte OTA.",
-            "image": "canjeaton.png",
-            "url": "https://wizedevs.com",
-            "date": "2023-05-01",
-            "tech_stack": [
-              {
-                "name": "React Native"
-              },
-              {
-                "name": "Expo"
-              },
-              {
-                "name": "Redux"
-              }
-            ]
-          }
-        ],
+        "achievements": [],
         "show_on_home": false
       },
       {
@@ -336,31 +329,11 @@
         "position": "Tech Lead & Full-Stack",
         "description": "Implementación full-stack y despliegue AWS para la plataforma de quinielas del Mundial Qatar 2022.",
         "tasks": [
-          "Construcción de módulos de frontend y backend para administración de quinielas.",
-          "Automatización de infraestructura con servicios administrados de AWS.",
-          "Soporte operativo y monitoreo durante el torneo.",
-          "Documentación técnica para equipos regionales."
+          "Desarrollo full-stack de módulos de quiniela y puntuación.",
+          "Diseño y despliegue de infraestructura AWS.",
+          "Soporte operativo durante el Mundial."
         ],
-        "achievements": [
-          {
-            "title": "Qatar 2022 Pool",
-            "description": "Portal empresarial gamificado con autenticación segura y reportes en vivo.",
-            "image": "payroll2.jpg",
-            "url": "https://www.asofarma.com",
-            "date": "2022-12-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "Node.js"
-              },
-              {
-                "name": "AWS"
-              }
-            ]
-          }
-        ],
+        "achievements": [],
         "show_on_home": false
       },
       {
@@ -372,31 +345,11 @@
         "position": "Tech Lead & Full-Stack",
         "description": "Entrega full-stack y despliegue en AWS de la plataforma mundialista para concursos en vivo.",
         "tasks": [
-          "Desarrollo de servicios y componentes compartidos para experiencia en tiempo real.",
-          "Gestión CI/CD y observabilidad.",
-          "Coordinación con diseño para experiencias responsive.",
-          "Soporte 24/7 durante la competición."
+          "Implementé servicios y componentes para juego en tiempo real.",
+          "Gestioné CI/CD y observabilidad.",
+          "Soporte 24/7 durante la competencia."
         ],
-        "achievements": [
-          {
-            "title": "Plataforma de Quinielas",
-            "description": "Aplicación escalable con tableros en vivo y administración de premios.",
-            "image": "canjeaton2.png",
-            "url": "https://www.quinielas.live",
-            "date": "2022-11-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "AWS"
-              },
-              {
-                "name": "Docker"
-              }
-            ]
-          }
-        ],
+        "achievements": [],
         "show_on_home": false
       },
       {
@@ -408,31 +361,11 @@
         "position": "Senior Full-Stack",
         "description": "Soporte para la plataforma LEND, agregando nuevas funcionalidades y migraciones tecnológicas.",
         "tasks": [
-          "Desarrollo de componentes React y flujos de préstamo.",
-          "Migración de módulos escritos en Jython a tecnologías modernas.",
-          "Mejoras en entornos de QA y DevOps.",
-          "Revisión de código y liderazgo de buenas prácticas."
+          "Implementé nuevas funcionalidades en React para la plataforma LEND.",
+          "Migré módulos escritos en Jython a stacks modernos.",
+          "Mejoras en entornos QA y DevOps."
         ],
-        "achievements": [
-          {
-            "title": "Plataforma LEND",
-            "description": "Solución financiera con componentes modulares y despliegues automatizados.",
-            "image": "payroll.jpg",
-            "url": "https://www.cognits.co",
-            "date": "2022-09-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "Redux"
-              },
-              {
-                "name": "Docker"
-              }
-            ]
-          }
-        ],
+        "achievements": [],
         "show_on_home": false
       },
       {
@@ -444,10 +377,9 @@
         "position": "Senior Full-Stack Engineer",
         "description": "Desarrollo de aplicaciones basadas en mapas con Google Maps y Mapbox para clientes retail.",
         "tasks": [
-          "Integración de datos geoespaciales y dashboards analíticos.",
+          "Aplicaciones web/móvil con mapas (Google Maps, MapBox) para análisis de sitios.",
           "Migración de módulos .NET a React y React Native.",
-          "Iniciativa para habilitar productos móviles en React Native.",
-          "Comunicación con stakeholders de negocio en EE.UU."
+          "Inicio del desarrollo móvil con React Native."
         ],
         "achievements": [
           {
@@ -529,26 +461,7 @@
           "Integración con servicios gubernamentales y análisis de datos.",
           "Acompañamiento en auditorías de seguridad."
         ],
-        "achievements": [
-          {
-            "title": "Sistema de Visas Temporales",
-            "description": "Modernización del backend y frontoffice con flujos trazables y reportes.",
-            "image": "chivo.png",
-            "url": "https://www.migracion.gob.gt",
-            "date": "2021-08-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "Node.js"
-              },
-              {
-                "name": "AWS"
-              }
-            ]
-          }
-        ],
+        "achievements": [],
         "show_on_home": false
       },
       {
@@ -556,14 +469,16 @@
         "end_date": "2020-12-31",
         "is_current": false,
         "company": "FAO ONU & SIECA",
-        "company_image": ["fao.png", "sieca.png"],
+        "company_image": [
+          "fao.png",
+          "sieca.png"
+        ],
         "position": "Tech Lead & Senior Full-Stack",
         "description": "Implementación de mercados agrícolas regionales y tableros aduaneros para Centroamérica y el Caribe.",
         "tasks": [
-          "Coordinación de equipos multinacionales y despliegues regionales.",
-          "Diseño de dashboards de comercio y logística.",
-          "Desarrollo de portales web y móviles multiplataforma.",
-          "Mantenimiento de sistemas FYDUCA y reportes RFID."
+          "Plataforma regional de mercados agrícolas para Centroamérica y República Dominicana.",
+          "Coordinación de equipos técnicos multinacionales.",
+          "Desarrollo web y móvil."
         ],
         "achievements": [
           {
@@ -640,14 +555,7 @@
         "company_image": "fantasygol-logo.png",
         "position": "Desarrollador Full-Stack",
         "description": "• Plataforma de fútbol de fantasía con 10+ ligas internacionales y más de 10,000 usuarios jugando simultáneamente.\n• Monetización de apuestas entre pares con comisión del 10%, crecimiento acelerado y adquisición post-Mundial.",
-        "tasks": [
-          "Diseñé el sistema desde cero: modelo de datos, diagramas entidad-relación, backend y frontend.",
-          "Implementé pagos seguros, módulo de premios y cobro automático de la comisión del 10%.",
-          "Conecté feeds de datos de partidos en vivo para alineaciones, odds y puntuaciones en tiempo real.",
-          "Construí la infraestructura en AWS (cómputo, storage, networking) con CI/CD para despliegues rápidos.",
-          "Creé páginas optimizadas para SEO y captar tráfico orgánico.",
-          "Optimizé rendimiento para soportar más de 10,000 usuarios jugando simultáneamente durante el Mundial."
-        ],
+        "tasks": [],
         "achievements": [
           {
             "title": "Plataforma FantasyGol",
@@ -656,12 +564,24 @@
             "url": "",
             "date": "2014-12-01",
             "tech_stack": [
-              { "name": "PHP" },
-              { "name": "PayPal" },
-              { "name": "AWS" },
-              { "name": "MySQL" },
-              { "name": "Git" },
-              { "name": "GitLab" }
+              {
+                "name": "PHP"
+              },
+              {
+                "name": "PayPal"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              }
             ],
             "modal_details": [
               {
@@ -696,26 +616,7 @@
           "Mantenimiento de sistemas Java + PHP + Oracle.",
           "Desarrollo de backend y servicios de datos."
         ],
-        "achievements": [
-          {
-            "title": "Plataformas multinacionales",
-            "description": "Suite de soluciones para ONU con monitoreo en campo y backoffice seguro.",
-            "image": "payroll.jpg",
-            "url": "https://www.un.org",
-            "date": "2015-05-01",
-            "tech_stack": [
-              {
-                "name": "React"
-              },
-              {
-                "name": "Laravel"
-              },
-              {
-                "name": "MySQL"
-              }
-            ]
-          }
-        ],
+        "achievements": [],
         "show_on_home": false
       },
       {
@@ -726,32 +627,8 @@
         "company_image": "10x.png",
         "position": "Full-Stack Developer",
         "description": "Modernización de sistemas de impuestos y aduanas usando Java, OAS, Spring y Oracle.",
-        "tasks": [
-          "Desarrollo de aplicaciones internas fiscales.",
-          "Integración de servicios web y autenticación.",
-          "Migración de legados hacia arquitecturas web.",
-          "Soporte continuo a usuarios clave."
-        ],
-        "achievements": [
-          {
-            "title": "Sistemas tributarios",
-            "description": "Plataformas internas para declaraciones y seguimiento de impuestos.",
-            "image": "canjeaton.png",
-            "url": "https://portal.sat.gob.gt",
-            "date": "2013-01-01",
-            "tech_stack": [
-              {
-                "name": "Java"
-              },
-              {
-                "name": "SQL"
-              },
-              {
-                "name": "Linux"
-              }
-            ]
-          }
-        ],
+        "tasks": [],
+        "achievements": [],
         "show_on_home": false
       }
     ],
@@ -776,12 +653,23 @@
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Bases de Datos",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
+        "tools": [
+          "MySQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle"
+        ],
         "stars": 4
       },
       {
