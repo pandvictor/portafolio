@@ -9,6 +9,7 @@ import {
   Avatar,
   ListItemText,
   Button,
+  Chip,
 } from "@mui/material";
 import { format, intervalToDuration, formatDuration, parseISO } from "date-fns";
 import { publicPath } from "./../../constants/gloabals";
@@ -17,6 +18,7 @@ import i18n from "../../utils/i18n";
 import { useLanguage } from "../../context/LanguageContext";
 import { Resume } from "../../types/";
 import { MainTemplate } from "../templates";
+import { resolveTechIcon } from "../../utils/techIcons";
 
 export function ResumePage() {
   const { setLanguage, language } = useLanguage();
@@ -203,31 +205,33 @@ export function ResumePage() {
               <hr />
               {resume.tech_skills.map((item, index) => (
                 <section key={index} style={{ marginBottom: 30 }}>
-                  <Typography variant='h6'>
+                  <Typography variant='h6' sx={{ mb: 1 }}>
                     {item.title}
                     {stars(item.stars)}
                   </Typography>
-                  <Stack direction='row' spacing={1} flexWrap='wrap'>
-                    {item.tools.map((tool, idx) => (
-                      <Stack
-                        key={`${tool}-${idx}`}
-                        direction='row'
-                        spacing={1}
-                        alignItems='center'
-                        sx={{ mr: 1, mb: 0.5 }}>
-                        <Typography variant='body2'>{tool}</Typography>
-                        {idx < item.tools.length - 1 && (
-                          <Box
-                            component='span'
-                            sx={{
-                              color: "text.disabled",
-                              fontWeight: 700,
-                            }}>
-                            |
-                          </Box>
-                        )}
-                      </Stack>
-                    ))}
+                  <Stack
+                    direction='row'
+                    spacing={1}
+                    flexWrap='wrap'
+                    alignItems='center'
+                    sx={{ columnGap: 1, rowGap: 1 }}>
+                    {item.tools.map((tool, idx) => {
+                      const icon = resolveTechIcon(tool);
+                      return (
+                        <Chip
+                          key={`${tool}-${idx}`}
+                          label={tool}
+                          avatar={
+                            <Avatar
+                              src={`${publicPath}/images/icons/${icon}`}
+                              alt={tool}
+                              sx={{ width: 22, height: 22 }}
+                            />
+                          }
+                          sx={{ borderRadius: 2 }}
+                        />
+                      );
+                    })}
                   </Stack>
                 </section>
               ))}
