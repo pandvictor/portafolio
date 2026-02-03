@@ -4,3 +4,4 @@ export * from './ImageIcons';
 export * from './CardClients';
 export * from './SkillIconsRow';
 export * from './TrustedLogosMarquee';
+export * from './PrintButton';

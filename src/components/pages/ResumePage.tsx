@@ -10,8 +10,10 @@ import {
   ListItemText,
   Paper,
   Stack,
+  Tooltip,
   Typography,
 } from "@mui/material";
+import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
 import { format, formatDuration, intervalToDuration, parseISO } from "date-fns";
 import { publicPath } from "./../../constants/gloabals";
 import { LinkItem } from "../atoms";
@@ -20,6 +22,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { ContactInfo, Language, Resume, TechSkill, WorkHistory } from "../../types/";
 import { MainTemplate } from "../templates";
 import { resolveTechIcon } from "../../utils/techIcons";
+import { PrintButton } from "../molecules";
 
 const Stars = ({ count }: { count: number }) => (
   <Box
@@ -242,11 +245,12 @@ export function ResumePage() {
   const contactInfo = useMemo(() => resume?.contact_info || [], [resume]);
   const languages = useMemo(() => resume?.languages || [], [resume]);
   const techSkills = useMemo(() => resume?.tech_skills || [], [resume]);
+  const handlePrint = () => window.print();
 
   return (
     <MainTemplate>
       <Box sx={{ padding: 0, margin: 0 }}>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} sx={{ backgroundColor: "white", px: { xs: 1, md: 0 } }}>
           <HeaderSection resume={resume} />
 
           <Grid item xs={12} md={9}>
@@ -265,6 +269,14 @@ export function ResumePage() {
           </Grid>
         </Grid>
 
+        <Box
+          sx={{
+            display: { print: "none" },
+            mt: 2,
+          }}>
+          <PrintButton onClick={handlePrint} />
+        </Box>
+
         <Stack
           direction={{ xs: "row", md: "column" }}
           sx={{
@@ -277,12 +289,11 @@ export function ResumePage() {
           <Button
             onClick={() =>
               handleLanguageChange(language === "en" ? "es" : "en")
-            }>
-            <Avatar
-              sx={{ display: "flex", mr: 1, height: 30, width: 30 }}
-              alt='A'
-              src={`${publicPath}/images/icons/${"locale.svg"}`}
-            />
+            }
+            aria-label={language === "es" ? "Cambiar idioma" : "Change language"}>
+            <Tooltip title={language === "es" ? "Cambiar idioma" : "Change language"} arrow>
+              <TranslateRoundedIcon sx={{ fontSize: 26 }} />
+            </Tooltip>
           </Button>
         </Stack>
       </Box>

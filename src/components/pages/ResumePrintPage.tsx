@@ -1,4 +1,5 @@
-import { Stack, Typography, Grid, Paper, Box, ListItem, ListItemAvatar, Avatar, ListItemText, Button } from "@mui/material";
+import { Stack, Typography, Grid, Paper, Box, ListItem, ListItemAvatar, Avatar, ListItemText, Button, Tooltip } from "@mui/material";
+import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
 import { format, intervalToDuration, formatDuration, parseISO } from 'date-fns'
 import { publicPath } from './../../constants/gloabals';
 import { LinkItem } from "../atoms";
@@ -136,8 +137,13 @@ export function ResumePrintPage() {
                 </Grid>
             </Grid>
             <Stack direction={{ xs: 'row', md: 'column' }} sx={{ position: 'fixed', bottom: '10px', right: '10px', zIndex: 1000, display: {print: 'none'} }}>
-                    <Button onClick={() => handleLanguageChange(language === 'en' ? 'es': 'en' )} sx={{display: {print: 'none'}}}>
-                        <Avatar sx={{ display: {print: 'none'}, mr: 1, height: 30, width: 30 }} alt="A" src={`${publicPath}/images/icons/${'locale.svg'}`} />
+                    <Button
+                        onClick={() => handleLanguageChange(language === 'en' ? 'es': 'en' )}
+                        sx={{display: {print: 'none'}}}
+                        aria-label={language === "es" ? "Cambiar idioma" : "Change language"}>
+                        <Tooltip title={language === "es" ? "Cambiar idioma" : "Change language"} arrow>
+                            <TranslateRoundedIcon sx={{ fontSize: 26 }} />
+                        </Tooltip>
                     </Button>
             </Stack>
         </Box>
