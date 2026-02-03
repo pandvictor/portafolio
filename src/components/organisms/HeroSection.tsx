@@ -3,12 +3,11 @@ import {
   Box,
   Button,
   Chip,
-  IconButton,
   Stack,
-  Tooltip,
   Typography,
 } from "@mui/material";
 import SwapHorizRoundedIcon from "@mui/icons-material/SwapHorizRounded";
+import ArrowRightAltRoundedIcon from "@mui/icons-material/ArrowRightAltRounded";
 import { publicPath } from "../../constants/gloabals";
 import { SkillIconsRow } from "../molecules";
 import { Resume, ContactInfo } from "../../types";
@@ -38,6 +37,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [isPaused, setIsPaused] = useState(false);
   const flipTimerRef = useRef<number | null>(null);
   const contactUrl = contactInfo?.[0]?.url;
+  const linkedinUrl = useMemo(
+    () =>
+      contactInfo?.find(
+        (item) =>
+          item?.title?.toLowerCase?.().includes("linkedin") ||
+          item?.icon === "linkedin.svg"
+      )?.url,
+    [contactInfo]
+  );
   const downloadHref = useMemo(
     () => `${publicPath}/files/resume-victor-hernandez-${language}.pdf`,
     [language]
@@ -95,6 +103,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     ],
     []
   );
+  const pipelineSteps = useMemo(
+    () =>
+      language === "es"
+        ? ["Ingesta", "Embeddings", "RAG", "Evaluación", "Deploy"]
+        : ["Ingest", "Embeddings", "RAG", "Evaluation", "Deploy"],
+    [language]
+  );
 
   const startFlipTimer = useCallback(() => {
     if (prefersReducedMotion || typeof window === "undefined") return;
@@ -144,29 +159,50 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         animation: `${fadeInUp} 0.6s ease`,
         perspective: "1600px",
       }}>
-      <Tooltip
-        title={language === "es" ? "Girar sección" : "Flip section"}
-        arrow>
-        <IconButton
+      <Box
+        sx={{
+          position: "absolute",
+          top: { xs: 10, sm: 14 },
+          right: { xs: 10, sm: 14 },
+          zIndex: 5,
+          p: "1px",
+          borderRadius: 999,
+          background:
+            "linear-gradient(90deg, rgba(14,165,233,0.9), rgba(16,185,129,0.9))",
+          boxShadow: "0 12px 28px rgba(14,165,233,0.25)",
+        }}>
+        <Button
           onClick={handleManualFlip}
           aria-label={language === "es" ? "Girar sección" : "Flip section"}
+          endIcon={<SwapHorizRoundedIcon sx={{ fontSize: 18 }} />}
+          size='small'
           sx={{
-            position: "absolute",
-            top: { xs: 10, sm: 14 },
-            right: { xs: 10, sm: 14 },
-            zIndex: 5,
-            borderRadius: 2,
-            border: "1px solid rgba(226,232,240,0.9)",
-            backgroundColor: "rgba(255,255,255,0.9)",
-            boxShadow: "0 12px 26px rgba(15,23,42,0.12)",
+            borderRadius: 999,
+            px: 1.4,
+            py: 0.45,
+            minHeight: 0,
+            textTransform: "none",
+            fontWeight: 800,
+            fontSize: "0.72rem",
+            color: "rgba(15,23,42,0.9)",
+            backgroundColor: "rgba(255,255,255,0.92)",
+            backdropFilter: "blur(6px)",
+            boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.7)",
             "&:hover": {
               backgroundColor: "white",
               transform: "translateY(-2px)",
+              boxShadow: "0 10px 18px rgba(15,23,42,0.12)",
             },
           }}>
-          <SwapHorizRoundedIcon sx={{ fontSize: 22 }} />
-        </IconButton>
-      </Tooltip>
+          {isFlipped
+            ? language === "es"
+              ? "Ver perfil"
+              : "View profile"
+            : language === "es"
+              ? "Ver IA"
+              : "View AI"}
+        </Button>
+      </Box>
       <Box
         sx={{
           position: "absolute",
@@ -340,6 +376,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   href={downloadHref}>
                   {i18n.t("download")}
                 </Button>
+                {linkedinUrl && (
+                  <Button
+                    variant='outlined'
+                    size='large'
+                    href={linkedinUrl}
+                    target='_blank'
+                    rel='noreferrer'
+                    startIcon={
+                      <Box
+                        component='img'
+                        alt='LinkedIn'
+                        src={`${publicPath}/images/icons/linkedin.svg`}
+                        sx={{ width: 18, height: 18 }}
+                      />
+                    }
+                    sx={{
+                      borderRadius: 2,
+                      textTransform: "none",
+                      fontWeight: 700,
+                      borderColor: "rgba(10,102,194,0.35)",
+                      color: "#0A66C2",
+                      backgroundColor: "rgba(10,102,194,0.06)",
+                      "&:hover": {
+                        borderColor: "#0A66C2",
+                        backgroundColor: "rgba(10,102,194,0.12)",
+                      },
+                    }}>
+                    LinkedIn
+                  </Button>
+                )}
                 {contactUrl && (
                   <Button
                     variant='outlined'
@@ -466,19 +532,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   />
                 ))}
               </Stack>
-              {contactUrl && (
-                <Button
-                  variant='contained'
-                  color='secondary'
-                  size='large'
-                  sx={{
-                    borderRadius: 2,
-                    boxShadow: "0 18px 40px rgba(0,0,0,0.12)",
-                  }}
-                  href={contactUrl}>
-                  {language === "es" ? "Hablemos de arquitectura" : "Talk architecture"}
-                </Button>
-              )}
+              <Stack
+                direction='row'
+                useFlexGap
+                sx={{
+                  flexWrap: "wrap",
+                  gap: 1,
+                  justifyContent: { xs: "center", md: "flex-start" },
+                }}>
+                {[
+                  language === "es" ? "Codex" : "Codex",
+                  language === "es" ? "Claude" : "Claude",
+                ].map((tool) => (
+                  <Chip
+                    key={tool}
+                    label={tool}
+                    size='small'
+                    sx={{
+                      borderRadius: 99,
+                      fontWeight: 800,
+                      color: "white",
+                      background:
+                        "linear-gradient(90deg, rgba(15,118,110,0.9), rgba(59,130,246,0.9))",
+                      boxShadow: "0 10px 22px rgba(15,118,110,0.25)",
+                    }}
+                  />
+                ))}
+                <Typography variant='caption' color='text.secondary' sx={{ fontWeight: 600 }}>
+                  {language === "es"
+                    ? "Herramientas principales de trabajo"
+                    : "Primary working tools"}
+                </Typography>
+              </Stack>
             </Stack>
             <Box
               sx={{
@@ -507,7 +592,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   boxShadow: "0 18px 50px rgba(15,23,42,0.18)",
                   position: "relative",
                   zIndex: 1,
-                  background: "rgba(255,255,255,0.92)",
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.95), rgba(236,254,255,0.9))",
                   backdropFilter: "blur(6px)",
                   p: { xs: 2, sm: 2.5 },
                 }}>
@@ -542,6 +628,61 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                           : "Layered system + continuous improvement"}
                       </Typography>
                     </Stack>
+                    <Chip
+                      label='AI Ops'
+                      size='small'
+                      sx={{
+                        ml: "auto",
+                        fontWeight: 800,
+                        borderRadius: 99,
+                        color: "white",
+                        background:
+                          "linear-gradient(90deg, rgba(14,165,233,0.9), rgba(16,185,129,0.9))",
+                      }}
+                    />
+                  </Stack>
+                  <Box
+                    sx={{
+                      height: 2,
+                      borderRadius: 999,
+                      background:
+                        "linear-gradient(90deg, rgba(14,165,233,0.6), rgba(16,185,129,0.6))",
+                      opacity: 0.7,
+                    }}
+                  />
+                  <Stack
+                    direction='row'
+                    useFlexGap
+                    sx={{
+                      flexWrap: "wrap",
+                      gap: 0.75,
+                      alignItems: "center",
+                    }}>
+                    {pipelineSteps.map((step, idx) => (
+                      <Stack
+                        key={step}
+                        direction='row'
+                        spacing={0.5}
+                        alignItems='center'>
+                        <Box
+                          sx={{
+                            px: 1,
+                            py: 0.4,
+                            borderRadius: 999,
+                            backgroundColor: "rgba(15,23,42,0.06)",
+                            fontSize: "0.7rem",
+                            fontWeight: 700,
+                            letterSpacing: "0.02em",
+                          }}>
+                          {step}
+                        </Box>
+                        {idx < pipelineSteps.length - 1 && (
+                          <ArrowRightAltRoundedIcon
+                            sx={{ fontSize: 14, color: "text.secondary" }}
+                          />
+                        )}
+                      </Stack>
+                    ))}
                   </Stack>
 
                   <Box
@@ -564,6 +705,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                           flexDirection: "column",
                           gap: 0.6,
                           minHeight: 92,
+                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                          "&:hover": {
+                            transform: "translateY(-3px)",
+                            boxShadow: "0 16px 26px rgba(15,23,42,0.12)",
+                          },
                         }}>
                         <Box
                           sx={{
