@@ -1,8 +1,8 @@
 import * as React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
 import {
   AppBar,
-  Avatar,
   Box,
   Container,
   Drawer,
@@ -15,6 +15,7 @@ import {
   MenuItem,
   Toolbar,
   Button,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { keyframes } from "@mui/system";
@@ -256,23 +257,24 @@ export const DrawerAppBar = () => {
                 href={`${publicPath}/files/resume-victor-hernandez-${language}.pdf`}>
                 {i18n.t("download")}
               </Button>
-              <IconButton
-                size='large'
-                aria-label='show more'
-                aria-controls={mobileMenuId}
-                aria-haspopup='true'
-                onClick={handleMobileMenuOpen}
-                color='inherit'
-                sx={{
-                  borderRadius: 2,
-                  bgcolor: "rgba(0,0,0,0.03)",
-                  "&:hover": { bgcolor: "rgba(0,0,0,0.06)" },
-                }}>
-                <Avatar
-                  alt='Language'
-                  src={`${publicPath}/images/icons/locale.svg`}
-                  />
-              </IconButton>
+              <Tooltip
+                title={language === "es" ? "Cambiar idioma" : "Change language"}
+                arrow>
+                <IconButton
+                  size='large'
+                  aria-label={language === "es" ? "Cambiar idioma" : "Change language"}
+                  aria-controls={mobileMenuId}
+                  aria-haspopup='true'
+                  onClick={handleMobileMenuOpen}
+                  color='inherit'
+                  sx={{
+                    borderRadius: 2,
+                    bgcolor: "rgba(0,0,0,0.03)",
+                    "&:hover": { bgcolor: "rgba(0,0,0,0.06)" },
+                  }}>
+                  <TranslateRoundedIcon sx={{ fontSize: 22 }} />
+                </IconButton>
+              </Tooltip>
               <IconButton
                 size='small'
                 aria-controls='menu-appbar'

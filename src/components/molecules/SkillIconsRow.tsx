@@ -1,4 +1,5 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import { useMemo, useState } from "react";
 import { publicPath } from "../../constants/gloabals";
 
 type IconItem = { src: string; alt: string };
@@ -33,7 +34,26 @@ const defaultIcons: IconItem[] = [
 export const SkillIconsRow: React.FC<{
   icons?: IconItem[];
   justify?: "center" | "flex-start";
-}> = ({ icons = defaultIcons, justify = "flex-start" }) => {
+  initialVisibleCount?: number;
+  language?: string;
+}> = ({
+  icons = defaultIcons,
+  justify = "flex-start",
+  initialVisibleCount = 6,
+  language,
+}) => {
+  const [expanded, setExpanded] = useState(false);
+  const visibleCount = Math.max(
+    0,
+    Math.min(initialVisibleCount, icons.length)
+  );
+  const hiddenCount = Math.max(0, icons.length - visibleCount);
+  const isEs = language === "es";
+  const visibleIcons = useMemo(
+    () => (expanded ? icons : icons.slice(0, visibleCount)),
+    [expanded, icons, visibleCount]
+  );
+
   return (
     <Stack
       direction='row'
@@ -45,7 +65,7 @@ export const SkillIconsRow: React.FC<{
         justifyContent: { xs: "center", md: justify },
         gap: 1.5,
       }}>
-      {icons.map((item) => (
+      {visibleIcons.map((item) => (
         <Stack
           key={item.alt}
           direction='row'
@@ -91,6 +111,37 @@ export const SkillIconsRow: React.FC<{
           </Typography>
         </Stack>
       ))}
+      {hiddenCount > 0 && (
+        <Button
+          variant='outlined'
+          size='small'
+          onClick={() => setExpanded((prev) => !prev)}
+          aria-expanded={expanded}
+          sx={{
+            borderRadius: 999,
+            px: 1.4,
+            py: 0.35,
+            minWidth: "auto",
+            textTransform: "none",
+            fontWeight: 700,
+            fontSize: "0.75rem",
+            borderColor: "rgba(15,23,42,0.2)",
+            color: "text.primary",
+            backgroundColor: "rgba(255,255,255,0.6)",
+            "&:hover": {
+              borderColor: "rgba(15,23,42,0.35)",
+              backgroundColor: "rgba(255,255,255,0.9)",
+            },
+          }}>
+          {expanded
+            ? isEs
+              ? "Ver menos"
+              : "Show less"
+            : isEs
+              ? `+${hiddenCount} más`
+              : `+${hiddenCount} more`}
+        </Button>
+      )}
     </Stack>
   );
 };

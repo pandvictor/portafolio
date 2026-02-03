@@ -11,6 +11,12 @@ import { SkillIconsRow } from "../molecules";
 import { Resume, ContactInfo } from "../../types";
 import { useMemo } from "react";
 import i18n from "../../utils/i18n";
+import { keyframes } from "@mui/system";
+
+const fadeInUp = keyframes`
+  0% { opacity: 0; transform: translateY(18px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+`;
 
 type HeroSectionProps = {
   resume: Resume;
@@ -42,6 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         background:
           "radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.12), transparent 35%), radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.14), transparent 30%), linear-gradient(120deg, rgba(255,255,255,0.94), rgba(244, 248, 255, 0.92))",
         boxShadow: "0 24px 60px rgba(15, 23, 42, 0.12)",
+        animation: `${fadeInUp} 0.6s ease`,
       }}>
       <Box
         sx={{
@@ -90,7 +97,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             direction='row'
             spacing={1}
             alignItems='center'
+            useFlexGap
             sx={{ flexWrap: "wrap", justifyContent: { xs: "center", md: "flex-start" } }}>
+            <Chip
+              label={
+                language === "es"
+                  ? "Trabajo con IA • LLMs"
+                  : "Working with AI • LLMs"
+              }
+              size='small'
+              sx={{
+                fontWeight: 800,
+                borderRadius: 99,
+                color: "white",
+                background: "linear-gradient(90deg, #0ea5e9, #10b981)",
+                boxShadow: "0 12px 30px rgba(14,165,233,0.35)",
+                "& .MuiChip-label": {
+                  px: 1.25,
+                  letterSpacing: "0.02em",
+                },
+              }}
+            />
             <Chip
               label={
                 language === "es"
@@ -98,12 +125,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   : "Fintech • Government • Exchanges"
               }
               color='secondary'
+              size='small'
               sx={{ fontWeight: 700, borderRadius: 99 }}
             />
             <Chip
               label={language === "es" ? "19+ años" : "19+ years"}
               variant='outlined'
               color='default'
+              size='small'
               sx={{ fontWeight: 700, borderRadius: 99 }}
             />
             <Chip
@@ -114,6 +143,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               }
               variant='outlined'
               color='secondary'
+              size='small'
               sx={{ fontWeight: 700, borderRadius: 99 }}
             />
           </Stack>
@@ -132,7 +162,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             sx={{ fontWeight: 600 }}>
             {resume?.position}
           </Typography>
-          <SkillIconsRow justify='flex-start' />
+          <SkillIconsRow justify='flex-start' language={language} />
           <Typography variant='body1' color='text.secondary' sx={{ maxWidth: 720 }}>
             {i18n.t("portfolio.subtitle")}
           </Typography>
