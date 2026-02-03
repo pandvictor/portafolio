@@ -203,7 +203,7 @@ export function ExercisePage() {
                       label='Priority'
                       name='priority'
                       value={formValues.priority}
-                      onChange={handlePriorityChange}
+                      // onChange={handlePriorityChange}
                       error={Boolean(errors.priority)}
                       helperText={errors.priority}
                       required>

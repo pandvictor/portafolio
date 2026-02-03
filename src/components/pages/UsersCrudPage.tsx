@@ -91,8 +91,7 @@ export function UsersCrudPage() {
     };
 
   const handleSelectChange =
-    (field: "role" | "status") =>
-    (event: SelectChangeEvent<string>) => {
+    (field: "role" | "status") => (event: SelectChangeEvent<string>) => {
       const { value } = event.target;
       setFormValues((prev) => ({
         ...prev,
@@ -151,8 +150,8 @@ export function UsersCrudPage() {
     if (editingId) {
       setUsers((prev) =>
         prev.map((user) =>
-          user.id === editingId ? { ...user, ...normalizedUser } : user
-        )
+          user.id === editingId ? { ...user, ...normalizedUser } : user,
+        ),
       );
       resetForm();
       return;
@@ -192,7 +191,11 @@ export function UsersCrudPage() {
   return (
     <MainTemplate>
       <Stack spacing={3}>
-        <Card sx={{ borderRadius: 3, boxShadow: "0 18px 40px rgba(15,23,42,0.08)" }}>
+        <Card
+          sx={{
+            borderRadius: 3,
+            boxShadow: "0 18px 40px rgba(15,23,42,0.08)",
+          }}>
           <CardContent>
             <Stack spacing={2.5}>
               <Box>
@@ -235,7 +238,7 @@ export function UsersCrudPage() {
                       label='Role'
                       name='role'
                       value={formValues.role}
-                      onChange={handleSelectChange("role")}
+                      // onChange={handleSelectChange("role")}
                       error={Boolean(errors.role)}
                       helperText={errors.role}
                       required>
@@ -255,7 +258,7 @@ export function UsersCrudPage() {
                       label='Status'
                       name='status'
                       value={formValues.status}
-                      onChange={handleSelectChange("status")}
+                      // onChange={handleSelectChange("status")}
                       error={Boolean(errors.status)}
                       helperText={errors.status}
                       required>
@@ -338,7 +341,10 @@ export function UsersCrudPage() {
                             />
                           </TableCell>
                           <TableCell align='right'>
-                            <Stack direction='row' spacing={1} justifyContent='flex-end'>
+                            <Stack
+                              direction='row'
+                              spacing={1}
+                              justifyContent='flex-end'>
                               <Button
                                 color='primary'
                                 variant='outlined'
