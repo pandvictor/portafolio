@@ -91,7 +91,7 @@ export function UsersCrudPage() {
     };
 
   const handleSelectChange =
-    (field: "role" | "status") => (event: SelectChangeEvent<string>) => {
+    (field: "role" | "status") => (event: SelectChangeEvent<unknown>) => {
       const { value } = event.target;
       setFormValues((prev) => ({
         ...prev,
@@ -238,7 +238,7 @@ export function UsersCrudPage() {
                       label='Role'
                       name='role'
                       value={formValues.role}
-                      // onChange={handleSelectChange("role")}
+                      SelectProps={{ onChange: handleSelectChange("role") }}
                       error={Boolean(errors.role)}
                       helperText={errors.role}
                       required>
@@ -258,7 +258,7 @@ export function UsersCrudPage() {
                       label='Status'
                       name='status'
                       value={formValues.status}
-                      // onChange={handleSelectChange("status")}
+                      SelectProps={{ onChange: handleSelectChange("status") }}
                       error={Boolean(errors.status)}
                       helperText={errors.status}
                       required>

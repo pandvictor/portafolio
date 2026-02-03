@@ -105,7 +105,7 @@ export function ExercisePage() {
       }
     };
 
-  const handlePriorityChange = (event: SelectChangeEvent<string>) => {
+  const handlePriorityChange = (event: SelectChangeEvent<unknown>) => {
     const { value } = event.target;
     setFormValues((prev) => ({ ...prev, priority: value as Priority }));
     if (errors.priority) {
@@ -203,7 +203,7 @@ export function ExercisePage() {
                       label='Priority'
                       name='priority'
                       value={formValues.priority}
-                      // onChange={handlePriorityChange}
+                      SelectProps={{ onChange: handlePriorityChange }}
                       error={Boolean(errors.priority)}
                       helperText={errors.priority}
                       required>
