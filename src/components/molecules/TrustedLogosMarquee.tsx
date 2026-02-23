@@ -11,11 +11,11 @@ const marquee = keyframes`
 
 const defaultLogos: LogoItem[] = [
   { src: "alphapoint-logo.png", alt: "AlphaPoint" },
-  { src: "sat_logo.png", alt: "SAT" },
-  { src: "bullseye-logo.png", alt: "Bullseye" },
-  { src: "fantasygol-logo.png", alt: "FantasyGol" },
+  { src: "sat_logo-transparent.png", alt: "SAT" },
+  { src: "bullseye-logo-transparent.png", alt: "Bullseye" },
+  { src: "fantasygol-logo-transparent.png", alt: "FantasyGol" },
   { src: "fao.png", alt: "FAO" },
-  { src: "oim.jpeg", alt: "OIM" },
+  { src: "oim-transparent.png", alt: "OIM" },
   { src: "sbs.png", alt: "SBS" },
   { src: "sieca.png", alt: "SIECA" },
   { src: "red-regional.png", alt: "Red Regional" },
@@ -43,15 +43,22 @@ export const TrustedLogosMarquee: React.FC<{ logos?: LogoItem[] }> = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              filter: "grayscale(1)",
-              opacity: 0.85,
-              transition: "opacity 0.2s ease",
-              "&:hover": { opacity: 1 },
+              filter: "grayscale(1) brightness(1.7)",
+              opacity: 0.75,
+              transition: "opacity 0.2s ease, filter 0.2s ease",
+              "&:hover": {
+                opacity: 1,
+              },
             }}>
             <img
               src={`${publicPath}/images/${logo.src}`}
               alt={logo.alt}
-              style={{ height: "100%", width: "auto", objectFit: "contain" }}
+              style={{
+                height: "100%",
+                width: "auto",
+                objectFit: "contain",
+                display: "block",
+              }}
             />
           </Box>
         ))}

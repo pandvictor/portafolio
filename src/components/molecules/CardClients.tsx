@@ -12,7 +12,12 @@ export const CardClients = ({ data }: CardClientsProps) => {
     return tech_stack.map((item: TechStack) => {
       return (
         <IconButton
-          sx={{ backgroundColor: "#ffffffad", borderRadius: "8px", margin: 1 }}
+          sx={{
+            backgroundColor: "rgba(15,23,42,0.7)",
+            border: "1px solid var(--border-subtle)",
+            borderRadius: "8px",
+            margin: 1,
+          }}
           key={item.name}
         >
           <img

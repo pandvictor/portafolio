@@ -24,7 +24,7 @@ export const UserAvatar = () => {
         transition: "transform 0.2s ease, filter 0.2s ease",
         "&:hover": {
           transform: "translateY(-1px)",
-          filter: "drop-shadow(0 6px 18px rgba(0,0,0,0.08))",
+          filter: "drop-shadow(0 10px 24px rgba(0,0,0,0.45))",
           backgroundColor: "transparent",
         },
       }}>
@@ -34,7 +34,7 @@ export const UserAvatar = () => {
           flexGrow: 1,
           width: 42,
           height: 42,
-          border: "2px solid rgba(0,0,0,0.04)",
+          border: "2px solid rgba(148,163,184,0.4)",
         }}
         alt='A'
         src={`${publicPath}/images/vic.jpeg`}

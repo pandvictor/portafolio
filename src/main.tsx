@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import "./index.css";
 import HomePage from "./components/pages/HomePage.tsx";
 import { LanguageProvider } from "./context/LanguageContext.tsx";
 import { MainTemplate } from "./components/templates/index.tsx";
 import { ExercisePage, ResumePage, ResumePrintPage, UsersCrudPage } from "./components/pages";
+import theme from "./theme";
 //import App from './App.tsx';
 
 const router = createBrowserRouter([
@@ -98,8 +100,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <LanguageProvider>
-      <RouterProvider router={router} />
-    </LanguageProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <LanguageProvider>
+        <RouterProvider router={router} />
+      </LanguageProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );

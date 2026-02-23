@@ -40,7 +40,7 @@ const Stars = ({ count }: { count: number }) => (
 );
 
 const HeaderSection = memo(({ resume }: { resume: Resume }) => (
-  <Grid item xs={12} sx={{ backgroundColor: "#343a40" }}>
+  <Grid item xs={12} sx={{ backgroundColor: "rgba(15,23,42,0.9)" }}>
     <ListItem>
       <ListItemAvatar>
         <Avatar
@@ -58,10 +58,10 @@ const HeaderSection = memo(({ resume }: { resume: Resume }) => (
       <ListItemText
         children={
           <div style={{ flex: 1 }}>
-            <Typography variant='h4' color='lightgrey'>
+            <Typography variant='h4' color='text.primary'>
               {resume.full_name}
             </Typography>
-            <Typography variant='h6' color='lightgrey'>
+            <Typography variant='h6' color='text.secondary'>
               {resume.position}
             </Typography>
           </div>
@@ -250,7 +250,15 @@ export function ResumePage() {
   return (
     <MainTemplate>
       <Box sx={{ padding: 0, margin: 0 }}>
-        <Grid container spacing={3} sx={{ backgroundColor: "white", px: { xs: 1, md: 0 } }}>
+        <Grid
+          container
+          spacing={3}
+          sx={{
+            backgroundColor: "rgba(15,23,42,0.7)",
+            px: { xs: 1, md: 0 },
+            borderRadius: 3,
+            border: "1px solid var(--border-subtle)",
+          }}>
           <HeaderSection resume={resume} />
 
           <Grid item xs={12} md={9}>

@@ -171,7 +171,12 @@ export function ExercisePage() {
   return (
     <MainTemplate>
       <Stack spacing={3}>
-        <Card sx={{ borderRadius: 3, boxShadow: "0 18px 40px rgba(15,23,42,0.08)" }}>
+        <Card
+          sx={{
+            borderRadius: 3,
+            boxShadow: "var(--shadow-soft)",
+            border: "1px solid var(--border-subtle)",
+          }}>
           <CardContent>
             <Stack spacing={2.5}>
               <Box>
@@ -258,7 +263,12 @@ export function ExercisePage() {
           </CardContent>
         </Card>
 
-        <Card sx={{ borderRadius: 3 }}>
+        <Card
+          sx={{
+            borderRadius: 3,
+            boxShadow: "var(--shadow-soft)",
+            border: "1px solid var(--border-subtle)",
+          }}>
           <CardContent>
             <Stack spacing={2}>
               <Typography variant='h5' sx={{ fontWeight: 600 }}>

@@ -75,12 +75,13 @@ export const SkillIconsRow: React.FC<{
             px: 1.25,
             py: 0.6,
             borderRadius: 999,
-            backgroundColor: "rgba(0,0,0,0.04)",
-            boxShadow: "0 8px 18px rgba(0,0,0,0.05)",
+            backgroundColor: "rgba(15,23,42,0.65)",
+            border: "1px solid var(--border-subtle)",
+            boxShadow: "0 10px 22px rgba(0,0,0,0.35)",
             transition: "transform 0.2s ease, box-shadow 0.2s ease",
             "&:hover": {
               transform: "translateY(-2px)",
-              boxShadow: "0 14px 26px rgba(0,0,0,0.08)",
+              boxShadow: "0 16px 30px rgba(0,0,0,0.45)",
             },
           }}>
           <Box
@@ -88,7 +89,7 @@ export const SkillIconsRow: React.FC<{
               width: 26,
               height: 26,
               borderRadius: "50%",
-              backgroundColor: "rgba(79,70,229,0.08)",
+              backgroundColor: "rgba(34,211,238,0.15)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -125,12 +126,12 @@ export const SkillIconsRow: React.FC<{
             textTransform: "none",
             fontWeight: 700,
             fontSize: "0.75rem",
-            borderColor: "rgba(15,23,42,0.2)",
+            borderColor: "var(--border-strong)",
             color: "text.primary",
-            backgroundColor: "rgba(255,255,255,0.6)",
+            backgroundColor: "rgba(15,23,42,0.65)",
             "&:hover": {
-              borderColor: "rgba(15,23,42,0.35)",
-              backgroundColor: "rgba(255,255,255,0.9)",
+              borderColor: "rgba(34,211,238,0.4)",
+              backgroundColor: "rgba(15,23,42,0.85)",
             },
           }}>
           {expanded

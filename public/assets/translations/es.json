@@ -440,7 +440,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "bullseye-logo.png",
+        "company_image": "bullseye-logo-transparent.png",
         "position": "Senior Full-Stack Engineer",
         "description": "Desarrollo de aplicaciones basadas en mapas con Google Maps y Mapbox para clientes retail.",
         "tasks": [
@@ -453,7 +453,7 @@
           {
             "title": "Suites de localización",
             "description": "Web y mobile apps para análisis de ubicaciones con mapas interactivos.",
-            "image": "bullseye-banner.png",
+            "image": "bullseye-banner-transparent.png",
             "url": "https://bullseyeapps.com",
             "date": "2022-10-01",
             "tech_stack": [
