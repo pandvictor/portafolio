@@ -40,8 +40,8 @@ const HeroRoot = styled(Box)(({ theme }) => ({
 
 const FlipButtonShell = styled(Box)(({ theme }) => ({
   position: "absolute",
-  top: 10,
-  right: 10,
+  top: 16,
+  right: 16,
   zIndex: 5,
   padding: "1px",
   borderRadius: 999,
@@ -49,8 +49,8 @@ const FlipButtonShell = styled(Box)(({ theme }) => ({
     "linear-gradient(90deg, rgba(34,211,238,0.95), rgba(163,230,53,0.9))",
   boxShadow: "0 12px 28px rgba(34,211,238,0.35)",
   [theme.breakpoints.up("sm")]: {
-    top: 14,
-    right: 14,
+    top: 20,
+    right: 20,
   },
 }));
 
