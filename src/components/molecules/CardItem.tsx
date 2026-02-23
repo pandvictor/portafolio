@@ -212,7 +212,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
               </LogoWrap>
             ))}
           </LogoRow>
-          <ProjectTitle variant='h6' component='div'>
+          <ProjectTitle variant='h6'>
             {title}
           </ProjectTitle>
         </HeaderStack>

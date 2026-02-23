@@ -233,19 +233,6 @@ const PrimaryCtaButton = styled(Button)(({ theme }) => ({
   boxShadow: "0 18px 40px rgba(0,0,0,0.12)",
 }));
 
-const LinkedInButton = styled(Button)(({ theme }) => ({
-  borderRadius: theme.shape.borderRadius * 2,
-  textTransform: "none",
-  fontWeight: 700,
-  borderColor: "rgba(10,102,194,0.6)",
-  color: "#7cb6ff",
-  backgroundColor: "rgba(10,102,194,0.18)",
-  "&:hover": {
-    borderColor: "#7cb6ff",
-    backgroundColor: "rgba(10,102,194,0.28)",
-  },
-}));
-
 const TalkButton = styled(Button)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius * 2,
 }));
@@ -710,7 +697,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   {i18n.t("download")}
                 </PrimaryCtaButton>
                 {linkedinUrl && (
-                  <LinkedInButton
+                  <Button
                     variant='outlined'
                     size='large'
                     href={linkedinUrl}
@@ -721,9 +708,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         alt='LinkedIn'
                         src={`${publicPath}/images/icons/linkedin.svg`}
                       />
-                    }>
+                    }
+                    sx={{
+                      borderRadius: (theme) => theme.shape.borderRadius * 2,
+                      textTransform: "none",
+                      fontWeight: 700,
+                      borderColor: "rgba(10,102,194,0.6)",
+                      color: "#7cb6ff",
+                      backgroundColor: "rgba(10,102,194,0.18)",
+                      "&:hover": {
+                        borderColor: "#7cb6ff",
+                        backgroundColor: "rgba(10,102,194,0.28)",
+                      },
+                    }}>
                     LinkedIn
-                  </LinkedInButton>
+                  </Button>
                 )}
                 {contactUrl && (
                   <TalkButton

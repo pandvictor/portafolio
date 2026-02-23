@@ -10,7 +10,6 @@ import {
   IconButton,
   Grid,
   Card,
-  CardMedia,
   CardContent,
   Box,
 } from "@mui/material";
@@ -73,10 +72,11 @@ const DetailsGrid = styled(Grid)(({ theme }) => ({
   marginTop: theme.spacing(2),
 }));
 
-const DetailMedia = styled(CardMedia)(() => ({
+const DetailMedia = styled("img")(() => ({
   width: "100%",
   maxHeight: 260,
   objectFit: "contain",
+  display: "block",
   backgroundColor: "rgba(15,23,42,0.6)",
 }));
 
@@ -140,8 +140,7 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
             <Grid item xs={12} key={`${item.image}-${idx}`}>
               <Card variant='outlined'>
                 <DetailMedia
-                  component='img'
-                  image={`${publicPath}/images/${item.image}`}
+                  src={`${publicPath}/images/${item.image}`}
                   alt={payload.project.title}
                 />
                 <CardContent>
