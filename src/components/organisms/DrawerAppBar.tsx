@@ -18,6 +18,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { keyframes } from "@mui/system";
 
 import { UserAvatar } from "../molecules";
@@ -38,6 +39,168 @@ const fadeInUp = keyframes`
   0% { opacity: 0; transform: translateY(12px) scale(0.98); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 `;
+
+const DrawerContainer = styled(Box)(({ theme }) => ({
+  textAlign: "center",
+  marginTop: theme.spacing(5),
+  paddingLeft: theme.spacing(3),
+  paddingRight: theme.spacing(3),
+  paddingBottom: theme.spacing(3),
+}));
+
+const DrawerList = styled(List)(({ theme }) => ({
+  marginTop: theme.spacing(2),
+}));
+
+const DrawerNavButton = styled(ListItemButton, {
+  shouldForwardProp: (prop) => prop !== "delay",
+})<{ delay: number }>(({ delay, theme }) => ({
+  textAlign: "center",
+  borderRadius: theme.shape.borderRadius * 2,
+  transition: "background-color 0.2s ease, transform 0.2s ease",
+  opacity: 0,
+  animation: `${fadeInUp} 0.6s ease ${delay}s forwards`,
+  "&:hover": {
+    transform: "translateY(-2px)",
+    backgroundColor: "rgba(255,255,255,0.06)",
+  },
+}));
+
+const DrawerNavText = styled(Typography)(() => ({
+  fontWeight: 600,
+}));
+
+const DrawerDownloadButton = styled(Button)(({ theme }) => ({
+  textTransform: "none",
+  marginTop: theme.spacing(2),
+  borderRadius: theme.shape.borderRadius * 2,
+  boxShadow: "0 16px 36px rgba(0,0,0,0.45)",
+}));
+
+const AppBarRoot = styled(AppBar)(() => ({
+  boxShadow: "0 18px 40px rgba(0, 0, 0, 0.4)",
+  background:
+    "linear-gradient(120deg, rgba(10,15,24,0.92), rgba(14,22,34,0.88))",
+  backdropFilter: "blur(16px)",
+  borderBottom: "1px solid var(--border-subtle)",
+  animation: `${fadeInDown} 0.6s ease`,
+}));
+
+const ToolbarRoot = styled(Toolbar)(({ theme }) => ({
+  paddingTop: theme.spacing(1),
+  paddingBottom: theme.spacing(1),
+  paddingLeft: theme.spacing(1.5),
+  paddingRight: theme.spacing(1.5),
+  minHeight: 80,
+  gap: theme.spacing(2),
+  [theme.breakpoints.up("md")]: {
+    paddingLeft: theme.spacing(2.5),
+    paddingRight: theme.spacing(2.5),
+  },
+}));
+
+const LogoBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  flexGrow: 1,
+  [theme.breakpoints.up("md")]: {
+    flexGrow: 0,
+  },
+}));
+
+const NavLinks = styled(Box)(({ theme }) => ({
+  flexGrow: 1,
+  display: "none",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: theme.spacing(0.75),
+  [theme.breakpoints.up("md")]: {
+    display: "flex",
+  },
+  "& a.nav-link": {
+    padding: "4px",
+    borderRadius: 10,
+  },
+  "& a.nav-link.active": {
+    backgroundColor: "rgba(34,211,238,0.18)",
+  },
+  "& a.nav-link.active button": {
+    color: theme.palette.primary.main,
+    fontWeight: 700,
+  },
+}));
+
+const NavButton = styled(Button)(({ theme }) => ({
+  textTransform: "none",
+  fontWeight: 600,
+  borderRadius: theme.shape.borderRadius * 2,
+  paddingLeft: theme.spacing(2),
+  paddingRight: theme.spacing(2),
+  opacity: 0,
+  animation: `${fadeInDown} 0.6s ease 0.2s forwards`,
+  transition: "color 0.2s ease, transform 0.2s ease, background-color 0.2s ease",
+  "&:hover": {
+    color: theme.palette.primary.main,
+    backgroundColor: "rgba(255,255,255,0.06)",
+    transform: "translateY(-2px)",
+  },
+}));
+
+const ActionsBox = styled(Box)(({ theme }) => ({
+  flexGrow: 0,
+  display: "flex",
+  alignItems: "center",
+  gap: theme.spacing(1),
+  marginLeft: 0,
+  [theme.breakpoints.up("md")]: {
+    marginLeft: theme.spacing(2),
+  },
+}));
+
+const TopDownloadButton = styled(Button)(({ theme }) => ({
+  display: "none",
+  textTransform: "none",
+  borderRadius: theme.shape.borderRadius * 2,
+  boxShadow: "0 16px 36px rgba(0,0,0,0.45)",
+  fontWeight: 700,
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+  },
+}));
+
+const ToolbarIconButton = styled(IconButton)(({ theme }) => ({
+  borderRadius: theme.shape.borderRadius * 2,
+  backgroundColor: "rgba(255,255,255,0.08)",
+  "&:hover": {
+    backgroundColor: "rgba(255,255,255,0.12)",
+  },
+}));
+
+const LanguageIcon = styled(TranslateRoundedIcon)(() => ({
+  fontSize: 22,
+}));
+
+const MenuToggleButton = styled(ToolbarIconButton)(({ theme }) => ({
+  display: "inline-flex",
+  [theme.breakpoints.up("md")]: {
+    display: "none",
+  },
+}));
+
+const MobileDrawer = styled(Drawer)(({ theme }) => ({
+  display: "block",
+  [theme.breakpoints.up("sm")]: {
+    display: "none",
+  },
+  "& .MuiDrawer-paper": {
+    boxSizing: "border-box",
+    width: "100%",
+    background:
+      "linear-gradient(180deg, rgba(15,23,42,0.98) 0%, rgba(11,17,27,0.98) 65%)",
+    borderTopLeftRadius: 18,
+    borderTopRightRadius: 18,
+  },
+}));
 
 export const DrawerAppBar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -82,30 +245,21 @@ export const DrawerAppBar = () => {
       onClose={handleMobileMenuClose}>
       <MenuItem>
         <Button color='inherit' onClick={() => handleLanguageChange("en")}>
-          {" "}
-          English{" "}
+          English
         </Button>
       </MenuItem>
       <MenuItem>
         <Button color='inherit' onClick={() => handleLanguageChange("es")}>
-          {" "}
-          Español{" "}
+          Español
         </Button>
       </MenuItem>
     </Menu>
   );
 
   const drawer = (
-    <Box
-      onClick={handleDrawerToggle}
-      sx={{
-        textAlign: "center",
-        marginTop: 5,
-        px: 3,
-        pb: 3,
-      }}>
+    <DrawerContainer onClick={handleDrawerToggle}>
       <UserAvatar />
-      <List sx={{ mt: 2 }}>
+      <DrawerList>
         {pages.map((page, idx) => (
           <LinkItem
             key={page}
@@ -114,96 +268,37 @@ export const DrawerAppBar = () => {
             relative='path'
             className='nav-link'>
             <ListItem key={page} disablePadding>
-              <ListItemButton
-                sx={{
-                  textAlign: "center",
-                  borderRadius: 2,
-                  transition: "background-color 0.2s ease, transform 0.2s ease",
-                  opacity: 0,
-                  animation: `${fadeInUp} 0.6s ease ${(idx + 1) * 0.08}s forwards`,
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    backgroundColor: "rgba(0,0,0,0.04)",
-                  },
-                }}>
+              <DrawerNavButton delay={(idx + 1) * 0.08}>
                 <ListItemText
                   primary={
-                    <Typography sx={{ fontWeight: 600 }}>
-                      {i18n.t(page + ".title")}
-                    </Typography>
+                    <DrawerNavText>{i18n.t(page + ".title")}</DrawerNavText>
                   }
                 />
-              </ListItemButton>
+              </DrawerNavButton>
             </ListItem>
           </LinkItem>
         ))}
-        <Button
+        <DrawerDownloadButton
           fullWidth
           variant='contained'
           color='secondary'
-          sx={{
-            textTransform: "none",
-            marginTop: 2,
-            borderRadius: 2,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.08)",
-          }}
           size='medium'
           href={`${publicPath}/files/resume-victor-hernandez-${language}.pdf`}>
           {i18n.t("download")}
-        </Button>
-      </List>
-    </Box>
+        </DrawerDownloadButton>
+      </DrawerList>
+    </DrawerContainer>
   );
 
   return (
     <>
-      <AppBar
-        color='default'
-        position='fixed'
-        sx={{
-          boxShadow: "0 12px 30px rgba(15, 23, 42, 0.08)",
-          background:
-            "linear-gradient(120deg, rgba(255,255,255,0.96), rgba(247,250,252,0.94))",
-          backdropFilter: "blur(14px)",
-          borderBottom: "1px solid rgba(226, 232, 240, 0.8)",
-          animation: `${fadeInDown} 0.6s ease`,
-        }}>
+      <AppBarRoot color='default' position='fixed'>
         <Container maxWidth='xl'>
-          <Toolbar
-            disableGutters
-            sx={{
-              py: 1,
-              px: { xs: 1.5, md: 2.5 },
-              minHeight: 80,
-              gap: 2,
-            }}>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                flexGrow: { xs: 1, md: 0 },
-              }}>
+          <ToolbarRoot disableGutters>
+            <LogoBox>
               <UserAvatar />
-            </Box>
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", md: "flex" },
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 0.75,
-                "& a.nav-link": {
-                  padding: "4px",
-                  borderRadius: 10,
-                },
-                "& a.nav-link.active": {
-                  backgroundColor: "rgba(79,70,229,0.1)",
-                },
-                "& a.nav-link.active button": {
-                  color: "secondary.main",
-                  fontWeight: 700,
-                },
-              }}>
+            </LogoBox>
+            <NavLinks>
               {pages.map((page) => (
                 <LinkItem
                   key={page}
@@ -211,109 +306,58 @@ export const DrawerAppBar = () => {
                   color='inherit'
                   relative='path'
                   className='nav-link'>
-                  <Button
-                    key={page}
-                    color='inherit'
-                    sx={{
-                      textTransform: "none",
-                      fontWeight: 600,
-                      borderRadius: 2,
-                      px: 2,
-                      opacity: 0,
-                      animation: `${fadeInDown} 0.6s ease 0.2s forwards`,
-                      transition:
-                        "color 0.2s ease, transform 0.2s ease, background-color 0.2s ease",
-                      "&:hover": {
-                        color: "secondary.main",
-                        backgroundColor: "rgba(0,0,0,0.04)",
-                        transform: "translateY(-2px)",
-                      },
-                    }}>
+                  <NavButton key={page} color='inherit'>
                     {i18n.t(page + ".title")}
-                  </Button>
+                  </NavButton>
                 </LinkItem>
               ))}
-            </Box>
+            </NavLinks>
 
-            <Box
-              sx={{
-                flexGrow: 0,
-                display: "flex",
-                alignItems: "center",
-                gap: 1,
-                ml: { xs: 0, md: 2 },
-              }}>
-              <Button
+            <ActionsBox>
+              <TopDownloadButton
                 variant='contained'
                 color='secondary'
-                sx={{
-                  display: { xs: "none", sm: "flex" },
-                  textTransform: "none",
-                  borderRadius: 2,
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
-                  fontWeight: 700,
-                }}
                 size='small'
                 href={`${publicPath}/files/resume-victor-hernandez-${language}.pdf`}>
                 {i18n.t("download")}
-              </Button>
+              </TopDownloadButton>
               <Tooltip
                 title={language === "es" ? "Cambiar idioma" : "Change language"}
                 arrow>
-                <IconButton
+                <ToolbarIconButton
                   size='large'
-                  aria-label={language === "es" ? "Cambiar idioma" : "Change language"}
+                  aria-label={
+                    language === "es" ? "Cambiar idioma" : "Change language"
+                  }
                   aria-controls={mobileMenuId}
                   aria-haspopup='true'
                   onClick={handleMobileMenuOpen}
-                  color='inherit'
-                  sx={{
-                    borderRadius: 2,
-                    bgcolor: "rgba(0,0,0,0.03)",
-                    "&:hover": { bgcolor: "rgba(0,0,0,0.06)" },
-                  }}>
-                  <TranslateRoundedIcon sx={{ fontSize: 22 }} />
-                </IconButton>
+                  color='inherit'>
+                  <LanguageIcon />
+                </ToolbarIconButton>
               </Tooltip>
-              <IconButton
+              <MenuToggleButton
                 size='small'
                 aria-controls='menu-appbar'
                 aria-haspopup='true'
                 onClick={handleDrawerToggle}
-                color='inherit'
-                sx={{
-                  display: { xs: "inline-flex", md: "none" },
-                  borderRadius: 2,
-                  bgcolor: "rgba(0,0,0,0.03)",
-                  "&:hover": { bgcolor: "rgba(0,0,0,0.06)" },
-                }}>
+                color='inherit'>
                 <MenuIcon />
-              </IconButton>
-            </Box>
-          </Toolbar>
+              </MenuToggleButton>
+            </ActionsBox>
+          </ToolbarRoot>
         </Container>
-      </AppBar>
+      </AppBarRoot>
       <nav>
-        <Drawer
+        <MobileDrawer
           variant='temporary'
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: "100%",
-              background:
-                "linear-gradient(180deg, rgba(247,250,252,0.96) 0%, #ffffff 65%)",
-              borderTopLeftRadius: 18,
-              borderTopRightRadius: 18,
-            },
+            keepMounted: true,
           }}>
           {drawer}
-        </Drawer>
+        </MobileDrawer>
       </nav>
       {renderMobileMenu}
     </>

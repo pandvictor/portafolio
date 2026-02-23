@@ -6,6 +6,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import SwapHorizRoundedIcon from "@mui/icons-material/SwapHorizRounded";
 import ArrowRightAltRoundedIcon from "@mui/icons-material/ArrowRightAltRounded";
 import { publicPath } from "../../constants/gloabals";
@@ -19,6 +20,478 @@ const fadeInUp = keyframes`
   0% { opacity: 0; transform: translateY(18px) scale(0.98); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 `;
+
+const HeroRoot = styled(Box)(({ theme }) => ({
+  marginBottom: theme.spacing(5),
+  position: "relative",
+  overflow: "hidden",
+  borderRadius: theme.shape.borderRadius * 4,
+  border: "1px solid var(--border-subtle)",
+  background:
+    "radial-gradient(circle at 18% 20%, rgba(34,211,238,0.18), transparent 40%), radial-gradient(circle at 82% 10%, rgba(163,230,53,0.16), transparent 38%), linear-gradient(135deg, rgba(12,18,28,0.98), rgba(11,17,27,0.92))",
+  boxShadow: "var(--shadow-strong)",
+  animation: `${fadeInUp} 0.6s ease`,
+  perspective: "1600px",
+  [theme.breakpoints.up("md")]: {
+    marginBottom: theme.spacing(7),
+    borderRadius: theme.shape.borderRadius * 5,
+  },
+}));
+
+const FlipButtonShell = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  top: 10,
+  right: 10,
+  zIndex: 5,
+  padding: "1px",
+  borderRadius: 999,
+  background:
+    "linear-gradient(90deg, rgba(34,211,238,0.95), rgba(163,230,53,0.9))",
+  boxShadow: "0 12px 28px rgba(34,211,238,0.35)",
+  [theme.breakpoints.up("sm")]: {
+    top: 14,
+    right: 14,
+  },
+}));
+
+const FlipIcon = styled(SwapHorizRoundedIcon)(() => ({
+  fontSize: 18,
+}));
+
+const FlipButton = styled(Button)(({ theme }) => ({
+  borderRadius: 999,
+  padding: theme.spacing(0.45, 1.4),
+  minHeight: 0,
+  textTransform: "none",
+  fontWeight: 800,
+  fontSize: "0.72rem",
+  color: "rgba(226,232,240,0.92)",
+  backgroundColor: "rgba(15,23,42,0.7)",
+  backdropFilter: "blur(6px)",
+  boxShadow: "inset 0 0 0 1px rgba(148,163,184,0.35)",
+  "&:hover": {
+    backgroundColor: "rgba(17,24,39,0.9)",
+    transform: "translateY(-2px)",
+    boxShadow: "0 12px 22px rgba(0,0,0,0.45)",
+  },
+}));
+
+const OrbTop = styled(Box)(() => ({
+  position: "absolute",
+  width: 180,
+  height: 180,
+  borderRadius: "50%",
+  top: -50,
+  right: -30,
+  background:
+    "radial-gradient(circle, rgba(34,211,238,0.28) 0%, rgba(34,211,238,0.06) 60%, transparent 70%)",
+  filter: "blur(1px)",
+}));
+
+const OrbBottom = styled(Box)(() => ({
+  position: "absolute",
+  width: 220,
+  height: 220,
+  borderRadius: "50%",
+  bottom: -60,
+  left: -40,
+  background:
+    "radial-gradient(circle, rgba(163,230,53,0.2) 0%, rgba(163,230,53,0.05) 65%, transparent 75%)",
+  filter: "blur(2px)",
+}));
+
+const FlipGrid = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "flipped" && prop !== "reducedMotion",
+})<{ flipped: boolean; reducedMotion: boolean }>(({ flipped, reducedMotion }) => ({
+  position: "relative",
+  display: "grid",
+  transformStyle: "preserve-3d",
+  transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+  transition: reducedMotion ? "none" : "transform 0.9s ease",
+}));
+
+const FlipFace = styled(Box)(() => ({
+  gridArea: "1 / 1",
+  backfaceVisibility: "hidden",
+}));
+
+const FlipBackFace = styled(Box)(() => ({
+  gridArea: "1 / 1",
+  transform: "rotateY(180deg)",
+  backfaceVisibility: "hidden",
+}));
+
+const HeroContent = styled(Stack)(({ theme }) => ({
+  position: "relative",
+  padding: theme.spacing(3.5, 2.5),
+  [theme.breakpoints.up("sm")]: {
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+  },
+  [theme.breakpoints.up("md")]: {
+    padding: theme.spacing(6, 5),
+  },
+}));
+
+const HeroLeft = styled(Stack)(({ theme }) => ({
+  flex: 1,
+  minWidth: 0,
+  textAlign: "center",
+  alignItems: "center",
+  [theme.breakpoints.up("md")]: {
+    textAlign: "left",
+    alignItems: "flex-start",
+  },
+}));
+
+const ChipRow = styled(Stack)(({ theme }) => ({
+  flexWrap: "wrap",
+  justifyContent: "center",
+  [theme.breakpoints.up("md")]: {
+    justifyContent: "flex-start",
+  },
+}));
+
+const GradientChip = styled(Chip)(({ theme }) => ({
+  fontWeight: 800,
+  borderRadius: 999,
+  color: "white",
+  background: "linear-gradient(90deg, #22d3ee, #a3e635)",
+  boxShadow: "0 12px 30px rgba(34,211,238,0.35)",
+  "& .MuiChip-label": {
+    paddingLeft: theme.spacing(1.25),
+    paddingRight: theme.spacing(1.25),
+    letterSpacing: "0.02em",
+  },
+}));
+
+const SecondaryChip = styled(Chip)(() => ({
+  fontWeight: 700,
+  borderRadius: 999,
+}));
+
+const OutlineChip = styled(Chip)(() => ({
+  fontWeight: 700,
+  borderRadius: 999,
+  borderColor: "var(--border-strong)",
+  color: "var(--text-primary)",
+}));
+
+const OutlineSecondaryChip = styled(Chip)(() => ({
+  fontWeight: 700,
+  borderRadius: 999,
+  borderColor: "rgba(163,230,53,0.6)",
+  color: "var(--text-primary)",
+}));
+
+const HeroName = styled(Typography)(() => ({
+  fontWeight: 800,
+  lineHeight: 1.1,
+  letterSpacing: "-0.02em",
+}));
+
+const HeroRole = styled(Typography)(() => ({
+  fontWeight: 600,
+}));
+
+const HeroSubtitle = styled(Typography)(() => ({
+  maxWidth: 720,
+}));
+
+const BulletRow = styled(Stack)(({ theme }) => ({
+  justifyContent: "center",
+  [theme.breakpoints.up("md")]: {
+    justifyContent: "flex-start",
+  },
+}));
+
+const BulletDot = styled(Box)(() => ({
+  width: 10,
+  height: 10,
+  borderRadius: "50%",
+  background: "radial-gradient(circle, #22d3ee 0%, #a3e635 80%)",
+  boxShadow: "0 0 0 6px rgba(34,211,238,0.2)",
+  flexShrink: 0,
+}));
+
+const BulletText = styled(Typography)(() => ({
+  fontWeight: 600,
+}));
+
+const CtaRow = styled(Stack)(({ theme }) => ({
+  paddingTop: theme.spacing(1),
+  alignItems: "stretch",
+  justifyContent: "center",
+  [theme.breakpoints.up("sm")]: {
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+}));
+
+const PrimaryCtaButton = styled(Button)(({ theme }) => ({
+  borderRadius: theme.shape.borderRadius * 2,
+  boxShadow: "0 18px 40px rgba(0,0,0,0.12)",
+}));
+
+const LinkedInButton = styled(Button)(({ theme }) => ({
+  borderRadius: theme.shape.borderRadius * 2,
+  textTransform: "none",
+  fontWeight: 700,
+  borderColor: "rgba(10,102,194,0.6)",
+  color: "#7cb6ff",
+  backgroundColor: "rgba(10,102,194,0.18)",
+  "&:hover": {
+    borderColor: "#7cb6ff",
+    backgroundColor: "rgba(10,102,194,0.28)",
+  },
+}));
+
+const TalkButton = styled(Button)(({ theme }) => ({
+  borderRadius: theme.shape.borderRadius * 2,
+}));
+
+const LinkedInIcon = styled("img")(() => ({
+  width: 18,
+  height: 18,
+}));
+
+const AvatarWrap = styled(Box)(({ theme }) => ({
+  position: "relative",
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  [theme.breakpoints.up("md")]: {
+    width: 340,
+  },
+}));
+
+const AvatarGlow = styled(Box)(() => ({
+  position: "absolute",
+  inset: 14,
+  borderRadius: "28px",
+  background:
+    "linear-gradient(135deg, rgba(34,211,238,0.18), rgba(163,230,53,0.12))",
+  filter: "blur(6px)",
+}));
+
+const HeroAvatar = styled(Avatar)(({ theme }) => ({
+  width: 200,
+  height: 200,
+  borderRadius: "28px",
+  border: "2px solid rgba(148,163,184,0.35)",
+  boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
+  position: "relative",
+  zIndex: 1,
+  objectFit: "cover",
+  [theme.breakpoints.up("sm")]: {
+    width: 240,
+    height: 240,
+  },
+  [theme.breakpoints.up("md")]: {
+    width: 300,
+    height: 300,
+  },
+}));
+
+const SectionTitle = styled(Typography)(() => ({
+  fontWeight: 800,
+  lineHeight: 1.1,
+  letterSpacing: "-0.02em",
+}));
+
+const SectionBody = styled(Typography)(() => ({
+  maxWidth: 700,
+}));
+
+const TagRow = styled(Stack)(({ theme }) => ({
+  flexWrap: "wrap",
+  gap: theme.spacing(1),
+  justifyContent: "center",
+  [theme.breakpoints.up("md")]: {
+    justifyContent: "flex-start",
+  },
+}));
+
+const TagChip = styled(Chip)(() => ({
+  borderRadius: 999,
+  fontWeight: 700,
+  borderColor: "var(--border-strong)",
+}));
+
+const ToolChip = styled(Chip)(() => ({
+  borderRadius: 999,
+  fontWeight: 800,
+  color: "white",
+  background:
+    "linear-gradient(90deg, rgba(34,211,238,0.9), rgba(163,230,53,0.85))",
+  boxShadow: "0 10px 22px rgba(34,211,238,0.3)",
+}));
+
+const ToolsCaption = styled(Typography)(() => ({
+  fontWeight: 600,
+}));
+
+const PipelineWrap = styled(Box)(({ theme }) => ({
+  position: "relative",
+  width: "100%",
+  maxWidth: 440,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  [theme.breakpoints.up("md")]: {
+    width: 380,
+  },
+}));
+
+const PipelineGlow = styled(Box)(() => ({
+  position: "absolute",
+  inset: 14,
+  borderRadius: "28px",
+  background:
+    "linear-gradient(135deg, rgba(34,211,238,0.2), rgba(163,230,53,0.12))",
+  filter: "blur(6px)",
+}));
+
+const PipelinePanel = styled(Box)(({ theme }) => ({
+  width: "100%",
+  borderRadius: "28px",
+  border: "2px solid rgba(148,163,184,0.35)",
+  boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
+  position: "relative",
+  zIndex: 1,
+  background:
+    "linear-gradient(135deg, rgba(12,18,28,0.95), rgba(15,23,42,0.9))",
+  backdropFilter: "blur(6px)",
+  padding: theme.spacing(2),
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(2.5),
+  },
+}));
+
+const PipelineHeaderIcon = styled(Box)(() => ({
+  width: 36,
+  height: 36,
+  borderRadius: "12px",
+  display: "grid",
+  placeItems: "center",
+  background:
+    "linear-gradient(135deg, rgba(34,211,238,0.18), rgba(163,230,53,0.18))",
+}));
+
+const Icon20 = styled("img")(() => ({
+  width: 20,
+  height: 20,
+}));
+
+const PipelineTitle = styled(Typography)(() => ({
+  fontWeight: 800,
+}));
+
+const PipelineChip = styled(Chip)(() => ({
+  marginLeft: "auto",
+  fontWeight: 800,
+  borderRadius: 999,
+  color: "white",
+  background:
+    "linear-gradient(90deg, rgba(34,211,238,0.9), rgba(163,230,53,0.9))",
+}));
+
+const PipelineDivider = styled(Box)(() => ({
+  height: 2,
+  borderRadius: 999,
+  background:
+    "linear-gradient(90deg, rgba(34,211,238,0.6), rgba(163,230,53,0.6))",
+  opacity: 0.7,
+}));
+
+const PipelineStepsRow = styled(Stack)(({ theme }) => ({
+  flexWrap: "wrap",
+  gap: theme.spacing(0.75),
+  alignItems: "center",
+}));
+
+const PipelineStepBadge = styled(Box)(() => ({
+  padding: "3.2px 8px",
+  borderRadius: 999,
+  backgroundColor: "rgba(148,163,184,0.12)",
+  fontSize: "0.7rem",
+  fontWeight: 700,
+  letterSpacing: "0.02em",
+}));
+
+const ArrowIcon = styled(ArrowRightAltRoundedIcon)(() => ({
+  fontSize: 14,
+  color: "rgba(148,163,184,0.9)",
+}));
+
+const PipelineCardsGrid = styled(Box)(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(2, minmax(0,1fr))",
+  gap: theme.spacing(1.25),
+}));
+
+const PipelineCard = styled(Box)(() => ({
+  padding: "9.6px",
+  borderRadius: 8,
+  border: "1px solid var(--border-subtle)",
+  background: "linear-gradient(135deg, rgba(15,23,42,0.9), rgba(12,18,28,0.95))",
+  boxShadow: "0 16px 28px rgba(0,0,0,0.45)",
+  display: "flex",
+  flexDirection: "column",
+  gap: 6,
+  minHeight: 92,
+  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+  "&:hover": {
+    transform: "translateY(-3px)",
+    boxShadow: "0 22px 36px rgba(0,0,0,0.55)",
+  },
+}));
+
+const PipelineCardIcon = styled(Box)(() => ({
+  width: 32,
+  height: 32,
+  borderRadius: "10px",
+  backgroundColor: "rgba(34,211,238,0.12)",
+  display: "grid",
+  placeItems: "center",
+}));
+
+const Icon18 = styled("img")(() => ({
+  width: 18,
+  height: 18,
+}));
+
+const PipelineCardTitle = styled(Typography)(() => ({
+  fontWeight: 800,
+}));
+
+const DeliveryRow = styled(Stack)(({ theme }) => ({
+  padding: theme.spacing(0.8, 1.2),
+  borderRadius: 999,
+  border: "1px solid rgba(34,211,238,0.3)",
+  backgroundColor: "rgba(34,211,238,0.12)",
+}));
+
+const DeliveryItem = styled(Box)(() => ({
+  display: "flex",
+  alignItems: "center",
+  gap: 4,
+}));
+
+const Icon16 = styled("img")(() => ({
+  width: 16,
+  height: 16,
+}));
+
+const DeliveryLabel = styled(Typography)(() => ({
+  fontWeight: 700,
+}));
+
+const DeliveryCaption = styled(Typography)(() => ({
+  fontWeight: 600,
+  marginLeft: "auto",
+}));
 
 type HeroSectionProps = {
   resume: Resume;
@@ -144,56 +617,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   };
 
   return (
-    <Box
+    <HeroRoot
       onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      sx={{
-        mb: { xs: 5, md: 7 },
-        position: "relative",
-        overflow: "hidden",
-        borderRadius: { xs: 4, md: 5 },
-        border: "1px solid rgba(226,232,240,0.8)",
-        background:
-          "radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.12), transparent 35%), radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.14), transparent 30%), linear-gradient(120deg, rgba(255,255,255,0.94), rgba(244, 248, 255, 0.92))",
-        boxShadow: "0 24px 60px rgba(15, 23, 42, 0.12)",
-        animation: `${fadeInUp} 0.6s ease`,
-        perspective: "1600px",
-      }}>
-      <Box
-        sx={{
-          position: "absolute",
-          top: { xs: 10, sm: 14 },
-          right: { xs: 10, sm: 14 },
-          zIndex: 5,
-          p: "1px",
-          borderRadius: 999,
-          background:
-            "linear-gradient(90deg, rgba(14,165,233,0.9), rgba(16,185,129,0.9))",
-          boxShadow: "0 12px 28px rgba(14,165,233,0.25)",
-        }}>
-        <Button
+      onMouseLeave={() => setIsPaused(false)}>
+      <FlipButtonShell>
+        <FlipButton
           onClick={handleManualFlip}
           aria-label={language === "es" ? "Girar sección" : "Flip section"}
-          endIcon={<SwapHorizRoundedIcon sx={{ fontSize: 18 }} />}
-          size='small'
-          sx={{
-            borderRadius: 999,
-            px: 1.4,
-            py: 0.45,
-            minHeight: 0,
-            textTransform: "none",
-            fontWeight: 800,
-            fontSize: "0.72rem",
-            color: "rgba(15,23,42,0.9)",
-            backgroundColor: "rgba(255,255,255,0.92)",
-            backdropFilter: "blur(6px)",
-            boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.7)",
-            "&:hover": {
-              backgroundColor: "white",
-              transform: "translateY(-2px)",
-              boxShadow: "0 10px 18px rgba(15,23,42,0.12)",
-            },
-          }}>
+          endIcon={<FlipIcon />}
+          size='small'>
           {isFlipped
             ? language === "es"
               ? "Ver perfil"
@@ -201,93 +633,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             : language === "es"
               ? "Ver IA"
               : "View AI"}
-        </Button>
-      </Box>
-      <Box
-        sx={{
-          position: "absolute",
-          width: 180,
-          height: 180,
-          borderRadius: "50%",
-          top: -50,
-          right: -30,
-          background:
-            "radial-gradient(circle, rgba(79,70,229,0.24) 0%, rgba(79,70,229,0.05) 60%, transparent 70%)",
-          filter: "blur(1px)",
-        }}
-      />
-      <Box
-        sx={{
-          position: "absolute",
-          width: 220,
-          height: 220,
-          borderRadius: "50%",
-          bottom: -60,
-          left: -40,
-          background:
-            "radial-gradient(circle, rgba(16,185,129,0.18) 0%, rgba(16,185,129,0.04) 65%, transparent 75%)",
-          filter: "blur(2px)",
-        }}
-      />
-      <Box
-        sx={{
-          position: "relative",
-          display: "grid",
-          transformStyle: "preserve-3d",
-          transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
-          transition: prefersReducedMotion ? "none" : "transform 0.9s ease",
-        }}>
-        <Box
-          sx={{
-            gridArea: "1 / 1",
-            backfaceVisibility: "hidden",
-          }}>
-          <Stack
+        </FlipButton>
+      </FlipButtonShell>
+      <OrbTop />
+      <OrbBottom />
+      <FlipGrid flipped={isFlipped} reducedMotion={prefersReducedMotion}>
+        <FlipFace>
+          <HeroContent
             direction={{ xs: "column", md: "row" }}
             spacing={{ xs: 3, md: 5 }}
-            alignItems='center'
-            sx={{
-              position: "relative",
-              px: { xs: 2.5, sm: 3, md: 5 },
-              py: { xs: 3.5, md: 6 },
-            }}>
-            <Stack
-              spacing={2.5}
-              sx={{
-                flex: 1,
-                minWidth: 0,
-                textAlign: { xs: "center", md: "left" },
-                alignItems: { xs: "center", md: "flex-start" },
-              }}>
-              <Stack
-                direction='row'
-                spacing={1}
-                alignItems='center'
-                useFlexGap
-                sx={{
-                  flexWrap: "wrap",
-                  justifyContent: { xs: "center", md: "flex-start" },
-                }}>
-                <Chip
+            alignItems='center'>
+            <HeroLeft spacing={2.5}>
+              <ChipRow direction='row' spacing={1} alignItems='center' useFlexGap>
+                <GradientChip
                   label={
                     language === "es"
                       ? "Trabajo con IA • LLMs"
                       : "Working with AI • LLMs"
                   }
                   size='small'
-                  sx={{
-                    fontWeight: 800,
-                    borderRadius: 99,
-                    color: "white",
-                    background: "linear-gradient(90deg, #0ea5e9, #10b981)",
-                    boxShadow: "0 12px 30px rgba(14,165,233,0.35)",
-                    "& .MuiChip-label": {
-                      px: 1.25,
-                      letterSpacing: "0.02em",
-                    },
-                  }}
                 />
-                <Chip
+                <SecondaryChip
                   label={
                     language === "es"
                       ? "Fintech • Gobierno • Exchanges"
@@ -295,16 +661,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   }
                   color='secondary'
                   size='small'
-                  sx={{ fontWeight: 700, borderRadius: 99 }}
                 />
-                <Chip
+                <OutlineChip
                   label={language === "es" ? "19+ años" : "19+ years"}
                   variant='outlined'
                   color='default'
                   size='small'
-                  sx={{ fontWeight: 700, borderRadius: 99 }}
                 />
-                <Chip
+                <OutlineSecondaryChip
                   label={
                     language === "es"
                       ? "Crypto • Bitcoin • Lightning"
@@ -313,209 +677,100 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   variant='outlined'
                   color='secondary'
                   size='small'
-                  sx={{ fontWeight: 700, borderRadius: 99 }}
                 />
-              </Stack>
-              <Typography
-                variant='h3'
-                sx={{
-                  fontWeight: 800,
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.02em",
-                }}>
-                {resume?.full_name}
-              </Typography>
-              <Typography
-                variant='h5'
-                color='text.secondary'
-                sx={{ fontWeight: 600 }}>
+              </ChipRow>
+              <HeroName variant='h3'>{resume?.full_name}</HeroName>
+              <HeroRole variant='h5' color='text.secondary'>
                 {resume?.position}
-              </Typography>
+              </HeroRole>
               <SkillIconsRow justify='flex-start' language={language} />
-              <Typography variant='body1' color='text.secondary' sx={{ maxWidth: 720 }}>
+              <HeroSubtitle variant='body1' color='text.secondary'>
                 {i18n.t("portfolio.subtitle")}
-              </Typography>
+              </HeroSubtitle>
               <Stack spacing={1}>
                 {bullets.map((item, idx) => (
-                  <Stack
+                  <BulletRow
                     key={`${item}-${idx}`}
                     direction='row'
                     spacing={1.5}
-                    alignItems='center'
-                    sx={{ justifyContent: { xs: "center", md: "flex-start" } }}>
-                    <Box
-                      sx={{
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                        background:
-                          "radial-gradient(circle, #4f46e5 0%, #10b981 80%)",
-                        boxShadow: "0 0 0 6px rgba(79,70,229,0.08)",
-                        flexShrink: 0,
-                      }}
-                    />
-                    <Typography color='text.primary' sx={{ fontWeight: 600 }}>
-                      {item}
-                    </Typography>
-                  </Stack>
+                    alignItems='center'>
+                    <BulletDot />
+                    <BulletText color='text.primary'>{item}</BulletText>
+                  </BulletRow>
                 ))}
               </Stack>
-              <Stack
+              <CtaRow
                 direction={{ xs: "column", sm: "row" }}
-                spacing={1.5}
-                sx={{
-                  pt: 1,
-                  alignItems: { xs: "stretch", sm: "center" },
-                  justifyContent: { xs: "center", sm: "flex-start" },
-                }}>
-                <Button
+                spacing={1.5}>
+                <PrimaryCtaButton
                   variant='contained'
-                  color='secondary'
+                  color='primary'
                   size='large'
-                  sx={{ borderRadius: 2, boxShadow: "0 18px 40px rgba(0,0,0,0.12)" }}
                   href={downloadHref}>
                   {i18n.t("download")}
-                </Button>
+                </PrimaryCtaButton>
                 {linkedinUrl && (
-                  <Button
+                  <LinkedInButton
                     variant='outlined'
                     size='large'
                     href={linkedinUrl}
                     target='_blank'
                     rel='noreferrer'
                     startIcon={
-                      <Box
-                        component='img'
+                      <LinkedInIcon
                         alt='LinkedIn'
                         src={`${publicPath}/images/icons/linkedin.svg`}
-                        sx={{ width: 18, height: 18 }}
                       />
-                    }
-                    sx={{
-                      borderRadius: 2,
-                      textTransform: "none",
-                      fontWeight: 700,
-                      borderColor: "rgba(10,102,194,0.35)",
-                      color: "#0A66C2",
-                      backgroundColor: "rgba(10,102,194,0.06)",
-                      "&:hover": {
-                        borderColor: "#0A66C2",
-                        backgroundColor: "rgba(10,102,194,0.12)",
-                      },
-                    }}>
+                    }>
                     LinkedIn
-                  </Button>
+                  </LinkedInButton>
                 )}
                 {contactUrl && (
-                  <Button
+                  <TalkButton
                     variant='outlined'
                     color='inherit'
                     size='large'
-                    sx={{ borderRadius: 2 }}
                     href={contactUrl}>
                     {language === "es" ? "Hablemos" : "Let's talk"}
-                  </Button>
+                  </TalkButton>
                 )}
-              </Stack>
-            </Stack>
-            <Box
-              sx={{
-                position: "relative",
-                width: { xs: "100%", md: 340 },
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}>
-              <Box
-                sx={{
-                  position: "absolute",
-                  inset: 14,
-                  borderRadius: "28px",
-                  background:
-                    "linear-gradient(135deg, rgba(79,70,229,0.14), rgba(16,185,129,0.1))",
-                  filter: "blur(6px)",
-                }}
-              />
-              <Avatar
+              </CtaRow>
+            </HeroLeft>
+            <AvatarWrap>
+              <AvatarGlow />
+              <HeroAvatar
                 alt={resume?.full_name}
                 src={`${publicPath}/images/vic.jpeg`}
-                sx={{
-                  width: { xs: 200, sm: 240, md: 300 },
-                  height: { xs: 200, sm: 240, md: 300 },
-                  borderRadius: "28px",
-                  border: "6px solid rgba(255,255,255,0.8)",
-                  boxShadow: "0 18px 50px rgba(15,23,42,0.18)",
-                  position: "relative",
-                  zIndex: 1,
-                  objectFit: "cover",
-                }}
               />
-            </Box>
-          </Stack>
-        </Box>
-        <Box
-          sx={{
-            gridArea: "1 / 1",
-            transform: "rotateY(180deg)",
-            backfaceVisibility: "hidden",
-          }}>
-          <Stack
+            </AvatarWrap>
+          </HeroContent>
+        </FlipFace>
+        <FlipBackFace>
+          <HeroContent
             direction={{ xs: "column", md: "row" }}
             spacing={{ xs: 3, md: 5 }}
-            alignItems='center'
-            sx={{
-              position: "relative",
-              px: { xs: 2.5, sm: 3, md: 5 },
-              py: { xs: 3.5, md: 6 },
-            }}>
-            <Stack
-              spacing={2.5}
-              sx={{
-                flex: 1,
-                minWidth: 0,
-                textAlign: { xs: "center", md: "left" },
-                alignItems: { xs: "center", md: "flex-start" },
-              }}>
-              <Chip
+            alignItems='center'>
+            <HeroLeft spacing={2.5}>
+              <GradientChip
                 label={language === "es" ? "Arquitectura LLM" : "LLM Architecture"}
                 size='small'
-                sx={{
-                  fontWeight: 800,
-                  borderRadius: 99,
-                  color: "white",
-                  background: "linear-gradient(90deg, #0ea5e9, #10b981)",
-                  boxShadow: "0 12px 30px rgba(14,165,233,0.35)",
-                }}
               />
-              <Typography
-                variant='h4'
-                sx={{
-                  fontWeight: 800,
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.02em",
-                }}>
+              <SectionTitle variant='h4'>
                 {language === "es"
                   ? "Arquitectura por capas"
                   : "Layered architecture"}
-              </Typography>
-              <Typography variant='body1' color='text.secondary' sx={{ maxWidth: 700 }}>
+              </SectionTitle>
+              <SectionBody variant='body1' color='text.secondary'>
                 {language === "es"
                   ? "Capa de datos • Recuperación • Orquestación • Evaluación • Monitoreo"
                   : "Data Layer • Retrieval Layer • Orchestration • Evaluation • Monitoring"}
-              </Typography>
-              <Typography variant='body2' color='text.secondary' sx={{ maxWidth: 700 }}>
+              </SectionBody>
+              <SectionBody variant='body2' color='text.secondary'>
                 {language === "es"
                   ? "Mejora continua con feedback de usuarios web/mobile, guardrails y observabilidad end-to-end."
                   : "Continuous improvement with web/mobile feedback, guardrails, and end-to-end observability."}
-              </Typography>
-              <Stack
-                direction='row'
-                useFlexGap
-                sx={{
-                  flexWrap: "wrap",
-                  gap: 1,
-                  justifyContent: { xs: "center", md: "flex-start" },
-                }}>
+              </SectionBody>
+              <TagRow direction='row' useFlexGap>
                 {[
                   language === "es" ? "Datos" : "Data",
                   language === "es" ? "Recuperación" : "Retrieval",
@@ -523,263 +778,103 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   language === "es" ? "Evaluación" : "Evaluation",
                   language === "es" ? "Monitoreo" : "Monitoring",
                 ].map((tag) => (
-                  <Chip
-                    key={tag}
-                    label={tag}
-                    size='small'
-                    variant='outlined'
-                    sx={{ borderRadius: 99, fontWeight: 700 }}
-                  />
+                  <TagChip key={tag} label={tag} size='small' variant='outlined' />
                 ))}
-              </Stack>
-              <Stack
-                direction='row'
-                useFlexGap
-                sx={{
-                  flexWrap: "wrap",
-                  gap: 1,
-                  justifyContent: { xs: "center", md: "flex-start" },
-                }}>
+              </TagRow>
+              <TagRow direction='row' useFlexGap>
                 {[
                   language === "es" ? "Codex" : "Codex",
                   language === "es" ? "Claude" : "Claude",
                 ].map((tool) => (
-                  <Chip
-                    key={tool}
-                    label={tool}
-                    size='small'
-                    sx={{
-                      borderRadius: 99,
-                      fontWeight: 800,
-                      color: "white",
-                      background:
-                        "linear-gradient(90deg, rgba(15,118,110,0.9), rgba(59,130,246,0.9))",
-                      boxShadow: "0 10px 22px rgba(15,118,110,0.25)",
-                    }}
-                  />
+                  <ToolChip key={tool} label={tool} size='small' />
                 ))}
-                <Typography variant='caption' color='text.secondary' sx={{ fontWeight: 600 }}>
+                <ToolsCaption variant='caption' color='text.secondary'>
                   {language === "es"
                     ? "Herramientas principales de trabajo"
                     : "Primary working tools"}
-                </Typography>
-              </Stack>
-            </Stack>
-            <Box
-              sx={{
-                position: "relative",
-                width: { xs: "100%", md: 380 },
-                maxWidth: 440,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}>
-              <Box
-                sx={{
-                  position: "absolute",
-                  inset: 14,
-                  borderRadius: "28px",
-                  background:
-                    "linear-gradient(135deg, rgba(14,165,233,0.18), rgba(16,185,129,0.12))",
-                  filter: "blur(6px)",
-                }}
-              />
-              <Box
-                sx={{
-                  width: "100%",
-                  borderRadius: "28px",
-                  border: "6px solid rgba(255,255,255,0.8)",
-                  boxShadow: "0 18px 50px rgba(15,23,42,0.18)",
-                  position: "relative",
-                  zIndex: 1,
-                  background:
-                    "linear-gradient(135deg, rgba(255,255,255,0.95), rgba(236,254,255,0.9))",
-                  backdropFilter: "blur(6px)",
-                  p: { xs: 2, sm: 2.5 },
-                }}>
+                </ToolsCaption>
+              </TagRow>
+            </HeroLeft>
+            <PipelineWrap>
+              <PipelineGlow />
+              <PipelinePanel>
                 <Stack spacing={1.75}>
                   <Stack direction='row' spacing={1} alignItems='center'>
-                    <Box
-                      sx={{
-                        width: 36,
-                        height: 36,
-                        borderRadius: "12px",
-                        display: "grid",
-                        placeItems: "center",
-                        background:
-                          "linear-gradient(135deg, rgba(14,165,233,0.18), rgba(16,185,129,0.18))",
-                      }}>
-                      <Box
-                        component='img'
+                    <PipelineHeaderIcon>
+                      <Icon20
                         alt='AI'
                         src={`${publicPath}/images/icons/aws.svg`}
-                        sx={{ width: 20, height: 20 }}
                       />
-                    </Box>
+                    </PipelineHeaderIcon>
                     <Stack spacing={0.25}>
-                      <Typography variant='subtitle2' sx={{ fontWeight: 800 }}>
+                      <PipelineTitle variant='subtitle2'>
                         {language === "es"
                           ? "Pipeline LLM en producción"
                           : "Production LLM pipeline"}
-                      </Typography>
+                      </PipelineTitle>
                       <Typography variant='caption' color='text.secondary'>
                         {language === "es"
                           ? "Capas técnicas + mejora continua"
                           : "Layered system + continuous improvement"}
                       </Typography>
                     </Stack>
-                    <Chip
-                      label='AI Ops'
-                      size='small'
-                      sx={{
-                        ml: "auto",
-                        fontWeight: 800,
-                        borderRadius: 99,
-                        color: "white",
-                        background:
-                          "linear-gradient(90deg, rgba(14,165,233,0.9), rgba(16,185,129,0.9))",
-                      }}
-                    />
+                    <PipelineChip label='AI Ops' size='small' />
                   </Stack>
-                  <Box
-                    sx={{
-                      height: 2,
-                      borderRadius: 999,
-                      background:
-                        "linear-gradient(90deg, rgba(14,165,233,0.6), rgba(16,185,129,0.6))",
-                      opacity: 0.7,
-                    }}
-                  />
-                  <Stack
-                    direction='row'
-                    useFlexGap
-                    sx={{
-                      flexWrap: "wrap",
-                      gap: 0.75,
-                      alignItems: "center",
-                    }}>
+                  <PipelineDivider />
+                  <PipelineStepsRow direction='row' useFlexGap>
                     {pipelineSteps.map((step, idx) => (
                       <Stack
                         key={step}
                         direction='row'
                         spacing={0.5}
                         alignItems='center'>
-                        <Box
-                          sx={{
-                            px: 1,
-                            py: 0.4,
-                            borderRadius: 999,
-                            backgroundColor: "rgba(15,23,42,0.06)",
-                            fontSize: "0.7rem",
-                            fontWeight: 700,
-                            letterSpacing: "0.02em",
-                          }}>
-                          {step}
-                        </Box>
-                        {idx < pipelineSteps.length - 1 && (
-                          <ArrowRightAltRoundedIcon
-                            sx={{ fontSize: 14, color: "text.secondary" }}
-                          />
-                        )}
+                        <PipelineStepBadge>{step}</PipelineStepBadge>
+                        {idx < pipelineSteps.length - 1 && <ArrowIcon />}
                       </Stack>
                     ))}
-                  </Stack>
+                  </PipelineStepsRow>
 
-                  <Box
-                    sx={{
-                      display: "grid",
-                      gridTemplateColumns: { xs: "repeat(2, minmax(0,1fr))" },
-                      gap: 1.25,
-                    }}>
+                  <PipelineCardsGrid>
                     {pipelineCards.map((card) => (
-                      <Box
-                        key={card.key}
-                        sx={{
-                          p: 1.2,
-                          borderRadius: 2,
-                          border: "1px solid rgba(226,232,240,0.9)",
-                          background:
-                            "linear-gradient(135deg, rgba(255,255,255,0.92), rgba(241,245,249,0.85))",
-                          boxShadow: "0 10px 18px rgba(15,23,42,0.06)",
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: 0.6,
-                          minHeight: 92,
-                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                          "&:hover": {
-                            transform: "translateY(-3px)",
-                            boxShadow: "0 16px 26px rgba(15,23,42,0.12)",
-                          },
-                        }}>
-                        <Box
-                          sx={{
-                            width: 32,
-                            height: 32,
-                            borderRadius: "10px",
-                            backgroundColor: "rgba(79,70,229,0.08)",
-                            display: "grid",
-                            placeItems: "center",
-                          }}>
-                          <Box
-                            component='img'
+                      <PipelineCard key={card.key}>
+                        <PipelineCardIcon>
+                          <Icon18
                             alt={card.title}
                             src={`${publicPath}/images/icons/${card.icon}`}
-                            sx={{ width: 18, height: 18 }}
                           />
-                        </Box>
-                        <Typography variant='subtitle2' sx={{ fontWeight: 800 }}>
+                        </PipelineCardIcon>
+                        <PipelineCardTitle variant='subtitle2'>
                           {card.title}
-                        </Typography>
+                        </PipelineCardTitle>
                         <Typography variant='caption' color='text.secondary'>
                           {card.desc}
                         </Typography>
-                      </Box>
+                      </PipelineCard>
                     ))}
-                  </Box>
+                  </PipelineCardsGrid>
 
-                  <Stack
-                    direction='row'
-                    spacing={1}
-                    alignItems='center'
-                    sx={{
-                      px: 1.2,
-                      py: 0.8,
-                      borderRadius: 999,
-                      border: "1px solid rgba(14,165,233,0.2)",
-                      backgroundColor: "rgba(14,165,233,0.06)",
-                    }}>
+                  <DeliveryRow direction='row' spacing={1} alignItems='center'>
                     {deliveryIcons.map((item) => (
-                      <Box
-                        key={item.key}
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 0.5,
-                        }}>
-                        <Box
-                          component='img'
+                      <DeliveryItem key={item.key}>
+                        <Icon16
                           alt={item.label}
                           src={`${publicPath}/images/icons/${item.icon}`}
-                          sx={{ width: 16, height: 16 }}
                         />
-                        <Typography variant='caption' sx={{ fontWeight: 700 }}>
+                        <DeliveryLabel variant='caption'>
                           {item.label}
-                        </Typography>
-                      </Box>
+                        </DeliveryLabel>
+                      </DeliveryItem>
                     ))}
-                    <Typography
-                      variant='caption'
-                      color='text.secondary'
-                      sx={{ fontWeight: 600, ml: "auto" }}>
+                    <DeliveryCaption variant='caption' color='text.secondary'>
                       {language === "es" ? "Web + Mobile" : "Web + Mobile"}
-                    </Typography>
-                  </Stack>
+                    </DeliveryCaption>
+                  </DeliveryRow>
                 </Stack>
-              </Box>
-            </Box>
-          </Stack>
-        </Box>
-      </Box>
-    </Box>
+              </PipelinePanel>
+            </PipelineWrap>
+          </HeroContent>
+        </FlipBackFace>
+      </FlipGrid>
+    </HeroRoot>
   );
 };

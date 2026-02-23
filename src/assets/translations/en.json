@@ -373,7 +373,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "bullseye-logo.png",
+        "company_image": "bullseye-logo-transparent.png",
         "position": "Senior Full-Stack Engineer",
         "description": "Map-based applications with Google Maps and MapBox; migration from .NET to React and React Native.",
         "tasks": [
@@ -387,7 +387,7 @@
           {
             "title": "Location Intelligence Suite",
             "description": "Web and mobile apps for site analysis with interactive maps.",
-            "image": "bullseye-banner.png",
+            "image": "bullseye-banner-transparent.png",
             "url": "https://www.bullseyelocations.com/",
             "date": "2022-10-01",
             "tech_stack": [

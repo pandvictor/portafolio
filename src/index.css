@@ -1,10 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root {
+  color-scheme: dark;
+  --bg: #0b111b;
+  --surface-1: #0f172a;
+  --surface-2: #111c2f;
+  --surface-3: #162235;
+  --surface-glass: rgba(17, 24, 39, 0.65);
+  --border-subtle: rgba(148, 163, 184, 0.22);
+  --border-strong: rgba(148, 163, 184, 0.4);
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent-1: #22d3ee;
+  --accent-2: #a3e635;
+  --accent-3: #f97316;
+  --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--accent-1);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-2);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 1rem 0;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+  color: #f8fafc;
+}
+
+code,
+pre,
+kbd {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .floating-buttons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; /* Ensures buttons are on top of other content */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.floating-button {
+  margin: 8px;
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
   }
-  
-  .floating-button {
-    margin: 8px;
+
+  a {
+    color: black;
   }
+}

@@ -20,6 +20,9 @@ export const ImageIcons: React.FC<ImageIconsProps> = ({ image, actionIcons }) =>
         pt: '56.25%', // 16:9 ratio
         overflow: 'hidden',
         borderRadius: '18px',
+        background:
+          'linear-gradient(180deg, rgba(15,23,42,0.7), rgba(8,12,20,0.9))',
+        border: '1px solid var(--border-subtle)',
       }}>
       <img
         src={image.src}

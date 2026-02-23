@@ -1,4 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { keyframes } from "@mui/system";
 import { MainTemplate } from "../templates";
 import { CardItem, TrustedLogosMarquee } from "../molecules";
@@ -21,6 +22,91 @@ const riseIn = keyframes`
   100% { opacity: 1; transform: translateY(0); }
 `;
 
+const AnimatedGridItem = styled(Grid, {
+  shouldForwardProp: (prop) => prop !== "delay",
+})<{ delay: number }>(({ delay }) => ({
+  opacity: 0,
+  animation: `${fadeInUp} 0.7s ease ${delay}s forwards`,
+  transformOrigin: "center",
+}));
+
+const TrustedSection = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(3, 2),
+  marginBottom: theme.spacing(4),
+  borderRadius: 12,
+  border: "1px solid var(--border-subtle)",
+  backgroundColor: "rgba(15,23,42,0.65)",
+  boxShadow: "var(--shadow-soft)",
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(3, 3),
+  },
+  [theme.breakpoints.up("md")]: {
+    padding: theme.spacing(4, 3),
+    marginBottom: theme.spacing(6),
+  },
+}));
+
+const TrustedHeader = styled(Stack)(({ theme }) => ({
+  marginBottom: theme.spacing(2),
+}));
+
+const TrustedTitle = styled(Typography)(() => ({
+  fontWeight: 800,
+  letterSpacing: "0.08em",
+}));
+
+const TrustedDivider = styled(Box)(({ theme }) => ({
+  height: 1,
+  flexGrow: 1,
+  background:
+    "linear-gradient(90deg, rgba(34,211,238,0.35), rgba(163,230,53,0.28))",
+  borderRadius: 99,
+  display: "none",
+  [theme.breakpoints.up("sm")]: {
+    display: "block",
+  },
+}));
+
+const ServicesSection = styled(Box)(({ theme }) => ({
+  marginBottom: theme.spacing(4),
+  borderRadius: 12,
+  border: "1px solid var(--border-subtle)",
+  backgroundColor: "rgba(15,23,42,0.7)",
+  boxShadow: "var(--shadow-soft)",
+  padding: theme.spacing(3, 2.5),
+  [theme.breakpoints.up("md")]: {
+    padding: theme.spacing(3.5, 3.5),
+    marginBottom: theme.spacing(6),
+  },
+}));
+
+const ServicesTitle = styled(Typography)(() => ({
+  fontWeight: 800,
+  marginBottom: 16,
+}));
+
+const ServiceCard = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "delay",
+})<{ delay: number }>(({ delay }) => ({
+  padding: 16,
+  borderRadius: 20,
+  border: "1px solid var(--border-subtle)",
+  background:
+    "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(12,18,28,0.95))",
+  boxShadow: "0 16px 36px rgba(0,0,0,0.35)",
+  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+  animation: `${riseIn} 0.6s ease ${delay}s both`,
+  "&:hover": {
+    transform: "translateY(-4px)",
+    boxShadow: "0 22px 45px rgba(0,0,0,0.45)",
+  },
+}));
+
+const ServiceCardTitle = styled(Typography)(() => ({
+  fontWeight: 800,
+  marginBottom: 4,
+}));
+
 type RenderProjectsProps = {
   projects: Project[];
   companyImage?: string;
@@ -39,17 +125,13 @@ const RenderProjects = memo(({
   onOpen,
 }: RenderProjectsProps) => {
   return projects.map((element: Project, index) => (
-    <Grid
+    <AnimatedGridItem
       item
       xs={12}
       md={6}
       lg={4}
       key={index}
-      sx={{
-        opacity: 0,
-        animation: `${fadeInUp} 0.7s ease ${(index + 1) * 0.08}s forwards`,
-        transformOrigin: "center",
-      }}>
+      delay={(index + 1) * 0.08}>
       <CardItem
         data={element}
         companyImage={companyImage}
@@ -58,7 +140,7 @@ const RenderProjects = memo(({
         companyUrl={companyUrl}
         onOpen={onOpen}
       />
-    </Grid>
+    </AnimatedGridItem>
   ));
 });
 RenderProjects.displayName = "RenderProjects";
@@ -193,79 +275,38 @@ export default function HomePage() {
         bullets={heroBullets}
       />
 
-      <Box
-        sx={{
-          px: { xs: 2, sm: 3 },
-          py: { xs: 3, md: 4 },
-          mb: { xs: 4, md: 6 },
-          borderRadius: 3,
-          border: "1px solid rgba(226,232,240,0.8)",
-          backgroundColor: "rgba(255,255,255,0.9)",
-          boxShadow: "0 10px 30px rgba(15,23,42,0.08)",
-        }}>
-        <Stack
+      <TrustedSection>
+        <TrustedHeader
           direction={{ xs: "column", sm: "row" }}
           spacing={1.5}
-          alignItems={{ xs: "flex-start", sm: "center" }}
-          sx={{ mb: 2 }}>
-          <Typography variant='subtitle2' sx={{ fontWeight: 800, letterSpacing: "0.08em" }}>
+          alignItems={{ xs: "flex-start", sm: "center" }}>
+          <TrustedTitle variant='subtitle2'>
             {language === "es" ? "He trabajado con" : "Trusted by"}
-          </Typography>
-          <Box
-            sx={{
-              height: 1,
-              flexGrow: 1,
-              background:
-                "linear-gradient(90deg, rgba(79,70,229,0.25), rgba(16,185,129,0.18))",
-              borderRadius: 99,
-              display: { xs: "none", sm: "block" },
-            }}
-          />
-        </Stack>
+          </TrustedTitle>
+          <TrustedDivider />
+        </TrustedHeader>
         <TrustedLogosMarquee />
-      </Box>
+      </TrustedSection>
 
-      <Box
-        sx={{
-          mb: { xs: 4, md: 6 },
-          borderRadius: 3,
-          border: "1px solid rgba(226,232,240,0.8)",
-          backgroundColor: "rgba(255,255,255,0.95)",
-          boxShadow: "0 12px 30px rgba(15,23,42,0.08)",
-          px: { xs: 2.5, md: 3.5 },
-          py: { xs: 3, md: 3.5 },
-        }}>
-        <Typography variant='h6' sx={{ fontWeight: 800, mb: 2 }}>
+      <ServicesSection>
+        <ServicesTitle variant='h6'>
           {language === "es" ? "Servicios" : "Services"}
-        </Typography>
+        </ServicesTitle>
         <Grid container spacing={2}>
           {services.map((svc, idx) => (
             <Grid item xs={12} sm={6} md={3} key={`${svc.title}-${idx}`}>
-              <Box
-                sx={{
-                  p: 2,
-                  borderRadius: 2.5,
-                  border: "1px solid rgba(226,232,240,0.8)",
-                  background: "rgba(250,251,255,0.95)",
-                  boxShadow: "0 10px 26px rgba(15,23,42,0.06)",
-                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                  animation: `${riseIn} 0.6s ease ${idx * 0.08}s both`,
-                  "&:hover": {
-                    transform: "translateY(-4px)",
-                    boxShadow: "0 16px 36px rgba(15,23,42,0.1)",
-                  },
-                }}>
-                <Typography variant='subtitle1' sx={{ fontWeight: 800, mb: 0.5 }}>
+              <ServiceCard delay={idx * 0.08}>
+                <ServiceCardTitle variant='subtitle1'>
                   {svc.title}
-                </Typography>
+                </ServiceCardTitle>
                 <Typography variant='body2' color='text.secondary'>
                   {svc.desc}
                 </Typography>
-              </Box>
+              </ServiceCard>
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </ServicesSection>
 
       <ProjectsGrid works={works} onOpen={(payload) => setSelected(payload)} />
 

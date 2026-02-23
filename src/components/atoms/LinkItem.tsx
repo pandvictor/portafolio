@@ -16,8 +16,8 @@ export const LinkItem = styled(NavLink)(({ }) => ({
       fontWeight: 'bold', // Example of applying styles to the active link
     },
     '&.nav-link.active': {
-      backgroundColor: 'rgba(79,70,229,0.12)',
-      color: '#2f2f2f',
-      boxShadow: '0 8px 18px rgba(79,70,229,0.16)',
+      backgroundColor: 'rgba(34,211,238,0.18)',
+      color: '#e2e8f0',
+      boxShadow: '0 12px 24px rgba(34,211,238,0.2)',
     },
   }));
