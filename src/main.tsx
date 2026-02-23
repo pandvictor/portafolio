@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import "./index.css";
 import HomePage from "./components/pages/HomePage.tsx";
@@ -13,7 +13,7 @@ import theme from "./theme";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Navigate to="/portafolio" replace />,
   },
   {
     path: "/portafolio/ex",
