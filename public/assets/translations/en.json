@@ -6,6 +6,33 @@
     "title": "Portfolio",
     "subtitle": "Digital solutions for fintech, government and international organizations"
   },
+  "home": {
+    "trusted_by": "Trusted by",
+    "services_title": "Services",
+    "hero_bullets": [
+      "19+ years shipping digital products",
+      "Bitcoin/Lightning specialist for crypto exchanges",
+      "Technical leadership and delivery focus"
+    ],
+    "services": [
+      {
+        "title": "Technical leadership",
+        "desc": "Team direction, standards, mentoring and architectural reviews."
+      },
+      {
+        "title": "Crypto/Fintech",
+        "desc": "Bitcoin/Lightning wallets, trading, KYC/KYB, compliance and risk."
+      },
+      {
+        "title": "Legacy rescue",
+        "desc": "Refactors, tests and modernization to speed up delivery."
+      },
+      {
+        "title": "Performance & SRE",
+        "desc": "Latency tuning, observability and reliability in production."
+      }
+    ]
+  },
   "resume": {
     "title": "Resume",
     "name": "Victor",
@@ -15,6 +42,7 @@
     "education": "Education",
     "languages_title": "Languages",
     "skills": "Skills",
+    "change_language": "Change language",
     "contact": "Contact",
     "summary": "Senior developer with 19+ years delivering technology solutions for fintech, government and international organizations. Specialized in React Native, React, TypeScript, Node.js and AWS. Proven ability to lead teams, define architecture and launch high-impact products such as CHIVO Wallet and the APEX trading platform.",
     "work_history": [

@@ -6,6 +6,33 @@
     "title": "Portafolio",
     "subtitle": "Soluciones digitales para fintech, gobierno y organizaciones internacionales"
   },
+  "home": {
+    "trusted_by": "He trabajado con",
+    "services_title": "Servicios",
+    "hero_bullets": [
+      "19+ años construyendo producto digital",
+      "Experto en Bitcoin/Lightning y exchanges cripto",
+      "Liderazgo técnico y entrega de producto"
+    ],
+    "services": [
+      {
+        "title": "Liderazgo técnico",
+        "desc": "Dirección de equipos, estándares, mentoring y revisión de arquitectura."
+      },
+      {
+        "title": "Crypto/Fintech",
+        "desc": "Wallets Bitcoin/Lightning, trading, KYC/KYB, cumplimiento y riesgos."
+      },
+      {
+        "title": "Rescate de legacy",
+        "desc": "Refactor, pruebas y modernización de código para acelerar entregas."
+      },
+      {
+        "title": "Performance & SRE",
+        "desc": "Optimización de latencia, observabilidad y confiabilidad en producción."
+      }
+    ]
+  },
   "resume": {
     "title": "Hoja de Vida",
     "name": "Víctor",
@@ -15,6 +42,7 @@
     "education": "Educación",
     "languages_title": "Idiomas",
     "skills": "Habilidades",
+    "change_language": "Cambiar idioma",
     "contact": "Contacto",
     "summary": "Líder de ingeniería con 19+ años construyendo plataformas a gran escala y de misión crítica en fintech, cripto y sector público. Lideré el desarrollo end-to-end de CHIVO Wallet y la plataforma de trading APEX, mejorando escalabilidad, performance en tiempo real y confiabilidad para millones de usuarios. Experto en React Native, React, Node.js y AWS, con un historial sólido guiando equipos, definiendo arquitectura y entregando productos de alto impacto en entornos de alta velocidad y alta exigencia.",
     "work_history": [
