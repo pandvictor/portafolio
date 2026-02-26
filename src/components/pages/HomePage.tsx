@@ -35,6 +35,12 @@ export default function HomePage() {
   }, [language]);
   const trustedTitle = i18n.t("home.trusted_by");
   const servicesTitle = i18n.t("home.services_title");
+  const servicesKicker = i18n.t("home.services_kicker");
+  const servicesIntro = i18n.t("home.services_intro");
+  const projectsKicker = i18n.t("home.projects_kicker");
+  const projectsTitle = i18n.t("home.projects_title");
+  const projectsSubtitle = i18n.t("home.projects_subtitle");
+  const projectsNote = i18n.t("home.projects_note");
   const worksRaw = resumeData?.work_history as WorkHistory[] | undefined;
   const works = useMemo(
     () =>
@@ -72,9 +78,21 @@ export default function HomePage() {
 
       <HomeTrustedSection title={trustedTitle} />
 
-      <HomeServicesSection title={servicesTitle} services={services} />
+      <HomeServicesSection
+        kicker={servicesKicker}
+        title={servicesTitle}
+        intro={servicesIntro}
+        services={services}
+      />
 
-      <HomeProjectsGrid works={works} onOpen={handleOpen} />
+      <HomeProjectsGrid
+        works={works}
+        onOpen={handleOpen}
+        kicker={projectsKicker}
+        title={projectsTitle}
+        subtitle={projectsSubtitle}
+        note={projectsNote}
+      />
 
       <ProjectDialog
         open={Boolean(selected)}

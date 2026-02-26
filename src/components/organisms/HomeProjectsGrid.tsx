@@ -1,8 +1,29 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { CardItem } from "../molecules";
 import { Project, ProjectModalPayload, WorkHistory } from "../../types/types";
+
+const ProjectsSection = styled(Box)(({ theme }) => ({
+  marginBottom: theme.spacing(6),
+}));
+
+const ProjectsHeader = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: "var(--space-3)",
+  marginBottom: theme.spacing(3),
+  [theme.breakpoints.up("md")]: {
+    marginBottom: theme.spacing(4),
+  },
+}));
+
+const ProjectsEyebrow = styled(Typography)(() => ({
+  letterSpacing: "0.28em",
+  textTransform: "uppercase",
+  fontWeight: 700,
+  color: "var(--text-secondary)",
+}));
 
 const ScrollShell = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -103,10 +124,14 @@ ProjectSlide.displayName = "ProjectSlide";
 type HomeProjectsGridProps = {
   works: (WorkHistory & { _origIndex: number })[];
   onOpen: (payload: ProjectModalPayload) => void;
+  kicker: string;
+  title: string;
+  subtitle: string;
+  note?: string;
 };
 
 export const HomeProjectsGrid = memo(
-  ({ works, onOpen }: HomeProjectsGridProps) => {
+  ({ works, onOpen, kicker, title, subtitle, note }: HomeProjectsGridProps) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const slides = useMemo<SlideData[]>(() => {
       const items: SlideData[] = [];
@@ -134,17 +159,31 @@ export const HomeProjectsGrid = memo(
     }, [works]);
 
     return (
-      <ScrollShell ref={scrollRef}>
-        {slides.map((slide, index) => (
-          <ProjectSlide
-            key={slide.key}
-            data={slide}
-            delay={index * 50}
-            rootRef={scrollRef}
-            onOpen={onOpen}
-          />
-        ))}
-      </ScrollShell>
+      <ProjectsSection>
+        <ProjectsHeader>
+          <ProjectsEyebrow variant='overline'>{kicker}</ProjectsEyebrow>
+          <Typography variant='h4'>{title}</Typography>
+          <Typography variant='body1' color='text.secondary'>
+            {subtitle}
+          </Typography>
+          {note && (
+            <Typography variant='body2' color='text.secondary'>
+              {note}
+            </Typography>
+          )}
+        </ProjectsHeader>
+        <ScrollShell ref={scrollRef}>
+          {slides.map((slide, index) => (
+            <ProjectSlide
+              key={slide.key}
+              data={slide}
+              delay={index * 50}
+              rootRef={scrollRef}
+              onOpen={onOpen}
+            />
+          ))}
+        </ScrollShell>
+      </ProjectsSection>
     );
   }
 );

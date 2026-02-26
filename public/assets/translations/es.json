@@ -4,32 +4,38 @@
   "more_info": "Overview",
   "portfolio": {
     "title": "Portafolio",
-    "subtitle": "Soluciones digitales para fintech, gobierno y organizaciones internacionales"
+    "subtitle": "Diseño, construyo y escalo productos móviles, web y backend para fintech, sector público y crypto."
   },
   "home": {
     "trusted_by": "He trabajado con",
-    "services_title": "Servicios",
+    "services_title": "Cómo ayudo",
+    "services_kicker": "Servicios",
+    "services_intro": "Ejecución enfocada para equipos que necesitan velocidad, calidad y confiabilidad. Soluciones end-to-end: de discovery a producción y escala.",
+    "projects_kicker": "Proyectos",
+    "projects_title": "Proyectos destacados",
+    "projects_subtitle": "Casos en fintech, gobierno y plataformas crypto.",
+    "projects_note": "Abre un proyecto para ver alcance, stack y resultados.",
     "hero_bullets": [
-      "19+ años construyendo producto digital",
-      "Experto en Bitcoin/Lightning y exchanges cripto",
-      "Liderazgo técnico y entrega de producto"
+      "19+ años lanzando plataformas fintech y de gobierno",
+      "Entrega full-stack en mobile, web y backend",
+      "Liderazgo práctico: arquitectura, ejecución y mentoring"
     ],
     "services": [
       {
+        "title": "Entrega de producto",
+        "desc": "Del alcance al lanzamiento en mobile y web."
+      },
+      {
+        "title": "Plataforma & APIs",
+        "desc": "Servicios Node/TypeScript, Firebase y .NET preparados para escala."
+      },
+      {
+        "title": "Performance & confiabilidad",
+        "desc": "Mejoras de latencia, observabilidad y respuesta a incidentes."
+      },
+      {
         "title": "Liderazgo técnico",
-        "desc": "Dirección de equipos, estándares, mentoring y revisión de arquitectura."
-      },
-      {
-        "title": "Crypto/Fintech",
-        "desc": "Wallets Bitcoin/Lightning, trading, KYC/KYB, cumplimiento y riesgos."
-      },
-      {
-        "title": "Rescate de legacy",
-        "desc": "Refactor, pruebas y modernización de código para acelerar entregas."
-      },
-      {
-        "title": "Performance & SRE",
-        "desc": "Optimización de latencia, observabilidad y confiabilidad en producción."
+        "desc": "Arquitectura, mentoring y estándares de entrega."
       }
     ]
   },
@@ -40,10 +46,10 @@
       "view_ai": "Ver IA"
     },
     "chips": {
-      "ai": "Trabajo con IA • LLMs",
-      "sectors": "Fintech • Gobierno • Exchanges",
+      "ai": "IA • LLMs en producción",
+      "sectors": "Fintech • Gobierno • Crypto",
       "experience": "19+ años",
-      "crypto": "Crypto • Bitcoin • Lightning"
+      "crypto": "Bitcoin • Lightning"
     },
     "cta": {
       "talk": "Hablemos"
@@ -51,8 +57,8 @@
     "back": {
       "badge": "IA + Mobile Delivery",
       "title": "Construir y lanzar features de alto impacto",
-      "summary": "Entrega full-stack en mobile, web y backend.",
-      "impact_line": "Ejecución de alto impacto con producto, data y diseño.",
+      "summary": "Diseño, implemento y escalo experiencias de producto en mobile, web y backend.",
+      "impact_line": "Iteración rápida con producto, data y diseño, con foco en confiabilidad.",
       "tags": ["Mensajería", "Engagement", "Notificaciones", "Herramientas para creadores", "Seguridad", "Monetización"],
       "cards": [
         { "key": "features", "title": "Product features", "desc": "Messaging • Engagement • Monetización" },
