@@ -499,7 +499,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "bullseye-logo-transparent.png",
+        "company_image": "bullseye.svg",
         "position": "Senior Full-Stack Engineer",
         "description": "Desarrollo de aplicaciones basadas en mapas con Google Maps y Mapbox para clientes retail.",
         "tasks": [
@@ -696,7 +696,7 @@
         "end_date": "2014-12-31",
         "is_current": false,
         "company": "FantasyGol",
-        "company_image": "fantasygol-logo.png",
+        "company_image": "fantasygol-logo.svg",
         "position": "Desarrollador Full-Stack",
         "description": "• Plataforma de fútbol de fantasía con 10+ ligas internacionales y más de 10,000 usuarios jugando simultáneamente.\n• Monetización de apuestas entre pares con comisión del 10%, crecimiento acelerado y adquisición post-Mundial.",
         "tasks": [

@@ -499,7 +499,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "bullseye-logo-transparent.png",
+        "company_image": "bullseye.svg",
         "position": "Senior Full-Stack Engineer",
         "description": "Developed map-based applications with Google Maps and Mapbox for retail customers.",
         "tasks": [
@@ -696,7 +696,7 @@
         "end_date": "2014-12-31",
         "is_current": false,
         "company": "FantasyGol",
-        "company_image": "fantasygol-logo.png",
+        "company_image": "fantasygol-logo.svg",
         "position": "Full-Stack Developer",
         "description": "• Built a fantasy football platform with 10+ international leagues and 10k+ concurrent players.\n• Monetized peer betting with a 10% house fee and grew fast enough to be acquired post-World Cup.",
         "tasks": [

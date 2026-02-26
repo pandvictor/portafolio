@@ -12,8 +12,8 @@ const marquee = keyframes`
 const defaultLogos: LogoItem[] = [
   { src: "alphapoint-logo.png", alt: "AlphaPoint" },
   { src: "sat_logo-transparent.png", alt: "SAT" },
-  { src: "bullseye-logo-transparent.png", alt: "Bullseye" },
-  { src: "fantasygol-logo-transparent.png", alt: "FantasyGol" },
+  { src: "bullseye.svg", alt: "Bullseye" },
+  { src: "fantasygol-logo.svg", alt: "FantasyGol" },
   { src: "fao.png", alt: "FAO" },
   { src: "oim-transparent.png", alt: "OIM" },
   { src: "sbs.png", alt: "SBS" },
@@ -43,12 +43,9 @@ export const TrustedLogosMarquee: React.FC<{ logos?: LogoItem[] }> = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              filter: "grayscale(1) brightness(1.7)",
-              opacity: 0.75,
-              transition: "opacity 0.2s ease, filter 0.2s ease",
-              "&:hover": {
-                opacity: 1,
-              },
+              filter: "drop-shadow(0 6px 14px rgba(0,0,0,0.35))",
+              opacity: 1,
+              transform: "scale(1.03)",
             }}>
             <img
               src={`${publicPath}/images/${logo.src}`}

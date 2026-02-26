@@ -27,6 +27,12 @@ interface RecipeReviewCardProps {
   onOpen?: (payload: ProjectModalPayload) => void;
 }
 
+type LogoPresentation = {
+  blendMode?: React.CSSProperties["mixBlendMode"];
+  filter?: string;
+  scale?: number;
+};
+
 const PROJECT_IMAGE_PRESENTATION: Record<string, ImagePresentation> = {
   "red-regional.jpeg": {
     fit: "cover",
@@ -57,6 +63,38 @@ const getProjectImagePresentation = (
 ): ImagePresentation | undefined => {
   if (!image) return undefined;
   return PROJECT_IMAGE_PRESENTATION[image];
+};
+
+const LOGO_PRESENTATION: Record<string, LogoPresentation> = {
+  "bullseye-logo-transparent.png": {
+    blendMode: "normal",
+    filter:
+      "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
+    scale: 1.08,
+  },
+  "bullseye.svg": {
+    blendMode: "normal",
+    filter:
+      "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
+    scale: 1.08,
+  },
+  "fantasygol-logo-transparent.png": {
+    blendMode: "normal",
+    filter:
+      "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
+    scale: 1.08,
+  },
+  "fantasygol-logo.svg": {
+    blendMode: "normal",
+    filter:
+      "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
+    scale: 1.08,
+  },
+};
+
+const getLogoPresentation = (image?: string): LogoPresentation | undefined => {
+  if (!image) return undefined;
+  return LOGO_PRESENTATION[image];
 };
 
 const CardRoot = styled(Card)(() => ({
@@ -139,12 +177,23 @@ const LogoWrap = styled(Box)(() => ({
   },
 }));
 
-const LogoImage = styled("img")(() => ({
+const LogoImage = styled("img", {
+  shouldForwardProp: (prop) =>
+    prop !== "blendMode" && prop !== "logoFilter" && prop !== "logoScale",
+})<{
+  blendMode?: React.CSSProperties["mixBlendMode"];
+  logoFilter?: string;
+  logoScale?: number;
+}>(({ blendMode, logoFilter, logoScale }) => ({
   height: "100%",
   width: "auto",
   maxWidth: 140,
   objectFit: "contain",
   display: "block",
+  mixBlendMode: blendMode,
+  filter: logoFilter,
+  transform: logoScale ? `scale(${logoScale})` : undefined,
+  transformOrigin: "center",
 }));
 
 const ProjectTitle = styled(Typography)(({ theme }) => ({
@@ -228,14 +277,20 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
               : companyImage
                 ? [companyImage]
                 : []
-            ).map((img, idx) => (
-              <LogoWrap key={`${img}-${idx}`}>
-                <LogoImage
-                  src={`${publicPath}/images/${img}`}
-                  alt={companyName || title}
-                />
-              </LogoWrap>
-            ))}
+            ).map((img, idx) => {
+              const logoPresentation = getLogoPresentation(img);
+              return (
+                <LogoWrap key={`${img}-${idx}`}>
+                  <LogoImage
+                    src={`${publicPath}/images/${img}`}
+                    alt={companyName || title}
+                    blendMode={logoPresentation?.blendMode}
+                    logoFilter={logoPresentation?.filter}
+                    logoScale={logoPresentation?.scale}
+                  />
+                </LogoWrap>
+              );
+            })}
           </LogoRow>
           <ProjectTitle variant='h6'>
             {title}
