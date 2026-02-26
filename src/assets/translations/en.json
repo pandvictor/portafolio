@@ -432,7 +432,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "bullseye-logo-transparent.png",
+        "company_image": "bullseye.svg",
         "position": "Senior Full-Stack Engineer",
         "description": "Map-based applications with Google Maps and MapBox; migration from .NET to React and React Native.",
         "tasks": [
@@ -627,7 +627,7 @@
         "end_date": "2016-07-31",
         "is_current": false,
         "company": "FantasyGol",
-        "company_image": "fantasygol-logo.png",
+        "company_image": "fantasygol-logo.svg",
         "position": "Full-Stack Developer",
         "description": "Development of multiple platforms: migration statistics, surveys, ecommerce, mobile apps, dashboards, nutrition systems, and fantasy sports.",
         "home_order": 4,
