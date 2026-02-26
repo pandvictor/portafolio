@@ -5,7 +5,7 @@ import { publicPath } from "../../constants/gloabals";
 import {
   HeroAvatar,
   HeroFlipButton,
-  HeroPipelinePanel,
+  HeroImpactPanel,
   SkillIconsRow,
 } from "../molecules";
 import { Resume, ContactInfo } from "../../types";
@@ -261,20 +261,14 @@ const ToolsCaption = styled(Typography)(() => ({
   fontWeight: 600,
 }));
 
-const PIPELINE_ICON_MAP: Record<string, string> = {
-  data: "mongodb.svg",
-  retrieval: "rtk-query.svg",
-  orchestration: "kubernetes.svg",
-  evaluation: "jira.svg",
-  monitoring: "dash.svg",
-  feedback: "git.svg",
+const IMPACT_ICON_MAP: Record<string, string> = {
+  features: "jira.svg",
+  mobile: "react-native.svg",
+  frontend: "react.svg",
+  backend: "nodejs.svg",
+  reliability: "kubernetes.svg",
+  experiments: "dash.svg",
 };
-
-const DELIVERY_ICON_ITEMS = [
-  { key: "web", icon: "react.svg", fallbackLabel: "Web" },
-  { key: "ios", icon: "ios.svg", fallbackLabel: "iOS" },
-  { key: "android", icon: "android.svg", fallbackLabel: "Android" },
-];
 
 type HeroSectionProps = {
   resume: Resume;
@@ -314,35 +308,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     language,
   ]);
   const backTags = useMemo(() => i18n.t("hero.back.tags") as string[], [language]);
-  const backTools = useMemo(() => i18n.t("hero.back.tools") as string[], [language]);
-  const pipelineSteps = useMemo(
-    () => i18n.t("hero.back.pipeline_steps") as string[],
+  const impactCardsCopy = useMemo(
+    () => i18n.t("hero.back.cards") as { key: string; title: string; desc: string }[],
     [language]
   );
-  const pipelineCardsCopy = useMemo(
-    () => i18n.t("hero.back.pipeline_cards") as { key: string; title: string; desc: string }[],
-    [language]
-  );
-  const pipelineCards = useMemo(
+  const impactCards = useMemo(
     () =>
-      pipelineCardsCopy.map((card) => ({
+      impactCardsCopy.map((card) => ({
         ...card,
-        icon: PIPELINE_ICON_MAP[card.key] ?? "jira.svg",
+        icon: IMPACT_ICON_MAP[card.key] ?? "react.svg",
       })),
-    [pipelineCardsCopy]
-  );
-  const deliveryLabels = useMemo(
-    () => i18n.t("hero.back.delivery.items") as string[],
-    [language]
-  );
-  const deliveryItems = useMemo(
-    () =>
-      DELIVERY_ICON_ITEMS.map((item, idx) => ({
-        key: item.key,
-        icon: item.icon,
-        label: deliveryLabels[idx] ?? item.fallbackLabel,
-      })),
-    [deliveryLabels]
+    [impactCardsCopy]
   );
 
   const startFlipTimer = useCallback(() => {
@@ -489,31 +465,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 {i18n.t("hero.back.summary")}
               </SectionBody>
               <SectionBody variant='body2' color='text.secondary'>
-                {i18n.t("hero.back.description")}
+                {i18n.t("hero.back.impact_line")}
               </SectionBody>
               <TagRow direction='row' useFlexGap>
                 {backTags.map((tag) => (
                   <TagChip key={tag} label={tag} size='small' variant='outlined' />
                 ))}
               </TagRow>
-              <TagRow direction='row' useFlexGap>
-                {backTools.map((tool) => (
-                  <ToolChip key={tool} label={tool} size='small' />
-                ))}
-                <ToolsCaption variant='caption' color='text.secondary'>
-                  {i18n.t("hero.back.tools_caption")}
-                </ToolsCaption>
-              </TagRow>
             </HeroLeft>
-            <HeroPipelinePanel
-              title={i18n.t("hero.back.pipeline_title")}
-              subtitle={i18n.t("hero.back.pipeline_subtitle")}
-              badgeLabel={i18n.t("hero.back.pipeline_badge")}
-              steps={pipelineSteps}
-              cards={pipelineCards}
-              deliveryItems={deliveryItems}
-              deliveryCaption={i18n.t("hero.back.delivery.caption")}
-            />
+            <HeroImpactPanel cards={impactCards} />
           </HeroContent>
         </FlipBackFace>
       </FlipGrid>

@@ -49,29 +49,19 @@
       "talk": "Let's talk"
     },
     "back": {
-      "badge": "LLM Architecture",
-      "title": "Layered architecture",
-      "summary": "Data Layer • Retrieval Layer • Orchestration • Evaluation • Monitoring",
-      "description": "Continuous improvement with web/mobile feedback, guardrails, and end-to-end observability.",
-      "tags": ["Data", "Retrieval", "Orchestration", "Evaluation", "Monitoring"],
-      "tools": ["Codex", "Claude"],
-      "tools_caption": "Primary working tools",
-      "pipeline_title": "Production LLM pipeline",
-      "pipeline_subtitle": "Layered system + continuous improvement",
-      "pipeline_badge": "AI Ops",
-      "pipeline_steps": ["Ingest", "Embeddings", "RAG", "Evaluation", "Deploy"],
-      "pipeline_cards": [
-        { "key": "data", "title": "Data layer", "desc": "Ingestion + quality" },
-        { "key": "retrieval", "title": "Retrieval", "desc": "Embeddings + RAG" },
-        { "key": "orchestration", "title": "Orchestration", "desc": "Pipelines + tools" },
-        { "key": "evaluation", "title": "Evaluation", "desc": "LLM-as-judge" },
-        { "key": "monitoring", "title": "Monitoring", "desc": "Latency + cost" },
-        { "key": "feedback", "title": "Feedback loop", "desc": "A/B + retraining" }
-      ],
-      "delivery": {
-        "items": ["Web", "iOS", "Android"],
-        "caption": "Web + Mobile"
-      }
+      "badge": "AI + Mobile Delivery",
+      "title": "Build & Ship High-Impact Features",
+      "summary": "Full-stack delivery across mobile, web, and backend services.",
+      "impact_line": "High-impact execution with product, data, and design.",
+      "tags": ["Messaging", "Engagement", "Notifications", "Creator tools", "Safety", "Monetization"],
+      "cards": [
+        { "key": "features", "title": "Product features", "desc": "Messaging • Engagement • Monetization" },
+        { "key": "mobile", "title": "Mobile", "desc": "React Native + Swift" },
+        { "key": "frontend", "title": "Frontend", "desc": "Web UX + performance" },
+        { "key": "backend", "title": "Backend APIs", "desc": "Node.js + TypeScript" },
+        { "key": "reliability", "title": "Reliability", "desc": "Low latency • on-call" },
+        { "key": "experiments", "title": "Experimentation", "desc": "A/B tests • rapid iteration" }
+      ]
     }
   },
   "resume": {
