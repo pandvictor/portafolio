@@ -545,7 +545,7 @@
           {
             "title": "Regional Agricultural Market",
             "description": "Platform used across Central America to track prices and supply.",
-            "image": "red-regional.jpeg",
+            "image": "red-regional-banner.svg",
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "tech_stack": [

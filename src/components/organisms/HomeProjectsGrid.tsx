@@ -1,61 +1,104 @@
-import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { keyframes } from "@mui/system";
-import { memo } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { CardItem } from "../molecules";
 import { Project, ProjectModalPayload, WorkHistory } from "../../types/types";
 
-const fadeInUp = keyframes`
-  0% { opacity: 0; transform: translateY(18px) scale(0.98); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-`;
-
-const AnimatedGridItem = styled(Grid, {
-  shouldForwardProp: (prop) => prop !== "delay",
-})<{ delay: number }>(({ delay }) => ({
-  opacity: 0,
-  animation: `${fadeInUp} 0.7s ease ${delay}s forwards`,
-  transformOrigin: "center",
+const ScrollShell = styled(Box)(({ theme }) => ({
+  position: "relative",
+  width: "100%",
+  overflowX: "auto",
+  overflowY: "hidden",
+  display: "flex",
+  gap: theme.spacing(2),
+  padding: theme.spacing(1, 0, 2),
+  scrollSnapType: "x mandatory",
+  scrollPaddingLeft: theme.spacing(2),
+  scrollBehavior: "smooth",
+  "&::-webkit-scrollbar": {
+    height: 8,
+  },
+  "&::-webkit-scrollbar-thumb": {
+    background: "rgba(148,163,184,0.35)",
+    borderRadius: 999,
+  },
+  "&::-webkit-scrollbar-track": {
+    background: "rgba(15,23,42,0.4)",
+    borderRadius: 999,
+  },
 }));
 
-type RenderProjectsProps = {
-  projects: Project[];
+const SlideItem = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "visible" && prop !== "delay",
+})<{ visible: boolean; delay: number }>(({ theme, visible, delay }) => ({
+  flex: "0 0 auto",
+  width: "min(380px, 86vw)",
+  scrollSnapAlign: "start",
+  opacity: visible ? 1 : 0,
+  transform: visible ? "translateY(0)" : "translateY(16px)",
+  transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`,
+  [theme.breakpoints.up("sm")]: {
+    width: 360,
+  },
+  [theme.breakpoints.up("md")]: {
+    width: 380,
+  },
+}));
+
+type SlideData = {
+  key: string;
+  project: Project;
   companyImage?: string;
   companyImages?: string[];
   companyName?: string;
   companyUrl?: string;
+};
+
+type ProjectSlideProps = {
+  data: SlideData;
+  delay: number;
+  rootRef: React.RefObject<HTMLDivElement>;
   onOpen?: (payload: ProjectModalPayload) => void;
 };
 
-const RenderProjects = memo(
-  ({
-    projects,
-    companyImage,
-    companyImages,
-    companyName,
-    companyUrl,
-    onOpen,
-  }: RenderProjectsProps) =>
-    projects.map((element: Project, index) => (
-      <AnimatedGridItem
-        item
-        xs={12}
-        md={6}
-        lg={4}
-        key={index}
-        delay={(index + 1) * 0.08}>
-        <CardItem
-          data={element}
-          companyImage={companyImage}
-          companyImages={companyImages}
-          companyName={companyName}
-          companyUrl={companyUrl}
-          onOpen={onOpen}
-        />
-      </AnimatedGridItem>
-    ))
-);
-RenderProjects.displayName = "RenderProjects";
+const ProjectSlide = memo(({ data, delay, rootRef, onOpen }: ProjectSlideProps) => {
+  const itemRef = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = itemRef.current;
+    if (!node || visible) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: rootRef.current ?? null,
+        rootMargin: "0px 120px",
+        threshold: 0.25,
+      }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [rootRef, visible]);
+
+  return (
+    <SlideItem ref={itemRef} visible={visible} delay={delay}>
+      <CardItem
+        data={data.project}
+        companyImage={data.companyImage}
+        companyImages={data.companyImages}
+        companyName={data.companyName}
+        companyUrl={data.companyUrl}
+        onOpen={onOpen}
+      />
+    </SlideItem>
+  );
+});
+ProjectSlide.displayName = "ProjectSlide";
 
 type HomeProjectsGridProps = {
   works: (WorkHistory & { _origIndex: number })[];
@@ -63,30 +106,46 @@ type HomeProjectsGridProps = {
 };
 
 export const HomeProjectsGrid = memo(
-  ({ works, onOpen }: HomeProjectsGridProps) => (
-    <Grid container spacing={3}>
-      {works.map((element: WorkHistory & { _origIndex: number }, idx: number) => (
-        <RenderProjects
-          key={`${element.company}-${idx}`}
-          projects={element.achievements}
-          companyImage={
-            Array.isArray(element.company_image)
-              ? element.company_image[0]
-              : element.company_image
-          }
-          companyImages={
-            Array.isArray(element.company_image)
-              ? element.company_image
-              : element.company_image
-                ? [element.company_image]
-                : []
-          }
-          companyName={element.company}
-          companyUrl={element.achievements?.[0]?.url}
-          onOpen={onOpen}
-        />
-      ))}
-    </Grid>
-  )
+  ({ works, onOpen }: HomeProjectsGridProps) => {
+    const scrollRef = useRef<HTMLDivElement | null>(null);
+    const slides = useMemo<SlideData[]>(() => {
+      const items: SlideData[] = [];
+      works.forEach((work, workIdx) => {
+        const companyImage = Array.isArray(work.company_image)
+          ? work.company_image[0]
+          : work.company_image;
+        const companyImages = Array.isArray(work.company_image)
+          ? work.company_image
+          : work.company_image
+            ? [work.company_image]
+            : [];
+        work.achievements.forEach((project, projectIdx) => {
+          items.push({
+            key: `${work.company}-${project.title}-${workIdx}-${projectIdx}`,
+            project,
+            companyImage,
+            companyImages,
+            companyName: work.company,
+            companyUrl: work.achievements?.[0]?.url,
+          });
+        });
+      });
+      return items;
+    }, [works]);
+
+    return (
+      <ScrollShell ref={scrollRef}>
+        {slides.map((slide, index) => (
+          <ProjectSlide
+            key={slide.key}
+            data={slide}
+            delay={index * 50}
+            rootRef={scrollRef}
+            onOpen={onOpen}
+          />
+        ))}
+      </ScrollShell>
+    );
+  }
 );
 HomeProjectsGrid.displayName = "HomeProjectsGrid";
