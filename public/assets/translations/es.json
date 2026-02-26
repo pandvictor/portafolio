@@ -33,6 +33,47 @@
       }
     ]
   },
+  "hero": {
+    "flip": {
+      "aria": "Girar sección",
+      "view_profile": "Ver perfil",
+      "view_ai": "Ver IA"
+    },
+    "chips": {
+      "ai": "Trabajo con IA • LLMs",
+      "sectors": "Fintech • Gobierno • Exchanges",
+      "experience": "19+ años",
+      "crypto": "Crypto • Bitcoin • Lightning"
+    },
+    "cta": {
+      "talk": "Hablemos"
+    },
+    "back": {
+      "badge": "Arquitectura LLM",
+      "title": "Arquitectura por capas",
+      "summary": "Capa de datos • Recuperación • Orquestación • Evaluación • Monitoreo",
+      "description": "Mejora continua con feedback de usuarios web/mobile, guardrails y observabilidad end-to-end.",
+      "tags": ["Datos", "Recuperación", "Orquestación", "Evaluación", "Monitoreo"],
+      "tools": ["Codex", "Claude"],
+      "tools_caption": "Herramientas principales de trabajo",
+      "pipeline_title": "Pipeline LLM en producción",
+      "pipeline_subtitle": "Capas técnicas + mejora continua",
+      "pipeline_badge": "AI Ops",
+      "pipeline_steps": ["Ingesta", "Embeddings", "RAG", "Evaluación", "Deploy"],
+      "pipeline_cards": [
+        { "key": "data", "title": "Capa de datos", "desc": "Ingesta + calidad" },
+        { "key": "retrieval", "title": "Recuperación", "desc": "Embeddings + RAG" },
+        { "key": "orchestration", "title": "Orquestación", "desc": "Pipelines + tools" },
+        { "key": "evaluation", "title": "Evaluación", "desc": "LLM-as-judge" },
+        { "key": "monitoring", "title": "Monitoreo", "desc": "Latencia + costo" },
+        { "key": "feedback", "title": "Ciclo de feedback", "desc": "A/B + reentrenar" }
+      ],
+      "delivery": {
+        "items": ["Web", "iOS", "Android"],
+        "caption": "Web + Mobile"
+      }
+    }
+  },
   "resume": {
     "title": "Hoja de Vida",
     "name": "Víctor",
