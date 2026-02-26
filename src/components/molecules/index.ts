@@ -9,4 +9,4 @@ export * from './ResumeWorkCard';
 export * from './TechStackMarquee';
 export * from './HeroFlipButton';
 export * from './HeroAvatar';
-export * from './HeroPipelinePanel';
+export * from './HeroImpactPanel';
