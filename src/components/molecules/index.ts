@@ -6,3 +6,4 @@ export * from './SkillIconsRow';
 export * from './TrustedLogosMarquee';
 export * from './PrintButton';
 export * from './ResumeWorkCard';
+export * from './TechStackMarquee';
