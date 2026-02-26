@@ -248,19 +248,6 @@ const TagChip = styled(Chip)(() => ({
   borderColor: "var(--border-strong)",
 }));
 
-const ToolChip = styled(Chip)(() => ({
-  borderRadius: 999,
-  fontWeight: 800,
-  color: "white",
-  background:
-    "linear-gradient(90deg, rgba(34,211,238,0.9), rgba(163,230,53,0.85))",
-  boxShadow: "0 10px 22px rgba(34,211,238,0.3)",
-}));
-
-const ToolsCaption = styled(Typography)(() => ({
-  fontWeight: 600,
-}));
-
 const IMPACT_ICON_MAP: Record<string, string> = {
   features: "jira.svg",
   mobile: "react-native.svg",
