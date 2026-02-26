@@ -1,5 +1,6 @@
 import React from "react";
 import { ImageIcons } from "./ImageIcons";
+import { TechStackMarquee } from "./TechStackMarquee";
 import { publicPath } from "../../constants/gloabals";
 import { Project, ProjectModalPayload } from "../../types/types";
 import { resolveTechIconFromStack } from "../../utils/techIcons";
@@ -119,11 +120,11 @@ const ProjectTitle = styled(Typography)(({ theme }) => ({
   lineHeight: 1.2,
   flexGrow: 1,
   color: theme.palette.text.primary,
-}));
-
-const TechStackRow = styled(Stack)(({ theme }) => ({
-  marginTop: theme.spacing(1),
-  flexWrap: "wrap",
+  display: "-webkit-box",
+  WebkitLineClamp: 2,
+  WebkitBoxOrient: "vertical",
+  overflow: "hidden",
+  minHeight: "2.4em",
 }));
 
 const TechAvatar = styled(Avatar)(() => ({
@@ -131,17 +132,8 @@ const TechAvatar = styled(Avatar)(() => ({
   height: 22,
 }));
 
-const TechChip = styled(Chip)(({ theme }) => ({
-  marginRight: theme.spacing(0.5),
-  marginBottom: theme.spacing(0.5),
-  borderRadius: theme.shape.borderRadius * 2,
-}));
-
 const CoinsRow = styled(Stack)(({ theme }) => ({
   marginTop: theme.spacing(1),
-  padding: theme.spacing(1),
-  borderRadius: theme.shape.borderRadius * 2,
-  backgroundColor: "rgba(34,211,238,0.08)",
   flexWrap: "wrap",
 }));
 
@@ -216,27 +208,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
             {title}
           </ProjectTitle>
         </HeaderStack>
-        <TechStackRow direction='row' spacing={1}>
-          {tech_stack.slice(0, 4).map((tech, idx) => {
-            const icon = resolveTechIconFromStack(tech);
-            return (
-              <TechChip
-                key={`${tech.name}-${idx}`}
-                size='small'
-                label={tech.name}
-                avatar={
-                  <TechAvatar
-                    src={`${publicPath}/images/icons/${icon}`}
-                    alt={tech.name}
-                  />
-                }
-              />
-            );
-          })}
-          {tech_stack.length > 4 && (
-            <TechChip size='small' label={`+${tech_stack.length - 4}`} />
-          )}
-        </TechStackRow>
+        <TechStackMarquee items={tech_stack} />
         {hasCoins && (
           <CoinsRow direction='row' spacing={1}>
             {coins.slice(0, 4).map((coin, idx) => {
