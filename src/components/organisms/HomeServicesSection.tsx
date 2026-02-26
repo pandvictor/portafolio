@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { keyframes } from "@mui/system";
 import { memo } from "react";
@@ -9,7 +9,9 @@ type ServiceItem = {
 };
 
 type HomeServicesSectionProps = {
+  kicker: string;
   title: string;
+  intro: string;
   services: ServiceItem[];
 };
 
@@ -20,27 +22,56 @@ const riseIn = keyframes`
 
 const ServicesSection = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(4),
-  borderRadius: 12,
+  borderRadius: 18,
   border: "1px solid var(--border-subtle)",
   backgroundColor: "rgba(15,23,42,0.7)",
   boxShadow: "var(--shadow-soft)",
-  padding: theme.spacing(3, 2.5),
+  padding: "var(--space-6)",
   [theme.breakpoints.up("md")]: {
-    padding: theme.spacing(3.5, 3.5),
+    padding: "var(--space-7)",
     marginBottom: theme.spacing(6),
   },
 }));
 
-const ServicesTitle = styled(Typography)(() => ({
-  fontWeight: 800,
-  marginBottom: 16,
+const ServicesLayout = styled(Box)(({ theme }) => ({
+  display: "grid",
+  gap: "var(--space-6)",
+  [theme.breakpoints.up("md")]: {
+    gridTemplateColumns: "minmax(0, 0.9fr) minmax(0, 1.1fr)",
+    alignItems: "start",
+  },
 }));
 
-const ServiceCard = styled(Box, {
+const ServicesKicker = styled(Typography)(() => ({
+  letterSpacing: "0.28em",
+  textTransform: "uppercase",
+  fontWeight: 700,
+  color: "var(--text-secondary)",
+}));
+
+const ServicesTitle = styled(Typography)(() => ({
+  fontWeight: 800,
+  lineHeight: 1.1,
+}));
+
+const ServicesIntro = styled(Typography)(() => ({
+  maxWidth: 420,
+}));
+
+const ServicesList = styled(Box)(() => ({
+  display: "grid",
+  gap: "var(--space-4)",
+}));
+
+const ServiceRow = styled(Box, {
   shouldForwardProp: (prop) => prop !== "delay",
 })<{ delay: number }>(({ delay }) => ({
-  padding: 16,
-  borderRadius: 20,
+  display: "grid",
+  gridTemplateColumns: "auto 1fr",
+  gap: "var(--space-4)",
+  alignItems: "start",
+  padding: "var(--space-4)",
+  borderRadius: 18,
   border: "1px solid var(--border-subtle)",
   background:
     "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(12,18,28,0.95))",
@@ -53,29 +84,47 @@ const ServiceCard = styled(Box, {
   },
 }));
 
+const ServiceIndex = styled(Typography)(() => ({
+  fontWeight: 700,
+  fontSize: "0.9rem",
+  color: "var(--text-secondary)",
+  minWidth: 32,
+}));
+
 const ServiceCardTitle = styled(Typography)(() => ({
   fontWeight: 800,
-  marginBottom: 4,
+  marginBottom: 6,
 }));
 
 export const HomeServicesSection = memo(
-  ({ title, services }: HomeServicesSectionProps) => (
+  ({ kicker, title, intro, services }: HomeServicesSectionProps) => (
     <ServicesSection>
-      <ServicesTitle variant='h6'>{title}</ServicesTitle>
-      <Grid container spacing={2}>
-        {services.map((svc, idx) => (
-          <Grid item xs={12} sm={6} md={3} key={`${svc.title}-${idx}`}>
-            <ServiceCard delay={idx * 0.08}>
-              <ServiceCardTitle variant='subtitle1'>
-                {svc.title}
-              </ServiceCardTitle>
-              <Typography variant='body2' color='text.secondary'>
-                {svc.desc}
-              </Typography>
-            </ServiceCard>
-          </Grid>
-        ))}
-      </Grid>
+      <ServicesLayout>
+        <Box>
+          <ServicesKicker variant='overline'>{kicker}</ServicesKicker>
+          <ServicesTitle variant='h4'>{title}</ServicesTitle>
+          <ServicesIntro variant='body1' color='text.secondary'>
+            {intro}
+          </ServicesIntro>
+        </Box>
+        <ServicesList>
+          {services.map((svc, idx) => (
+            <ServiceRow delay={idx * 0.08} key={`${svc.title}-${idx}`}>
+              <ServiceIndex variant='overline'>
+                {String(idx + 1).padStart(2, "0")}
+              </ServiceIndex>
+              <Box>
+                <ServiceCardTitle variant='subtitle1'>
+                  {svc.title}
+                </ServiceCardTitle>
+                <Typography variant='body2' color='text.secondary'>
+                  {svc.desc}
+                </Typography>
+              </Box>
+            </ServiceRow>
+          ))}
+        </ServicesList>
+      </ServicesLayout>
     </ServicesSection>
   )
 );
