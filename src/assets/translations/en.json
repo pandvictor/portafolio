@@ -33,6 +33,47 @@
       }
     ]
   },
+  "hero": {
+    "flip": {
+      "aria": "Flip section",
+      "view_profile": "View profile",
+      "view_ai": "View AI"
+    },
+    "chips": {
+      "ai": "Working with AI • LLMs",
+      "sectors": "Fintech • Government • Exchanges",
+      "experience": "19+ years",
+      "crypto": "Crypto • Bitcoin • Lightning"
+    },
+    "cta": {
+      "talk": "Let's talk"
+    },
+    "back": {
+      "badge": "LLM Architecture",
+      "title": "Layered architecture",
+      "summary": "Data Layer • Retrieval Layer • Orchestration • Evaluation • Monitoring",
+      "description": "Continuous improvement with web/mobile feedback, guardrails, and end-to-end observability.",
+      "tags": ["Data", "Retrieval", "Orchestration", "Evaluation", "Monitoring"],
+      "tools": ["Codex", "Claude"],
+      "tools_caption": "Primary working tools",
+      "pipeline_title": "Production LLM pipeline",
+      "pipeline_subtitle": "Layered system + continuous improvement",
+      "pipeline_badge": "AI Ops",
+      "pipeline_steps": ["Ingest", "Embeddings", "RAG", "Evaluation", "Deploy"],
+      "pipeline_cards": [
+        { "key": "data", "title": "Data layer", "desc": "Ingestion + quality" },
+        { "key": "retrieval", "title": "Retrieval", "desc": "Embeddings + RAG" },
+        { "key": "orchestration", "title": "Orchestration", "desc": "Pipelines + tools" },
+        { "key": "evaluation", "title": "Evaluation", "desc": "LLM-as-judge" },
+        { "key": "monitoring", "title": "Monitoring", "desc": "Latency + cost" },
+        { "key": "feedback", "title": "Feedback loop", "desc": "A/B + retraining" }
+      ],
+      "delivery": {
+        "items": ["Web", "iOS", "Android"],
+        "caption": "Web + Mobile"
+      }
+    }
+  },
   "resume": {
     "title": "Resume",
     "name": "Victor",

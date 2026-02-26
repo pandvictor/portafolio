@@ -1,5 +1,7 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
-import { useMemo, useState } from "react";
+import { Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { keyframes } from "@mui/system";
+import { useMemo } from "react";
 import { publicPath } from "../../constants/gloabals";
 
 type IconItem = { src: string; alt: string };
@@ -35,114 +37,74 @@ export const SkillIconsRow: React.FC<{
   icons?: IconItem[];
   justify?: "center" | "flex-start";
   initialVisibleCount?: number;
-  language?: string;
 }> = ({
   icons = defaultIcons,
   justify = "flex-start",
   initialVisibleCount = 6,
-  language,
 }) => {
-  const [expanded, setExpanded] = useState(false);
-  const visibleCount = Math.max(
-    0,
-    Math.min(initialVisibleCount, icons.length)
-  );
-  const hiddenCount = Math.max(0, icons.length - visibleCount);
-  const isEs = language === "es";
-  const visibleIcons = useMemo(
-    () => (expanded ? icons : icons.slice(0, visibleCount)),
-    [expanded, icons, visibleCount]
+  const shouldAnimate = icons.length > initialVisibleCount;
+  const loopIcons = useMemo(
+    () => (shouldAnimate ? [...icons, ...icons] : icons),
+    [icons, shouldAnimate]
   );
 
   return (
-    <Stack
-      direction='row'
-      spacing={1.5}
-      flexWrap='wrap'
-      alignItems='center'
-      sx={{
-        pt: 1,
-        justifyContent: { xs: "center", md: justify },
-        gap: 1.5,
-      }}>
-      {visibleIcons.map((item) => (
-        <Stack
-          key={item.alt}
-          direction='row'
-          alignItems='center'
-          spacing={0.8}
-          sx={{
-            px: 1.25,
-            py: 0.6,
-            borderRadius: 999,
-            backgroundColor: "rgba(15,23,42,0.65)",
-            border: "1px solid var(--border-subtle)",
-            boxShadow: "0 10px 22px rgba(0,0,0,0.35)",
-            transition: "transform 0.2s ease, box-shadow 0.2s ease",
-            "&:hover": {
-              transform: "translateY(-2px)",
-              boxShadow: "0 16px 30px rgba(0,0,0,0.45)",
-            },
-          }}>
-          <Box
-            sx={{
-              width: 26,
-              height: 26,
-              borderRadius: "50%",
-              backgroundColor: "rgba(34,211,238,0.15)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-            }}>
-            <img
+    <MarqueeShell>
+      <MarqueeTrack animate={shouldAnimate} justify={justify}>
+        {loopIcons.map((item, idx) => (
+          <IconWrap key={`${item.alt}-${idx}`} title={item.alt}>
+            <IconImage
               src={`${publicPath}/images/icons/${item.src}`}
               alt={item.alt}
-              style={{
-                width: item.src.endsWith(".png") ? 20 : 18,
-                height: item.src.endsWith(".png") ? 20 : 18,
-                objectFit: "contain",
-              }}
             />
-          </Box>
-          <Typography
-            variant='body2'
-            sx={{ fontWeight: 700, fontSize: "0.8rem" }}>
-            {item.alt}
-          </Typography>
-        </Stack>
-      ))}
-      {hiddenCount > 0 && (
-        <Button
-          variant='outlined'
-          size='small'
-          onClick={() => setExpanded((prev) => !prev)}
-          aria-expanded={expanded}
-          sx={{
-            borderRadius: 999,
-            px: 1.4,
-            py: 0.35,
-            minWidth: "auto",
-            textTransform: "none",
-            fontWeight: 700,
-            fontSize: "0.75rem",
-            borderColor: "var(--border-strong)",
-            color: "text.primary",
-            backgroundColor: "rgba(15,23,42,0.65)",
-            "&:hover": {
-              borderColor: "rgba(34,211,238,0.4)",
-              backgroundColor: "rgba(15,23,42,0.85)",
-            },
-          }}>
-          {expanded
-            ? isEs
-              ? "Ver menos"
-              : "Show less"
-            : isEs
-              ? `+${hiddenCount} más`
-              : `+${hiddenCount} more`}
-        </Button>
-      )}
-    </Stack>
+          </IconWrap>
+        ))}
+      </MarqueeTrack>
+    </MarqueeShell>
   );
 };
+
+const marquee = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+`;
+
+const MarqueeShell = styled(Box)(() => ({
+  overflow: "hidden",
+  position: "relative",
+  width: "100%",
+  paddingTop: 4,
+  maskImage:
+    "linear-gradient(90deg, transparent 0, black 10%, black 90%, transparent 100%)",
+}));
+
+const MarqueeTrack = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "animate" && prop !== "justify",
+})<{ animate: boolean; justify: "center" | "flex-start" }>(({ animate, justify }) => ({
+  display: "flex",
+  alignItems: "center",
+  gap: 14,
+  width: animate ? "max-content" : "100%",
+  justifyContent: animate ? "flex-start" : justify,
+  animation: animate ? `${marquee} 22s linear infinite` : "none",
+  "&:hover": {
+    animationPlayState: "paused",
+  },
+  "@media (prefers-reduced-motion: reduce)": {
+    animation: "none",
+  },
+}));
+
+const IconWrap = styled(Box)(() => ({
+  width: 40,
+  height: 40,
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const IconImage = styled("img")(() => ({
+  width: 28,
+  height: 28,
+  objectFit: "contain",
+}));
