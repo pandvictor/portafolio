@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageIcons } from "./ImageIcons";
+import { ImageIcons, ImagePresentation } from "./ImageIcons";
 import { TechStackMarquee } from "./TechStackMarquee";
 import { publicPath } from "../../constants/gloabals";
 import { Project, ProjectModalPayload } from "../../types/types";
@@ -26,6 +26,38 @@ interface RecipeReviewCardProps {
   companyUrl?: string;
   onOpen?: (payload: ProjectModalPayload) => void;
 }
+
+const PROJECT_IMAGE_PRESENTATION: Record<string, ImagePresentation> = {
+  "red-regional.jpeg": {
+    fit: "cover",
+    padding: 0,
+    blendMode: "multiply",
+    scale: 1.04,
+  },
+  "red-regional-banner.svg": {
+    fit: "cover",
+    padding: 0,
+    scale: 1,
+  },
+  "red-regional.png": {
+    fit: "cover",
+    padding: 0,
+    blendMode: "multiply",
+    scale: 1.04,
+  },
+  "fantasygol-card.png": {
+    fit: "cover",
+    padding: 0,
+    scale: 1.02,
+  },
+};
+
+const getProjectImagePresentation = (
+  image?: string
+): ImagePresentation | undefined => {
+  if (!image) return undefined;
+  return PROJECT_IMAGE_PRESENTATION[image];
+};
 
 const CardRoot = styled(Card)(() => ({
   maxWidth: 800,
@@ -181,10 +213,11 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
     <CardRoot>
       <ImageIcons
         actionIcons={null}
+        presentation={getProjectImagePresentation(image)}
         image={{
           src: `${publicPath}/images/${image}`,
           srcSet: "",
-          alt: "",
+          alt: title,
         }}
       />
       <CardContentRoot>

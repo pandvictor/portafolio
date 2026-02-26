@@ -628,7 +628,7 @@
           {
             "title": "Mercado agrícola regional",
             "description": "Plataforma usada en Centroamérica para seguimiento de precios y oferta agrícola.",
-            "image": "red-regional.jpeg",
+            "image": "red-regional-banner.svg",
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "tech_stack": [
