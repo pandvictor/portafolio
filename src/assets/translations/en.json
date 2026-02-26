@@ -56,9 +56,9 @@
       "tags": ["Messaging", "Engagement", "Notifications", "Creator tools", "Safety", "Monetization"],
       "cards": [
         { "key": "features", "title": "Product features", "desc": "Messaging • Engagement • Monetization" },
-        { "key": "mobile", "title": "Mobile", "desc": "React Native + Swift" },
+        { "key": "mobile", "title": "Mobile", "desc": "React Native • Swift • Kotlin" },
         { "key": "frontend", "title": "Frontend", "desc": "Web UX + performance" },
-        { "key": "backend", "title": "Backend APIs", "desc": "Node.js + TypeScript" },
+        { "key": "backend", "title": "Backend APIs", "desc": "Node.js • TypeScript • C# .NET" },
         { "key": "reliability", "title": "Reliability", "desc": "Low latency • on-call" },
         { "key": "experiments", "title": "Experimentation", "desc": "A/B tests • rapid iteration" }
       ]
