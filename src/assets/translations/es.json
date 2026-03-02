@@ -15,6 +15,19 @@
     "projects_title": "Proyectos destacados",
     "projects_subtitle": "Casos en fintech, gobierno y plataformas crypto.",
     "projects_note": "Abre un proyecto para ver alcance, stack y resultados.",
+    "featured_kicker": "Destacado",
+    "featured_title": "Un caso con impacto medible",
+    "featured_subtitle": "Un vistazo a una plataforma donde el impacto, la escala y la entrega son claros.",
+    "featured_cta": "Ver caso",
+    "projects_hint": "Desliza ->",
+    "credibility_kicker": "Credibilidad",
+    "credibility_title": "Entrega confiable a escala",
+    "credibility_stats": [
+      { "value": "19+ años", "label": "Construyendo productos críticos" },
+      { "value": "500k+ usuarios", "label": "Billeteras y pagos digitales" },
+      { "value": "10k+ TPS", "label": "Picos de trading en tiempo real" },
+      { "value": "200+ cajeros", "label": "Cobertura de cash-in/out" }
+    ],
     "hero_bullets": [
       "19+ años lanzando plataformas fintech y de gobierno",
       "Entrega full-stack en mobile, web y backend",
@@ -23,19 +36,23 @@
     "services": [
       {
         "title": "Entrega de producto",
-        "desc": "Del alcance al lanzamiento en mobile y web."
+        "desc": "Del alcance al lanzamiento en mobile y web.",
+        "icon": "dash.svg"
       },
       {
         "title": "Plataforma & APIs",
-        "desc": "Servicios Node/TypeScript, Firebase y .NET preparados para escala."
+        "desc": "Servicios Node/TypeScript, Firebase y .NET preparados para escala.",
+        "icon": "nodejs.svg"
       },
       {
         "title": "Performance & confiabilidad",
-        "desc": "Mejoras de latencia, observabilidad y respuesta a incidentes."
+        "desc": "Mejoras de latencia, observabilidad y respuesta a incidentes.",
+        "icon": "kubernetes.svg"
       },
       {
         "title": "Liderazgo técnico",
-        "desc": "Arquitectura, mentoring y estándares de entrega."
+        "desc": "Arquitectura, mentoring y estándares de entrega.",
+        "icon": "scrum.svg"
       }
     ]
   },
@@ -69,6 +86,12 @@
         { "key": "experiments", "title": "Experimentación", "desc": "A/B tests • iteración rápida" }
       ]
     }
+  },
+  "footer": {
+    "availability_tag": "Disponibilidad",
+    "availability_title": "Disponible para consultoría y roles de liderazgo",
+    "availability_desc": "Entrega end-to-end en mobile, web y backend.",
+    "availability_meta": "Remoto · Zonas horarias Americas"
   },
   "resume": {
     "title": "Hoja de Vida",
@@ -106,6 +129,11 @@
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
+            "outcomes": [
+              "500k+ usuarios activos",
+              "10k+ transacciones diarias",
+              "200+ cajeros"
+            ],
             "tech_stack": [
               {
                 "name": "React Native"
@@ -211,6 +239,11 @@
             "image": "apex-hero.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
+            "outcomes": [
+              "60% actualizaciones más rápidas",
+              "99.95% uptime",
+              "35% menos código duplicado"
+            ],
             "tech_stack": [
               {
                 "name": "React Native"
@@ -453,6 +486,11 @@
             "image": "bullseye-banner-transparent.png",
             "url": "https://bullseyeapps.com",
             "date": "2022-10-01",
+            "outcomes": [
+              "Scoring geoespacial de sitios",
+              "Planeación de expansión retail",
+              "Analítica con mapas"
+            ],
             "tech_stack": [
               {
                 "name": "React"
@@ -552,6 +590,11 @@
             "image": "red-regional-banner.svg",
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
+            "outcomes": [
+              "Inteligencia de mercados regionales",
+              "Analítica aduanera",
+              "Despliegue multinacional"
+            ],
             "tech_stack": [
               {
                 "name": "React"
@@ -628,6 +671,11 @@
             "image": "fantasygol-card.png",
             "url": "",
             "date": "2014-12-01",
+            "outcomes": [
+              "10k+ jugadores simultáneos",
+              "10+ ligas internacionales",
+              "Monetización de apuestas"
+            ],
             "tech_stack": [
               {
                 "name": "PHP"

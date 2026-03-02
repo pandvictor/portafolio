@@ -15,6 +15,19 @@
     "projects_title": "Selected work",
     "projects_subtitle": "Case studies across fintech, government, and crypto platforms.",
     "projects_note": "Open a project to see scope, stack, and outcomes.",
+    "featured_kicker": "Featured",
+    "featured_title": "A case study with measurable impact",
+    "featured_subtitle": "A closer look at one platform where outcomes, scale, and delivery are clear.",
+    "featured_cta": "View case study",
+    "projects_hint": "Scroll ->",
+    "credibility_kicker": "Credibility",
+    "credibility_title": "Trusted delivery at scale",
+    "credibility_stats": [
+      { "value": "19+ years", "label": "Shipping mission-critical products" },
+      { "value": "500k+ users", "label": "Wallets and payment platforms" },
+      { "value": "10k+ TPS", "label": "Peak trading throughput" },
+      { "value": "200+ ATMs", "label": "Cash-in/out coverage" }
+    ],
     "hero_bullets": [
       "19+ years shipping fintech and public-sector platforms",
       "Full-stack delivery across mobile, web, and backend",
@@ -23,19 +36,23 @@
     "services": [
       {
         "title": "Product delivery",
-        "desc": "Ship high-impact features from scope to launch across mobile and web."
+        "desc": "Ship high-impact features from scope to launch across mobile and web.",
+        "icon": "dash.svg"
       },
       {
         "title": "Platform & APIs",
-        "desc": "Node/TypeScript, Firebase, and .NET services built for scale."
+        "desc": "Node/TypeScript, Firebase, and .NET services built for scale.",
+        "icon": "nodejs.svg"
       },
       {
         "title": "Performance & reliability",
-        "desc": "Latency tuning, observability, and incident readiness."
+        "desc": "Latency tuning, observability, and incident readiness.",
+        "icon": "kubernetes.svg"
       },
       {
         "title": "Technical leadership",
-        "desc": "Architecture guidance, mentoring, and delivery standards."
+        "desc": "Architecture guidance, mentoring, and delivery standards.",
+        "icon": "scrum.svg"
       }
     ]
   },
@@ -69,6 +86,12 @@
         { "key": "experiments", "title": "Experimentation", "desc": "A/B tests • rapid iteration" }
       ]
     }
+  },
+  "footer": {
+    "availability_tag": "Availability",
+    "availability_title": "Open to consulting and leadership roles",
+    "availability_desc": "End-to-end delivery across mobile, web, and backend.",
+    "availability_meta": "Remote · Americas time zones"
   },
   "resume": {
     "title": "Resume",
@@ -104,6 +127,11 @@
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
+            "outcomes": [
+              "500k+ active users",
+              "10k+ daily transactions",
+              "200+ ATMs"
+            ],
             "tech_stack": [
               {
                 "name": "React Native"
@@ -205,6 +233,11 @@
             "image": "apex-hero.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
+            "outcomes": [
+              "60% faster trade updates",
+              "99.95% uptime",
+              "35% less duplicate code"
+            ],
             "tech_stack": [
               {
                 "name": "React Native"
@@ -521,6 +554,11 @@
             "image": "bullseye-banner-transparent.png",
             "url": "https://www.bullseyelocations.com/",
             "date": "2022-10-01",
+            "outcomes": [
+              "Geospatial site scoring",
+              "Retail expansion planning",
+              "Map-based analytics"
+            ],
             "tech_stack": [
               {
                 "name": "React"
@@ -637,6 +675,11 @@
             "image": "red-regional-banner.svg",
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
+            "outcomes": [
+              "Regional market intelligence",
+              "Customs trade analytics",
+              "Multi-country rollout"
+            ],
             "tech_stack": [
               {
                 "name": "React"
@@ -720,6 +763,11 @@
             "image": "fantasygol-card.png",
             "url": "",
             "date": "2014-12-01",
+            "outcomes": [
+              "10k+ concurrent players",
+              "10+ international leagues",
+              "Monetized betting flows"
+            ],
             "tech_stack": [
               { "name": "PHP" },
               { "name": "PayPal" },

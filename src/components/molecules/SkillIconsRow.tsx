@@ -45,7 +45,7 @@ export const SkillIconsRow: React.FC<{
   const shouldAnimate = icons.length > initialVisibleCount;
   const loopIcons = useMemo(
     () => (shouldAnimate ? [...icons, ...icons] : icons),
-    [icons, shouldAnimate]
+    [icons, shouldAnimate],
   );
 
   return (
@@ -72,7 +72,8 @@ const marquee = keyframes`
 const MarqueeShell = styled(Box)(() => ({
   overflow: "hidden",
   position: "relative",
-  width: "100%",
+  width: "fit-content",
+  maxWidth: 560,
   paddingTop: 4,
   maskImage:
     "linear-gradient(90deg, transparent 0, black 10%, black 90%, transparent 100%)",
@@ -80,20 +81,22 @@ const MarqueeShell = styled(Box)(() => ({
 
 const MarqueeTrack = styled(Box, {
   shouldForwardProp: (prop) => prop !== "animate" && prop !== "justify",
-})<{ animate: boolean; justify: "center" | "flex-start" }>(({ animate, justify }) => ({
-  display: "flex",
-  alignItems: "center",
-  gap: 14,
-  width: animate ? "max-content" : "100%",
-  justifyContent: animate ? "flex-start" : justify,
-  animation: animate ? `${marquee} 22s linear infinite` : "none",
-  "&:hover": {
-    animationPlayState: "paused",
-  },
-  "@media (prefers-reduced-motion: reduce)": {
-    animation: "none",
-  },
-}));
+})<{ animate: boolean; justify: "center" | "flex-start" }>(
+  ({ animate, justify }) => ({
+    display: "flex",
+    alignItems: "center",
+    gap: 14,
+    width: animate ? "max-content" : "100%",
+    justifyContent: animate ? "flex-start" : justify,
+    animation: animate ? `${marquee} 22s linear infinite` : "none",
+    "&:hover": {
+      animationPlayState: "paused",
+    },
+    "@media (prefers-reduced-motion: reduce)": {
+      animation: "none",
+    },
+  }),
+);
 
 const IconWrap = styled(Box)(() => ({
   width: 40,

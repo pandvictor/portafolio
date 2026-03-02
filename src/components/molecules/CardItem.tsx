@@ -169,8 +169,10 @@ const LogoWrap = styled(Box)(() => ({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  height: 42,
-  maxWidth: 140,
+  height: 36,
+  minWidth: 80,
+  maxWidth: 130,
+  padding: 4,
   transition: "transform 0.2s ease, box-shadow 0.2s ease",
   "&:hover": {
     transform: "scale(1.05)",
@@ -187,7 +189,8 @@ const LogoImage = styled("img", {
 }>(({ blendMode, logoFilter, logoScale }) => ({
   height: "100%",
   width: "auto",
-  maxWidth: 140,
+  maxWidth: 120,
+  maxHeight: 32,
   objectFit: "contain",
   display: "block",
   mixBlendMode: blendMode,
@@ -206,6 +209,21 @@ const ProjectTitle = styled(Typography)(({ theme }) => ({
   WebkitBoxOrient: "vertical",
   overflow: "hidden",
   minHeight: "2.4em",
+}));
+
+const OutcomesRow = styled(Stack)(({ theme }) => ({
+  marginTop: theme.spacing(1),
+  marginBottom: theme.spacing(1),
+  flexWrap: "wrap",
+  gap: theme.spacing(0.75),
+}));
+
+const OutcomeChip = styled(Chip)(({ theme }) => ({
+  borderRadius: 999,
+  borderColor: "rgba(34,211,238,0.35)",
+  backgroundColor: "rgba(15,23,42,0.5)",
+  fontWeight: 700,
+  color: theme.palette.text.primary,
 }));
 
 const TechAvatar = styled(Avatar)(() => ({
@@ -257,6 +275,8 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
   const { title, image, tech_stack } = data;
   const coins = data.coins || [];
   const hasCoins = coins.length > 0;
+  const outcomes = data.outcomes || [];
+  const hasOutcomes = outcomes.length > 0;
 
   return (
     <CardRoot>
@@ -296,6 +316,13 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
             {title}
           </ProjectTitle>
         </HeaderStack>
+        {hasOutcomes && (
+          <OutcomesRow direction='row' useFlexGap>
+            {outcomes.map((item, idx) => (
+              <OutcomeChip key={`${item}-${idx}`} size='small' label={item} variant='outlined' />
+            ))}
+          </OutcomesRow>
+        )}
         <TechStackMarquee items={tech_stack} />
         {hasCoins && (
           <CoinsRow direction='row' spacing={1}>

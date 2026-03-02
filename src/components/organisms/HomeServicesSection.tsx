@@ -2,10 +2,12 @@ import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { keyframes } from "@mui/system";
 import { memo } from "react";
+import { publicPath } from "../../constants/gloabals";
 
 type ServiceItem = {
   title: string;
   desc: string;
+  icon?: string;
 };
 
 type HomeServicesSectionProps = {
@@ -84,6 +86,26 @@ const ServiceRow = styled(Box, {
   },
 }));
 
+const ServiceMeta = styled(Box)(() => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: 8,
+  alignItems: "center",
+  minWidth: 36,
+}));
+
+const ServiceIcon = styled("span")(() => ({
+  width: 34,
+  height: 34,
+  borderRadius: "50%",
+  border: "1px solid var(--border-subtle)",
+  background: "rgba(15,23,42,0.7)",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  boxShadow: "0 10px 22px rgba(0,0,0,0.35)",
+}));
+
 const ServiceIndex = styled(Typography)(() => ({
   fontWeight: 700,
   fontSize: "0.9rem",
@@ -110,9 +132,21 @@ export const HomeServicesSection = memo(
         <ServicesList>
           {services.map((svc, idx) => (
             <ServiceRow delay={idx * 0.08} key={`${svc.title}-${idx}`}>
-              <ServiceIndex variant='overline'>
-                {String(idx + 1).padStart(2, "0")}
-              </ServiceIndex>
+              <ServiceMeta>
+                <ServiceIcon>
+                  {svc.icon && (
+                    <img
+                      src={`${publicPath}/images/icons/${svc.icon}`}
+                      alt={`${svc.title} icon`}
+                      width={18}
+                      height={18}
+                    />
+                  )}
+                </ServiceIcon>
+                <ServiceIndex variant='overline'>
+                  {String(idx + 1).padStart(2, "0")}
+                </ServiceIndex>
+              </ServiceMeta>
               <Box>
                 <ServiceCardTitle variant='subtitle1'>
                   {svc.title}

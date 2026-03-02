@@ -13,6 +13,7 @@ export type Project = {
     date:        string;
     tech_stack:  TechStack[];
     coins?:      TechStack[];
+    outcomes?:   string[];
     modal_details?: ModalDetail[];
 }
 

@@ -14,6 +14,7 @@ const AvatarWrap = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  zIndex: 1,
   [theme.breakpoints.up("md")]: {
     width: 340,
   },
@@ -29,8 +30,8 @@ const AvatarGlow = styled(Box)(() => ({
 }));
 
 const HeroAvatarFrame = styled(Box)(({ theme }) => ({
-  width: 200,
-  height: 200,
+  width: 170,
+  height: 170,
   borderRadius: "28px",
   border: "2px solid rgba(148,163,184,0.35)",
   boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
@@ -39,12 +40,12 @@ const HeroAvatarFrame = styled(Box)(({ theme }) => ({
   zIndex: 1,
   overflow: "hidden",
   [theme.breakpoints.up("sm")]: {
-    width: 240,
-    height: 240,
+    width: 220,
+    height: 220,
   },
   [theme.breakpoints.up("md")]: {
-    width: 300,
-    height: 300,
+    width: 280,
+    height: 280,
   },
 }));
 

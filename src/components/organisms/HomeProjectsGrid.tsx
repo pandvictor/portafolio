@@ -18,11 +18,31 @@ const ProjectsHeader = styled(Box)(({ theme }) => ({
   },
 }));
 
+const ProjectsHeaderTop = styled(Box)(() => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  gap: "var(--space-3)",
+  flexWrap: "wrap",
+}));
+
 const ProjectsEyebrow = styled(Typography)(() => ({
   letterSpacing: "0.28em",
   textTransform: "uppercase",
   fontWeight: 700,
   color: "var(--text-secondary)",
+}));
+
+const ProjectsHint = styled(Typography)(() => ({
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
+  padding: "4px 10px",
+  borderRadius: 999,
+  border: "1px solid var(--border-subtle)",
+  background: "rgba(15,23,42,0.6)",
+  color: "var(--text-secondary)",
+  fontWeight: 700,
 }));
 
 const ScrollShell = styled(Box)(({ theme }) => ({
@@ -50,14 +70,20 @@ const ScrollShell = styled(Box)(({ theme }) => ({
 }));
 
 const SlideItem = styled(Box, {
-  shouldForwardProp: (prop) => prop !== "visible" && prop !== "delay",
-})<{ visible: boolean; delay: number }>(({ theme, visible, delay }) => ({
+  shouldForwardProp: (prop) =>
+    prop !== "visible" && prop !== "delay" && prop !== "active",
+})<{ visible: boolean; delay: number; active: boolean }>(
+  ({ theme, visible, delay, active }) => ({
   flex: "0 0 auto",
   width: "min(380px, 86vw)",
   scrollSnapAlign: "start",
   opacity: visible ? 1 : 0,
-  transform: visible ? "translateY(0)" : "translateY(16px)",
-  transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`,
+  transform: visible ? (active ? "translateY(-6px)" : "translateY(0)") : "translateY(16px)",
+  boxShadow: active
+    ? "0 0 0 1px rgba(34,211,238,0.35), 0 24px 60px rgba(34,211,238,0.15)"
+    : "none",
+  borderRadius: 24,
+  transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms, box-shadow 0.4s ease`,
   [theme.breakpoints.up("sm")]: {
     width: 360,
   },
@@ -85,6 +111,7 @@ type ProjectSlideProps = {
 const ProjectSlide = memo(({ data, delay, rootRef, onOpen }: ProjectSlideProps) => {
   const itemRef = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     const node = itemRef.current;
@@ -93,21 +120,21 @@ const ProjectSlide = memo(({ data, delay, rootRef, onOpen }: ProjectSlideProps) 
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
         }
+        setActive(entry.intersectionRatio >= 0.6);
       },
       {
         root: rootRef.current ?? null,
         rootMargin: "0px 120px",
-        threshold: 0.25,
+        threshold: [0.25, 0.6],
       }
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, [rootRef, visible]);
+  }, [rootRef]);
 
   return (
-    <SlideItem ref={itemRef} visible={visible} delay={delay}>
+    <SlideItem ref={itemRef} visible={visible} delay={delay} active={active}>
       <CardItem
         data={data.project}
         companyImage={data.companyImage}
@@ -128,10 +155,11 @@ type HomeProjectsGridProps = {
   title: string;
   subtitle: string;
   note?: string;
+  hint?: string;
 };
 
 export const HomeProjectsGrid = memo(
-  ({ works, onOpen, kicker, title, subtitle, note }: HomeProjectsGridProps) => {
+  ({ works, onOpen, kicker, title, subtitle, note, hint }: HomeProjectsGridProps) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const slides = useMemo<SlideData[]>(() => {
       const items: SlideData[] = [];
@@ -161,7 +189,10 @@ export const HomeProjectsGrid = memo(
     return (
       <ProjectsSection>
         <ProjectsHeader>
-          <ProjectsEyebrow variant='overline'>{kicker}</ProjectsEyebrow>
+          <ProjectsHeaderTop>
+            <ProjectsEyebrow variant='overline'>{kicker}</ProjectsEyebrow>
+            {hint && <ProjectsHint variant='caption'>{hint}</ProjectsHint>}
+          </ProjectsHeaderTop>
           <Typography variant='h4'>{title}</Typography>
           <Typography variant='body1' color='text.secondary'>
             {subtitle}
