@@ -6,6 +6,8 @@ import { useCallback, useMemo, useState } from "react";
 import { ProjectDialog } from "../organisms/ProjectDialog";
 import {
   HeroSection,
+  HomeCredibilitySection,
+  HomeFeaturedProjectSection,
   HomeProjectsGrid,
   HomeServicesSection,
   HomeTrustedSection,
@@ -16,6 +18,7 @@ export type ModalPayload = ProjectModalPayload;
 type ServiceItem = {
   title: string;
   desc: string;
+  icon?: string;
 };
 
 const EMPTY_CONTACTS: ContactInfo[] = [];
@@ -41,6 +44,11 @@ export default function HomePage() {
   const projectsTitle = i18n.t("home.projects_title");
   const projectsSubtitle = i18n.t("home.projects_subtitle");
   const projectsNote = i18n.t("home.projects_note");
+  const projectsHint = i18n.t("home.projects_hint");
+  const featuredKicker = i18n.t("home.featured_kicker");
+  const featuredTitle = i18n.t("home.featured_title");
+  const featuredSubtitle = i18n.t("home.featured_subtitle");
+  const featuredCta = i18n.t("home.featured_cta");
   const worksRaw = resumeData?.work_history as WorkHistory[] | undefined;
   const works = useMemo(
     () =>
@@ -60,6 +68,52 @@ export default function HomePage() {
         }),
     [worksRaw]
   );
+  const credibilityKicker = i18n.t("home.credibility_kicker");
+  const credibilityTitle = i18n.t("home.credibility_title");
+  const credibilityStats = useMemo(() => {
+    const list = i18n.t("home.credibility_stats") as unknown;
+    return Array.isArray(list)
+      ? (list as { value: string; label: string }[])
+      : [];
+  }, [language]);
+  const featuredProject = useMemo(() => {
+    for (const work of works) {
+      const projects = work.achievements || [];
+      const match = projects.find((proj) => proj.outcomes && proj.outcomes.length > 0);
+      if (match) {
+        const companyImage = Array.isArray(work.company_image)
+          ? work.company_image[0]
+          : work.company_image;
+        const companyImages = Array.isArray(work.company_image)
+          ? work.company_image
+          : work.company_image
+            ? [work.company_image]
+            : [];
+        return {
+          project: match,
+          companyName: work.company,
+          companyImage,
+          companyImages,
+        };
+      }
+    }
+    const fallback = works[0];
+    if (!fallback || !fallback.achievements?.length) return null;
+    const companyImage = Array.isArray(fallback.company_image)
+      ? fallback.company_image[0]
+      : fallback.company_image;
+    const companyImages = Array.isArray(fallback.company_image)
+      ? fallback.company_image
+      : fallback.company_image
+        ? [fallback.company_image]
+        : [];
+    return {
+      project: fallback.achievements[0],
+      companyName: fallback.company,
+      companyImage,
+      companyImages,
+    };
+  }, [works]);
   const handleOpen = useCallback((payload: ModalPayload) => {
     setSelected(payload);
   }, []);
@@ -78,12 +132,32 @@ export default function HomePage() {
 
       <HomeTrustedSection title={trustedTitle} />
 
+      <HomeCredibilitySection
+        kicker={credibilityKicker}
+        title={credibilityTitle}
+        stats={credibilityStats}
+      />
+
       <HomeServicesSection
         kicker={servicesKicker}
         title={servicesTitle}
         intro={servicesIntro}
         services={services}
       />
+
+      {featuredProject && (
+        <HomeFeaturedProjectSection
+          kicker={featuredKicker}
+          title={featuredTitle}
+          subtitle={featuredSubtitle}
+          cta={featuredCta}
+          project={featuredProject.project}
+          companyName={featuredProject.companyName}
+          companyImage={featuredProject.companyImage}
+          companyImages={featuredProject.companyImages}
+          onOpen={handleOpen}
+        />
+      )}
 
       <HomeProjectsGrid
         works={works}
@@ -92,6 +166,7 @@ export default function HomePage() {
         title={projectsTitle}
         subtitle={projectsSubtitle}
         note={projectsNote}
+        hint={projectsHint}
       />
 
       <ProjectDialog

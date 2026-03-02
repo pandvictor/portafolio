@@ -1,5 +1,7 @@
 export * from './DrawerAppBar';
 export * from './HeroSection';
+export * from './HomeCredibilitySection';
+export * from './HomeFeaturedProjectSection';
 export * from './HomeProjectsGrid';
 export * from './HomeServicesSection';
 export * from './HomeTrustedSection';

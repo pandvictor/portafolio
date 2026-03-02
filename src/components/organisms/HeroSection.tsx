@@ -1,5 +1,5 @@
-import { Box, Button, Chip, Stack, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Box, Button, Chip, Stack, Typography, useMediaQuery } from "@mui/material";
+import { styled, useTheme } from "@mui/material/styles";
 import type { ButtonProps } from "@mui/material/Button";
 import { publicPath } from "../../constants/gloabals";
 import {
@@ -84,12 +84,13 @@ const HeroContent = styled(Box)(({ theme }) => ({
   position: "relative",
   display: "flex",
   flexDirection: "column",
-  gap: theme.spacing(3),
+  gap: theme.spacing(2.5),
   alignItems: "center",
-  padding: theme.spacing(3.5, 2.5),
+  padding: theme.spacing(3, 2),
   [theme.breakpoints.up("sm")]: {
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
+    gap: theme.spacing(3),
   },
   [theme.breakpoints.up("md")]: {
     padding: theme.spacing(6, 11),
@@ -106,6 +107,8 @@ const HeroLeft = styled(Stack)(({ theme }) => ({
   minWidth: 0,
   textAlign: "center",
   alignItems: "center",
+  position: "relative",
+  zIndex: 2,
   [theme.breakpoints.up("md")]: {
     textAlign: "left",
     alignItems: "flex-start",
@@ -234,9 +237,13 @@ const SectionBody = styled(Typography)(() => ({
 }));
 
 const TagRow = styled(Stack)(({ theme }) => ({
+  display: "flex",
   flexWrap: "wrap",
   gap: theme.spacing(1),
   justifyContent: "center",
+  [theme.breakpoints.down("sm")]: {
+    display: "none",
+  },
   [theme.breakpoints.up("md")]: {
     justifyContent: "flex-start",
   },
@@ -273,6 +280,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [isFlipped, setIsFlipped] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const flipTimerRef = useRef<number | null>(null);
+  const theme = useTheme();
+  const isCompact = useMediaQuery(theme.breakpoints.down("sm"));
   const contactUrl = contactInfo?.[0]?.url;
   const linkedinUrl = useMemo(
     () =>
@@ -287,6 +296,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     () => `${publicPath}/files/resume-victor-hernandez-${language}.pdf`,
     [language]
   );
+  const primaryAction = contactUrl
+    ? { label: i18n.t("hero.cta.talk"), href: contactUrl }
+    : { label: i18n.t("download"), href: downloadHref };
+  const secondaryAction = contactUrl
+    ? { label: i18n.t("download"), href: downloadHref, type: "download" }
+    : linkedinUrl
+      ? { label: "LinkedIn", href: linkedinUrl, type: "linkedin" }
+      : null;
   const prefersReducedMotion = useMemo(() => {
     if (typeof window === "undefined" || !window.matchMedia) return false;
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -306,6 +323,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         icon: IMPACT_ICON_MAP[card.key] ?? "react.svg",
       })),
     [impactCardsCopy]
+  );
+  const visibleBullets = useMemo(
+    () => (isCompact ? bullets.slice(0, 2) : bullets),
+    [bullets, isCompact]
   );
 
   const startFlipTimer = useCallback(() => {
@@ -350,7 +371,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <FlipGrid flipped={isFlipped} reducedMotion={prefersReducedMotion}>
         <FlipFace>
           <HeroContent>
-            <HeroLeft spacing={2.5}>
+            <HeroLeft spacing={{ xs: 2, sm: 2.5 }}>
               <ChipRow direction='row' spacing={1} alignItems='center' useFlexGap>
                 <GradientChip
                   label={chipLabels.ai}
@@ -360,6 +381,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   label={chipLabels.sectors}
                   color='secondary'
                   size='small'
+                  sx={{ display: { xs: "none", sm: "inline-flex" } }}
                 />
                 <OutlineChip
                   label={chipLabels.experience}
@@ -372,18 +394,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   variant='outlined'
                   color='secondary'
                   size='small'
+                  sx={{ display: { xs: "none", sm: "inline-flex" } }}
                 />
               </ChipRow>
-              <HeroName variant='h3'>{resume?.full_name}</HeroName>
-              <HeroRole variant='h5' color='text.secondary'>
+              <HeroName
+                variant='h3'
+                sx={{ fontSize: { xs: "2rem", sm: "2.4rem", md: "3rem" } }}>
+                {resume?.full_name}
+              </HeroName>
+              <HeroRole
+                variant='h5'
+                color='text.secondary'
+                sx={{ fontSize: { xs: "1.05rem", sm: "1.2rem" } }}>
                 {resume?.position}
               </HeroRole>
-              <SkillIconsRow justify='flex-start' />
+              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                <SkillIconsRow justify='flex-start' />
+              </Box>
               <HeroSubtitle variant='body1' color='text.secondary'>
                 {i18n.t("portfolio.subtitle")}
               </HeroSubtitle>
               <Stack spacing={1}>
-                {bullets.map((item, idx) => (
+                {visibleBullets.map((item, idx) => (
                   <BulletRow
                     key={`${item}-${idx}`}
                     direction='row'
@@ -401,33 +433,35 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   variant='contained'
                   color='primary'
                   size='large'
-                  href={downloadHref}>
-                  {i18n.t("download")}
+                  href={primaryAction.href}>
+                  {primaryAction.label}
                 </PrimaryCtaButton>
-                {linkedinUrl && (
+                {secondaryAction?.type === "linkedin" && (
                   <LinkedInButton
                     component='a'
                     variant='outlined'
                     size='large'
-                    href={linkedinUrl}
+                    href={secondaryAction.href}
                     target='_blank'
                     rel='noreferrer'
+                    sx={{ display: { xs: "none", sm: "inline-flex" } }}
                     startIcon={
                       <LinkedInIcon
                         alt='LinkedIn'
                         src={`${publicPath}/images/icons/linkedin.svg`}
                       />
                     }>
-                    LinkedIn
+                    {secondaryAction.label}
                   </LinkedInButton>
                 )}
-                {contactUrl && (
+                {secondaryAction?.type === "download" && (
                   <TalkButton
                     variant='outlined'
                     color='inherit'
                     size='large'
-                    href={contactUrl}>
-                    {i18n.t("hero.cta.talk")}
+                    href={secondaryAction.href}
+                    sx={{ display: { xs: "none", sm: "inline-flex" } }}>
+                    {secondaryAction.label}
                   </TalkButton>
                 )}
               </CtaRow>
@@ -440,7 +474,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </FlipFace>
         <FlipBackFace>
           <HeroContent>
-            <HeroLeft spacing={2.5}>
+            <HeroLeft spacing={{ xs: 2, sm: 2.5 }}>
               <GradientChip
                 label={i18n.t("hero.back.badge")}
                 size='small'

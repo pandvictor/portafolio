@@ -38,9 +38,10 @@ const LogoWrap = styled(Box)(() => ({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  minWidth: 60,
-  maxWidth: 140,
-  maxHeight: 42,
+  minWidth: 70,
+  maxWidth: 130,
+  height: 36,
+  padding: 4,
   transition: "transform 0.2s ease, box-shadow 0.2s ease",
   "&:hover": {
     transform: "scale(1.05)",
@@ -50,8 +51,8 @@ const LogoWrap = styled(Box)(() => ({
 const LogoImage = styled("img")(() => ({
   width: "100%",
   height: "100%",
-  maxWidth: 140,
-  maxHeight: 42,
+  maxWidth: 120,
+  maxHeight: 32,
   objectFit: "contain",
 }));
 
@@ -70,6 +71,24 @@ const TechIconButton = styled(IconButton)(() => ({
 
 const DetailsGrid = styled(Grid)(({ theme }) => ({
   marginTop: theme.spacing(2),
+}));
+
+const OutcomesRow = styled(Stack)(({ theme }) => ({
+  marginTop: theme.spacing(1.5),
+  marginBottom: theme.spacing(2),
+  flexWrap: "wrap",
+}));
+
+const OutcomeChip = styled("span")(({ theme }) => ({
+  display: "inline-flex",
+  alignItems: "center",
+  padding: "4px 10px",
+  borderRadius: 999,
+  border: "1px solid rgba(34,211,238,0.35)",
+  color: theme.palette.text.primary,
+  backgroundColor: "rgba(15,23,42,0.5)",
+  fontSize: "0.78rem",
+  fontWeight: 700,
 }));
 
 const DetailMedia = styled("img")(() => ({
@@ -112,6 +131,13 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
     </DialogTitle>
     <DialogContent dividers>
       <Typography paragraph>{payload?.project.description}</Typography>
+      {payload?.project.outcomes && payload.project.outcomes.length > 0 && (
+        <OutcomesRow direction='row' spacing={1} useFlexGap>
+          {payload.project.outcomes.map((item, idx) => (
+            <OutcomeChip key={`${item}-${idx}`}>{item}</OutcomeChip>
+          ))}
+        </OutcomesRow>
+      )}
       <Stack direction='row' spacing={1} flexWrap='wrap'>
         {payload?.project.tech_stack.map((tech) => {
           const icon = resolveTechIcon(tech.name, tech.icon);
