@@ -59,7 +59,7 @@ const FooterLinks = styled(Stack)(({ theme }) => ({
   gap: theme.spacing(1.5),
 }));
 
-const FooterLink = styled("a")(({ theme }) => ({
+const FooterLink = styled("a")(() => ({
   display: "inline-flex",
   alignItems: "center",
   gap: 8,
