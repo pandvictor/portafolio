@@ -18,13 +18,6 @@ const ProjectsHeader = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ProjectsHeaderTop = styled(Box)(() => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  gap: "var(--space-3)",
-  flexWrap: "wrap",
-}));
 
 const ProjectsEyebrow = styled(Typography)(() => ({
   letterSpacing: "0.28em",
@@ -33,17 +26,6 @@ const ProjectsEyebrow = styled(Typography)(() => ({
   color: "var(--text-secondary)",
 }));
 
-const ProjectsHint = styled(Typography)(() => ({
-  display: "inline-flex",
-  alignItems: "center",
-  gap: 6,
-  padding: "4px 10px",
-  borderRadius: 999,
-  border: "1px solid var(--border-subtle)",
-  background: "rgba(15,23,42,0.6)",
-  color: "var(--text-secondary)",
-  fontWeight: 700,
-}));
 
 const ScrollShell = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -155,11 +137,10 @@ type HomeProjectsGridProps = {
   title: string;
   subtitle: string;
   note?: string;
-  hint?: string;
 };
 
 export const HomeProjectsGrid = memo(
-  ({ works, onOpen, kicker, title, subtitle, note, hint }: HomeProjectsGridProps) => {
+  ({ works, onOpen, kicker, title, subtitle, note }: HomeProjectsGridProps) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const slides = useMemo<SlideData[]>(() => {
       const items: SlideData[] = [];
@@ -189,10 +170,7 @@ export const HomeProjectsGrid = memo(
     return (
       <ProjectsSection>
         <ProjectsHeader>
-          <ProjectsHeaderTop>
-            <ProjectsEyebrow variant='overline'>{kicker}</ProjectsEyebrow>
-            {hint && <ProjectsHint variant='caption'>{hint}</ProjectsHint>}
-          </ProjectsHeaderTop>
+          <ProjectsEyebrow variant='overline'>{kicker}</ProjectsEyebrow>
           <Typography variant='h4'>{title}</Typography>
           <Typography variant='body1' color='text.secondary'>
             {subtitle}

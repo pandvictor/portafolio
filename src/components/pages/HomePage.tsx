@@ -44,7 +44,6 @@ export default function HomePage() {
   const projectsTitle = i18n.t("home.projects_title");
   const projectsSubtitle = i18n.t("home.projects_subtitle");
   const projectsNote = i18n.t("home.projects_note");
-  const projectsHint = i18n.t("home.projects_hint");
   const featuredKicker = i18n.t("home.featured_kicker");
   const featuredTitle = i18n.t("home.featured_title");
   const featuredSubtitle = i18n.t("home.featured_subtitle");
@@ -166,7 +165,6 @@ export default function HomePage() {
         title={projectsTitle}
         subtitle={projectsSubtitle}
         note={projectsNote}
-        hint={projectsHint}
       />
 
       <ProjectDialog
