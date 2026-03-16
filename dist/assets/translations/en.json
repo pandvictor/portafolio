@@ -4,7 +4,137 @@
   "more_info": "Overview",
   "portfolio": {
     "title": "Portfolio",
-    "subtitle": "Digital solutions for fintech, government and international organizations"
+    "subtitle": "I build and scale mobile, web, and backend products for fintech, public-sector, and crypto teams."
+  },
+  "home": {
+    "trusted_by": "Trusted by",
+    "services_title": "How I help",
+    "services_kicker": "Services",
+    "services_intro": "Focused execution for teams that need speed, quality, and reliability. End-to-end product delivery, from discovery to scale.",
+    "projects_kicker": "Projects",
+    "projects_title": "Selected work",
+    "projects_subtitle": "Case studies across fintech, government, and crypto platforms.",
+    "projects_note": "Open a project to see scope, stack, and outcomes.",
+    "featured_kicker": "Featured",
+    "featured_title": "A case study with measurable impact",
+    "featured_subtitle": "A closer look at one platform where outcomes, scale, and delivery are clear.",
+    "featured_cta": "View case study",
+    "projects_hint": "Scroll ->",
+    "credibility_kicker": "Credibility",
+    "credibility_title": "Trusted delivery at scale",
+    "credibility_stats": [
+      {
+        "value": "19+ years",
+        "label": "Shipping mission-critical products"
+      },
+      {
+        "value": "500k+ users",
+        "label": "Wallets and payment platforms"
+      },
+      {
+        "value": "10k+ TPS",
+        "label": "Peak trading throughput"
+      },
+      {
+        "value": "200+ ATMs",
+        "label": "Cash-in/out coverage"
+      }
+    ],
+    "hero_bullets": [
+      "19+ years shipping fintech and public-sector platforms",
+      "Full-stack delivery across mobile, web, and backend",
+      "AI-assisted delivery workflows for faster planning, QA, and release cycles"
+    ],
+    "services": [
+      {
+        "title": "Product delivery",
+        "desc": "Ship high-impact features from scope to launch across mobile and web.",
+        "icon": "dash.svg"
+      },
+      {
+        "title": "Platform & APIs",
+        "desc": "Node/TypeScript, Firebase, and .NET services built for scale.",
+        "icon": "nodejs.svg"
+      },
+      {
+        "title": "Performance & reliability",
+        "desc": "Latency tuning, observability, and incident readiness.",
+        "icon": "kubernetes.svg"
+      },
+      {
+        "title": "Technical leadership",
+        "desc": "Architecture guidance, mentoring, and delivery standards.",
+        "icon": "scrum.svg"
+      }
+    ]
+  },
+  "hero": {
+    "flip": {
+      "aria": "Flip section",
+      "view_profile": "View profile",
+      "view_ai": "View AI"
+    },
+    "chips": {
+      "ai": "AI • LLMs in production",
+      "sectors": "Fintech • Government • Crypto",
+      "experience": "19+ years",
+      "crypto": "Bitcoin • Lightning"
+    },
+    "cta": {
+      "talk": "Let's talk"
+    },
+    "back": {
+      "badge": "AI + Mobile Delivery",
+      "title": "Build & Ship High-Impact Features",
+      "summary": "Design, implement, and scale product experiences across mobile, web, and backend.",
+      "impact_line": "Fast iteration with product, data, and design — built for reliability.",
+      "tags": [
+        "Messaging",
+        "Engagement",
+        "Notifications",
+        "Creator tools",
+        "Safety",
+        "Monetization"
+      ],
+      "cards": [
+        {
+          "key": "features",
+          "title": "Product features",
+          "desc": "Messaging • Engagement • Monetization"
+        },
+        {
+          "key": "mobile",
+          "title": "Mobile",
+          "desc": "React Native • Swift • Kotlin"
+        },
+        {
+          "key": "frontend",
+          "title": "Frontend",
+          "desc": "Web UX + performance"
+        },
+        {
+          "key": "backend",
+          "title": "Backend APIs",
+          "desc": "Node.js • TypeScript • C# .NET"
+        },
+        {
+          "key": "reliability",
+          "title": "Reliability",
+          "desc": "Low latency • on-call"
+        },
+        {
+          "key": "experiments",
+          "title": "Experimentation",
+          "desc": "A/B tests • rapid iteration"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "availability_tag": "Availability",
+    "availability_title": "Open to consulting and leadership roles",
+    "availability_desc": "End-to-end delivery across mobile, web, and backend.",
+    "availability_meta": "Remote · Americas time zones"
   },
   "resume": {
     "title": "Resume",
@@ -15,9 +145,121 @@
     "education": "Education",
     "languages_title": "Languages",
     "skills": "Skills",
+    "change_language": "Change language",
     "contact": "Contact",
-    "summary": "Senior developer with 19+ years delivering technology solutions for fintech, government and international organizations. Specialized in React Native, React, TypeScript, Node.js and AWS. Proven ability to lead teams, define architecture and launch high-impact products such as CHIVO Wallet and the APEX trading platform.",
+    "summary": "Senior developer with 19+ years delivering technology solutions for fintech, government and international organizations. Specialized in React Native, React, TypeScript, Node.js and AWS. Proven ability to lead teams, define architecture and launch high-impact products such as CHIVO Wallet and the APEX trading platform. Currently focused on AI-assisted delivery workflows that shorten planning, QA, and release cycles across React, Python, database, and Docker-based systems.",
     "work_history": [
+      {
+        "start_date": "2026-01-20",
+        "end_date": "",
+        "is_current": true,
+        "company": "BlueQuant",
+        "company_image": "bluequant-wordmark.svg",
+        "position": "Lead Full-Stack Engineer",
+        "description": "Leading AI-assisted product delivery across React frontends, Python services, databases, Dockerized environments, and QA workflows.",
+        "tasks": [
+          "Build internal product workflows with React and Python, connecting business needs to production-ready features.",
+          "Use AI-assisted flows to accelerate technical discovery, implementation support, documentation, and QA preparation.",
+          "Coordinate database work, Docker-based environments, and QA checkpoints so releases move faster with less manual overhead.",
+          "Define practical review standards for AI-generated output, keeping delivery speed high without weakening quality."
+        ],
+        "achievements": [
+          {
+            "title": "AI Delivery Workspace",
+            "description": "Internal workspace for faster planning, implementation, and handoff across product delivery.",
+            "image": "bluequant-ai-studio.svg",
+            "url": "",
+            "date": "2026-01-20",
+            "outcomes": [
+              "AI-assisted delivery planning",
+              "Faster implementation handoffs",
+              "Reusable prompt workflows"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Python",
+                "icon": "python.svg"
+              },
+              {
+                "name": "OpenAI / LLMs",
+                "icon": "openai.svg"
+              },
+              {
+                "name": "PostgreSQL",
+                "icon": "postgresql.svg"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "QA",
+                "icon": "jira.svg"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bluequant-ai-studio.svg",
+                "description": "AI-assisted workspace for defining scope, composing delivery artifacts, and standardizing implementation handoffs."
+              },
+              {
+                "image": "bluequant-qa-copilot.svg",
+                "description": "Operational view for triage, release readiness, and QA acceleration with shared prompts and review checkpoints."
+              }
+            ]
+          },
+          {
+            "title": "QA Intelligence Pipeline",
+            "description": "AI-supported QA and release workflow that reduces manual preparation and improves defect triage.",
+            "image": "bluequant-qa-copilot.svg",
+            "url": "",
+            "date": "2026-02-03",
+            "outcomes": [
+              "Faster QA turnaround",
+              "AI-generated test scenarios",
+              "Smarter defect triage"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Python",
+                "icon": "python.svg"
+              },
+              {
+                "name": "OpenAI / LLMs",
+                "icon": "openai.svg"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "PostgreSQL",
+                "icon": "postgresql.svg"
+              },
+              {
+                "name": "QA",
+                "icon": "jira.svg"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bluequant-qa-copilot.svg",
+                "description": "AI-supported QA workspace for generating test paths, organizing findings, and tightening release readiness."
+              },
+              {
+                "image": "bluequant-ai-studio.svg",
+                "description": "Shared delivery context linking implementation tasks, release scope, and QA follow-up in one operational flow."
+              }
+            ]
+          }
+        ],
+        "home_order": 0,
+        "show_on_home": true
+      },
       {
         "start_date": "2023-06-01",
         "end_date": "",
@@ -39,6 +281,11 @@
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
+            "outcomes": [
+              "500k+ active users",
+              "10k+ daily transactions",
+              "200+ ATMs"
+            ],
             "tech_stack": [
               {
                 "name": "React Native"
@@ -140,6 +387,11 @@
             "image": "apex-hero.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
+            "outcomes": [
+              "60% faster trade updates",
+              "99.95% uptime",
+              "35% less duplicate code"
+            ],
             "tech_stack": [
               {
                 "name": "React Native"
@@ -244,7 +496,10 @@
         "end_date": "2023-12-31",
         "is_current": false,
         "company": "IOM & Social Welfare Secretariat",
-        "company_image": ["oim.jpeg", "sbs.png"],
+        "company_image": [
+          "oim.jpeg",
+          "sbs.png"
+        ],
         "position": "Technical Lead & Senior Developer",
         "description": "Technical owner of the Angel Ariel program, coordinating React and Node.js teams for government projects.",
         "tasks": [
@@ -440,7 +695,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Bullseye Locations",
-        "company_image": "bullseye-logo.png",
+        "company_image": "bullseye.svg",
         "position": "Senior Full-Stack Engineer",
         "description": "Developed map-based applications with Google Maps and Mapbox for retail customers.",
         "tasks": [
@@ -453,9 +708,14 @@
           {
             "title": "Location Intelligence Suite",
             "description": "Web and mobile apps for site analysis with interactive maps.",
-            "image": "bullseye-banner.png",
+            "image": "bullseye-banner-transparent.png",
             "url": "https://www.bullseyelocations.com/",
             "date": "2022-10-01",
+            "outcomes": [
+              "Geospatial site scoring",
+              "Retail expansion planning",
+              "Map-based analytics"
+            ],
             "tech_stack": [
               {
                 "name": "React"
@@ -556,7 +816,10 @@
         "end_date": "2020-12-31",
         "is_current": false,
         "company": "FAO UN & SIECA",
-        "company_image": ["fao.png", "sieca.png"],
+        "company_image": [
+          "fao.png",
+          "sieca.png"
+        ],
         "position": "Tech Lead & Senior Full-Stack",
         "description": "Delivered regional agricultural market platforms and customs dashboards for Central America and the Caribbean.",
         "tasks": [
@@ -569,9 +832,14 @@
           {
             "title": "Regional Agricultural Market",
             "description": "Platform used across Central America to track prices and supply.",
-            "image": "red-regional.jpeg",
+            "image": "red-regional-banner.svg",
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
+            "outcomes": [
+              "Regional market intelligence",
+              "Customs trade analytics",
+              "Multi-country rollout"
+            ],
             "tech_stack": [
               {
                 "name": "React"
@@ -619,6 +887,10 @@
                 "description": "Interactive statistical charts comparing prices across countries and products."
               },
               {
+                "image": "simmagro-alerts.png",
+                "description": "Real-time alerts and freshness checks for price updates across markets."
+              },
+              {
                 "image": "simmagro-timeline.png",
                 "description": "Time-series price charts by country with side-by-side comparisons across markets."
               }
@@ -633,7 +905,7 @@
         "end_date": "2014-12-31",
         "is_current": false,
         "company": "FantasyGol",
-        "company_image": "fantasygol-logo.png",
+        "company_image": "fantasygol-logo.svg",
         "position": "Full-Stack Developer",
         "description": "• Built a fantasy football platform with 10+ international leagues and 10k+ concurrent players.\n• Monetized peer betting with a 10% house fee and grew fast enough to be acquired post-World Cup.",
         "tasks": [
@@ -651,13 +923,30 @@
             "image": "fantasygol-card.png",
             "url": "",
             "date": "2014-12-01",
+            "outcomes": [
+              "10k+ concurrent players",
+              "10+ international leagues",
+              "Monetized betting flows"
+            ],
             "tech_stack": [
-              { "name": "PHP" },
-              { "name": "PayPal" },
-              { "name": "AWS" },
-              { "name": "MySQL" },
-              { "name": "Git" },
-              { "name": "GitLab" }
+              {
+                "name": "PHP"
+              },
+              {
+                "name": "PayPal"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              }
             ],
             "modal_details": [
               {
@@ -760,17 +1049,36 @@
     "tech_skills": [
       {
         "title": "Frontend & Mobile",
-        "tools": ["React", "React Native", "TypeScript", "Redux", "Expo"],
+        "tools": [
+          "React",
+          "React Native",
+          "TypeScript",
+          "Redux",
+          "Expo"
+        ],
         "stars": 5
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Python",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Databases",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
+        "tools": [
+          "MySQL",
+          "PostgreSQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle"
+        ],
         "stars": 4
       },
       {
@@ -780,7 +1088,8 @@
           "Bitbucket",
           "Jira",
           "AWS Amplify",
-          "CloudFormation"
+          "CloudFormation",
+          "QA"
         ],
         "stars": 4
       }

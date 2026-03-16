@@ -1,0 +1,37 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="124" y1="64" x2="1160" y2="662" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111B"/>
+      <stop offset="1" stop-color="#102033"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="210" y1="154" x2="970" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A3E635"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="40" fill="url(#bg)"/>
+  <circle cx="1040" cy="132" r="120" fill="#22D3EE" fill-opacity="0.14"/>
+  <circle cx="204" cy="612" r="150" fill="#A3E635" fill-opacity="0.1"/>
+  <rect x="92" y="110" width="476" height="498" rx="28" fill="#0B1623" stroke="rgba(148,163,184,0.25)"/>
+  <rect x="130" y="156" width="216" height="18" rx="9" fill="#22D3EE" fill-opacity="0.85"/>
+  <rect x="130" y="196" width="322" height="18" rx="9" fill="#E2E8F0" fill-opacity="0.9"/>
+  <rect x="130" y="238" width="380" height="14" rx="7" fill="#94A3B8" fill-opacity="0.3"/>
+  <rect x="130" y="276" width="380" height="14" rx="7" fill="#94A3B8" fill-opacity="0.22"/>
+  <rect x="130" y="314" width="380" height="14" rx="7" fill="#94A3B8" fill-opacity="0.22"/>
+  <rect x="130" y="376" width="184" height="88" rx="20" fill="#132438"/>
+  <rect x="326" y="376" width="184" height="88" rx="20" fill="#132438"/>
+  <rect x="130" y="476" width="380" height="92" rx="22" fill="#0F1F31" stroke="rgba(148,163,184,0.18)"/>
+  <path d="M670 210H1150" stroke="rgba(148,163,184,0.18)" stroke-width="2"/>
+  <path d="M670 330H1150" stroke="rgba(148,163,184,0.18)" stroke-width="2"/>
+  <path d="M670 450H1150" stroke="rgba(148,163,184,0.18)" stroke-width="2"/>
+  <circle cx="726" cy="210" r="48" fill="#10263A" stroke="url(#accent)" stroke-width="3"/>
+  <circle cx="910" cy="330" r="48" fill="#10263A" stroke="url(#accent)" stroke-width="3"/>
+  <circle cx="726" cy="450" r="48" fill="#10263A" stroke="url(#accent)" stroke-width="3"/>
+  <circle cx="1094" cy="210" r="48" fill="#10263A" stroke="url(#accent)" stroke-width="3"/>
+  <circle cx="1094" cy="450" r="48" fill="#10263A" stroke="url(#accent)" stroke-width="3"/>
+  <path d="M774 210H1046" stroke="url(#accent)" stroke-width="4"/>
+  <path d="M958 330H1094V402" stroke="url(#accent)" stroke-width="4"/>
+  <path d="M774 450H1046" stroke="url(#accent)" stroke-width="4"/>
+  <text x="672" y="110" fill="#E2E8F0" font-family="Space Grotesk, Sora, Arial, sans-serif" font-size="44" font-weight="700">AI Delivery Workspace</text>
+  <text x="672" y="156" fill="#94A3B8" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="500">Planning, implementation, review, and release workflows accelerated with LLM assistance.</text>
+</svg>
