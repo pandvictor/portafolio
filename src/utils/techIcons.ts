@@ -9,6 +9,11 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("expo")) return "expo.svg";
   if (key.includes("redux")) return "redux.svg";
   if (key.includes("rtk") || key.includes("query")) return "rtk-query.svg";
+  if (key.includes("python")) return "python.svg";
+  if (key.includes("openai") || key.includes("llm") || key.includes("gpt") || key.includes("rag")) {
+    return "openai.svg";
+  }
+  if (key === "qa" || key.includes("quality assurance")) return "jira.svg";
   if (key.includes("jira")) return "jira.svg";
   if (key.includes("gitlab")) return "gitlab.svg";
   if (key.includes("git")) return "git.svg";
@@ -30,6 +35,7 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("ios")) return "ios.svg";
   if (key.includes("docker")) return "docker.svg";
   if (key.includes("kubernetes")) return "kubernetes.svg";
+  if (key.includes("postgres")) return "postgresql.svg";
   if (key.includes("mysql")) return "mysql-database.svg";
   if (key.includes("node")) return "nodejs.svg";
   if (key.includes("typescript") || key === "ts") return "typescript.png";

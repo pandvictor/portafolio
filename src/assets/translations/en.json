@@ -23,15 +23,27 @@
     "credibility_kicker": "Credibility",
     "credibility_title": "Trusted delivery at scale",
     "credibility_stats": [
-      { "value": "19+ years", "label": "Shipping mission-critical products" },
-      { "value": "500k+ users", "label": "Wallets and payment platforms" },
-      { "value": "10k+ TPS", "label": "Peak trading throughput" },
-      { "value": "200+ ATMs", "label": "Cash-in/out coverage" }
+      {
+        "value": "19+ years",
+        "label": "Shipping mission-critical products"
+      },
+      {
+        "value": "500k+ users",
+        "label": "Wallets and payment platforms"
+      },
+      {
+        "value": "10k+ TPS",
+        "label": "Peak trading throughput"
+      },
+      {
+        "value": "200+ ATMs",
+        "label": "Cash-in/out coverage"
+      }
     ],
     "hero_bullets": [
       "19+ years shipping fintech and public-sector platforms",
       "Full-stack delivery across mobile, web, and backend",
-      "Hands-on leadership from architecture to launch"
+      "AI-assisted delivery workflows for faster planning, QA, and release cycles"
     ],
     "services": [
       {
@@ -76,14 +88,45 @@
       "title": "Build & Ship High-Impact Features",
       "summary": "Design, implement, and scale product experiences across mobile, web, and backend.",
       "impact_line": "Fast iteration with product, data, and design — built for reliability.",
-      "tags": ["Messaging", "Engagement", "Notifications", "Creator tools", "Safety", "Monetization"],
+      "tags": [
+        "Messaging",
+        "Engagement",
+        "Notifications",
+        "Creator tools",
+        "Safety",
+        "Monetization"
+      ],
       "cards": [
-        { "key": "features", "title": "Product features", "desc": "Messaging • Engagement • Monetization" },
-        { "key": "mobile", "title": "Mobile", "desc": "React Native • Swift • Kotlin" },
-        { "key": "frontend", "title": "Frontend", "desc": "Web UX + performance" },
-        { "key": "backend", "title": "Backend APIs", "desc": "Node.js • TypeScript • C# .NET" },
-        { "key": "reliability", "title": "Reliability", "desc": "Low latency • on-call" },
-        { "key": "experiments", "title": "Experimentation", "desc": "A/B tests • rapid iteration" }
+        {
+          "key": "features",
+          "title": "Product features",
+          "desc": "Messaging • Engagement • Monetization"
+        },
+        {
+          "key": "mobile",
+          "title": "Mobile",
+          "desc": "React Native • Swift • Kotlin"
+        },
+        {
+          "key": "frontend",
+          "title": "Frontend",
+          "desc": "Web UX + performance"
+        },
+        {
+          "key": "backend",
+          "title": "Backend APIs",
+          "desc": "Node.js • TypeScript • C# .NET"
+        },
+        {
+          "key": "reliability",
+          "title": "Reliability",
+          "desc": "Low latency • on-call"
+        },
+        {
+          "key": "experiments",
+          "title": "Experimentation",
+          "desc": "A/B tests • rapid iteration"
+        }
       ]
     }
   },
@@ -96,7 +139,7 @@
   "resume": {
     "title": "Resume",
     "name": "Victor",
-    "full_name": "Victor Hern\u00e1ndez",
+    "full_name": "Victor Hernández",
     "position": "Lead & Senior Software Developer",
     "experience": "Experience",
     "education": "Education",
@@ -104,8 +147,119 @@
     "skills": "Skills",
     "change_language": "Change language",
     "contact": "Contact",
-    "summary": "Engineering Leader with 19+ years building large-scale, mission-critical platforms across fintech, crypto, and public-sector organizations. Led end-to-end development of CHIVO Wallet and the APEX trading platform, improving scalability, real-time performance, and system reliability for millions of users. Expert in React Native, React, Node.js, and AWS, with a strong track record guiding engineering teams, defining architecture, and delivering high-impact products under fast-paced and high-stakes environments.",
+    "summary": "Engineering Leader with 19+ years building large-scale, mission-critical platforms across fintech, crypto, and public-sector organizations. Led end-to-end development of CHIVO Wallet and the APEX trading platform, improving scalability, real-time performance, and system reliability for millions of users. Expert in React Native, React, Node.js, and AWS, with a strong track record guiding engineering teams, defining architecture, and delivering high-impact products under fast-paced and high-stakes environments. Currently focused on AI-assisted delivery workflows that shorten planning, QA, and release cycles across React, Python, database, and Docker-based systems.",
     "work_history": [
+      {
+        "start_date": "2026-01-20",
+        "end_date": "",
+        "is_current": true,
+        "company": "BlueQuant",
+        "company_image": "bluequant-wordmark.svg",
+        "position": "Lead Full-Stack Engineer",
+        "description": "Leading AI-assisted product delivery across React frontends, Python services, databases, Dockerized environments, and QA workflows.",
+        "tasks": [
+          "Build internal product workflows with React and Python, connecting business needs to production-ready features.",
+          "Use AI-assisted flows to accelerate technical discovery, implementation support, documentation, and QA preparation.",
+          "Coordinate database work, Docker-based environments, and QA checkpoints so releases move faster with less manual overhead.",
+          "Define practical review standards for AI-generated output, keeping delivery speed high without weakening quality."
+        ],
+        "achievements": [
+          {
+            "title": "AI Delivery Workspace",
+            "description": "Internal workspace for faster planning, implementation, and handoff across product delivery.",
+            "image": "bluequant-ai-studio.svg",
+            "url": "",
+            "date": "2026-01-20",
+            "outcomes": [
+              "AI-assisted delivery planning",
+              "Faster implementation handoffs",
+              "Reusable prompt workflows"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Python",
+                "icon": "python.svg"
+              },
+              {
+                "name": "OpenAI / LLMs",
+                "icon": "openai.svg"
+              },
+              {
+                "name": "PostgreSQL",
+                "icon": "postgresql.svg"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "QA",
+                "icon": "jira.svg"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bluequant-ai-studio.svg",
+                "description": "AI-assisted workspace for defining scope, composing delivery artifacts, and standardizing implementation handoffs."
+              },
+              {
+                "image": "bluequant-qa-copilot.svg",
+                "description": "Operational view for triage, release readiness, and QA acceleration with shared prompts and review checkpoints."
+              }
+            ]
+          },
+          {
+            "title": "QA Intelligence Pipeline",
+            "description": "AI-supported QA and release workflow that reduces manual preparation and improves defect triage.",
+            "image": "bluequant-qa-copilot.svg",
+            "url": "",
+            "date": "2026-02-03",
+            "outcomes": [
+              "Faster QA turnaround",
+              "AI-generated test scenarios",
+              "Smarter defect triage"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Python",
+                "icon": "python.svg"
+              },
+              {
+                "name": "OpenAI / LLMs",
+                "icon": "openai.svg"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "PostgreSQL",
+                "icon": "postgresql.svg"
+              },
+              {
+                "name": "QA",
+                "icon": "jira.svg"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bluequant-qa-copilot.svg",
+                "description": "AI-supported QA workspace for generating test paths, organizing findings, and tightening release readiness."
+              },
+              {
+                "image": "bluequant-ai-studio.svg",
+                "description": "Shared delivery context linking implementation tasks, release scope, and QA follow-up in one operational flow."
+              }
+            ]
+          }
+        ],
+        "home_order": 0,
+        "show_on_home": true
+      },
       {
         "start_date": "2024-07-01",
         "end_date": "2025-11-30",
@@ -120,8 +274,8 @@
           "Designed and built the mobile experience for complex financial modules, including margin calculations, risk indicators, leverage controls, and order management UIs.",
           "On the web platform, developed new features for Trading UI, Margin, and Futures, contributing to both the user-facing platform and an admin portal used for system monitoring, configuration, and operational management.",
           "Created a reusable cross-platform component library for mobile and web, reducing duplicated code by 35% and improving long-term maintainability.",
-          "Optimized mobile performance (cold-start \u219340%, crash rate \u219325%) through architectural adjustments and targeted profiling.",
-          "Mentored engineers, introduced engineering standards, and significantly reduced code review cycle times (4 days \u2192 1.5 days).",
+          "Optimized mobile performance (cold-start ↓40%, crash rate ↓25%) through architectural adjustments and targeted profiling.",
+          "Mentored engineers, introduced engineering standards, and significantly reduced code review cycle times (4 days → 1.5 days).",
           "Participated in on-call rotations and incident response, helping increase system availability to 99.95%."
         ],
         "achievements": [
@@ -353,10 +507,10 @@
           "sbs.png"
         ],
         "position": "Technical Lead & Senior Developer",
-        "description": "Principal architect and developer for the \u00c1ngel Ariel project and social platforms.",
+        "description": "Principal architect and developer for the Ángel Ariel project and social platforms.",
         "tasks": [
-          "Principal architect and developer for \u00c1ngel Ariel.",
-          "Management platform for Qu\u00e9date and Casa Joven Centers built with React and Node.js.",
+          "Principal architect and developer for Ángel Ariel.",
+          "Management platform for Quédate and Casa Joven Centers built with React and Node.js.",
           "Stakeholder coordination with functional teams.",
           "Owned technical delivery and standards."
         ],
@@ -776,6 +930,7 @@
         "title": "Backend & Cloud",
         "tools": [
           "Node.js",
+          "Python",
           "Java",
           ".NET",
           "AWS",
@@ -787,6 +942,7 @@
         "title": "Databases",
         "tools": [
           "MySQL",
+          "PostgreSQL",
           "MongoDB",
           "DynamoDB",
           "Oracle",
@@ -801,7 +957,8 @@
           "Bitbucket",
           "Jira",
           "AWS Amplify",
-          "CloudFormation"
+          "CloudFormation",
+          "QA"
         ],
         "stars": 4
       }
