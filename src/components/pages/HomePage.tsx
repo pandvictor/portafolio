@@ -76,6 +76,37 @@ export default function HomePage() {
       : [];
   }, [language]);
   const featuredProject = useMemo(() => {
+    const preferredWork = works.find((work) =>
+      work.company.toLowerCase().includes("alphapoint")
+    );
+
+    if (preferredWork) {
+      const preferredProject =
+        preferredWork.achievements.find((proj) => proj.title === "APEX Exchange") ??
+        preferredWork.achievements.find(
+          (proj) => proj.outcomes && proj.outcomes.length > 0
+        ) ??
+        preferredWork.achievements[0];
+
+      if (preferredProject) {
+        const companyImage = Array.isArray(preferredWork.company_image)
+          ? preferredWork.company_image[0]
+          : preferredWork.company_image;
+        const companyImages = Array.isArray(preferredWork.company_image)
+          ? preferredWork.company_image
+          : preferredWork.company_image
+            ? [preferredWork.company_image]
+            : [];
+
+        return {
+          project: preferredProject,
+          companyName: preferredWork.company,
+          companyImage,
+          companyImages,
+        };
+      }
+    }
+
     for (const work of works) {
       const projects = work.achievements || [];
       const match = projects.find((proj) => proj.outcomes && proj.outcomes.length > 0);

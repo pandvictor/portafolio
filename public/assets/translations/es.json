@@ -23,15 +23,27 @@
     "credibility_kicker": "Credibilidad",
     "credibility_title": "Entrega confiable a escala",
     "credibility_stats": [
-      { "value": "19+ años", "label": "Construyendo productos críticos" },
-      { "value": "500k+ usuarios", "label": "Billeteras y pagos digitales" },
-      { "value": "10k+ TPS", "label": "Picos de trading en tiempo real" },
-      { "value": "200+ cajeros", "label": "Cobertura de cash-in/out" }
+      {
+        "value": "19+ años",
+        "label": "Construyendo productos críticos"
+      },
+      {
+        "value": "500k+ usuarios",
+        "label": "Billeteras y pagos digitales"
+      },
+      {
+        "value": "10k+ TPS",
+        "label": "Picos de trading en tiempo real"
+      },
+      {
+        "value": "200+ cajeros",
+        "label": "Cobertura de cash-in/out"
+      }
     ],
     "hero_bullets": [
       "19+ años lanzando plataformas fintech y de gobierno",
       "Entrega full-stack en mobile, web y backend",
-      "Liderazgo práctico: arquitectura, ejecución y mentoring"
+      "Flujos asistidos por IA para acelerar planificación, QA y ciclos de release"
     ],
     "services": [
       {
@@ -76,14 +88,45 @@
       "title": "Construir y lanzar features de alto impacto",
       "summary": "Diseño, implemento y escalo experiencias de producto en mobile, web y backend.",
       "impact_line": "Iteración rápida con producto, data y diseño, con foco en confiabilidad.",
-      "tags": ["Mensajería", "Engagement", "Notificaciones", "Herramientas para creadores", "Seguridad", "Monetización"],
+      "tags": [
+        "Mensajería",
+        "Engagement",
+        "Notificaciones",
+        "Herramientas para creadores",
+        "Seguridad",
+        "Monetización"
+      ],
       "cards": [
-        { "key": "features", "title": "Product features", "desc": "Messaging • Engagement • Monetización" },
-        { "key": "mobile", "title": "Mobile", "desc": "React Native • Swift • Kotlin" },
-        { "key": "frontend", "title": "Frontend", "desc": "Web UX + performance" },
-        { "key": "backend", "title": "APIs backend", "desc": "Node.js • TypeScript • C# .NET" },
-        { "key": "reliability", "title": "Confiabilidad", "desc": "Baja latencia • on-call" },
-        { "key": "experiments", "title": "Experimentación", "desc": "A/B tests • iteración rápida" }
+        {
+          "key": "features",
+          "title": "Product features",
+          "desc": "Messaging • Engagement • Monetización"
+        },
+        {
+          "key": "mobile",
+          "title": "Mobile",
+          "desc": "React Native • Swift • Kotlin"
+        },
+        {
+          "key": "frontend",
+          "title": "Frontend",
+          "desc": "Web UX + performance"
+        },
+        {
+          "key": "backend",
+          "title": "APIs backend",
+          "desc": "Node.js • TypeScript • C# .NET"
+        },
+        {
+          "key": "reliability",
+          "title": "Confiabilidad",
+          "desc": "Baja latencia • on-call"
+        },
+        {
+          "key": "experiments",
+          "title": "Experimentación",
+          "desc": "A/B tests • iteración rápida"
+        }
       ]
     }
   },
@@ -104,8 +147,119 @@
     "skills": "Habilidades",
     "change_language": "Cambiar idioma",
     "contact": "Contacto",
-    "summary": "Desarrollador senior con más de 19 años entregando soluciones tecnológicas para fintech, gobierno y organizaciones internacionales. Especializado en React Native, React, TypeScript, Node.js y AWS. Experiencia comprobada liderando equipos, definiendo arquitecturas y lanzando productos de alto impacto como CHIVO Wallet y la plataforma APEX.",
+    "summary": "Desarrollador senior con más de 19 años entregando soluciones tecnológicas para fintech, gobierno y organizaciones internacionales. Especializado en React Native, React, TypeScript, Node.js y AWS. Experiencia comprobada liderando equipos, definiendo arquitecturas y lanzando productos de alto impacto como CHIVO Wallet y la plataforma APEX. Actualmente enfocado en flujos de entrega asistidos por IA para acortar planificación, QA y ciclos de release sobre sistemas con React, Python, bases de datos y Docker.",
     "work_history": [
+      {
+        "start_date": "2026-01-20",
+        "end_date": "",
+        "is_current": true,
+        "company": "BlueQuant",
+        "company_image": "bluequant-wordmark.svg",
+        "position": "Lead Full-Stack Engineer",
+        "description": "Liderando entrega de producto asistida por IA en frontends React, servicios Python, bases de datos, entornos con Docker y flujos de QA.",
+        "tasks": [
+          "Construcción de flujos internos de producto con React y Python, conectando necesidades de negocio con features listas para producción.",
+          "Uso de flujos asistidos por IA para acelerar discovery técnico, soporte de implementación, documentación y preparación de QA.",
+          "Coordinación de trabajo de bases de datos, entornos con Docker y checkpoints de QA para mover releases más rápido y con menos trabajo manual.",
+          "Definición de estándares prácticos de revisión para output generado con IA, manteniendo velocidad de entrega sin debilitar la calidad."
+        ],
+        "achievements": [
+          {
+            "title": "AI Delivery Workspace",
+            "description": "Workspace interno para acelerar planificación, implementación y handoff dentro del flujo de entrega.",
+            "image": "bluequant-ai-studio.svg",
+            "url": "",
+            "date": "2026-01-20",
+            "outcomes": [
+              "Planeación asistida por IA",
+              "Handoffs técnicos más rápidos",
+              "Workflows de prompts reutilizables"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Python",
+                "icon": "python.svg"
+              },
+              {
+                "name": "OpenAI / LLMs",
+                "icon": "openai.svg"
+              },
+              {
+                "name": "PostgreSQL",
+                "icon": "postgresql.svg"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "QA",
+                "icon": "jira.svg"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bluequant-ai-studio.svg",
+                "description": "Workspace asistido por IA para definir alcance, generar artefactos de entrega y estandarizar handoffs técnicos."
+              },
+              {
+                "image": "bluequant-qa-copilot.svg",
+                "description": "Vista operativa para triage, readiness de release y aceleración de QA con prompts compartidos y checkpoints de revisión."
+              }
+            ]
+          },
+          {
+            "title": "QA Intelligence Pipeline",
+            "description": "Flujo de QA y release apoyado por IA que reduce preparación manual y mejora el triage de defectos.",
+            "image": "bluequant-qa-copilot.svg",
+            "url": "",
+            "date": "2026-02-03",
+            "outcomes": [
+              "QA más ágil",
+              "Escenarios de prueba generados con IA",
+              "Triage de defectos más inteligente"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Python",
+                "icon": "python.svg"
+              },
+              {
+                "name": "OpenAI / LLMs",
+                "icon": "openai.svg"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "PostgreSQL",
+                "icon": "postgresql.svg"
+              },
+              {
+                "name": "QA",
+                "icon": "jira.svg"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bluequant-qa-copilot.svg",
+                "description": "Workspace de QA con soporte de IA para generar rutas de prueba, organizar hallazgos y reforzar la preparación del release."
+              },
+              {
+                "image": "bluequant-ai-studio.svg",
+                "description": "Contexto compartido de entrega que conecta tareas de implementación, alcance de release y seguimiento de QA en un solo flujo operativo."
+              }
+            ]
+          }
+        ],
+        "home_order": 0,
+        "show_on_home": true
+      },
       {
         "start_date": "2023-06-01",
         "end_date": "",
@@ -342,7 +496,10 @@
         "end_date": "2023-12-31",
         "is_current": false,
         "company": "IOM & Secretaría de Bienestar Social",
-        "company_image": ["oim.jpeg", "sbs.png"],
+        "company_image": [
+          "oim.jpeg",
+          "sbs.png"
+        ],
         "position": "Technical Lead & Senior Developer",
         "description": "Responsable técnico del programa Angel Ariel, coordinando equipos React y Node.js para proyectos gubernamentales.",
         "tasks": [
@@ -659,7 +816,10 @@
         "end_date": "2020-12-31",
         "is_current": false,
         "company": "FAO ONU & SIECA",
-        "company_image": ["fao.png", "sieca.png"],
+        "company_image": [
+          "fao.png",
+          "sieca.png"
+        ],
         "position": "Tech Lead & Senior Full-Stack",
         "description": "Implementación de mercados agrícolas regionales y tableros aduaneros para Centroamérica y el Caribe.",
         "tasks": [
@@ -769,12 +929,24 @@
               "Monetización de apuestas"
             ],
             "tech_stack": [
-              { "name": "PHP" },
-              { "name": "PayPal" },
-              { "name": "AWS" },
-              { "name": "MySQL" },
-              { "name": "Git" },
-              { "name": "GitLab" }
+              {
+                "name": "PHP"
+              },
+              {
+                "name": "PayPal"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              }
             ],
             "modal_details": [
               {
@@ -877,17 +1049,36 @@
     "tech_skills": [
       {
         "title": "Frontend & Mobile",
-        "tools": ["React", "React Native", "TypeScript", "Redux", "Expo"],
+        "tools": [
+          "React",
+          "React Native",
+          "TypeScript",
+          "Redux",
+          "Expo"
+        ],
         "stars": 5
       },
       {
         "title": "Backend & Cloud",
-        "tools": ["Node.js", "Java", ".NET", "AWS", "Docker"],
+        "tools": [
+          "Node.js",
+          "Python",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
         "stars": 4
       },
       {
         "title": "Bases de Datos",
-        "tools": ["MySQL", "MongoDB", "DynamoDB", "Oracle"],
+        "tools": [
+          "MySQL",
+          "PostgreSQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle"
+        ],
         "stars": 4
       },
       {
@@ -897,7 +1088,8 @@
           "Bitbucket",
           "Jira",
           "AWS Amplify",
-          "CloudFormation"
+          "CloudFormation",
+          "QA"
         ],
         "stars": 4
       }

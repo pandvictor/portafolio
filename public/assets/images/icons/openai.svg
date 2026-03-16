@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="28" fill="#0F172A"/>
+  <path d="M64.003 21C54.002 21 45.223 25.813 40.001 33.196C32.03 34.527 25.516 40.425 23.326 48.169C19.417 61.992 28.53 76.105 42.449 79.661C44.748 87.437 51.117 93.58 59.174 95.56C73.213 99.011 87.357 90.376 90.766 76.28C97.78 72.167 102.172 64.258 101.75 55.993C100.997 41.526 88.932 30.19 74.455 30.776C71.58 24.791 68.055 21 64.003 21Z" stroke="#E2E8F0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52.24 33.979L75.384 47.334M42.992 58.801L66.137 72.155M52.616 94.023L52.575 67.304M75.808 80.621L52.664 93.976M85.056 55.799L61.911 69.153M75.432 20.577L75.473 47.296" stroke="url(#openai-accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="openai-accent" x1="38" y1="28" x2="92" y2="100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A3E635"/>
+    </linearGradient>
+  </defs>
+</svg>

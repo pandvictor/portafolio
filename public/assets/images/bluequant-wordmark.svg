@@ -1,0 +1,17 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bq-accent" x1="36" y1="18" x2="104" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A3E635"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="120" rx="24" fill="none"/>
+  <g transform="translate(28 24)">
+    <rect x="2" y="2" width="68" height="68" rx="20" stroke="url(#bq-accent)" stroke-width="4"/>
+    <path d="M22 36C22 28.268 28.268 22 36 22H42C51.941 22 60 30.059 60 40C60 49.941 51.941 58 42 58H22V36Z" fill="#0F172A"/>
+    <path d="M36 22H42C51.941 22 60 30.059 60 40C60 49.941 51.941 58 42 58H36C45.941 58 54 49.941 54 40C54 30.059 45.941 22 36 22Z" fill="url(#bq-accent)" fill-opacity="0.95"/>
+    <circle cx="36" cy="40" r="8" fill="#E2E8F0"/>
+  </g>
+  <text x="116" y="53" fill="#E2E8F0" font-family="Space Grotesk, Sora, Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="0.4">BlueQuant</text>
+  <text x="118" y="80" fill="#94A3B8" font-family="Sora, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="1.2">AI DELIVERY WORKFLOWS</text>
+</svg>
