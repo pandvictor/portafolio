@@ -5,6 +5,32 @@ export type Portfolio = {
     projects: Project[];
 }
 
+export type CoverLetterSection = {
+    title: string;
+    paragraphs?: string[];
+    bullets?: string[];
+}
+
+export type CoverLetterSidebarGroup = {
+    title: string;
+    items: string[];
+}
+
+export type CoverLetter = {
+    title: string;
+    eyebrow: string;
+    headline: string;
+    subheadline: string;
+    recipient_label: string;
+    recipient_value: string;
+    download_label: string;
+    download_note: string;
+    location: string;
+    sections: CoverLetterSection[];
+    sidebar_groups: CoverLetterSidebarGroup[];
+    closing: string;
+}
+
 export type Project = {
     title:       string;
     description: string;
