@@ -10,7 +10,7 @@
     "trusted_by": "He trabajado con",
     "services_title": "Cómo ayudo",
     "services_kicker": "Servicios",
-    "services_intro": "Ejecución enfocada para equipos que necesitan velocidad, calidad y confiabilidad. Soluciones end-to-end: de discovery a producción y escala.",
+    "services_intro": "Acelerando la entrega de producto desde el concepto hasta la escala. Aporto liderazgo técnico y ejecución enfocada para equipos que demandan velocidad y confiabilidad de nivel productivo a lo largo de todo el ciclo de vida del software.",
     "projects_kicker": "Proyectos",
     "projects_title": "Proyectos destacados",
     "projects_subtitle": "Casos en fintech, gobierno y plataformas crypto.",
@@ -1152,37 +1152,38 @@
       {
         "title": "INTRODUCCIÓN Y BACKGROUND",
         "paragraphs": [
-          "Soy Lead & Senior Software Developer con 19+ años construyendo y modernizando productos en fintech, gobierno y plataformas crypto.",
-          "Mi trabajo combina implementación hands-on con liderazgo técnico. Me muevo con soltura desde interfaces en React y React Native hasta servicios en Python o Node, APIs, sistemas con PostgreSQL, entornos con Docker, coordinación de QA y ejecución de releases."
+          "Soy un Senior Software Lead con casi dos décadas de experiencia modernizando productos digitales dentro de industrias altamente reguladas, incluyendo Fintech y Gobierno. Soy un ingeniero versátil que se mueve con soltura a través de todo el stack: desde el desarrollo de front-ends intuitivos en React y React Native hasta la ingeniería de APIs robustas en Python/Node y bases de datos PostgreSQL. Mi liderazgo va más allá del código; tengo experiencia sólida en despliegues con Docker, estrategia de QA y gestión de todo el ciclo de vida de desarrollo de software para garantizar releases de alto desempeño."
         ]
       },
       {
-        "title": "HABILIDADES CLAVE Y PUESTO PREFERIDO",
+        "title": "HABILIDADES CLAVE Y ROLES OBJETIVO",
         "paragraphs": [
-          "El título que mejor refleja mi alcance actual es Lead Full-Stack Engineer, aunque también encajo bien en roles de Senior Software Engineer, Staff-level product engineering y consultoría donde importe la profundidad de ejecución."
+          "Roles objetivo: Lead Full-Stack Engineer, Staff Software Engineer o Technical Consultant. Destaco en entornos de alta responsabilidad donde se requiere ejecución profunda y supervisión arquitectónica."
         ],
         "bullets": [
-          "Entrega end-to-end entre mobile, web, backend, bases de datos, QA y ejecución de releases.",
-          "Stack fuerte en React, React Native, TypeScript, Python, Node.js, PostgreSQL y Docker.",
-          "Uso práctico de IA para mejorar velocidad de planificación, soporte de implementación, documentación, preparación de QA y consistencia de entrega."
+          "Entrega de ciclo completo: experiencia en entrega end-to-end cubriendo Mobile (React Native), Web (React) y arquitecturas Backend robustas (Python/Node.js).",
+          "Stack base: dominio avanzado de TypeScript, PostgreSQL, entornos con Docker y gestión de releases con CI/CD.",
+          "Eficiencia impulsada por IA: uso estratégico de herramientas de IA para acelerar planeación de sistemas, automatizar protocolos de QA y asegurar documentación y consistencia de entrega de alto nivel."
         ]
       },
       {
-        "title": "SALARIO Y NOTICE PERIOD",
+        "title": "COMPENSACIÓN Y DISPONIBILIDAD",
         "paragraphs": [
-          "La compensación está abierta a conversación y debe reflejar el alcance del rol, el nivel de ownership esperado y el impacto de entrega.",
-          "Mi disponibilidad es flexible y la fecha de inicio puede alinearse con las necesidades del equipo o del proyecto."
+          "Salario: abierto a conversación según el alcance del rol, nivel de ownership e impacto total esperado. Busco una relación profesional que refleje casi dos décadas de experiencia técnica.",
+          "Notice period: flexible. La fecha de inicio puede alinearse con las necesidades inmediatas del proyecto o del equipo."
         ]
       },
       {
-        "title": "UBICACIONES DE TRABAJO CONSIDERADAS",
+        "title": "PREFERENCIAS DE TRABAJO Y UBICACIÓN",
         "paragraphs": [
-          "Estoy principalmente interesado en roles remotos dentro de América, especialmente con equipos que valoren comunicación directa, ownership y resultados medibles de entrega.",
-          "También puedo considerar colaboración híbrida cuando sea estratégicamente útil para el rol o proyecto."
+          "Ubicación: busco principalmente oportunidades remotas dentro de América. Trabajo mejor en culturas que valoran comunicación directa, ownership radical y resultados medibles.",
+          "Híbrido / viajes estratégicos: abierto a colaboración híbrida o visitas on-site cuando sean estratégicamente útiles para hitos del proyecto o alineación del equipo."
         ]
       }
     ],
     "sidebar_groups": [],
-    "closing": "Si necesitas a alguien que pueda moverse entre arquitectura, entrega y detalle de ejecución, con gusto lo conversamos."
+    "closing": "Si tu equipo necesita un ingeniero con experiencia que pueda cerrar la brecha entre arquitectura de alto nivel y detalle de ejecución hands-on, con gusto conectamos.",
+    "closing_title": "CIERRE",
+    "footer_note": "Gracias por tu tiempo y consideración. Valoro la claridad, el ownership y entregar trabajo que realmente importe."
   }
 }

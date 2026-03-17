@@ -204,12 +204,17 @@ const SidebarList = styled("ul")(({ theme }) => ({
 
 const Closing = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(1),
-  borderTop: "1px solid rgba(15,23,42,0.08)",
 }));
 
 const ClosingText = styled(Typography)(() => ({
-  color: "#0f172a",
-  fontWeight: 700,
+  color: "var(--text-secondary)",
+}));
+
+const FooterNote = styled(Typography)(({ theme }) => ({
+  paddingTop: theme.spacing(2),
+  color: "#64748b",
+  textAlign: "center",
+  borderTop: "1px solid rgba(15,23,42,0.08)",
 }));
 
 export const CoverLetterDocument = memo(
@@ -297,10 +302,15 @@ export const CoverLetterDocument = memo(
                 </SectionBlock>
               ))}
 
-              <Closing>
+              <SectionBlock>
+                <SectionTitle>{coverLetter.closing_title}</SectionTitle>
                 <ClosingText variant='body1'>
                   {coverLetter.closing}
                 </ClosingText>
+              </SectionBlock>
+
+              <Closing>
+                <FooterNote variant='body2'>{coverLetter.footer_note}</FooterNote>
               </Closing>
             </MainColumn>
 

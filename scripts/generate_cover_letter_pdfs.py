@@ -278,7 +278,23 @@ def build_cover_letter_lines(lang: str) -> List[TextLine]:
             push("", "regular", 11, gap=8)
         push("", "regular", 11, gap=10)
 
-    push(cover["closing"], "bold", 11, gap=18)
+    push(cover["closing_title"], "bold", 12, gap=24)
+    for chunk in textwrap.wrap(
+        cover["closing"],
+        width=82,
+        break_long_words=False,
+        break_on_hyphens=False,
+    ):
+        push(chunk, "regular", 11)
+
+    push("", "regular", 11, gap=20)
+    for chunk in textwrap.wrap(
+        cover["footer_note"],
+        width=84,
+        break_long_words=False,
+        break_on_hyphens=False,
+    ):
+        push(chunk, "regular", 10, x=110)
     return lines
 
 

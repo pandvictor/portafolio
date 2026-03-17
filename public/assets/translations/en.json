@@ -10,7 +10,7 @@
     "trusted_by": "Trusted by",
     "services_title": "How I help",
     "services_kicker": "Services",
-    "services_intro": "Focused execution for teams that need speed, quality, and reliability. End-to-end product delivery, from discovery to scale.",
+    "services_intro": "Accelerating product delivery from concept to scale. I provide technical leadership and focused execution for teams that demand velocity and production-grade reliability across the entire software lifecycle.",
     "projects_kicker": "Projects",
     "projects_title": "Selected work",
     "projects_subtitle": "Case studies across fintech, government, and crypto platforms.",
@@ -1152,37 +1152,38 @@
       {
         "title": "INTRODUCTION AND BACKGROUND",
         "paragraphs": [
-          "I’m a Lead & Senior Software Developer with 19+ years building and modernizing products across fintech, government, and crypto platforms.",
-          "My work combines hands-on implementation with technical leadership. I move comfortably from React and React Native interfaces to Python or Node services, APIs, PostgreSQL-backed systems, Docker-based environments, QA coordination, and release execution."
+          "I am a Senior Software Lead with nearly two decades of experience modernizing digital products within highly regulated industries, including Fintech and Government. I am a versatile engineer who moves comfortably across the full stack—from developing intuitive React and React Native front-ends to engineering robust Python/Node APIs and PostgreSQL databases. My leadership extends beyond code; I am an expert in Docker-based deployments, QA strategy, and managing the full software development lifecycle to guarantee high-performance releases."
         ]
       },
       {
-        "title": "KEY SKILLS AND PREFERRED JOB TITLE",
+        "title": "KEY SKILLS & TARGET ROLES",
         "paragraphs": [
-          "The title that best matches my current scope is Lead Full-Stack Engineer, though I also fit Senior Software Engineer, Staff-level product engineering, and consulting roles where execution depth matters."
+          "Target Roles: Lead Full-Stack Engineer, Staff Software Engineer, or Technical Consultant. I excel in high-ownership environments where deep execution and architectural oversight are required."
         ],
         "bullets": [
-          "End-to-end delivery across mobile, web, backend, databases, QA, and release execution.",
-          "Strong stack around React, React Native, TypeScript, Python, Node.js, PostgreSQL, and Docker.",
-          "Practical AI usage to improve planning speed, implementation support, documentation, QA preparation, and delivery consistency."
+          "Full-Cycle Delivery: Expert in end-to-end product delivery, spanning Mobile (React Native), Web (React), and robust Backend architectures (Python/Node.js).",
+          "Core Stack: Advanced mastery of TypeScript, PostgreSQL, Docker-based environments, and CI/CD release management.",
+          "AI-Driven Efficiency: Strategic use of AI tools to accelerate system planning, automate QA protocols, and ensure high-standard documentation and delivery consistency."
         ]
       },
       {
-        "title": "SALARY AND NOTICE PERIOD",
+        "title": "COMPENSATION & AVAILABILITY",
         "paragraphs": [
-          "Compensation is open to discussion and should reflect role scope, expected ownership, and delivery impact.",
-          "My availability is flexible, and start timing can be aligned with the needs of the team or project."
+          "Salary: Open to discussion based on role scope, ownership level, and total impact. I am looking for a partnership that reflects nearly two decades of technical expertise.",
+          "Notice Period: Flexible. Start dates can be aligned with the immediate needs of the project or team."
         ]
       },
       {
-        "title": "WORK LOCATIONS CONSIDERED",
+        "title": "WORK PREFERENCES & LOCATION",
         "paragraphs": [
-          "I’m primarily interested in remote roles across the Americas, especially with teams that value direct communication, ownership, and measurable delivery outcomes.",
-          "I can also consider hybrid collaboration when it is strategically useful for the role or project."
+          "Location: Primarily seeking Remote opportunities across the Americas. I thrive in cultures that value direct communication, radical ownership, and measurable outcomes.",
+          "Hybrid/Strategic Travel: Open to hybrid collaboration or on-site visits when strategically beneficial for project milestones or team alignment."
         ]
       }
     ],
     "sidebar_groups": [],
-    "closing": "If you need someone who can move between architecture, delivery, and execution detail, I’d be glad to talk."
+    "closing": "If your team requires a seasoned engineer who can bridge the gap between high-level architecture and hands-on execution detail, I would be glad to connect.",
+    "closing_title": "CLOSING PITCH",
+    "footer_note": "Thank you for your time and consideration. I value clarity, ownership, and shipping work that matters."
   }
 }
