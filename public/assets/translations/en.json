@@ -1135,7 +1135,8 @@
         "icon": "github.svg",
         "url": "https://github.com/pandvictor"
       }
-    ]
+    ],
+    "present": "Present"
   },
   "cover_letter": {
     "title": "Cover Letter",

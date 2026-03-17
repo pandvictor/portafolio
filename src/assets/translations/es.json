@@ -995,7 +995,8 @@
         "icon": "github.svg",
         "url": "https://github.com/pandvictor"
       }
-    ]
+    ],
+    "present": "Actual"
   },
   "cover_letter": {
     "title": "Carta de presentación",
