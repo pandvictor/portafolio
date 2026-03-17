@@ -1005,5 +1005,52 @@
         "url": "https://github.com/pandvictor"
       }
     ]
+  },
+  "cover_letter": {
+    "title": "Cover Letter",
+    "eyebrow": "Cover letter",
+    "headline": "End-to-end delivery for teams that need product speed and technical depth",
+    "subheadline": "A concise view of how I work across mobile, web, backend, and AI-assisted execution.",
+    "recipient_label": "Open to",
+    "recipient_value": "Lead, senior, consulting, and AI-enabled product roles",
+    "download_label": "Download cover letter",
+    "download_note": "PDF version for recruiters and hiring managers.",
+    "location": "Remote · Americas time zones",
+    "sections": [
+      {
+        "title": "INTRODUCTION AND BACKGROUND",
+        "paragraphs": [
+          "I’m a Lead & Senior Software Developer with 19+ years building and modernizing products across fintech, government, and crypto platforms.",
+          "My work combines hands-on implementation with technical leadership. I move comfortably from React and React Native interfaces to Python or Node services, APIs, PostgreSQL-backed systems, Docker-based environments, QA coordination, and release execution."
+        ]
+      },
+      {
+        "title": "KEY SKILLS AND PREFERRED JOB TITLE",
+        "paragraphs": [
+          "The title that best matches my current scope is Lead Full-Stack Engineer, though I also fit Senior Software Engineer, Staff-level product engineering, and consulting roles where execution depth matters."
+        ],
+        "bullets": [
+          "End-to-end delivery across mobile, web, backend, databases, QA, and release execution.",
+          "Strong stack around React, React Native, TypeScript, Python, Node.js, PostgreSQL, and Docker.",
+          "Practical AI usage to improve planning speed, implementation support, documentation, QA preparation, and delivery consistency."
+        ]
+      },
+      {
+        "title": "SALARY AND NOTICE PERIOD",
+        "paragraphs": [
+          "Compensation is open to discussion and should reflect role scope, expected ownership, and delivery impact.",
+          "My availability is flexible, and start timing can be aligned with the needs of the team or project."
+        ]
+      },
+      {
+        "title": "WORK LOCATIONS CONSIDERED",
+        "paragraphs": [
+          "I’m primarily interested in remote roles across the Americas, especially with teams that value direct communication, ownership, and measurable delivery outcomes.",
+          "I can also consider hybrid collaboration when it is strategically useful for the role or project."
+        ]
+      }
+    ],
+    "sidebar_groups": [],
+    "closing": "If you need someone who can move between architecture, delivery, and execution detail, I’d be glad to talk."
   }
 }

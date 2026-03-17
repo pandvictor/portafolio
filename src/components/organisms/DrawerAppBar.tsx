@@ -27,8 +27,14 @@ import { LinkItem } from "../atoms";
 import { useLanguage } from "../../context/LanguageContext";
 import i18n from "../../utils/i18n";
 
-const pages = ["resume"];
+const pages = [
+  { key: "resume", path: "resume" },
+  { key: "cover_letter", path: "cover-letter" },
+];
 const basePath = import.meta.env.BASE_URL || "/";
+
+const getPagePath = (path: string) =>
+  `${basePath}/${path}`.replace(/\/{2,}/g, "/");
 
 const fadeInDown = keyframes`
   0% { opacity: 0; transform: translateY(-10px); }
@@ -262,16 +268,16 @@ export const DrawerAppBar = () => {
       <DrawerList>
         {pages.map((page, idx) => (
           <LinkItem
-            key={page}
-            to={`${basePath}${page}`}
+            key={page.key}
+            to={getPagePath(page.path)}
             color='inherit'
             relative='path'
             className='nav-link'>
-            <ListItem key={page} disablePadding>
+            <ListItem key={page.key} disablePadding>
               <DrawerNavButton delay={(idx + 1) * 0.08}>
                 <ListItemText
                   primary={
-                    <DrawerNavText>{i18n.t(page + ".title")}</DrawerNavText>
+                    <DrawerNavText>{i18n.t(page.key + ".title")}</DrawerNavText>
                   }
                 />
               </DrawerNavButton>
@@ -301,13 +307,13 @@ export const DrawerAppBar = () => {
             <NavLinks>
               {pages.map((page) => (
                 <LinkItem
-                  key={page}
-                  to={`${basePath}${page}`}
+                  key={page.key}
+                  to={getPagePath(page.path)}
                   color='inherit'
                   relative='path'
                   className='nav-link'>
-                  <NavButton key={page} color='inherit'>
-                    {i18n.t(page + ".title")}
+                  <NavButton key={page.key} color='inherit'>
+                    {i18n.t(page.key + ".title")}
                   </NavButton>
                 </LinkItem>
               ))}

@@ -261,115 +261,9 @@
         "show_on_home": true
       },
       {
-        "start_date": "2023-06-01",
-        "end_date": "",
-        "is_current": true,
-        "company": "CHIVO Wallet",
-        "company_image": "alphapoint-logo.png",
-        "position": "Senior Software Developer",
-        "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint), owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
-        "tasks": [
-          "Delivered wallet, remittance and on/off-ramp flows in React Native and React, integrating Lightning and on-chain services.",
-          "Coordinated releases with product and compliance to keep KYC, cash-in kiosks and merchant POS aligned with regulations.",
-          "Built shared UI components, error monitoring and performance baselines for both mobile and web clients.",
-          "Mentored engineers on TypeScript, testing and observability while grooming backlog and technical debt."
-        ],
-        "achievements": [
-          {
-            "title": "CHIVO Wallet",
-            "description": "Bitcoin/LN wallet with QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
-            "image": "chivo2.png",
-            "url": "https://www.chivowallet.com",
-            "date": "2024-01-01",
-            "outcomes": [
-              "500k+ active users",
-              "10k+ daily transactions",
-              "200+ ATMs"
-            ],
-            "tech_stack": [
-              {
-                "name": "React Native"
-              },
-              {
-                "name": "Expo"
-              },
-              {
-                "name": "React"
-              },
-              {
-                "name": "Redux"
-              },
-              {
-                "name": "RTK Query"
-              },
-              {
-                "name": "Jira"
-              },
-              {
-                "name": "Git"
-              },
-              {
-                "name": "GitLab"
-              },
-              {
-                "name": "Scrum"
-              },
-              {
-                "name": "iOS"
-              },
-              {
-                "name": "Android"
-              },
-              {
-                "name": "TypeScript"
-              },
-              {
-                "name": "AWS"
-              },
-              {
-                "name": "Bitcoin"
-              }
-            ],
-            "modal_details": [
-              {
-                "image": "chivo2.png",
-                "description": "Mobile experience for Lightning and on-chain payments, remittances, and QR flows."
-              },
-              {
-                "image": "chivo.png",
-                "description": "Merchant POS and cash management across kiosks/ATMs with compliance-ready flows."
-              },
-              {
-                "image": "chivo-benefits.png",
-                "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
-              },
-              {
-                "image": "chivo-login.png",
-                "description": "User validation, secure onboarding, and KYC checks for new registrations and logins."
-              },
-              {
-                "image": "chivo-otp.png",
-                "description": "Phone-based login with OTP sent to the user for secure access."
-              },
-              {
-                "image": "chivo-admin.png",
-                "description": "Web console to administer users, accounts, balances, and positions."
-              }
-            ],
-            "coins": [
-              {
-                "name": "Bitcoin"
-              }
-            ]
-          }
-        ],
-        "home_order": 2,
-        "show_on_home": true
-      },
-      {
-        "start_date": "2024-01-01",
-        "end_date": "",
-        "is_current": true,
+        "start_date": "2024-07-01",
+        "end_date": "2025-11-30",
+        "is_current": false,
         "company": "APEX Exchange (AlphaPoint)",
         "company_image": "alphapoint-logo.png",
         "position": "Lead Frontend Engineer",
@@ -489,6 +383,112 @@
           }
         ],
         "home_order": 1,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2023-06-01",
+        "end_date": "2024-06-30",
+        "is_current": false,
+        "company": "CHIVO Wallet",
+        "company_image": "alphapoint-logo.png",
+        "position": "Senior Software Developer",
+        "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint), owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
+        "tasks": [
+          "Delivered wallet, remittance and on/off-ramp flows in React Native and React, integrating Lightning and on-chain services.",
+          "Coordinated releases with product and compliance to keep KYC, cash-in kiosks and merchant POS aligned with regulations.",
+          "Built shared UI components, error monitoring and performance baselines for both mobile and web clients.",
+          "Mentored engineers on TypeScript, testing and observability while grooming backlog and technical debt."
+        ],
+        "achievements": [
+          {
+            "title": "CHIVO Wallet",
+            "description": "Bitcoin/LN wallet with QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
+            "image": "chivo2.png",
+            "url": "https://www.chivowallet.com",
+            "date": "2024-01-01",
+            "outcomes": [
+              "500k+ active users",
+              "10k+ daily transactions",
+              "200+ ATMs"
+            ],
+            "tech_stack": [
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "chivo2.png",
+                "description": "Mobile experience for Lightning and on-chain payments, remittances, and QR flows."
+              },
+              {
+                "image": "chivo.png",
+                "description": "Merchant POS and cash management across kiosks/ATMs with compliance-ready flows."
+              },
+              {
+                "image": "chivo-benefits.png",
+                "description": "User-facing benefits for the national wallet: zero-fee transfers, easy onboarding, USD/BTC support, and cash withdrawal at any time."
+              },
+              {
+                "image": "chivo-login.png",
+                "description": "User validation, secure onboarding, and KYC checks for new registrations and logins."
+              },
+              {
+                "image": "chivo-otp.png",
+                "description": "Phone-based login with OTP sent to the user for secure access."
+              },
+              {
+                "image": "chivo-admin.png",
+                "description": "Web console to administer users, accounts, balances, and positions."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              }
+            ]
+          }
+        ],
+        "home_order": 2,
         "show_on_home": true
       },
       {
@@ -1136,5 +1136,52 @@
         "url": "https://github.com/pandvictor"
       }
     ]
+  },
+  "cover_letter": {
+    "title": "Cover Letter",
+    "eyebrow": "Cover letter",
+    "headline": "End-to-end delivery for teams that need product speed and technical depth",
+    "subheadline": "A concise view of how I work across mobile, web, backend, and AI-assisted execution.",
+    "recipient_label": "Open to",
+    "recipient_value": "Lead, senior, consulting, and AI-enabled product roles",
+    "download_label": "Download cover letter",
+    "download_note": "PDF version for recruiters and hiring managers.",
+    "location": "Remote · Americas time zones",
+    "sections": [
+      {
+        "title": "INTRODUCTION AND BACKGROUND",
+        "paragraphs": [
+          "I’m a Lead & Senior Software Developer with 19+ years building and modernizing products across fintech, government, and crypto platforms.",
+          "My work combines hands-on implementation with technical leadership. I move comfortably from React and React Native interfaces to Python or Node services, APIs, PostgreSQL-backed systems, Docker-based environments, QA coordination, and release execution."
+        ]
+      },
+      {
+        "title": "KEY SKILLS AND PREFERRED JOB TITLE",
+        "paragraphs": [
+          "The title that best matches my current scope is Lead Full-Stack Engineer, though I also fit Senior Software Engineer, Staff-level product engineering, and consulting roles where execution depth matters."
+        ],
+        "bullets": [
+          "End-to-end delivery across mobile, web, backend, databases, QA, and release execution.",
+          "Strong stack around React, React Native, TypeScript, Python, Node.js, PostgreSQL, and Docker.",
+          "Practical AI usage to improve planning speed, implementation support, documentation, QA preparation, and delivery consistency."
+        ]
+      },
+      {
+        "title": "SALARY AND NOTICE PERIOD",
+        "paragraphs": [
+          "Compensation is open to discussion and should reflect role scope, expected ownership, and delivery impact.",
+          "My availability is flexible, and start timing can be aligned with the needs of the team or project."
+        ]
+      },
+      {
+        "title": "WORK LOCATIONS CONSIDERED",
+        "paragraphs": [
+          "I’m primarily interested in remote roles across the Americas, especially with teams that value direct communication, ownership, and measurable delivery outcomes.",
+          "I can also consider hybrid collaboration when it is strategically useful for the role or project."
+        ]
+      }
+    ],
+    "sidebar_groups": [],
+    "closing": "If you need someone who can move between architecture, delivery, and execution detail, I’d be glad to talk."
   }
 }

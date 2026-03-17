@@ -6,7 +6,13 @@ import "./index.css";
 import HomePage from "./components/pages/HomePage.tsx";
 import { LanguageProvider } from "./context/LanguageContext.tsx";
 import { MainTemplate } from "./components/templates/index.tsx";
-import { ExercisePage, ResumePage, ResumePrintPage, UsersCrudPage } from "./components/pages";
+import {
+  CoverLetterPage,
+  ExercisePage,
+  ResumePage,
+  ResumePrintPage,
+  UsersCrudPage,
+} from "./components/pages";
 import theme from "./theme";
 //import App from './App.tsx';
 
@@ -42,6 +48,22 @@ const router = createBrowserRouter([
   {
     path: "/portafolio/resume",
     element: <ResumePage />,
+  },
+  {
+    path: "/cover-letter",
+    element: <CoverLetterPage />,
+  },
+  {
+    path: "/cover_letter",
+    element: <Navigate to="/cover-letter" replace />,
+  },
+  {
+    path: "/portafolio/cover-letter",
+    element: <CoverLetterPage />,
+  },
+  {
+    path: "/portafolio/cover_letter",
+    element: <Navigate to="/portafolio/cover-letter" replace />,
   },
   {
     path: "/printResume",

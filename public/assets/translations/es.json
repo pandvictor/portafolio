@@ -261,115 +261,9 @@
         "show_on_home": true
       },
       {
-        "start_date": "2023-06-01",
-        "end_date": "",
-        "is_current": true,
-        "company": "CHIVO Wallet",
-        "company_image": "alphapoint-logo.png",
-        "position": "Senior Software Developer",
-        "description": "Lideré la billetera Bitcoin nacional de El Salvador (AlphaPoint), tomando la experiencia web y móvil para pagos, remesas, cash-in/out y POS para comercios.",
-        "tasks": [
-          "Entregué flujos de billetera, remesas y on/off-ramp en React Native y React, integrando Lightning y servicios on-chain.",
-          "Coordiné releases con producto y compliance para mantener KYC, kioscos de cash-in y POS alineados a regulación.",
-          "Construí componentes UI compartidos, monitoreo de errores y bases de performance para móvil y web.",
-          "Mentoricé al equipo en TypeScript, pruebas y observabilidad mientras ordenaba backlog y deuda técnica."
-        ],
-        "achievements": [
-          {
-            "title": "Relanzamiento CHIVO Wallet",
-            "description": "Billetera Bitcoin/LN con 500k+ usuarios activos, más de 10,000 transacciones diarias, pagos QR, remesas, POS para comercios, descuentos de combustible y manejo de efectivo en más de 200 cajeros.",
-            "image": "chivo2.png",
-            "url": "https://www.chivowallet.com",
-            "date": "2024-01-01",
-            "outcomes": [
-              "500k+ usuarios activos",
-              "10k+ transacciones diarias",
-              "200+ cajeros"
-            ],
-            "tech_stack": [
-              {
-                "name": "React Native"
-              },
-              {
-                "name": "Expo"
-              },
-              {
-                "name": "React"
-              },
-              {
-                "name": "Redux"
-              },
-              {
-                "name": "RTK Query"
-              },
-              {
-                "name": "Jira"
-              },
-              {
-                "name": "Git"
-              },
-              {
-                "name": "GitLab"
-              },
-              {
-                "name": "Scrum"
-              },
-              {
-                "name": "iOS"
-              },
-              {
-                "name": "Android"
-              },
-              {
-                "name": "TypeScript"
-              },
-              {
-                "name": "AWS"
-              },
-              {
-                "name": "Bitcoin"
-              }
-            ],
-            "modal_details": [
-              {
-                "image": "chivo2.png",
-                "description": "Experiencia móvil para pagos Lightning/on-chain, remesas y flujos QR."
-              },
-              {
-                "image": "chivo.png",
-                "description": "POS para comercios y manejo de efectivo en kioscos/cajeros con flujos alineados a compliance."
-              },
-              {
-                "image": "chivo-benefits.png",
-                "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento."
-              },
-              {
-                "image": "chivo-login.png",
-                "description": "Validación de usuarios, onboarding seguro y verificaciones KYC para nuevos registros e ingresos."
-              },
-              {
-                "image": "chivo-otp.png",
-                "description": "Inicio de sesión por teléfono con envío de OTP al usuario para acceso seguro."
-              },
-              {
-                "image": "chivo-admin.png",
-                "description": "Consola web para administrar usuarios, cuentas, saldos y posiciones."
-              }
-            ],
-            "coins": [
-              {
-                "name": "Bitcoin"
-              }
-            ]
-          }
-        ],
-        "home_order": 2,
-        "show_on_home": true
-      },
-      {
-        "start_date": "2024-01-01",
-        "end_date": "",
-        "is_current": true,
+        "start_date": "2024-07-01",
+        "end_date": "2025-11-30",
+        "is_current": false,
         "company": "APEX Exchange (AlphaPoint)",
         "company_image": "alphapoint-logo.png",
         "position": "Lead Frontend Engineer",
@@ -489,6 +383,112 @@
           }
         ],
         "home_order": 1,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2023-06-01",
+        "end_date": "2024-06-30",
+        "is_current": false,
+        "company": "CHIVO Wallet",
+        "company_image": "alphapoint-logo.png",
+        "position": "Senior Software Developer",
+        "description": "Lideré la billetera Bitcoin nacional de El Salvador (AlphaPoint), tomando la experiencia web y móvil para pagos, remesas, cash-in/out y POS para comercios.",
+        "tasks": [
+          "Entregué flujos de billetera, remesas y on/off-ramp en React Native y React, integrando Lightning y servicios on-chain.",
+          "Coordiné releases con producto y compliance para mantener KYC, kioscos de cash-in y POS alineados a regulación.",
+          "Construí componentes UI compartidos, monitoreo de errores y bases de performance para móvil y web.",
+          "Mentoricé al equipo en TypeScript, pruebas y observabilidad mientras ordenaba backlog y deuda técnica."
+        ],
+        "achievements": [
+          {
+            "title": "Relanzamiento CHIVO Wallet",
+            "description": "Billetera Bitcoin/LN con 500k+ usuarios activos, más de 10,000 transacciones diarias, pagos QR, remesas, POS para comercios, descuentos de combustible y manejo de efectivo en más de 200 cajeros.",
+            "image": "chivo2.png",
+            "url": "https://www.chivowallet.com",
+            "date": "2024-01-01",
+            "outcomes": [
+              "500k+ usuarios activos",
+              "10k+ transacciones diarias",
+              "200+ cajeros"
+            ],
+            "tech_stack": [
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "chivo2.png",
+                "description": "Experiencia móvil para pagos Lightning/on-chain, remesas y flujos QR."
+              },
+              {
+                "image": "chivo.png",
+                "description": "POS para comercios y manejo de efectivo en kioscos/cajeros con flujos alineados a compliance."
+              },
+              {
+                "image": "chivo-benefits.png",
+                "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento."
+              },
+              {
+                "image": "chivo-login.png",
+                "description": "Validación de usuarios, onboarding seguro y verificaciones KYC para nuevos registros e ingresos."
+              },
+              {
+                "image": "chivo-otp.png",
+                "description": "Inicio de sesión por teléfono con envío de OTP al usuario para acceso seguro."
+              },
+              {
+                "image": "chivo-admin.png",
+                "description": "Consola web para administrar usuarios, cuentas, saldos y posiciones."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              }
+            ]
+          }
+        ],
+        "home_order": 2,
         "show_on_home": true
       },
       {
@@ -1136,5 +1136,52 @@
         "url": "https://github.com/pandvictor"
       }
     ]
+  },
+  "cover_letter": {
+    "title": "Carta de presentación",
+    "eyebrow": "Carta",
+    "headline": "Entrega end-to-end para equipos que necesitan velocidad de producto y profundidad técnica",
+    "subheadline": "Una vista breve de cómo trabajo entre mobile, web, backend y ejecución asistida por IA.",
+    "recipient_label": "Abierto a",
+    "recipient_value": "Roles lead, senior, consultoría y producto con IA",
+    "download_label": "Descargar carta",
+    "download_note": "Versión PDF para recruiters y hiring managers.",
+    "location": "Remoto · Zonas horarias de América",
+    "sections": [
+      {
+        "title": "INTRODUCCIÓN Y BACKGROUND",
+        "paragraphs": [
+          "Soy Lead & Senior Software Developer con 19+ años construyendo y modernizando productos en fintech, gobierno y plataformas crypto.",
+          "Mi trabajo combina implementación hands-on con liderazgo técnico. Me muevo con soltura desde interfaces en React y React Native hasta servicios en Python o Node, APIs, sistemas con PostgreSQL, entornos con Docker, coordinación de QA y ejecución de releases."
+        ]
+      },
+      {
+        "title": "HABILIDADES CLAVE Y PUESTO PREFERIDO",
+        "paragraphs": [
+          "El título que mejor refleja mi alcance actual es Lead Full-Stack Engineer, aunque también encajo bien en roles de Senior Software Engineer, Staff-level product engineering y consultoría donde importe la profundidad de ejecución."
+        ],
+        "bullets": [
+          "Entrega end-to-end entre mobile, web, backend, bases de datos, QA y ejecución de releases.",
+          "Stack fuerte en React, React Native, TypeScript, Python, Node.js, PostgreSQL y Docker.",
+          "Uso práctico de IA para mejorar velocidad de planificación, soporte de implementación, documentación, preparación de QA y consistencia de entrega."
+        ]
+      },
+      {
+        "title": "SALARIO Y NOTICE PERIOD",
+        "paragraphs": [
+          "La compensación está abierta a conversación y debe reflejar el alcance del rol, el nivel de ownership esperado y el impacto de entrega.",
+          "Mi disponibilidad es flexible y la fecha de inicio puede alinearse con las necesidades del equipo o del proyecto."
+        ]
+      },
+      {
+        "title": "UBICACIONES DE TRABAJO CONSIDERADAS",
+        "paragraphs": [
+          "Estoy principalmente interesado en roles remotos dentro de América, especialmente con equipos que valoren comunicación directa, ownership y resultados medibles de entrega.",
+          "También puedo considerar colaboración híbrida cuando sea estratégicamente útil para el rol o proyecto."
+        ]
+      }
+    ],
+    "sidebar_groups": [],
+    "closing": "Si necesitas a alguien que pueda moverse entre arquitectura, entrega y detalle de ejecución, con gusto lo conversamos."
   }
 }

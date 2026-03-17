@@ -1,3 +1,4 @@
+export * from "./CoverLetterDocument";
 export * from './DrawerAppBar';
 export * from './HeroSection';
 export * from './HomeCredibilitySection';
