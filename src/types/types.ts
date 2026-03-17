@@ -28,7 +28,9 @@ export type CoverLetter = {
     location: string;
     sections: CoverLetterSection[];
     sidebar_groups: CoverLetterSidebarGroup[];
+    closing_title: string;
     closing: string;
+    footer_note: string;
 }
 
 export type Project = {
