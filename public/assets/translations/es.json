@@ -147,8 +147,89 @@
     "skills": "Habilidades",
     "change_language": "Cambiar idioma",
     "contact": "Contacto",
-    "summary": "Desarrollador senior con más de 19 años entregando soluciones tecnológicas para fintech, gobierno y organizaciones internacionales. Especializado en React Native, React, TypeScript, Node.js y AWS. Experiencia comprobada liderando equipos, definiendo arquitecturas y lanzando productos de alto impacto como CHIVO Wallet y la plataforma APEX. Actualmente enfocado en flujos de entrega asistidos por IA para acortar planificación, QA y ciclos de release sobre sistemas con React, Python, bases de datos y Docker.",
+    "summary": "Líder de ingeniería con 19+ años construyendo plataformas a gran escala y de misión crítica en fintech, cripto y sector público. Lideré el desarrollo end-to-end de CHIVO Wallet y la plataforma de trading APEX, mejorando escalabilidad, performance en tiempo real y confiabilidad para millones de usuarios. Experto en React Native, React, Node.js y AWS, con un historial sólido guiando equipos, definiendo arquitectura y entregando productos de alto impacto en entornos de alta velocidad y alta exigencia. Más recientemente lancé Quinielas.live, una plataforma multi-tenant para el Mundial 2026 sobre un stack serverless en AWS optimizado en costos, entregada en ~2 semanas mediante pair programming asistido por IA.",
     "work_history": [
+      {
+        "start_date": "2026-03-01",
+        "end_date": "",
+        "is_current": true,
+        "company": "Quinielas.live",
+        "company_image": "quinielas-live-badge.png",
+        "position": "Lead Full-Stack Engineer",
+        "description": "Diseñé y lancé una plataforma multi-tenant de quinielas para el Mundial 2026 sobre AWS serverless de bajo costo, combinando entrega white-label, flujos seguros de juego y ejecución asistida por IA.",
+        "tasks": [
+          "Diseñé e implementé una arquitectura serverless multi-tenant en AWS usando Lambdas Node 20 ARM64, DynamoDB single-table con 3 GSIs, HTTP API, CloudFront, S3 y ACM, optimizada para costo cercano a $0 en reposo bajo condiciones normales.",
+          "Construí el frontend en Next.js 12, React y MUI con branding white-label guiado por perfiles, capaz de servir múltiples variantes corporativas desde un solo codebase sin duplicación.",
+          "Implementé autenticación JWT HS256 con bcrypt cost-12, validación dual cliente/servidor, roles IAM con privilegio mínimo y políticas CORS estrictas.",
+          "Construí 3 Lambdas y 13 endpoints REST cubriendo CRUD de quinielas, pronósticos, posiciones y leaderboard.",
+          "Extraje y normalicé el fixture completo del Mundial 2026 (48 selecciones, 104 partidos) con un scraper en Python y cargas idempotentes hacia DynamoDB.",
+          "Lideré iteraciones de UX/UI basadas en feedback visual, refinando hero banners, countdowns contextuales, estados de medallas top-3 y gradientes profile-aware.",
+          "Configuré quinielas.live con GoDaddy + ACM, SSL automatizado y despliegues idempotentes vía AWS CLI sin Route 53 para mantener costos bajos.",
+          "Adopté pair programming asistido por IA con Claude Code para comprimir un cronograma típico de 3-4 meses a ~2 semanas, manteniendo bajo control humano la arquitectura, el producto y la calidad."
+        ],
+        "achievements": [
+          {
+            "title": "Plataforma Quinielas.live Mundial 2026",
+            "description": "Plataforma multi-tenant de quinielas para el Mundial 2026 con branding white-label, pronósticos seguros, tablas en vivo y entrega asistida por IA comprimida a ~2 semanas.",
+            "image": "quinielas-live-hero.png",
+            "url": "https://quinielas.live",
+            "date": "2026-03-01",
+            "outcomes": [
+              "Infraestructura AWS casi $0 en reposo",
+              "13 endpoints REST / 3 Lambdas",
+              "Entrega en ~2 semanas con IA"
+            ],
+            "tech_stack": [
+              {
+                "name": "Next.js 12"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "MUI"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS Lambda"
+              },
+              {
+                "name": "DynamoDB"
+              },
+              {
+                "name": "CloudFront"
+              },
+              {
+                "name": "S3"
+              },
+              {
+                "name": "Python"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "quinielas-live-hero.png",
+                "description": "Superficie hero para las quinielas del Mundial 2026 con countdowns contextuales, llamados a la acción y un sistema visual de estadio/trofeo preparado para perfiles white-label."
+              },
+              {
+                "image": "quinielas-live-trophy-hands.png",
+                "description": "Arte de torneo reutilizado en onboarding y campañas para reforzar la energía de día de partido y los estados promocionales de marca."
+              },
+              {
+                "image": "quinielas-live-wordmark.png",
+                "description": "Cresta y wordmark principal reutilizados en navegación, cards de quinielas y variantes corporativas desde el mismo codebase compartido."
+              }
+            ]
+          }
+        ],
+        "home_order": 0,
+        "show_on_home": true
+      },
       {
         "start_date": "2026-01-20",
         "end_date": "",
@@ -257,7 +338,7 @@
             ]
           }
         ],
-        "home_order": 0,
+        "home_order": 1,
         "show_on_home": true
       },
       {
@@ -382,7 +463,7 @@
             ]
           }
         ],
-        "home_order": 1,
+        "home_order": 2,
         "show_on_home": true
       },
       {
@@ -488,7 +569,7 @@
             ]
           }
         ],
-        "home_order": 2,
+        "home_order": 3,
         "show_on_home": true
       },
       {
@@ -622,26 +703,29 @@
         "start_date": "2022-08-01",
         "end_date": "2022-12-31",
         "is_current": false,
-        "company": "Quinielas Live",
-        "company_image": "canjeaton1.png",
+        "company": "Quinielas.live",
+        "company_image": "quinielas-live-badge.png",
         "position": "Tech Lead & Full-Stack",
-        "description": "Entrega full-stack y despliegue en AWS de la plataforma mundialista para concursos en vivo.",
+        "description": "Entrega full-stack y despliegue en AWS de la versión original de la plataforma de quinielas para Qatar 2022.",
         "tasks": [
-          "Desarrollo de servicios y componentes compartidos para experiencia en tiempo real.",
-          "Gestión CI/CD y observabilidad.",
-          "Coordinación con diseño para experiencias responsive.",
-          "Soporte 24/7 durante la competición."
+          "Construí módulos de frontend y backend para administración de quinielas y participación en vivo.",
+          "Automaticé infraestructura con servicios administrados de AWS y scripts de despliegue.",
+          "Mantuve observabilidad y soporte operativo durante todo el torneo.",
+          "Documenté flujos técnicos para operadores regionales y equipos de soporte."
         ],
         "achievements": [
           {
-            "title": "Plataforma de Quinielas",
-            "description": "Aplicación escalable con tableros en vivo y administración de premios.",
-            "image": "canjeaton2.png",
-            "url": "https://www.quinielas.live",
+            "title": "Plataforma de Quinielas Qatar 2022",
+            "description": "Primera versión de la plataforma de quinielas con acceso seguro, tablas en vivo y administración de premios para campañas del Mundial.",
+            "image": "quinielas-live-hero.png",
+            "url": "https://quinielas.live",
             "date": "2022-11-01",
             "tech_stack": [
               {
                 "name": "React"
+              },
+              {
+                "name": "Node.js"
               },
               {
                 "name": "AWS"

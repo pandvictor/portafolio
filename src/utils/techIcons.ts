@@ -4,8 +4,10 @@ const DEFAULT_ICON = "javascript.svg";
 
 const mapNameToIcon = (name?: string) => {
   const key = (name || "").toLowerCase();
+  if (key.includes("next")) return "react.svg";
   if (key.includes("react native")) return "react.svg";
   if (key.includes("react")) return "react.svg";
+  if (key.includes("mui") || key.includes("material ui")) return "react.svg";
   if (key.includes("expo")) return "expo.svg";
   if (key.includes("redux")) return "redux.svg";
   if (key.includes("rtk") || key.includes("query")) return "rtk-query.svg";
@@ -31,7 +33,17 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("mongo")) return "mongodb.svg";
   if (key.includes("scrum") || key.includes("agile")) return "scrum.svg";
   if (key.includes("android")) return "android.svg";
-  if (key.includes("aws")) return "aws.svg";
+  if (
+    key.includes("aws") ||
+    key.includes("lambda") ||
+    key.includes("dynamodb") ||
+    key.includes("cloudfront") ||
+    key.includes("s3") ||
+    key.includes("acm") ||
+    key.includes("iam")
+  ) {
+    return "aws.svg";
+  }
   if (key.includes("ios")) return "ios.svg";
   if (key.includes("docker")) return "docker.svg";
   if (key.includes("kubernetes")) return "kubernetes.svg";

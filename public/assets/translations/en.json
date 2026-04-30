@@ -147,8 +147,89 @@
     "skills": "Skills",
     "change_language": "Change language",
     "contact": "Contact",
-    "summary": "Senior developer with 19+ years delivering technology solutions for fintech, government and international organizations. Specialized in React Native, React, TypeScript, Node.js and AWS. Proven ability to lead teams, define architecture and launch high-impact products such as CHIVO Wallet and the APEX trading platform. Currently focused on AI-assisted delivery workflows that shorten planning, QA, and release cycles across React, Python, database, and Docker-based systems.",
+    "summary": "Engineering Leader with 19+ years building large-scale, mission-critical platforms across fintech, crypto, and public-sector organizations. Led end-to-end development of CHIVO Wallet and the APEX trading platform, improving scalability, real-time performance, and system reliability for millions of users. Expert in React Native, React, Node.js, and AWS, with a strong track record guiding engineering teams, defining architecture, and delivering high-impact products under fast-paced and high-stakes environments. Most recently launched Quinielas.live, a multi-tenant World Cup 2026 platform on a cost-optimized AWS serverless stack, delivered in ~2 weeks through AI-assisted pair programming.",
     "work_history": [
+      {
+        "start_date": "2026-03-01",
+        "end_date": "",
+        "is_current": true,
+        "company": "Quinielas.live",
+        "company_image": "quinielas-live-badge.png",
+        "position": "Lead Full-Stack Engineer",
+        "description": "Designed and launched a multi-tenant World Cup 2026 prediction platform on low-cost serverless AWS, combining white-label product delivery, secure gameplay flows, and AI-assisted execution.",
+        "tasks": [
+          "Designed and implemented a multi-tenant serverless AWS architecture using Node 20 ARM64 Lambdas, single-table DynamoDB with 3 GSIs, HTTP API, CloudFront, S3, and ACM, optimized for near-$0 idle cost in normal conditions.",
+          "Built the frontend in Next.js 12, React, and MUI with profile-driven white-label branding that serves multiple corporate variants from one codebase without duplication.",
+          "Implemented JWT HS256 authentication with bcrypt cost-12, dual client/server validation, least-privilege IAM roles, and strict CORS policies.",
+          "Built 3 Lambdas and 13 REST endpoints covering pool CRUD, predictions, standings, and leaderboard workflows.",
+          "Extracted and normalized the full 2026 World Cup fixture (48 teams, 104 matches) with a Python scraper and idempotent DynamoDB loading.",
+          "Led UX/UI iteration based on visual feedback, refining hero banners, contextual countdowns, top-3 medal states, and profile-aware gradients.",
+          "Configured quinielas.live with GoDaddy + ACM, automated SSL, and idempotent AWS CLI deployments without Route 53 to keep infrastructure cost lean.",
+          "Adopted AI-assisted pair programming with Claude Code to compress a typical 3-4 month delivery window into ~2 weeks while keeping architecture, product, and quality decisions under human control."
+        ],
+        "achievements": [
+          {
+            "title": "Quinielas.live World Cup 2026 Platform",
+            "description": "Multi-tenant pool platform for World Cup 2026 with white-label branding, secure predictions, live standings, and AI-assisted delivery compressed into ~2 weeks.",
+            "image": "quinielas-live-hero.png",
+            "url": "https://quinielas.live",
+            "date": "2026-03-01",
+            "outcomes": [
+              "Near-$0 idle AWS footprint",
+              "13 REST endpoints / 3 Lambdas",
+              "~2-week delivery with AI"
+            ],
+            "tech_stack": [
+              {
+                "name": "Next.js 12"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "MUI"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS Lambda"
+              },
+              {
+                "name": "DynamoDB"
+              },
+              {
+                "name": "CloudFront"
+              },
+              {
+                "name": "S3"
+              },
+              {
+                "name": "Python"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "quinielas-live-hero.png",
+                "description": "Hero surface for World Cup 2026 pools with contextual countdowns, branded calls to action, and a stadium/trophy visual system tuned for white-label profiles."
+              },
+              {
+                "image": "quinielas-live-trophy-hands.png",
+                "description": "Tournament entry artwork reused across onboarding and campaign flows to reinforce match-day energy and branded promotion states."
+              },
+              {
+                "image": "quinielas-live-wordmark.png",
+                "description": "Primary crest and wordmark adapted across navigation, pool cards, and corporate-branded variants from the same shared codebase."
+              }
+            ]
+          }
+        ],
+        "home_order": 0,
+        "show_on_home": true
+      },
       {
         "start_date": "2026-01-20",
         "end_date": "",
@@ -257,7 +338,7 @@
             ]
           }
         ],
-        "home_order": 0,
+        "home_order": 1,
         "show_on_home": true
       },
       {
@@ -382,7 +463,7 @@
             ]
           }
         ],
-        "home_order": 1,
+        "home_order": 2,
         "show_on_home": true
       },
       {
@@ -488,7 +569,7 @@
             ]
           }
         ],
-        "home_order": 2,
+        "home_order": 3,
         "show_on_home": true
       },
       {
@@ -622,26 +703,29 @@
         "start_date": "2022-08-01",
         "end_date": "2022-12-31",
         "is_current": false,
-        "company": "Quinielas Live",
-        "company_image": "canjeaton1.png",
+        "company": "Quinielas.live",
+        "company_image": "quinielas-live-badge.png",
         "position": "Tech Lead & Full-Stack",
-        "description": "Delivered the full-stack experience and AWS infrastructure for the live World Cup contest platform.",
+        "description": "Full-stack delivery and AWS deployment for the original Qatar 2022 live contest platform.",
         "tasks": [
-          "Developed services and shared components for real-time play.",
-          "Managed CI/CD and observability.",
-          "Coordinated responsive UX with design teams.",
-          "Provided 24/7 support during the competition."
+          "Built frontend and backend modules for pool administration and live participation.",
+          "Automated infrastructure with AWS managed services and deployment scripts.",
+          "Maintained observability and operational support throughout the tournament.",
+          "Documented technical flows for regional operators and supporting teams."
         ],
         "achievements": [
           {
-            "title": "Live Contest Platform",
-            "description": "Scalable application with live leaderboards and prize management.",
-            "image": "canjeaton2.png",
-            "url": "https://www.quinielas.live",
+            "title": "Qatar 2022 Live Contest Platform",
+            "description": "First release of the live pool platform with secure access, real-time standings, and prize management for World Cup campaigns.",
+            "image": "quinielas-live-hero.png",
+            "url": "https://quinielas.live",
             "date": "2022-11-01",
             "tech_stack": [
               {
                 "name": "React"
+              },
+              {
+                "name": "Node.js"
               },
               {
                 "name": "AWS"
