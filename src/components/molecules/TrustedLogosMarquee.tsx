@@ -11,6 +11,7 @@ const marquee = keyframes`
 
 const defaultLogos: LogoItem[] = [
   { src: "alphapoint-logo.png", alt: "AlphaPoint" },
+  { src: "bluequant-wordmark.svg", alt: "BlueQuant" },
   { src: "sat_logo-transparent.png", alt: "SAT" },
   { src: "bullseye.svg", alt: "Bullseye" },
   { src: "fantasygol-logo.svg", alt: "FantasyGol" },
@@ -19,6 +20,7 @@ const defaultLogos: LogoItem[] = [
   { src: "sbs.png", alt: "SBS" },
   { src: "sieca.png", alt: "SIECA" },
   { src: "red-regional.png", alt: "Red Regional" },
+  { src: "quinielas-live-badge.png", alt: "Quinielas.live" },
 ];
 
 export const TrustedLogosMarquee: React.FC<{ logos?: LogoItem[] }> = ({
@@ -53,6 +55,7 @@ export const TrustedLogosMarquee: React.FC<{ logos?: LogoItem[] }> = ({
               style={{
                 height: "100%",
                 width: "auto",
+                maxWidth: 140,
                 objectFit: "contain",
                 display: "block",
               }}
