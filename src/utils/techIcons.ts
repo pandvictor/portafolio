@@ -15,11 +15,14 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("openai") || key.includes("llm") || key.includes("gpt") || key.includes("rag")) {
     return "openai.svg";
   }
+  if (key.includes("claude")) return "openai.svg";
   if (key === "qa" || key.includes("quality assurance")) return "jira.svg";
   if (key.includes("jira")) return "jira.svg";
   if (key.includes("gitlab")) return "gitlab.svg";
   if (key.includes("git")) return "git.svg";
   if (key.includes("bitcoin") || key === "btc") return "bitcoin.svg";
+  if (key.includes("coinbase") || key.includes("polymarket") || key.includes("clob")) return "bitcoin.svg";
+  if (key.includes("usdc") || key.includes("pusd")) return "usdt.svg";
   if (key.includes("xrp") || key.includes("ripple")) return "xrp.svg";
   if (key.includes("usdt") || key.includes("tether")) return "usdt.svg";
   if (key.includes("eth") || key.includes("ethereum")) return "eth.svg";
@@ -33,6 +36,7 @@ const mapNameToIcon = (name?: string) => {
   if (key.includes("mongo")) return "mongodb.svg";
   if (key.includes("scrum") || key.includes("agile")) return "scrum.svg";
   if (key.includes("android")) return "android.svg";
+  if (key.includes("websocket") || key.includes("ws")) return "nodejs.svg";
   if (
     key.includes("aws") ||
     key.includes("lambda") ||

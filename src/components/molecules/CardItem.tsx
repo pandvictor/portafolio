@@ -113,6 +113,12 @@ const LOGO_PRESENTATION: Record<string, LogoPresentation> = {
       "drop-shadow(0 6px 16px rgba(0,0,0,0.42)) brightness(1.04)",
     scale: 1.02,
   },
+  "bluequant-logo.svg": {
+    blendMode: "normal",
+    filter:
+      "drop-shadow(0 6px 16px rgba(0,0,0,0.42)) brightness(1.06)",
+    scale: 1.02,
+  },
 };
 
 const getLogoPresentation = (image?: string): LogoPresentation | undefined => {

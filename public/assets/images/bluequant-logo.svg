@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bq-dark" x1="58" y1="96" x2="410" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08285D"/>
+      <stop offset="1" stop-color="#0B4F9C"/>
+    </linearGradient>
+    <linearGradient id="bq-cyan" x1="202" y1="120" x2="468" y2="376" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F69D8"/>
+      <stop offset="0.62" stop-color="#18A9F3"/>
+      <stop offset="1" stop-color="#29C8FF"/>
+    </linearGradient>
+    <filter id="shadow" x="28" y="60" width="456" height="392" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#06142D" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M64 118H232C309.32 118 372 178.68 372 256C372 301.132 350.63 341.272 317.45 366.89C353.848 389.264 377 429.462 377 475H64V118ZM148 188V474H232C268.451 474 298 444.451 298 408C298 371.549 268.451 342 232 342H178V272H226C262.451 272 292 242.451 292 206C292 195.908 289.737 186.345 285.691 177.79C273.941 153.056 248.726 136 219.528 136H148V188ZM178 202C177.458 202 177.018 202.44 177.018 202.982V258.018C177.018 258.56 177.458 259 178 259H226C255.271 259 279 235.271 279 206C279 176.729 255.271 153 226 153H178V202ZM178 355C177.458 355 177.018 355.44 177.018 355.982V461.018C177.018 461.56 177.458 462 178 462H232C261.271 462 285 438.271 285 409C285 379.729 261.271 356 232 356H178V355Z" fill="url(#bq-dark)"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M292 118C389.754 118 469 197.246 469 295C469 332.093 457.578 366.518 438.063 394.953L466 422.89L412.89 476L359.775 422.885C339.363 435.849 315.149 444.447 289 447.566V363H315.531L378.15 425.619L404.619 399.15L342 336.531H289V250H385C385 197.772 342.228 155 290 155C237.772 155 195 197.772 195 250C195 302.228 237.772 345 290 345V382C217.651 382 159 323.349 159 251C159 178.651 217.651 120 290 120L292 118Z" fill="url(#bq-cyan)"/>
+    <path d="M387 112H404V210H387V112Z" fill="#18B8F6"/>
+    <path d="M421 94H438V210H421V94Z" fill="#17ADEE"/>
+    <path d="M455 66H472V210H455V66Z" fill="#1BCBFF"/>
+  </g>
+</svg>
