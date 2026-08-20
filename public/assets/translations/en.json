@@ -66,7 +66,16 @@
         "desc": "Architecture guidance, mentoring, and delivery standards.",
         "icon": "scrum.svg"
       }
-    ]
+    ],
+    "cta_kicker": "Next step",
+    "cta_title": "Have a platform to build or scale?",
+    "cta_desc": "Tell me what you are shipping and I will come back with scope, risks, and a delivery plan.",
+    "cta_primary": "Start a conversation",
+    "cta_secondary": "Download CV",
+    "projects_prev": "Previous projects",
+    "projects_next": "More projects",
+    "project_live": "Live site",
+    "project_case": "Overview"
   },
   "hero": {
     "flip": {

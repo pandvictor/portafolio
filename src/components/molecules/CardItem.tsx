@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { ImageIcons, ImagePresentation } from "./ImageIcons";
-import { TechStackMarquee } from "./TechStackMarquee";
 import { publicPath } from "../../constants/gloabals";
 import { Project, ProjectModalPayload } from "../../types/types";
 import { resolveTechIconFromStack } from "../../utils/techIcons";
@@ -10,11 +9,13 @@ import {
   CardActions,
   CardContent,
   Typography,
-  Avatar,
   Stack,
   Button,
   Chip,
+  Tooltip,
 } from "@mui/material";
+import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
+import type { ButtonProps } from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import i18n from "../../utils/i18n";
 import { motionize, transitions } from "../motion";
@@ -33,6 +34,8 @@ type LogoPresentation = {
   filter?: string;
   scale?: number;
 };
+
+const MAX_TECH_ICONS = 6;
 
 const PROJECT_IMAGE_PRESENTATION: Record<string, ImagePresentation> = {
   "red-regional.jpeg": {
@@ -74,50 +77,42 @@ const getProjectImagePresentation = (
 const LOGO_PRESENTATION: Record<string, LogoPresentation> = {
   "bullseye-logo-transparent.png": {
     blendMode: "normal",
-    filter:
-      "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
+    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
     scale: 1.08,
   },
   "bullseye.svg": {
     blendMode: "normal",
-    filter:
-      "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
+    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
     scale: 1.08,
   },
   "fantasygol-logo-transparent.png": {
     blendMode: "normal",
-    filter:
-      "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
+    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
     scale: 1.08,
   },
   "fantasygol-logo.svg": {
     blendMode: "normal",
-    filter:
-      "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
+    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
     scale: 1.08,
   },
   "quinielas-live-wordmark.png": {
     blendMode: "normal",
-    filter:
-      "drop-shadow(0 6px 16px rgba(0,0,0,0.38)) brightness(1.05)",
+    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.38)) brightness(1.05)",
     scale: 1.04,
   },
   "quinielas-live-logo-transparent.png": {
     blendMode: "normal",
-    filter:
-      "drop-shadow(0 6px 16px rgba(0,0,0,0.38)) brightness(1.05)",
+    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.38)) brightness(1.05)",
     scale: 1.03,
   },
   "quinielas-live-badge.png": {
     blendMode: "normal",
-    filter:
-      "drop-shadow(0 6px 16px rgba(0,0,0,0.42)) brightness(1.04)",
+    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.42)) brightness(1.04)",
     scale: 1.02,
   },
   "bluequant-logo.svg": {
     blendMode: "normal",
-    filter:
-      "drop-shadow(0 6px 16px rgba(0,0,0,0.42)) brightness(1.06)",
+    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.42)) brightness(1.06)",
     scale: 1.02,
   },
 };
@@ -129,14 +124,14 @@ const getLogoPresentation = (image?: string): LogoPresentation | undefined => {
 
 const CardRoot = styled(Card)(() => ({
   maxWidth: 800,
-  borderRadius: "28px",
+  borderRadius: "24px",
   height: "100%",
   display: "flex",
   flexDirection: "column",
   position: "relative",
   overflow: "hidden",
   background:
-    "linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(10,15,24,0.98) 100%)",
+    "linear-gradient(180deg, rgba(17,26,44,0.95) 0%, rgba(10,15,24,0.98) 100%)",
   border: "1px solid var(--border-subtle)",
   boxShadow: "0 20px 50px rgba(0,0,0,0.4)",
   // Lift + tilt are owned by the framer-motion `TiltCard` wrapper; this element
@@ -158,11 +153,11 @@ const CardRoot = styled(Card)(() => ({
     bottom: 0,
     left: 0,
     right: 0,
-    height: 6,
+    height: 4,
     background:
-      "linear-gradient(90deg, rgba(34,211,238,0.5), rgba(163,230,53,0.6))",
+      "linear-gradient(90deg, rgba(34,211,238,0.6), rgba(163,230,53,0.6))",
     opacity: 0,
-    transform: "translateY(6px)",
+    transform: "translateY(4px)",
     transition: "opacity 0.3s ease, transform 0.3s ease",
     pointerEvents: "none",
   },
@@ -179,36 +174,27 @@ const CardRoot = styled(Card)(() => ({
   },
 }));
 
-const CardContentRoot = styled(CardContent)(() => ({
+const CardContentRoot = styled(CardContent)(({ theme }) => ({
   flexGrow: 1,
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.spacing(1.5),
+  paddingTop: theme.spacing(1),
 }));
 
-const HeaderStack = styled(Stack)(({ theme }) => ({
-  backgroundColor: "transparent",
-  padding: theme.spacing(1.2),
-  gap: theme.spacing(2),
-  border: "none",
-}));
-
-const LogoRow = styled(Box)(() => ({
+/** Company logo, company name, and year — the context line above the title. */
+const MetaRow = styled(Box)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  gap: 8,
-  flexShrink: 0,
+  gap: theme.spacing(1.25),
+  minHeight: 26,
 }));
 
 const LogoWrap = styled(Box)(() => ({
   display: "inline-flex",
   alignItems: "center",
-  justifyContent: "center",
-  height: 36,
-  minWidth: 80,
-  maxWidth: 130,
-  padding: 4,
-  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-  "&:hover": {
-    transform: "scale(1.05)",
-  },
+  height: 24,
+  flexShrink: 0,
 }));
 
 const LogoImage = styled("img", {
@@ -221,8 +207,8 @@ const LogoImage = styled("img", {
 }>(({ blendMode, logoFilter, logoScale }) => ({
   height: "100%",
   width: "auto",
-  maxWidth: 120,
-  maxHeight: 32,
+  // Narrow enough that a wordmark never crowds out the company name beside it.
+  maxWidth: 66,
   objectFit: "contain",
   display: "block",
   mixBlendMode: blendMode,
@@ -231,51 +217,107 @@ const LogoImage = styled("img", {
   transformOrigin: "center",
 }));
 
+const MetaText = styled(Typography)(() => ({
+  color: "var(--text-secondary)",
+  fontWeight: 600,
+  letterSpacing: "0.04em",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+}));
+
+const MetaDot = styled("span")(() => ({
+  width: 3,
+  height: 3,
+  borderRadius: "50%",
+  backgroundColor: "var(--text-secondary)",
+  opacity: 0.6,
+  flexShrink: 0,
+}));
+
+const YearText = styled(Typography)(() => ({
+  marginLeft: "auto",
+  flexShrink: 0,
+  color: "var(--text-secondary)",
+  fontWeight: 700,
+  fontVariantNumeric: "tabular-nums",
+  letterSpacing: "0.08em",
+}));
+
 const ProjectTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 700,
-  lineHeight: 1.2,
-  flexGrow: 1,
+  lineHeight: 1.25,
   color: theme.palette.text.primary,
   display: "-webkit-box",
   WebkitLineClamp: 2,
   WebkitBoxOrient: "vertical",
   overflow: "hidden",
-  minHeight: "2.4em",
+  // Two lines reserved so every card in the rail aligns on the same baseline.
+  minHeight: "2.5em",
 }));
 
 const OutcomesRow = styled(Stack)(({ theme }) => ({
-  marginTop: theme.spacing(1),
-  marginBottom: theme.spacing(1),
   flexWrap: "wrap",
   gap: theme.spacing(0.75),
 }));
 
 const OutcomeChip = styled(Chip)(({ theme }) => ({
-  borderRadius: 999,
-  borderColor: "rgba(34,211,238,0.35)",
-  backgroundColor: "rgba(15,23,42,0.5)",
-  fontWeight: 700,
+  borderRadius: 8,
+  height: 26,
+  borderColor: "rgba(34,211,238,0.3)",
+  backgroundColor: "rgba(34,211,238,0.06)",
+  fontWeight: 600,
+  fontSize: "0.75rem",
   color: theme.palette.text.primary,
 }));
 
-const TechAvatar = styled(Avatar)(() => ({
-  width: 22,
-  height: 22,
-}));
-
-const CoinsRow = styled(Stack)(({ theme }) => ({
-  marginTop: theme.spacing(1),
+/** Static stack row — a scrolling marquee inside a card reads as decoration. */
+const TechRow = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
   flexWrap: "wrap",
+  gap: theme.spacing(0.75),
+  marginTop: "auto",
+  paddingTop: theme.spacing(1),
 }));
 
-const CoinChip = styled(Chip)(({ theme }) => ({
-  marginRight: theme.spacing(0.5),
-  marginBottom: theme.spacing(0.5),
-  borderRadius: theme.shape.borderRadius * 2,
-  backgroundColor: "rgba(34,211,238,0.08)",
+const TechIcon = styled(Box)(() => ({
+  width: 30,
+  height: 30,
+  borderRadius: 9,
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  border: "1px solid var(--border-subtle)",
+  backgroundColor: "rgba(15,23,42,0.75)",
+  transition: "transform 0.2s ease, border-color 0.2s ease",
+  "&:hover": {
+    transform: "translateY(-3px)",
+    borderColor: "rgba(34,211,238,0.5)",
+  },
+  "& img": {
+    width: 17,
+    height: 17,
+    objectFit: "contain",
+  },
+}));
+
+const TechOverflow = styled(Box)(() => ({
+  height: 30,
+  minWidth: 30,
+  padding: "0 8px",
+  borderRadius: 9,
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  border: "1px dashed var(--border-subtle)",
+  color: "var(--text-secondary)",
+  fontSize: "0.72rem",
+  fontWeight: 700,
 }));
 
 const CardActionsRoot = styled(CardActions)(({ theme }) => ({
+  gap: theme.spacing(1),
   paddingLeft: theme.spacing(2),
   paddingRight: theme.spacing(2),
   paddingBottom: theme.spacing(2),
@@ -283,16 +325,28 @@ const CardActionsRoot = styled(CardActions)(({ theme }) => ({
 }));
 
 const MoreInfoButton = styled(Button)(({ theme }) => ({
-  borderRadius: theme.shape.borderRadius * 2,
+  flexGrow: 1,
+  borderRadius: theme.shape.borderRadius,
   fontWeight: 700,
   background:
-    "linear-gradient(90deg, rgba(34,211,238,0.2), rgba(163,230,53,0.2))",
+    "linear-gradient(90deg, rgba(34,211,238,0.22), rgba(163,230,53,0.22))",
   color: "var(--text-primary)",
-  boxShadow: "0 10px 22px rgba(0,0,0,0.4)",
+  boxShadow: "none",
   "&:hover": {
     background:
-      "linear-gradient(90deg, rgba(34,211,238,0.35), rgba(163,230,53,0.35))",
-    boxShadow: "0 16px 30px rgba(0,0,0,0.5)",
+      "linear-gradient(90deg, rgba(34,211,238,0.38), rgba(163,230,53,0.38))",
+  },
+}));
+
+const LiveButton = styled(Button)<ButtonProps<"a">>(({ theme }) => ({
+  flexShrink: 0,
+  borderRadius: theme.shape.borderRadius,
+  fontWeight: 700,
+  color: "var(--text-secondary)",
+  borderColor: "var(--border-subtle)",
+  "&:hover": {
+    color: "var(--text-primary)",
+    borderColor: "rgba(34,211,238,0.5)",
   },
 }));
 
@@ -306,11 +360,34 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
   companyUrl,
   onOpen,
 }) => {
-  const { title, image, tech_stack } = data;
-  const coins = data.coins || [];
-  const hasCoins = coins.length > 0;
+  const { title, image, url, date } = data;
   const outcomes = data.outcomes || [];
-  const hasOutcomes = outcomes.length > 0;
+  // Coins are a handful of extra assets on the crypto projects; showing them in
+  // their own row made those two cards taller than the rest for little gain, so
+  // they share the stack row and keep their tooltips.
+  const techStack = useMemo(
+    () => [...(data.tech_stack || []), ...(data.coins || [])],
+    [data.coins, data.tech_stack]
+  );
+  const logos = useMemo(
+    () =>
+      companyImages && companyImages.length > 0
+        ? companyImages.slice(0, 1)
+        : companyImage
+          ? [companyImage]
+          : [],
+    [companyImage, companyImages]
+  );
+  const year = useMemo(() => {
+    if (!date) return null;
+    const parsed = Number(String(date).slice(0, 4));
+    return Number.isFinite(parsed) && parsed > 1900 ? String(parsed) : null;
+  }, [date]);
+  const visibleTech = useMemo(
+    () => (techStack || []).slice(0, MAX_TECH_ICONS),
+    [techStack]
+  );
+  const hiddenTechCount = Math.max((techStack?.length || 0) - MAX_TECH_ICONS, 0);
 
   return (
     <CardRoot>
@@ -324,68 +401,72 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
         }}
       />
       <CardContentRoot>
-        <HeaderStack direction='row' alignItems='center' spacing={2}>
-          <LogoRow>
-            {(companyImages && companyImages.length > 0
-              ? companyImages
-              : companyImage
-                ? [companyImage]
-                : []
-            ).map((img, idx) => {
-              const logoPresentation = getLogoPresentation(img);
-              return (
-                <LogoWrap key={`${img}-${idx}`}>
-                  <LogoImage
-                    src={`${publicPath}/images/${img}`}
-                    alt={companyName || title}
-                    blendMode={logoPresentation?.blendMode}
-                    logoFilter={logoPresentation?.filter}
-                    logoScale={logoPresentation?.scale}
-                  />
-                </LogoWrap>
-              );
-            })}
-          </LogoRow>
-          <ProjectTitle variant='h6'>
-            {title}
-          </ProjectTitle>
-        </HeaderStack>
-        {hasOutcomes && (
+        <MetaRow>
+          {logos.map((img, idx) => {
+            const logoPresentation = getLogoPresentation(img);
+            return (
+              <LogoWrap key={`${img}-${idx}`}>
+                <LogoImage
+                  src={`${publicPath}/images/${img}`}
+                  alt={companyName || title}
+                  blendMode={logoPresentation?.blendMode}
+                  logoFilter={logoPresentation?.filter}
+                  logoScale={logoPresentation?.scale}
+                />
+              </LogoWrap>
+            );
+          })}
+          {companyName && (
+            <>
+              {logos.length > 0 && <MetaDot aria-hidden />}
+              <MetaText variant='caption'>{companyName}</MetaText>
+            </>
+          )}
+          {year && <YearText variant='caption'>{year}</YearText>}
+        </MetaRow>
+
+        <ProjectTitle variant='h6'>{title}</ProjectTitle>
+
+        {outcomes.length > 0 && (
           <OutcomesRow direction='row' useFlexGap>
-            {outcomes.map((item, idx) => (
-              <OutcomeChip key={`${item}-${idx}`} size='small' label={item} variant='outlined' />
+            {outcomes.slice(0, 3).map((item, idx) => (
+              <OutcomeChip
+                key={`${item}-${idx}`}
+                size='small'
+                label={item}
+                variant='outlined'
+              />
             ))}
           </OutcomesRow>
         )}
-        <TechStackMarquee items={tech_stack} />
-        {hasCoins && (
-          <CoinsRow direction='row' spacing={1}>
-            {coins.slice(0, 4).map((coin, idx) => {
-              const icon = resolveTechIconFromStack(coin);
-              return (
-                <CoinChip
-                  key={`${coin.name}-${idx}`}
-                  size='small'
-                  label={coin.name}
-                  avatar={
-                    <TechAvatar
-                      src={`${publicPath}/images/icons/${icon}`}
-                      alt={coin.name}
-                    />
-                  }
+
+        <TechRow>
+          {visibleTech.map((tech, idx) => (
+            <Tooltip key={`${tech.name}-${idx}`} title={tech.name} arrow>
+              <TechIcon>
+                <img
+                  src={`${publicPath}/images/icons/${resolveTechIconFromStack(tech)}`}
+                  alt={tech.name}
+                  loading='lazy'
                 />
-              );
-            })}
-            {coins.length > 4 && (
-              <CoinChip size='small' label={`+${coins.length - 4}`} />
-            )}
-          </CoinsRow>
-        )}
+              </TechIcon>
+            </Tooltip>
+          ))}
+          {hiddenTechCount > 0 && (
+            <Tooltip
+              title={(techStack || [])
+                .slice(MAX_TECH_ICONS)
+                .map((tech) => tech.name)
+                .join(", ")}
+              arrow>
+              <TechOverflow>+{hiddenTechCount}</TechOverflow>
+            </Tooltip>
+          )}
+        </TechRow>
       </CardContentRoot>
       <CardActionsRoot disableSpacing>
         <MotionMoreInfoButton
-          size='small'
-          fullWidth
+          size='medium'
           variant='contained'
           color='primary'
           whileHover={{ scale: 1.02 }}
@@ -402,6 +483,18 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
           }>
           {i18n.t("more_info")}
         </MotionMoreInfoButton>
+        {url && (
+          <LiveButton
+            component='a'
+            size='medium'
+            variant='outlined'
+            href={url}
+            target='_blank'
+            rel='noreferrer'
+            endIcon={<OpenInNewRoundedIcon sx={{ fontSize: 15 }} />}>
+            {i18n.t("home.project_live")}
+          </LiveButton>
+        )}
       </CardActionsRoot>
     </CardRoot>
   );

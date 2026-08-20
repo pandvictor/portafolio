@@ -114,6 +114,10 @@ const MotionHeroLeft = motionize(HeroLeft);
 const ChipRow = styled(Stack)(({ theme }) => ({
   flexWrap: "wrap",
   justifyContent: "center",
+  "& .MuiChip-root": {
+    height: 26,
+    fontSize: "0.74rem",
+  },
   [theme.breakpoints.up("md")]: {
     justifyContent: "flex-start",
   },

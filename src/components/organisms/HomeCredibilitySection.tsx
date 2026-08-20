@@ -1,14 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { memo } from "react";
-import {
-  AnimatedCounter,
-  Reveal,
-  StaggerGroup,
-  StaggerItem,
-  motionize,
-  transitions,
-} from "../motion";
+import { memo, useMemo } from "react";
+import { SectionHeader, SectionSurface } from "../molecules";
+import { AnimatedCounter, Reveal, motionize, transitions } from "../motion";
 
 type StatItem = {
   value: string;
@@ -21,53 +15,36 @@ type HomeCredibilitySectionProps = {
   stats: StatItem[];
 };
 
-const Section = styled(Box)(({ theme }) => ({
-  marginBottom: theme.spacing(5),
-  borderRadius: 20,
-  border: "1px solid var(--border-subtle)",
-  background:
-    "linear-gradient(140deg, rgba(15,23,42,0.85) 0%, rgba(10,15,24,0.98) 100%)",
-  boxShadow: "var(--shadow-soft)",
-  padding: "var(--space-6)",
-  [theme.breakpoints.up("md")]: {
-    padding: "var(--space-7)",
-  },
-}));
-
-const Header = styled(Box)(() => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: "var(--space-2)",
-  marginBottom: "var(--space-5)",
-}));
-
-const Kicker = styled(Typography)(() => ({
-  letterSpacing: "0.28em",
-  textTransform: "uppercase",
-  fontWeight: 700,
-  color: "var(--text-secondary)",
-}));
+/**
+ * Stat copy arrives as one string ("500k+ users"). Splitting the numeric part
+ * from its unit lets the number carry display weight while the unit stays
+ * quiet, which reads far better than one uniform line.
+ */
+const splitStat = (value: string) => {
+  const match = /^(\D*\d[\d,.]*[a-zA-Z]*\+?)\s*(.*)$/s.exec(value.trim());
+  if (!match) return { figure: value, unit: "" };
+  return { figure: match[1], unit: match[2] };
+};
 
 const StatsGrid = styled(Box)(({ theme }) => ({
   display: "grid",
-  gap: "var(--space-4)",
-  gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+  gap: theme.spacing(2),
+  gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
   [theme.breakpoints.up("sm")]: {
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
   },
 }));
 
 const MotionStatsGrid = motionize(StatsGrid);
 
-const StatCard = styled(Box)(() => ({
+const StatCard = styled(Box)(({ theme }) => ({
   position: "relative",
   overflow: "hidden",
-  padding: "var(--space-4)",
-  borderRadius: 18,
+  padding: theme.spacing(2.5, 2.5, 2.5, 3),
+  borderRadius: 16,
   border: "1px solid var(--border-subtle)",
-  background: "rgba(15,23,42,0.6)",
-  boxShadow: "0 14px 30px rgba(0,0,0,0.35)",
-  // Accent rail that fills in as the card enters.
+  background: "rgba(9,14,23,0.55)",
+  // Accent rail on the leading edge ties the four cards into one group.
   "&::before": {
     content: "''",
     position: "absolute",
@@ -76,44 +53,58 @@ const StatCard = styled(Box)(() => ({
     bottom: 0,
     width: 3,
     background: "linear-gradient(180deg, #22d3ee, #a3e635)",
-    opacity: 0.65,
+    opacity: 0.7,
   },
 }));
 
 const MotionStatCard = motionize(StatCard);
 
-const StatValue = styled(Typography)(() => ({
+const Figure = styled(Typography)(({ theme }) => ({
   fontWeight: 800,
-  letterSpacing: "-0.01em",
+  letterSpacing: "-0.03em",
+  lineHeight: 1,
+  fontVariantNumeric: "tabular-nums",
+  fontSize: "clamp(1.9rem, 3.4vw, 2.6rem)",
+  background: "linear-gradient(120deg, #e2e8f0 20%, #22d3ee 120%)",
+  WebkitBackgroundClip: "text",
+  backgroundClip: "text",
+  color: "transparent",
+  marginBottom: theme.spacing(0.5),
 }));
 
-const StatLabel = styled(Typography)(() => ({
+const Unit = styled(Typography)(() => ({
+  fontWeight: 700,
+  letterSpacing: "0.1em",
+  textTransform: "uppercase",
+  fontSize: "0.7rem",
+  color: "var(--accent-1)",
+}));
+
+const StatLabel = styled(Typography)(({ theme }) => ({
   color: "var(--text-secondary)",
-  marginTop: 4,
+  marginTop: theme.spacing(1),
+  lineHeight: 1.45,
 }));
 
 export const HomeCredibilitySection = memo(
   ({ kicker, title, stats }: HomeCredibilitySectionProps) => {
+    const parsed = useMemo(
+      () => stats.map((stat) => ({ ...stat, ...splitStat(stat.value) })),
+      [stats]
+    );
+
     if (!stats?.length) return null;
+
     return (
       <Reveal preset='up'>
-        <Section>
-          <StaggerGroup stagger={0.06}>
-            <Header>
-              <StaggerItem>
-                <Kicker variant='overline'>{kicker}</Kicker>
-              </StaggerItem>
-              <StaggerItem preset='up'>
-                <Typography variant='h4'>{title}</Typography>
-              </StaggerItem>
-            </Header>
-          </StaggerGroup>
+        <SectionSurface tone='raised'>
+          <SectionHeader kicker={kicker} title={title} />
           <MotionStatsGrid
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true, amount: 0.3 }}>
-            {stats.map((stat, idx) => (
+            {parsed.map((stat, idx) => (
               <MotionStatCard
                 key={`${stat.value}-${idx}`}
                 variants={{
@@ -126,14 +117,15 @@ export const HomeCredibilitySection = memo(
                   borderColor: "rgba(34,211,238,0.45)",
                   boxShadow: "0 26px 50px rgba(0,0,0,0.5)",
                 }}>
-                <StatValue variant='h4'>
-                  <AnimatedCounter value={stat.value} />
-                </StatValue>
+                <Figure variant='h3'>
+                  <AnimatedCounter value={stat.figure} />
+                </Figure>
+                {stat.unit && <Unit variant='overline'>{stat.unit}</Unit>}
                 <StatLabel variant='body2'>{stat.label}</StatLabel>
               </MotionStatCard>
             ))}
           </MotionStatsGrid>
-        </Section>
+        </SectionSurface>
       </Reveal>
     );
   }

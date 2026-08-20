@@ -5,6 +5,7 @@ import { useScroll, useTransform } from "framer-motion";
 import { Project, ProjectModalPayload } from "../../types/types";
 import { publicPath } from "../../constants/gloabals";
 import { resolveTechIconFromStack } from "../../utils/techIcons";
+import { SectionHeader, SectionSurface } from "../molecules";
 import {
   MagneticButton,
   Reveal,
@@ -26,33 +27,6 @@ type HomeFeaturedProjectSectionProps = {
   companyImages?: string[];
   onOpen?: (payload: ProjectModalPayload) => void;
 };
-
-const Section = styled(Box)(({ theme }) => ({
-  marginBottom: theme.spacing(6),
-  borderRadius: 24,
-  border: "1px solid var(--border-subtle)",
-  background:
-    "linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(10,15,24,0.98) 100%)",
-  boxShadow: "var(--shadow-strong)",
-  padding: "var(--space-6)",
-  [theme.breakpoints.up("md")]: {
-    padding: "var(--space-7)",
-  },
-}));
-
-const Header = styled(Box)(() => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: "var(--space-3)",
-  marginBottom: "var(--space-5)",
-}));
-
-const Kicker = styled(Typography)(() => ({
-  letterSpacing: "0.28em",
-  textTransform: "uppercase",
-  fontWeight: 700,
-  color: "var(--text-secondary)",
-}));
 
 const ContentGrid = styled(Box)(({ theme }) => ({
   display: "grid",
@@ -161,22 +135,13 @@ export const HomeFeaturedProjectSection = memo(
 
     return (
       <Reveal preset='up'>
-        <Section>
-          <StaggerGroup stagger={0.08}>
-            <Header>
-              <StaggerItem>
-                <Kicker variant='overline'>{kicker}</Kicker>
-              </StaggerItem>
-              <StaggerItem preset='up'>
-                <Typography variant='h3'>{title}</Typography>
-              </StaggerItem>
-              <StaggerItem>
-                <Typography variant='body1' color='text.secondary'>
-                  {subtitle}
-                </Typography>
-              </StaggerItem>
-            </Header>
-          </StaggerGroup>
+        <SectionSurface tone='feature'>
+          <SectionHeader
+            kicker={kicker}
+            title={title}
+            subtitle={subtitle}
+            size='lead'
+          />
           <ContentGrid>
             <MotionMediaFrame
               ref={frameRef}
@@ -265,7 +230,7 @@ export const HomeFeaturedProjectSection = memo(
               </Stack>
             </StaggerGroup>
           </ContentGrid>
-        </Section>
+        </SectionSurface>
       </Reveal>
     );
   }

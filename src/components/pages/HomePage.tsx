@@ -7,11 +7,14 @@ import { ProjectDialog } from "../organisms/ProjectDialog";
 import {
   HeroSection,
   HomeCredibilitySection,
+  HomeCtaSection,
   HomeFeaturedProjectSection,
   HomeProjectsGrid,
   HomeServicesSection,
   HomeTrustedSection,
 } from "../organisms";
+import { SectionBlock } from "../molecules";
+import { publicPath } from "../../constants/gloabals";
 
 export type ModalPayload = ProjectModalPayload;
 
@@ -66,6 +69,20 @@ export default function HomePage() {
           return a._origIndex - b._origIndex;
         }),
     [worksRaw]
+  );
+  const ctaCopy = useMemo(
+    () => ({
+      kicker: i18n.t("home.cta_kicker"),
+      title: i18n.t("home.cta_title"),
+      desc: i18n.t("home.cta_desc"),
+      primary: i18n.t("home.cta_primary"),
+      secondary: i18n.t("home.cta_secondary"),
+    }),
+    [language]
+  );
+  const downloadHref = useMemo(
+    () => `${publicPath}/files/resume-victor-hernandez-${language}.pdf`,
+    [language]
   );
   const credibilityKicker = i18n.t("home.credibility_kicker");
   const credibilityTitle = i18n.t("home.credibility_title");
@@ -160,43 +177,65 @@ export default function HomePage() {
         bullets={heroBullets}
       />
 
-      <HomeTrustedSection title={trustedTitle} />
+      <SectionBlock>
+        <HomeTrustedSection title={trustedTitle} />
+      </SectionBlock>
 
-      <HomeCredibilitySection
-        kicker={credibilityKicker}
-        title={credibilityTitle}
-        stats={credibilityStats}
-      />
+      <SectionBlock>
+        <HomeCredibilitySection
+          kicker={credibilityKicker}
+          title={credibilityTitle}
+          stats={credibilityStats}
+        />
+      </SectionBlock>
 
-      <HomeServicesSection
-        kicker={servicesKicker}
-        title={servicesTitle}
-        intro={servicesIntro}
-        services={services}
-      />
+      <SectionBlock>
+        <HomeServicesSection
+          kicker={servicesKicker}
+          title={servicesTitle}
+          intro={servicesIntro}
+          services={services}
+        />
+      </SectionBlock>
 
       {featuredProject && (
-        <HomeFeaturedProjectSection
-          kicker={featuredKicker}
-          title={featuredTitle}
-          subtitle={featuredSubtitle}
-          cta={featuredCta}
-          project={featuredProject.project}
-          companyName={featuredProject.companyName}
-          companyImage={featuredProject.companyImage}
-          companyImages={featuredProject.companyImages}
-          onOpen={handleOpen}
-        />
+        <SectionBlock>
+          <HomeFeaturedProjectSection
+            kicker={featuredKicker}
+            title={featuredTitle}
+            subtitle={featuredSubtitle}
+            cta={featuredCta}
+            project={featuredProject.project}
+            companyName={featuredProject.companyName}
+            companyImage={featuredProject.companyImage}
+            companyImages={featuredProject.companyImages}
+            onOpen={handleOpen}
+          />
+        </SectionBlock>
       )}
 
-      <HomeProjectsGrid
-        works={works}
-        onOpen={handleOpen}
-        kicker={projectsKicker}
-        title={projectsTitle}
-        subtitle={projectsSubtitle}
-        note={projectsNote}
-      />
+      <SectionBlock>
+        <HomeProjectsGrid
+          works={works}
+          onOpen={handleOpen}
+          kicker={projectsKicker}
+          title={projectsTitle}
+          subtitle={projectsSubtitle}
+          note={projectsNote}
+        />
+      </SectionBlock>
+
+      <SectionBlock>
+        <HomeCtaSection
+          kicker={ctaCopy.kicker}
+          title={ctaCopy.title}
+          desc={ctaCopy.desc}
+          primaryLabel={ctaCopy.primary}
+          primaryHref={contactInfo?.[0]?.url}
+          secondaryLabel={ctaCopy.secondary}
+          secondaryHref={downloadHref}
+        />
+      </SectionBlock>
 
       <ProjectDialog
         open={Boolean(selected)}

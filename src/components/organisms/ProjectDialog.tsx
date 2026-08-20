@@ -166,7 +166,10 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
         </OutcomesRow>
       )}
       <Stack direction='row' spacing={1} flexWrap='wrap'>
-        {payload?.project.tech_stack.map((tech) => {
+        {[
+          ...(payload?.project.tech_stack ?? []),
+          ...(payload?.project.coins ?? []),
+        ].map((tech) => {
           const icon = resolveTechIcon(tech.name, tech.icon);
           return (
             <TechItem key={tech.name} alignItems='center' spacing={0.5}>

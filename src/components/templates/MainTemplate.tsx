@@ -1,6 +1,6 @@
 import React from "react";
 import { DrawerAppBar } from "../organisms";
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import FloatingActionButtons from "../molecules/FloatingActionButtons";
 import { ContactInfo } from "../../types";
@@ -32,15 +32,20 @@ const ContentContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
+/** Colophon line. A filled green button for the build number read as a CTA. */
 const VersionRow = styled(Box)(({ theme }) => ({
   display: "flex",
-  justifyContent: "center",
-  paddingBottom: theme.spacing(4),
+  flexDirection: "column",
+  alignItems: "center",
+  gap: theme.spacing(0.5),
+  paddingTop: theme.spacing(1),
+  paddingBottom: theme.spacing(5),
+  color: "var(--text-secondary)",
 }));
 
 const FooterRoot = styled(Box)(({ theme }) => ({
   borderTop: "1px solid var(--border-subtle)",
-  paddingTop: theme.spacing(4),
+  paddingTop: theme.spacing(5),
   paddingBottom: theme.spacing(4),
 }));
 
@@ -172,9 +177,12 @@ export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
           </FooterRoot>
         </Container>
         <VersionRow>
-          <Button color='secondary' variant='contained' size='small'>
-            version: {version}
-          </Button>
+          <Typography variant='caption' color='text.secondary'>
+            © {new Date().getFullYear()} {i18n.t("resume.full_name")}
+          </Typography>
+          <Typography variant='caption' sx={{ opacity: 0.6 }}>
+            v{version}
+          </Typography>
         </VersionRow>
       </Box>
     </PageRoot>

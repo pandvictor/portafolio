@@ -1,26 +1,17 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { memo } from "react";
-import { TrustedLogosMarquee } from "../molecules";
+import { SectionSurface, TrustedLogosMarquee } from "../molecules";
 import { Reveal, motionize, transitions } from "../motion";
 
 type HomeTrustedSectionProps = {
   title: string;
 };
 
-const TrustedSection = styled(Box)(({ theme }) => ({
+const TrustedSection = styled(SectionSurface)(({ theme }) => ({
   padding: theme.spacing(3, 2),
-  marginBottom: theme.spacing(4),
-  borderRadius: 12,
-  border: "1px solid var(--border-subtle)",
-  backgroundColor: "rgba(15,23,42,0.65)",
-  boxShadow: "var(--shadow-soft)",
-  [theme.breakpoints.up("sm")]: {
-    padding: theme.spacing(3, 3),
-  },
   [theme.breakpoints.up("md")]: {
-    padding: theme.spacing(4, 3),
-    marginBottom: theme.spacing(6),
+    padding: theme.spacing(3.5, 3),
   },
 }));
 
@@ -29,8 +20,12 @@ const TrustedHeader = styled(Stack)(({ theme }) => ({
 }));
 
 const TrustedTitle = styled(Typography)(() => ({
-  fontWeight: 800,
-  letterSpacing: "0.08em",
+  fontWeight: 700,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  fontSize: "0.72rem",
+  color: "var(--text-secondary)",
+  whiteSpace: "nowrap",
 }));
 
 const TrustedDivider = styled(Box)(({ theme }) => ({
@@ -50,12 +45,12 @@ const MotionTrustedDivider = motionize(TrustedDivider);
 
 export const HomeTrustedSection = memo(({ title }: HomeTrustedSectionProps) => (
   <Reveal preset='fade'>
-    <TrustedSection>
+    <TrustedSection tone='quiet'>
       <TrustedHeader
         direction={{ xs: "column", sm: "row" }}
         spacing={1.5}
         alignItems={{ xs: "flex-start", sm: "center" }}>
-        <TrustedTitle variant='subtitle2'>{title}</TrustedTitle>
+        <TrustedTitle variant='overline'>{title}</TrustedTitle>
         <MotionTrustedDivider
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}

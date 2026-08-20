@@ -73,8 +73,9 @@ const MarqueeShell = styled(Box)(() => ({
   overflow: "hidden",
   position: "relative",
   width: "fit-content",
-  maxWidth: 560,
+  maxWidth: 520,
   paddingTop: 4,
+  paddingBottom: 4,
   maskImage:
     "linear-gradient(90deg, transparent 0, black 10%, black 90%, transparent 100%)",
 }));
@@ -85,7 +86,7 @@ const MarqueeTrack = styled(Box, {
   ({ animate, justify }) => ({
     display: "flex",
     alignItems: "center",
-    gap: 14,
+    gap: 8,
     width: animate ? "max-content" : "100%",
     justifyContent: animate ? "flex-start" : justify,
     animation: animate ? `${marquee} 22s linear infinite` : "none",
@@ -98,16 +99,30 @@ const MarqueeTrack = styled(Box, {
   }),
 );
 
+/**
+ * Bare icons floating on the hero background read as scattered noise. Giving
+ * each one the same bordered tile used on the project cards makes the strip
+ * look like a deliberate component.
+ */
 const IconWrap = styled(Box)(() => ({
-  width: 40,
-  height: 40,
+  width: 34,
+  height: 34,
+  flexShrink: 0,
+  borderRadius: 10,
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
+  border: "1px solid var(--border-subtle)",
+  backgroundColor: "rgba(15,23,42,0.7)",
+  transition: "border-color 0.25s ease, transform 0.25s ease",
+  "&:hover": {
+    borderColor: "rgba(34,211,238,0.5)",
+    transform: "translateY(-2px)",
+  },
 }));
 
 const IconImage = styled("img")(() => ({
-  width: 28,
-  height: 28,
+  width: 19,
+  height: 19,
   objectFit: "contain",
 }));
