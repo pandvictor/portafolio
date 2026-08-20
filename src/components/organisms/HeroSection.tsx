@@ -271,6 +271,12 @@ const IMPACT_ICON_MAP: Record<string, string> = {
   experiments: "openai.svg",
 };
 
+/**
+ * Long enough that the panel is unlikely to change while someone is mid-sentence.
+ * The previous 20s swapped the hero out from under a reader.
+ */
+const AUTO_FLIP_INTERVAL_MS = 45000;
+
 type HeroSectionProps = {
   resume: Resume;
   contactInfo: ContactInfo[];
@@ -288,6 +294,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const { language } = useLanguage();
   const [isFlipped, setIsFlipped] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  // Once the visitor flips the panel themselves they have taken control, and
+  // swapping the content out from under them again is hostile to reading.
+  const [autoFlipStopped, setAutoFlipStopped] = useState(false);
   const flipTimerRef = useRef<number | null>(null);
   const theme = useTheme();
   const isCompact = useMediaQuery(theme.breakpoints.down("sm"));
@@ -343,11 +352,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     }
     flipTimerRef.current = window.setInterval(() => {
       setIsFlipped((prev) => !prev);
-    }, 20000);
+    }, AUTO_FLIP_INTERVAL_MS);
   }, [prefersReducedMotion]);
 
   useEffect(() => {
-    if (prefersReducedMotion || isPaused) {
+    if (prefersReducedMotion || isPaused || autoFlipStopped) {
       if (flipTimerRef.current) {
         window.clearInterval(flipTimerRef.current);
         flipTimerRef.current = null;
@@ -361,11 +370,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         flipTimerRef.current = null;
       }
     };
-  }, [isPaused, prefersReducedMotion, startFlipTimer]);
+  }, [autoFlipStopped, isPaused, prefersReducedMotion, startFlipTimer]);
 
   const handleManualFlip = () => {
     setIsFlipped((prev) => !prev);
-    if (!isPaused) startFlipTimer();
+    setAutoFlipStopped(true);
   };
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {

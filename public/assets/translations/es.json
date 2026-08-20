@@ -1242,7 +1242,9 @@
     "summary_title": "Resumen",
     "print_cv": "Imprimir / Guardar PDF",
     "back_to_site": "Volver al sitio",
-    "location": "Guatemala · Remoto (América)"
+    "location": "Guatemala · Remoto (América)",
+    "download_pdf": "Descargar PDF",
+    "print_label": "Imprimir"
   },
   "cover_letter": {
     "title": "Carta de presentación",

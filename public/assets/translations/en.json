@@ -1242,7 +1242,9 @@
     "summary_title": "Summary",
     "print_cv": "Print / Save PDF",
     "back_to_site": "Back to site",
-    "location": "Guatemala · Remote (Americas)"
+    "location": "Guatemala · Remote (Americas)",
+    "download_pdf": "Download PDF",
+    "print_label": "Print"
   },
   "cover_letter": {
     "title": "Cover Letter",

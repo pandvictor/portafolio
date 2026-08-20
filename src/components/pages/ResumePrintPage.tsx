@@ -3,16 +3,19 @@ import { styled } from "@mui/material/styles";
 import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
 import PrintIcon from "@mui/icons-material/Print";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
+import { CircularProgress } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import type { ButtonProps } from "@mui/material/Button";
 import { format, parseISO } from "date-fns";
 import { es as esLocale } from "date-fns/locale";
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import i18n from "../../utils/i18n";
 import { useLanguage } from "../../context/LanguageContext";
 import { Resume, WorkHistory } from "../../types/";
 import { homePath } from "../../constants/gloabals";
 import { useScrollToTop } from "../../utils/useScrollToTop";
+import { downloadResumePdf } from "../../utils/downloadResumePdf";
 import { isDuplicateText, parseDescription } from "../../utils/resumeText";
 
 /**
@@ -254,16 +257,41 @@ export function ResumePrintPage() {
   const resume = useMemo(() => i18n.t("resume") as Resume, [language]);
   const dateLocale = language === "es" ? esLocale : undefined;
 
-  const formatRange = (work: WorkHistory) => {
-    const start = format(parseISO(work.start_date), "MMM yyyy", {
-      locale: dateLocale,
-    });
-    const end =
-      work.is_current || !work.end_date
-        ? i18n.t("resume.present")
-        : format(parseISO(work.end_date), "MMM yyyy", { locale: dateLocale });
-    return `${start} – ${end}`;
-  };
+  const formatRange = useCallback(
+    (work: WorkHistory) => {
+      const start = format(parseISO(work.start_date), "MMM yyyy", {
+        locale: dateLocale,
+      });
+      const end =
+        work.is_current || !work.end_date
+          ? i18n.t("resume.present")
+          : format(parseISO(work.end_date), "MMM yyyy", { locale: dateLocale });
+      return `${start} – ${end}`;
+    },
+    [dateLocale]
+  );
+
+  const [downloading, setDownloading] = useState(false);
+
+  const handleDownload = useCallback(async () => {
+    setDownloading(true);
+    try {
+      await downloadResumePdf({
+        resume,
+        dateRanges: (resume?.work_history ?? []).map(formatRange),
+        labels: {
+          summary: i18n.t("resume.summary_title"),
+          experience: i18n.t("resume.experience"),
+          education: i18n.t("resume.education"),
+          languages: i18n.t("resume.languages_title"),
+          skills: i18n.t("resume.skills"),
+        },
+        language,
+      });
+    } finally {
+      setDownloading(false);
+    }
+  }, [formatRange, language, resume]);
 
   const contacts = useMemo(() => {
     const all = resume?.contact_info ?? [];
@@ -284,9 +312,27 @@ export function ResumePrintPage() {
           <ButtonLabel>{i18n.t("resume.back_to_site")}</ButtonLabel>
         </ToolbarLinkButton>
         <ToolbarGroup>
-          <Tooltip title={i18n.t("resume.print_cv")} arrow>
-            <ToolbarButton startIcon={<PrintIcon />} onClick={() => window.print()}>
-              <ButtonLabel>{i18n.t("resume.print_cv")}</ButtonLabel>
+          <Tooltip title={i18n.t("resume.download_pdf")} arrow>
+            <ToolbarButton
+              startIcon={
+                downloading ? (
+                  <CircularProgress size={16} color='inherit' />
+                ) : (
+                  <DownloadRoundedIcon />
+                )
+              }
+              aria-label={i18n.t("resume.download_pdf")}
+              disabled={downloading}
+              onClick={handleDownload}>
+              <ButtonLabel>{i18n.t("resume.download_pdf")}</ButtonLabel>
+            </ToolbarButton>
+          </Tooltip>
+          <Tooltip title={i18n.t("resume.print_label")} arrow>
+            <ToolbarButton
+              startIcon={<PrintIcon />}
+              aria-label={i18n.t("resume.print_label")}
+              onClick={() => window.print()}>
+              <ButtonLabel>{i18n.t("resume.print_label")}</ButtonLabel>
             </ToolbarButton>
           </Tooltip>
           <Tooltip title={toggleLabel} arrow>
