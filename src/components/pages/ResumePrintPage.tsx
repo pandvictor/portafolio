@@ -2,12 +2,17 @@ import { Box, Button, Stack, Tooltip, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
 import PrintIcon from "@mui/icons-material/Print";
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+import { Link as RouterLink } from "react-router-dom";
+import type { ButtonProps } from "@mui/material/Button";
 import { format, parseISO } from "date-fns";
 import { es as esLocale } from "date-fns/locale";
 import { useMemo } from "react";
 import i18n from "../../utils/i18n";
 import { useLanguage } from "../../context/LanguageContext";
 import { Resume, WorkHistory } from "../../types/";
+import { homePath } from "../../constants/gloabals";
+import { useScrollToTop } from "../../utils/useScrollToTop";
 import { isDuplicateText, parseDescription } from "../../utils/resumeText";
 
 /**
@@ -21,7 +26,10 @@ import { isDuplicateText, parseDescription } from "../../utils/resumeText";
 const Screen = styled(Box)(({ theme }) => ({
   minHeight: "100vh",
   backgroundColor: "#525659",
-  padding: theme.spacing(4, 2),
+  padding: theme.spacing(10, 2, 4),
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(4, 2),
+  },
   display: "flex",
   justifyContent: "center",
   "@media print": {
@@ -179,20 +187,51 @@ const SkillLabel = styled("span")(() => ({
 const Toolbar = styled(Stack)(({ theme }) => ({
   position: "fixed",
   top: theme.spacing(2),
+  left: theme.spacing(2),
   right: theme.spacing(2),
   zIndex: 1200,
   gap: theme.spacing(1),
+  justifyContent: "space-between",
+  pointerEvents: "none",
+  "& > *": {
+    pointerEvents: "auto",
+  },
 }));
 
-const ToolbarButton = styled(Button)(() => ({
+const ToolbarGroup = styled(Stack)(({ theme }) => ({
+  flexDirection: "row",
+  gap: theme.spacing(1),
+}));
+
+const toolbarButtonStyles = {
   backgroundColor: "#0f172a",
   color: "#e2e8f0",
   borderRadius: 10,
   textTransform: "none",
   fontWeight: 700,
+  minWidth: 0,
   boxShadow: "0 12px 26px rgba(0,0,0,0.4)",
   "&:hover": {
     backgroundColor: "#1e293b",
+  },
+  // Labels are dropped on narrow screens so three buttons do not span the
+  // viewport and cover the top of the CV.
+  "@media (max-width: 599px)": {
+    "& .MuiButton-startIcon": {
+      margin: 0,
+    },
+  },
+} as const;
+
+const ToolbarButton = styled(Button)(() => toolbarButtonStyles);
+
+const ToolbarLinkButton = styled(Button)<ButtonProps<typeof RouterLink>>(
+  () => toolbarButtonStyles
+);
+
+const ButtonLabel = styled("span")(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    display: "none",
   },
 }));
 
@@ -211,6 +250,7 @@ const shortUrl = (url?: string) => {
 
 export function ResumePrintPage() {
   const { setLanguage, language } = useLanguage();
+  useScrollToTop();
   const resume = useMemo(() => i18n.t("resume") as Resume, [language]);
   const dateLocale = language === "es" ? esLocale : undefined;
 
@@ -236,18 +276,27 @@ export function ResumePrintPage() {
   return (
     <Screen>
       <Toolbar direction='row' className='no-print'>
-        <ToolbarButton
-          startIcon={<PrintIcon />}
-          onClick={() => window.print()}>
-          {i18n.t("resume.print_cv")}
-        </ToolbarButton>
-        <Tooltip title={toggleLabel} arrow>
-          <ToolbarButton
-            aria-label={toggleLabel}
-            onClick={() => setLanguage(language === "en" ? "es" : "en")}>
-            <TranslateRoundedIcon sx={{ fontSize: 20 }} />
-          </ToolbarButton>
-        </Tooltip>
+        <ToolbarLinkButton
+          component={RouterLink}
+          to={homePath}
+          aria-label={i18n.t("resume.back_to_site")}
+          startIcon={<ArrowBackRoundedIcon />}>
+          <ButtonLabel>{i18n.t("resume.back_to_site")}</ButtonLabel>
+        </ToolbarLinkButton>
+        <ToolbarGroup>
+          <Tooltip title={i18n.t("resume.print_cv")} arrow>
+            <ToolbarButton startIcon={<PrintIcon />} onClick={() => window.print()}>
+              <ButtonLabel>{i18n.t("resume.print_cv")}</ButtonLabel>
+            </ToolbarButton>
+          </Tooltip>
+          <Tooltip title={toggleLabel} arrow>
+            <ToolbarButton
+              aria-label={toggleLabel}
+              onClick={() => setLanguage(language === "en" ? "es" : "en")}>
+              <TranslateRoundedIcon sx={{ fontSize: 20 }} />
+            </ToolbarButton>
+          </Tooltip>
+        </ToolbarGroup>
       </Toolbar>
 
       <Sheet className='print-sheet'>

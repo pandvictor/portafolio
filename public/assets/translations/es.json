@@ -1237,7 +1237,8 @@
     ],
     "present": "Actual",
     "summary_title": "Resumen",
-    "print_cv": "Imprimir / Guardar PDF"
+    "print_cv": "Imprimir / Guardar PDF",
+    "back_to_site": "Volver al sitio"
   },
   "cover_letter": {
     "title": "Carta de presentación",

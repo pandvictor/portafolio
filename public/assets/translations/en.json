@@ -1237,7 +1237,8 @@
     ],
     "present": "Present",
     "summary_title": "Summary",
-    "print_cv": "Print / Save PDF"
+    "print_cv": "Print / Save PDF",
+    "back_to_site": "Back to site"
   },
   "cover_letter": {
     "title": "Cover Letter",

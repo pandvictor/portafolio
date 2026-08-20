@@ -28,7 +28,6 @@ export function ResumePage() {
   const contactInfo = useMemo(() => resume?.contact_info || [], [resume]);
   const languages = useMemo(() => resume?.languages || [], [resume]);
   const techSkills = useMemo(() => resume?.tech_skills || [], [resume]);
-  const handlePrint = () => window.print();
 
   return (
     <MainTemplate>
@@ -71,7 +70,7 @@ export function ResumePage() {
         <Box
           sx={{ mt: 2 }}
           className='no-print'>
-          <PrintButton onClick={handlePrint} />
+          <PrintButton />
         </Box>
 
         <ResumeLanguageToggle
