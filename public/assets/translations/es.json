@@ -1214,22 +1214,19 @@
         "url": "https://www.linkedin.com/in/avihergo/"
       },
       {
-        "title": "GitHub",
-        "icon": "github.svg",
-        "url": "https://github.com/avihergo"
-      },
-      {
         "title": "WhatsApp",
         "icon": "whatsapp.svg",
         "url": "https://wa.me/50255286714"
       },
       {
-        "title": "GitHub 2",
+        "title": "GitHub",
         "icon": "github.svg",
         "url": "https://github.com/pandvictor"
       }
     ],
-    "present": "Actual"
+    "present": "Actual",
+    "summary_title": "Resumen",
+    "print_cv": "Imprimir / Guardar PDF"
   },
   "cover_letter": {
     "title": "Carta de presentación",
@@ -1278,5 +1275,14 @@
     "closing": "Si tu equipo necesita un ingeniero con experiencia que pueda cerrar la brecha entre arquitectura de alto nivel y detalle de ejecución hands-on, con gusto conectamos.",
     "closing_title": "CIERRE",
     "footer_note": "Gracias por tu tiempo y consideración. Valoro la claridad, el ownership y entregar trabajo que realmente importe."
+  },
+  "contact_dialog": {
+    "title": "¿Cómo prefieres contactarme?",
+    "desc": "Elige lo que te resulte más fácil — respondo por ambos.",
+    "email": "Correo",
+    "email_desc": "Ideal para briefs detallados, alcance y adjuntos.",
+    "whatsapp": "WhatsApp",
+    "whatsapp_desc": "Ideal para una duda rápida o agendar una llamada.",
+    "close": "Cancelar"
   }
 }

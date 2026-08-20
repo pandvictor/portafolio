@@ -22,7 +22,9 @@ import { styled } from "@mui/material/styles";
 import { useScroll, useTransform } from "framer-motion";
 
 import { UserAvatar } from "../molecules";
-import { publicPath } from "../../constants/gloabals";
+import { Link as RouterLink } from "react-router-dom";
+import type { ButtonProps } from "@mui/material/Button";
+import { printResumePath } from "../../constants/gloabals";
 import { LinkItem } from "../atoms";
 import { useLanguage } from "../../context/LanguageContext";
 import i18n from "../../utils/i18n";
@@ -66,7 +68,7 @@ const DrawerNavText = styled(Typography)(() => ({
   fontWeight: 600,
 }));
 
-const DrawerDownloadButton = styled(Button)(({ theme }) => ({
+const DrawerDownloadButton = styled(Button)<ButtonProps<typeof RouterLink>>(({ theme }) => ({
   textTransform: "none",
   marginTop: theme.spacing(2),
   borderRadius: theme.shape.borderRadius * 2,
@@ -154,7 +156,7 @@ const ActionsBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const TopDownloadButton = styled(Button)(({ theme }) => ({
+const TopDownloadButton = styled(Button)<ButtonProps<typeof RouterLink>>(({ theme }) => ({
   display: "none",
   textTransform: "none",
   borderRadius: theme.shape.borderRadius * 2,
@@ -294,7 +296,8 @@ export const DrawerAppBar = () => {
           variant='contained'
           color='secondary'
           size='medium'
-          href={`${publicPath}/files/resume-victor-hernandez-${language}.pdf`}>
+          component={RouterLink}
+          to={printResumePath}>
           {i18n.t("download")}
         </DrawerDownloadButton>
       </MotionDrawerList>
@@ -342,7 +345,8 @@ export const DrawerAppBar = () => {
                 variant='contained'
                 color='secondary'
                 size='small'
-                href={`${publicPath}/files/resume-victor-hernandez-${language}.pdf`}>
+                component={RouterLink}
+                to={printResumePath}>
                 {i18n.t("download")}
               </TopDownloadButton>
               <Tooltip

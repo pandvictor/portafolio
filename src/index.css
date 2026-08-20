@@ -109,10 +109,12 @@ kbd {
     display: none !important;
   }
 
-  /* Flatten every dark surface, gradient, and glow. */
-  *,
-  *::before,
-  *::after {
+  /* Flatten every dark surface, gradient, and glow. Scoped to the app shell so
+     the standalone print CV keeps the typographic greys it was designed with. */
+  .app-shell,
+  .app-shell *,
+  .app-shell *::before,
+  .app-shell *::after {
     background-image: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
@@ -121,11 +123,11 @@ kbd {
     color: #101828 !important;
   }
 
-  .MuiPaper-root,
-  .MuiCard-root,
-  .MuiBox-root,
-  section,
-  div {
+  .app-shell .MuiPaper-root,
+  .app-shell .MuiCard-root,
+  .app-shell .MuiBox-root,
+  .app-shell section,
+  .app-shell div {
     background-color: transparent !important;
   }
 
@@ -138,20 +140,23 @@ kbd {
     transition: none !important;
   }
 
-  a {
+  .app-shell a {
     color: #101828 !important;
+  }
+
+  a {
     text-decoration: none !important;
   }
 
-  hr,
-  .MuiDivider-root {
+  .app-shell hr,
+  .app-shell .MuiDivider-root {
     border-color: #d0d5dd !important;
   }
 
   /* Secondary copy keeps a lighter weight so the hierarchy survives. */
-  .MuiTypography-body2,
-  .MuiTypography-caption,
-  .MuiTypography-subtitle2 {
+  .app-shell .MuiTypography-body2,
+  .app-shell .MuiTypography-caption,
+  .app-shell .MuiTypography-subtitle2 {
     color: #475467 !important;
   }
 
@@ -204,7 +209,7 @@ kbd {
   }
 
   /* Chip-style tags read better as plain outlined labels on paper. */
-  .MuiChip-root {
+  .app-shell .MuiChip-root {
     border: 1px solid #d0d5dd !important;
     background: transparent !important;
   }

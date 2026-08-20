@@ -1214,22 +1214,19 @@
         "url": "https://www.linkedin.com/in/avihergo/"
       },
       {
-        "title": "GitHub",
-        "icon": "github.svg",
-        "url": "https://github.com/avihergo"
-      },
-      {
         "title": "WhatsApp",
         "icon": "whatsapp.svg",
         "url": "https://wa.me/50255286714"
       },
       {
-        "title": "GitHub 2",
+        "title": "GitHub",
         "icon": "github.svg",
         "url": "https://github.com/pandvictor"
       }
     ],
-    "present": "Present"
+    "present": "Present",
+    "summary_title": "Summary",
+    "print_cv": "Print / Save PDF"
   },
   "cover_letter": {
     "title": "Cover Letter",
@@ -1278,5 +1275,14 @@
     "closing": "If your team requires a seasoned engineer who can bridge the gap between high-level architecture and hands-on execution detail, I would be glad to connect.",
     "closing_title": "CLOSING PITCH",
     "footer_note": "Thank you for your time and consideration. I value clarity, ownership, and shipping work that matters."
+  },
+  "contact_dialog": {
+    "title": "How would you like to reach me?",
+    "desc": "Pick whichever is easiest — I reply to both.",
+    "email": "Email",
+    "email_desc": "Best for detailed briefs, scope, and attachments.",
+    "whatsapp": "WhatsApp",
+    "whatsapp_desc": "Best for a quick question or to set up a call.",
+    "close": "Cancel"
   }
 }

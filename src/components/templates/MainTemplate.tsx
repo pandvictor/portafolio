@@ -120,7 +120,7 @@ export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
     ["linkedin.svg", "github.svg", "whatsapp.svg"].includes(item.icon)
   );
   return (
-    <PageRoot>
+    <PageRoot className='app-shell'>
       <ScrollProgress />
       <MotionAmbientLayer
         className='ambient-layer'

@@ -4,6 +4,7 @@ import { format, formatDuration, intervalToDuration, parseISO } from "date-fns";
 import { WorkHistory } from "../../types";
 import i18n from "../../utils/i18n";
 import { motionize, transitions } from "../motion";
+import { parseDescription } from "../../utils/resumeText";
 
 const MotionPaper = motionize(Paper);
 
@@ -15,6 +16,9 @@ export const ResumeWorkCard = memo(({ work }: ResumeWorkCardProps) => {
   const start = parseISO(work.start_date);
   const end = work.is_current || !work.end_date ? new Date() : parseISO(work.end_date);
   const endLabel = work.is_current ? i18n.t("resume.present") : format(end, "MMM, yy");
+  // A few descriptions are authored as bullet lists; render them as such.
+  const parsed = parseDescription(work.description);
+  const bullets = [...parsed.bullets, ...(work.tasks ?? [])];
 
   return (
     <MotionPaper
@@ -44,9 +48,9 @@ export const ResumeWorkCard = memo(({ work }: ResumeWorkCardProps) => {
         </div>
       </Stack>
       <Box sx={{ ml: { xs: 0, md: "140px" } }}>
-        <Typography sx={{ mb: 1 }}>{work.description}</Typography>
+        {parsed.lead && <Typography sx={{ mb: 1 }}>{parsed.lead}</Typography>}
         <ul style={{ marginTop: 8 }}>
-          {work?.tasks?.map((task, index) => (
+          {bullets.map((task, index) => (
             <li key={index}>
               <Typography variant='body2'>{task}</Typography>
             </li>

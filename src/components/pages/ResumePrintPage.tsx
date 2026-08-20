@@ -1,151 +1,356 @@
-import { Stack, Typography, Grid, Paper, Box, ListItem, ListItemAvatar, Avatar, ListItemText, Button, Tooltip } from "@mui/material";
+import { Box, Button, Stack, Tooltip, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
-import { format, intervalToDuration, formatDuration, parseISO } from 'date-fns'
-import { publicPath } from './../../constants/gloabals';
-import { LinkItem } from "../atoms";
+import PrintIcon from "@mui/icons-material/Print";
+import { format, parseISO } from "date-fns";
+import { es as esLocale } from "date-fns/locale";
+import { useMemo } from "react";
 import i18n from "../../utils/i18n";
 import { useLanguage } from "../../context/LanguageContext";
-import { Resume } from "../../types/";
+import { Resume, WorkHistory } from "../../types/";
+import { isDuplicateText, parseDescription } from "../../utils/resumeText";
+
+/**
+ * Print-first CV.
+ *
+ * Deliberately not the site's design: a single ink-on-paper column, matching
+ * the structure of the distributed PDF. The previous version reused the dark
+ * web layout with a right sidebar, which printed as a cramped, ragged column.
+ */
+
+const Screen = styled(Box)(({ theme }) => ({
+  minHeight: "100vh",
+  backgroundColor: "#525659",
+  padding: theme.spacing(4, 2),
+  display: "flex",
+  justifyContent: "center",
+  "@media print": {
+    minHeight: 0,
+    padding: 0,
+    display: "block",
+    backgroundColor: "#fff",
+  },
+}));
+
+/** US Letter content width at 96dpi minus the @page margins. */
+const Sheet = styled("article")(({ theme }) => ({
+  width: "100%",
+  maxWidth: 820,
+  backgroundColor: "#ffffff",
+  color: "#1a1a1a",
+  padding: theme.spacing(6, 6, 7),
+  borderRadius: 4,
+  boxShadow: "0 24px 60px rgba(0,0,0,0.45)",
+  fontFamily: '"Sora", "Helvetica Neue", Arial, sans-serif',
+  fontSize: 11,
+  lineHeight: 1.5,
+  "@media print": {
+    maxWidth: "none",
+    padding: 0,
+    borderRadius: 0,
+    boxShadow: "none",
+  },
+}));
+
+const Name = styled(Typography)(() => ({
+  fontSize: 26,
+  fontWeight: 800,
+  letterSpacing: "0.06em",
+  textTransform: "uppercase",
+  lineHeight: 1.1,
+  color: "#111",
+}));
+
+const Role = styled(Typography)(() => ({
+  fontSize: 12,
+  fontWeight: 600,
+  letterSpacing: "0.02em",
+  color: "#444",
+  marginTop: 2,
+}));
+
+const ContactLine = styled("div")(() => ({
+  marginTop: 8,
+  fontSize: 10.5,
+  color: "#333",
+  display: "flex",
+  flexWrap: "wrap",
+  alignItems: "center",
+  columnGap: 8,
+  rowGap: 2,
+}));
+
+const ContactSeparator = styled("span")(() => ({
+  color: "#bbb",
+}));
+
+const ContactLink = styled("a")(() => ({
+  color: "#1a1a1a",
+  textDecoration: "none",
+}));
+
+const SectionTitle = styled("h2")(() => ({
+  margin: "18px 0 6px",
+  fontSize: 11.5,
+  fontWeight: 800,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "#111",
+  paddingBottom: 4,
+  borderBottom: "1px solid #c9c9c9",
+  // A heading stranded at the foot of a page reads as a mistake.
+  breakAfter: "avoid",
+  pageBreakAfter: "avoid",
+}));
+
+const Entry = styled("section")(() => ({
+  marginTop: 10,
+  breakInside: "avoid",
+  pageBreakInside: "avoid",
+}));
+
+const EntryHead = styled("div")(() => ({
+  display: "flex",
+  alignItems: "baseline",
+  justifyContent: "space-between",
+  gap: 12,
+}));
+
+const EntryTitle = styled("h3")(() => ({
+  margin: 0,
+  fontSize: 12,
+  fontWeight: 800,
+  color: "#111",
+}));
+
+const EntryDates = styled("span")(() => ({
+  fontSize: 10,
+  fontWeight: 600,
+  color: "#555",
+  whiteSpace: "nowrap",
+  fontVariantNumeric: "tabular-nums",
+}));
+
+const EntryCompany = styled("div")(() => ({
+  fontSize: 11,
+  fontWeight: 600,
+  color: "#444",
+  marginTop: 1,
+}));
+
+const EntryDescription = styled("p")(() => ({
+  margin: "5px 0 0",
+  fontSize: 10.5,
+  color: "#333",
+}));
+
+const Bullets = styled("ul")(() => ({
+  margin: "5px 0 0",
+  paddingLeft: 16,
+  "& li": {
+    fontSize: 10.5,
+    marginBottom: 2.5,
+    color: "#222",
+  },
+}));
+
+const Highlights = styled("p")(() => ({
+  margin: "5px 0 0",
+  fontSize: 10.5,
+  color: "#333",
+}));
+
+const HighlightName = styled("span")(() => ({
+  fontWeight: 700,
+  color: "#111",
+}));
+
+const SkillRow = styled("div")(() => ({
+  fontSize: 10.5,
+  marginBottom: 3,
+  color: "#222",
+}));
+
+const SkillLabel = styled("span")(() => ({
+  fontWeight: 800,
+  color: "#111",
+}));
+
+const Toolbar = styled(Stack)(({ theme }) => ({
+  position: "fixed",
+  top: theme.spacing(2),
+  right: theme.spacing(2),
+  zIndex: 1200,
+  gap: theme.spacing(1),
+}));
+
+const ToolbarButton = styled(Button)(() => ({
+  backgroundColor: "#0f172a",
+  color: "#e2e8f0",
+  borderRadius: 10,
+  textTransform: "none",
+  fontWeight: 700,
+  boxShadow: "0 12px 26px rgba(0,0,0,0.4)",
+  "&:hover": {
+    backgroundColor: "#1e293b",
+  },
+}));
+
+/** "linkedin.com/in/avihergo" reads better on paper than the full URL. */
+const shortUrl = (url?: string) => {
+  if (!url) return undefined;
+  if (url.startsWith("mailto:")) return url.slice(7);
+  if (url.startsWith("tel:")) return url.slice(4);
+  try {
+    const parsed = new URL(url);
+    return `${parsed.host.replace(/^www\./, "")}${parsed.pathname.replace(/\/$/, "")}`;
+  } catch {
+    return url;
+  }
+};
 
 export function ResumePrintPage() {
-    const { setLanguage, language } = useLanguage();
-    const resume = i18n.t("resume") as  Resume;
+  const { setLanguage, language } = useLanguage();
+  const resume = useMemo(() => i18n.t("resume") as Resume, [language]);
+  const dateLocale = language === "es" ? esLocale : undefined;
 
-    const handleLanguageChange = (newLanguage: string) => {
-        setLanguage(newLanguage);
-    }
+  const formatRange = (work: WorkHistory) => {
+    const start = format(parseISO(work.start_date), "MMM yyyy", {
+      locale: dateLocale,
+    });
+    const end =
+      work.is_current || !work.end_date
+        ? i18n.t("resume.present")
+        : format(parseISO(work.end_date), "MMM yyyy", { locale: dateLocale });
+    return `${start} – ${end}`;
+  };
 
-    const stars = (num: number) => {
-        let renderStars = "";
-        for (let i = 0; i < num; i++) {
-            renderStars += "★";
-        }
-        return <span> {renderStars} </span>;
-    };
+  const contacts = useMemo(() => {
+    const all = resume?.contact_info ?? [];
+    const hasPhone = all.some((item) => item.url?.startsWith("tel:"));
+    // wa.me/<number> repeats the phone line verbatim in the header.
+    return all.filter((item) => !(hasPhone && item.icon === "whatsapp.svg"));
+  }, [resume]);
+  const toggleLabel = i18n.t("resume.change_language");
 
-    const workHistory = resume?.work_history?.map((work, index) => (
-        <Paper key={`${work.company}-${work.position}-${index}`} elevation={0} style={{ padding: '20px', marginBottom: '20px' }}>
-            <Stack direction="row" spacing={3} sx={{ flexGrow: 1 }}>
-                <div>
-                    <Typography variant="subtitle1">
-                        {format(parseISO(work.start_date), 'MMM, yy')} - {format(work.end_date ? parseISO(work.end_date) : new Date(), 'MMM,yy', {})}
-                    </Typography>
-                    <Typography variant="subtitle1">
-                        {formatDuration(intervalToDuration({ start: parseISO(work.start_date), end: work.end_date ? parseISO(work.end_date) : new Date() }), { format: ['years', 'months'] })}
-                    </Typography>
-                </div>
-                <div>
-                    <Typography variant="h5">{work.position}</Typography>
-                    <Typography variant="h6">{work.company}</Typography>
-                </div>
-            </Stack>
-            <div style={{ marginLeft: "140px" }}>
-                <div>
-                    <Typography>{work.description}</Typography>
-                    <ul>
-                        {work?.tasks?.map((task, index) => (
-                            <li key={index}>{task}</li>
-                        ))}
-                    </ul>
-                </div>
-                <div>
-                    {work.achievements?.map((achievement, index) => (
-                        <Typography key={index} paragraph>
-                            <a href={achievement.url} className="h5">{achievement?.title}</a> | {achievement.description}
-                        </Typography>
-                    ))}
-                </div>
-            </div>
-        </Paper>
-    ));
+  return (
+    <Screen>
+      <Toolbar direction='row' className='no-print'>
+        <ToolbarButton
+          startIcon={<PrintIcon />}
+          onClick={() => window.print()}>
+          {i18n.t("resume.print_cv")}
+        </ToolbarButton>
+        <Tooltip title={toggleLabel} arrow>
+          <ToolbarButton
+            aria-label={toggleLabel}
+            onClick={() => setLanguage(language === "en" ? "es" : "en")}>
+            <TranslateRoundedIcon sx={{ fontSize: 20 }} />
+          </ToolbarButton>
+        </Tooltip>
+      </Toolbar>
 
-    return (
-        <Box sx={{ padding: 0, margin: 0 }}>
-            <Grid container spacing={3}>
-                <Grid item xs={12} sx={{ backgroundColor: '#343a40' }}>
-                    <ListItem>
-                        <ListItemAvatar>
-                            <Avatar sx={{ display: 'flex', mr: 5, flexGrow: 1, width: 90, height: 90 }} alt="A" src={`${publicPath}/images/norellanac.jpg`} />
-                        </ListItemAvatar>
-                        <ListItemText children={
-                            <div style={{ flex: 1 }}>
-                                <Typography variant="h4" color="lightgrey">{i18n.t('resume.full_name')}</Typography>
-                                <Typography variant="h6" color="lightgrey">{i18n.t('resume.position')}</Typography>
-                            </div>
-                        } />
-                    </ListItem>
-                </Grid>
-                <Grid item xs={9}>
-                    <section>
-                        <Typography paragraph>{resume.summary}</Typography>
-                    </section>
-                    <section>
-                        <Typography variant="h5">{i18n.t('resume.experience')}</Typography>
-                        <hr />
-                        {workHistory}
-                    </section>
-                    <section>
-                        <Typography variant="h5">{i18n.t('resume.education')}</Typography>
-                        <hr />
-                        <Stack direction="row" spacing={3}>
-                            <div>
-                                <Typography>{resume.university.start_date}</Typography>
-                                <Typography>{resume.university.end_date}</Typography>
-                            </div>
-                            <div>
-                                <Typography variant="h5">{resume.university.title}</Typography>
-                                <Typography variant="h6">{resume.university.school}</Typography>
-                            </div>
-                        </Stack>
-                    </section>
-                </Grid>
-                <Grid item xs={3}>
-                    <section style={{ marginBottom: '5em' }}>
-                        <Typography variant="h5">{i18n.t('resume.contact')}</Typography>
-                        <hr />
-                        <Stack direction="column" spacing={1}>
-                            {resume.contact_info.map((item, index) => (
-                                <ListItem key={index} component="div" disablePadding>
-                                    <LinkItem to={item.url} >{item.title}</LinkItem>
-                                </ListItem>
-                            ))}
-                        </Stack>
-                    </section>
-                    <section style={{ marginBottom: '5em' }}>
-                        <Typography variant="h5">{i18n.t('resume.languages_title')}</Typography>
-                        <hr />
-                        <Stack direction="column" spacing={1}>
-                            {resume.languages.map((item, index) => (
-                                <Typography key={index} variant="h6">{item.language} | {item.level}</Typography>
-                            ))}
-                        </Stack>
-                    </section>
-                    <section style={{ marginBottom: '5em' }}>
-                        <Typography variant="h5">Skills</Typography>
-                        <hr />
-                        {resume.tech_skills.map((item, index) => (
-                            <section key={index} style={{ marginBottom: 30 }}>
-                                <Typography variant="h6">{item.title}{stars(item.stars)}</Typography>
-                                <Stack display="inline" spacing={1}>
-                                    {item.tools.map((tool, index) => (
-                                        <Typography key={index} variant="body2" display="inline-block">{tool} |</Typography>
-                                    ))}
-                                </Stack>
-                            </section>
-                        ))}
-                    </section>
-                </Grid>
-            </Grid>
-            <Stack direction={{ xs: 'row', md: 'column' }} sx={{ position: 'fixed', bottom: '10px', right: '10px', zIndex: 1000, display: {print: 'none'} }}>
-                    <Button
-                        onClick={() => handleLanguageChange(language === 'en' ? 'es': 'en' )}
-                        sx={{display: {print: 'none'}}}
-                        aria-label={language === "es" ? "Cambiar idioma" : "Change language"}>
-                        <Tooltip title={language === "es" ? "Cambiar idioma" : "Change language"} arrow>
-                            <TranslateRoundedIcon sx={{ fontSize: 26 }} />
-                        </Tooltip>
-                    </Button>
-            </Stack>
-        </Box>
-    );
+      <Sheet className='print-sheet'>
+        <header>
+          <Name variant='h1'>{resume?.full_name}</Name>
+          <Role>{resume?.position}</Role>
+          <ContactLine>
+            {contacts.map((item, idx) => (
+              <span key={`${item.title}-${idx}`}>
+                {idx > 0 && <ContactSeparator>·&nbsp;</ContactSeparator>}
+                <ContactLink href={item.url} target='_blank' rel='noreferrer'>
+                  {shortUrl(item.url) ?? item.title}
+                </ContactLink>
+              </span>
+            ))}
+          </ContactLine>
+        </header>
+
+        {resume?.summary && (
+          <>
+            <SectionTitle>{i18n.t("resume.summary_title")}</SectionTitle>
+            <EntryDescription>{resume.summary}</EntryDescription>
+          </>
+        )}
+
+        <SectionTitle>{i18n.t("resume.experience")}</SectionTitle>
+        {resume?.work_history?.map((work, index) => (
+          <Entry key={`${work.company}-${work.position}-${index}`}>
+            <EntryHead>
+              <EntryTitle>{work.position}</EntryTitle>
+              <EntryDates>{formatRange(work)}</EntryDates>
+            </EntryHead>
+            <EntryCompany>{work.company}</EntryCompany>
+            {(() => {
+              const parsed = parseDescription(work.description);
+              const bullets = [...parsed.bullets, ...(work.tasks ?? [])];
+              return (
+                <>
+                  {parsed.lead && <EntryDescription>{parsed.lead}</EntryDescription>}
+                  {bullets.length > 0 && (
+                    <Bullets>
+                      {bullets.map((task, taskIdx) => (
+                        <li key={taskIdx}>{task}</li>
+                      ))}
+                    </Bullets>
+                  )}
+                </>
+              );
+            })()}
+            {work.achievements?.map((achievement, achievementIdx) => {
+              const repeatsRole = isDuplicateText(
+                achievement.description,
+                work.description
+              );
+              return (
+                <Highlights key={`${achievement.title}-${achievementIdx}`}>
+                  <HighlightName>{achievement.title}</HighlightName>
+                  {!repeatsRole && achievement.description
+                    ? ` — ${parseDescription(achievement.description).lead ?? achievement.description}`
+                    : ""}
+                </Highlights>
+              );
+            })}
+          </Entry>
+        ))}
+
+        {resume?.university && (
+          <>
+            <SectionTitle>{i18n.t("resume.education")}</SectionTitle>
+            <Entry>
+              <EntryHead>
+                <EntryTitle>{resume.university.title}</EntryTitle>
+                <EntryDates>
+                  {resume.university.start_date} – {resume.university.end_date}
+                </EntryDates>
+              </EntryHead>
+              <EntryCompany>{resume.university.school}</EntryCompany>
+            </Entry>
+          </>
+        )}
+
+        {resume?.languages?.length > 0 && (
+          <>
+            <SectionTitle>{i18n.t("resume.languages_title")}</SectionTitle>
+            <SkillRow>
+              {resume.languages
+                .map((item) => `${item.language} — ${item.level}`)
+                .join("  ·  ")}
+            </SkillRow>
+          </>
+        )}
+
+        {resume?.tech_skills?.length > 0 && (
+          <>
+            <SectionTitle>{i18n.t("resume.skills")}</SectionTitle>
+            {resume.tech_skills.map((group, index) => (
+              <SkillRow key={`${group.title}-${index}`}>
+                <SkillLabel>{group.title}:</SkillLabel> {group.tools.join(", ")}
+              </SkillRow>
+            ))}
+          </>
+        )}
+      </Sheet>
+    </Screen>
+  );
 }

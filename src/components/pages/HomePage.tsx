@@ -4,6 +4,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import i18n from "../../utils/i18n";
 import { useCallback, useMemo, useState } from "react";
 import { ProjectDialog } from "../organisms/ProjectDialog";
+import { ContactDialog } from "../organisms";
 import {
   HeroSection,
   HomeCredibilitySection,
@@ -14,7 +15,7 @@ import {
   HomeTrustedSection,
 } from "../organisms";
 import { SectionBlock } from "../molecules";
-import { publicPath } from "../../constants/gloabals";
+import { printResumePath } from "../../constants/gloabals";
 
 export type ModalPayload = ProjectModalPayload;
 
@@ -29,6 +30,7 @@ const EMPTY_CONTACTS: ContactInfo[] = [];
 export default function HomePage() {
   const { language } = useLanguage();
   const [selected, setSelected] = useState<ModalPayload | null>(null);
+  const [contactOpen, setContactOpen] = useState(false);
   const resumeData = useMemo(() => i18n.t("resume") as Resume, [language]);
   const contactInfo = resumeData?.contact_info ?? EMPTY_CONTACTS;
   const heroBullets = useMemo(() => {
@@ -78,10 +80,6 @@ export default function HomePage() {
       primary: i18n.t("home.cta_primary"),
       secondary: i18n.t("home.cta_secondary"),
     }),
-    [language]
-  );
-  const downloadHref = useMemo(
-    () => `${publicPath}/files/resume-victor-hernandez-${language}.pdf`,
     [language]
   );
   const credibilityKicker = i18n.t("home.credibility_kicker");
@@ -172,9 +170,9 @@ export default function HomePage() {
     <MainTemplate>
       <HeroSection
         resume={resumeData}
-        language={language}
         contactInfo={contactInfo}
         bullets={heroBullets}
+        onContact={() => setContactOpen(true)}
       />
 
       <SectionBlock>
@@ -231,9 +229,9 @@ export default function HomePage() {
           title={ctaCopy.title}
           desc={ctaCopy.desc}
           primaryLabel={ctaCopy.primary}
-          primaryHref={contactInfo?.[0]?.url}
+          onPrimary={() => setContactOpen(true)}
           secondaryLabel={ctaCopy.secondary}
-          secondaryHref={downloadHref}
+          secondaryHref={printResumePath}
         />
       </SectionBlock>
 
@@ -241,6 +239,12 @@ export default function HomePage() {
         open={Boolean(selected)}
         payload={selected}
         onClose={handleClose}
+      />
+
+      <ContactDialog
+        open={contactOpen}
+        onClose={() => setContactOpen(false)}
+        contacts={contactInfo}
       />
     </MainTemplate>
   );

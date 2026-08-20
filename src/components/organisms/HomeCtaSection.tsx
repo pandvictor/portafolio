@@ -1,6 +1,8 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
+import type { ButtonProps } from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import { memo } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { MagneticButton, Reveal, StaggerGroup, StaggerItem, motionize } from "../motion";
 
 type HomeCtaSectionProps = {
@@ -8,7 +10,7 @@ type HomeCtaSectionProps = {
   title: string;
   desc: string;
   primaryLabel: string;
-  primaryHref?: string;
+  onPrimary: () => void;
   secondaryLabel: string;
   secondaryHref: string;
 };
@@ -80,7 +82,7 @@ const PrimaryButton = styled(Button)(({ theme }) => ({
   paddingRight: theme.spacing(3.5),
 }));
 
-const SecondaryButton = styled(Button)(({ theme }) => ({
+const SecondaryButton = styled(Button)<ButtonProps<typeof RouterLink>>(({ theme }) => ({
   whiteSpace: "nowrap",
   borderRadius: theme.shape.borderRadius * 2,
   paddingLeft: theme.spacing(3),
@@ -112,7 +114,7 @@ export const HomeCtaSection = memo(
     title,
     desc,
     primaryLabel,
-    primaryHref,
+    onPrimary,
     secondaryLabel,
     secondaryHref,
   }: HomeCtaSectionProps) => (
@@ -140,23 +142,22 @@ export const HomeCtaSection = memo(
             </Copy>
             <StaggerItem>
               <Actions direction={{ xs: "column", sm: "row" }} spacing={1.5}>
-                {primaryHref && (
-                  <MagneticButton>
-                    <PrimaryButton
-                      variant='contained'
-                      color='primary'
-                      size='large'
-                      href={primaryHref}>
-                      {primaryLabel}
-                    </PrimaryButton>
-                  </MagneticButton>
-                )}
+                <MagneticButton>
+                  <PrimaryButton
+                    variant='contained'
+                    color='primary'
+                    size='large'
+                    onClick={onPrimary}>
+                    {primaryLabel}
+                  </PrimaryButton>
+                </MagneticButton>
                 <MagneticButton strength={6}>
                   <SecondaryButton
                     variant='outlined'
                     color='inherit'
                     size='large'
-                    href={secondaryHref}>
+                    component={RouterLink}
+                    to={secondaryHref}>
                     {secondaryLabel}
                   </SecondaryButton>
                 </MagneticButton>

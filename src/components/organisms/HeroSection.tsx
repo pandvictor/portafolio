@@ -1,7 +1,7 @@
 import { Box, Button, Chip, Stack, Typography, useMediaQuery } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import type { ButtonProps } from "@mui/material/Button";
-import { publicPath } from "../../constants/gloabals";
+import { printResumePath, publicPath } from "../../constants/gloabals";
 import {
   HeroAvatar,
   HeroFlipButton,
@@ -11,6 +11,8 @@ import {
 import { Resume, ContactInfo } from "../../types";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import i18n from "../../utils/i18n";
+import { useLanguage } from "../../context/LanguageContext";
+import { Link as RouterLink } from "react-router-dom";
 import {
   motion,
   useMotionTemplate,
@@ -220,7 +222,7 @@ const LinkedInButton = styled(Button)<ButtonProps<"a">>(({ theme }) => ({
   },
 }));
 
-const TalkButton = styled(Button)(({ theme }) => ({
+const TalkButton = styled(Button)<ButtonProps<typeof RouterLink>>(({ theme }) => ({
   borderRadius: theme.shape.borderRadius * 2,
 }));
 
@@ -271,17 +273,19 @@ const IMPACT_ICON_MAP: Record<string, string> = {
 
 type HeroSectionProps = {
   resume: Resume;
-  language: string;
   contactInfo: ContactInfo[];
   bullets: string[];
+  /** Opens the "email or WhatsApp?" chooser. */
+  onContact: () => void;
 };
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   resume,
-  language,
   contactInfo,
   bullets,
+  onContact,
 }) => {
+  const { language } = useLanguage();
   const [isFlipped, setIsFlipped] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const flipTimerRef = useRef<number | null>(null);
@@ -304,15 +308,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       )?.url,
     [contactInfo]
   );
-  const downloadHref = useMemo(
-    () => `${publicPath}/files/resume-victor-hernandez-${language}.pdf`,
-    [language]
-  );
-  const primaryAction = contactUrl
-    ? { label: i18n.t("hero.cta.talk"), href: contactUrl }
-    : { label: i18n.t("download"), href: downloadHref };
+  const primaryAction = { label: i18n.t("hero.cta.talk") };
   const secondaryAction = contactUrl
-    ? { label: i18n.t("download"), href: downloadHref, type: "download" }
+    ? { label: i18n.t("download"), href: printResumePath, type: "download" }
     : linkedinUrl
       ? { label: "LinkedIn", href: linkedinUrl, type: "linkedin" }
       : null;
@@ -531,7 +529,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                         variant='contained'
                         color='primary'
                         size='large'
-                        href={primaryAction.href}>
+                        onClick={onContact}>
                         {primaryAction.label}
                       </PrimaryCtaButton>
                     </MagneticButton>
@@ -561,7 +559,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                           variant='outlined'
                           color='inherit'
                           size='large'
-                          href={secondaryAction.href}
+                          component={RouterLink}
+                          to={secondaryAction.href}
                           sx={{ display: { xs: "none", sm: "inline-flex" } }}>
                           {secondaryAction.label}
                         </TalkButton>
