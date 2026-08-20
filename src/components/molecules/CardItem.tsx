@@ -261,14 +261,20 @@ const OutcomesRow = styled(Stack)(({ theme }) => ({
   gap: theme.spacing(0.75),
 }));
 
-const OutcomeChip = styled(Chip)(({ theme }) => ({
+/**
+ * Outcomes are ordered strongest-first, so the lead result gets extra weight.
+ * Three chips of identical emphasis gave the eye nothing to land on.
+ */
+const OutcomeChip = styled(Chip, {
+  shouldForwardProp: (prop) => prop !== "lead",
+})<{ lead?: boolean }>(({ theme, lead }) => ({
   borderRadius: 8,
   height: 26,
-  borderColor: "rgba(34,211,238,0.3)",
-  backgroundColor: "rgba(34,211,238,0.06)",
-  fontWeight: 600,
   fontSize: "0.75rem",
   color: theme.palette.text.primary,
+  fontWeight: lead ? 700 : 600,
+  borderColor: lead ? "rgba(34,211,238,0.6)" : "rgba(148,163,184,0.28)",
+  backgroundColor: lead ? "rgba(34,211,238,0.14)" : "rgba(148,163,184,0.06)",
 }));
 
 /** Static stack row — a scrolling marquee inside a card reads as decoration. */
@@ -435,6 +441,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
                 size='small'
                 label={item}
                 variant='outlined'
+                lead={idx === 0}
               />
             ))}
           </OutcomesRow>

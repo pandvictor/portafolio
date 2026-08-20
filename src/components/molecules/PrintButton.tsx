@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import PrintIcon from "@mui/icons-material/Print";
+import i18n from "../../utils/i18n";
 
 type Props = {
   onClick: () => void;
@@ -18,6 +19,6 @@ export const PrintButton: React.FC<Props> = ({ onClick }) => (
       textTransform: "none",
       alignSelf: "flex-start",
     }}>
-    Print / Save PDF
+    {i18n.t("resume.print_cv")}
   </Button>
 );

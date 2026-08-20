@@ -268,7 +268,7 @@ const IMPACT_ICON_MAP: Record<string, string> = {
   frontend: "react.svg",
   backend: "nodejs.svg",
   reliability: "kubernetes.svg",
-  experiments: "dash.svg",
+  experiments: "openai.svg",
 };
 
 type HeroSectionProps = {

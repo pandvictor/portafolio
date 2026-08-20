@@ -24,6 +24,10 @@ const ServicesList = styled(Box)(({ theme }) => ({
   gridTemplateColumns: "1fr",
   [theme.breakpoints.up("sm")]: {
     gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+    // An odd count would otherwise leave a hole beside the final card.
+    "& > *:last-of-type:nth-of-type(odd)": {
+      gridColumn: "1 / -1",
+    },
   },
 }));
 

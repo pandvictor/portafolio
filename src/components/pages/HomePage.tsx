@@ -96,12 +96,12 @@ export default function HomePage() {
     );
 
     if (preferredWork) {
+      // Pick by shape rather than by title: titles are translated, so matching
+      // one hard-coded English string silently fell through in Spanish.
       const preferredProject =
-        preferredWork.achievements.find((proj) => proj.title === "APEX Exchange") ??
         preferredWork.achievements.find(
           (proj) => proj.outcomes && proj.outcomes.length > 0
-        ) ??
-        preferredWork.achievements[0];
+        ) ?? preferredWork.achievements[0];
 
       if (preferredProject) {
         const companyImage = Array.isArray(preferredWork.company_image)

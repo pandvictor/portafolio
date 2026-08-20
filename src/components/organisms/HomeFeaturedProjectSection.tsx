@@ -83,11 +83,13 @@ const FeaturedDescription = styled(Typography)(() => ({
   overflow: "hidden",
 }));
 
-const OutcomeChip = styled(Chip)(() => ({
+const OutcomeChip = styled(Chip, {
+  shouldForwardProp: (prop) => prop !== "lead",
+})<{ lead?: boolean }>(({ lead }) => ({
   borderRadius: 999,
-  borderColor: "rgba(34,211,238,0.35)",
-  backgroundColor: "rgba(15,23,42,0.5)",
   fontWeight: 700,
+  borderColor: lead ? "rgba(34,211,238,0.65)" : "rgba(148,163,184,0.3)",
+  backgroundColor: lead ? "rgba(34,211,238,0.14)" : "rgba(15,23,42,0.5)",
 }));
 
 const MotionOutcomeChip = motionize(OutcomeChip);
@@ -185,6 +187,7 @@ export const HomeFeaturedProjectSection = memo(
                           label={item}
                           size='small'
                           variant='outlined'
+                          lead={idx === 0}
                           whileHover={{ y: -3, scale: 1.04 }}
                           transition={transitions.quick}
                         />

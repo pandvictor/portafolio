@@ -18,6 +18,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { publicPath } from "../../constants/gloabals";
 import { ProjectModalPayload } from "../../types/types";
 import { resolveTechIcon } from "../../utils/techIcons";
+import i18n from "../../utils/i18n";
 import { StaggerGroup, StaggerItem, motionize, transitions } from "../motion";
 import { motion } from "framer-motion";
 
@@ -218,10 +219,10 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
       )}
     </DialogContent>
     <DialogActions>
-      <Button onClick={onClose}>Close</Button>
+      <Button onClick={onClose}>{i18n.t("close")}</Button>
       {payload?.project.url && (
         <Button onClick={() => window.open(payload.project.url, "_blank")} variant='contained'>
-          Visit project
+          {i18n.t("visit_project")}
         </Button>
       )}
     </DialogActions>

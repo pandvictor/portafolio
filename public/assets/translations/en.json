@@ -10,7 +10,7 @@
     "trusted_by": "Trusted by",
     "services_title": "How I help",
     "services_kicker": "Services",
-    "services_intro": "Accelerating product delivery from concept to scale. I provide technical leadership and focused execution for teams that demand velocity and production-grade reliability across the entire software lifecycle.",
+    "services_intro": "Technical leadership and hands-on delivery for teams that need production-grade software shipped fast — from architecture and build through launch, observability, and on-call.",
     "projects_kicker": "Projects",
     "projects_title": "Selected work",
     "projects_subtitle": "Case studies across fintech, government, and crypto platforms.",
@@ -49,7 +49,7 @@
       {
         "title": "Product delivery",
         "desc": "Ship high-impact features from scope to launch across mobile and web.",
-        "icon": "dash.svg"
+        "icon": "jira.svg"
       },
       {
         "title": "Platform & APIs",
@@ -65,6 +65,11 @@
         "title": "Technical leadership",
         "desc": "Architecture guidance, mentoring, and delivery standards.",
         "icon": "scrum.svg"
+      },
+      {
+        "title": "AI-assisted delivery",
+        "desc": "AI pair programming and AI-supported QA, with architecture and quality decisions kept under human review.",
+        "icon": "openai.svg"
       }
     ],
     "cta_kicker": "Next step",
@@ -93,48 +98,48 @@
       "talk": "Let's talk"
     },
     "back": {
-      "badge": "AI + Mobile Delivery",
-      "title": "Build & Ship High-Impact Features",
-      "summary": "Design, implement, and scale product experiences across mobile, web, and backend.",
-      "impact_line": "Fast iteration with product, data, and design — built for reliability.",
+      "badge": "AI-assisted delivery",
+      "title": "Ship in weeks, not quarters",
+      "summary": "I pair AI-assisted execution with 19+ years of production judgement. Architecture, security, and quality decisions stay under human control.",
+      "impact_line": "Most recently: a multi-tenant World Cup platform designed, built, and launched in ~2 weeks.",
       "tags": [
-        "Messaging",
-        "Engagement",
-        "Notifications",
-        "Creator tools",
-        "Safety",
-        "Monetization"
+        "Fintech",
+        "Bitcoin & Lightning",
+        "Trading platforms",
+        "Public sector",
+        "Serverless AWS",
+        "React Native"
       ],
       "cards": [
         {
           "key": "features",
-          "title": "Product features",
-          "desc": "Messaging • Engagement • Monetization"
+          "title": "Product delivery",
+          "desc": "Scope → launch on mobile and web"
         },
         {
           "key": "mobile",
           "title": "Mobile",
-          "desc": "React Native • Swift • Kotlin"
+          "desc": "React Native • Expo • iOS & Android"
         },
         {
           "key": "frontend",
           "title": "Frontend",
-          "desc": "Web UX + performance"
+          "desc": "React • Next.js • real-time UIs"
         },
         {
           "key": "backend",
-          "title": "Backend APIs",
-          "desc": "Node.js • TypeScript • C# .NET"
+          "title": "Backend & cloud",
+          "desc": "Node.js • Python • serverless AWS"
         },
         {
           "key": "reliability",
           "title": "Reliability",
-          "desc": "Low latency • on-call"
+          "desc": "99.95% uptime • observability • on-call"
         },
         {
           "key": "experiments",
-          "title": "Experimentation",
-          "desc": "A/B tests • rapid iteration"
+          "title": "AI delivery",
+          "desc": "AI pair programming • AI-assisted QA"
         }
       ]
     }
@@ -149,7 +154,7 @@
     "title": "Resume",
     "name": "Victor",
     "full_name": "Victor Hernández",
-    "position": "Lead & Senior Software Developer",
+    "position": "Lead Software Engineer",
     "experience": "Experience",
     "education": "Education",
     "languages_title": "Languages",
@@ -178,15 +183,15 @@
         ],
         "achievements": [
           {
-            "title": "Quinielas.live World Cup 2026 Platform",
-            "description": "Multi-tenant pool platform for World Cup 2026 with white-label branding, secure predictions, live standings, and AI-assisted delivery compressed into ~2 weeks.",
+            "title": "World Cup 2026 Prediction Platform",
+            "description": "Multi-tenant prediction platform for the 2026 World Cup: white-label branding from a single codebase, secure gameplay, and live standings on a cost-optimized serverless stack.",
             "image": "quinielas-live-hero.png",
             "url": "https://quinielas.live",
             "date": "2026-03-01",
             "outcomes": [
-              "Near-$0 idle AWS footprint",
-              "13 REST endpoints / 3 Lambdas",
-              "~2-week delivery with AI"
+              "~2 weeks from zero to launch",
+              "Near-$0 idle AWS cost",
+              "Multi-tenant white-label"
             ],
             "tech_stack": [
               {
@@ -256,14 +261,14 @@
         "achievements": [
           {
             "title": "AI Delivery Workspace",
-            "description": "Internal workspace for faster planning, implementation, and handoff across product delivery.",
+            "description": "Internal workspace that speeds up technical discovery, implementation support, and documentation across the delivery flow.",
             "image": "bluequant-ai-studio.svg",
             "url": "",
             "date": "2026-01-20",
             "outcomes": [
-              "AI-assisted delivery planning",
-              "Faster implementation handoffs",
-              "Reusable prompt workflows"
+              "Faster technical discovery",
+              "Fewer manual handoffs",
+              "Review standards for AI output"
             ],
             "tech_stack": [
               {
@@ -302,14 +307,14 @@
           },
           {
             "title": "QA Intelligence Pipeline",
-            "description": "AI-supported QA and release workflow that reduces manual preparation and improves defect triage.",
+            "description": "AI-supported QA and release workflow that cuts manual test preparation and sharpens defect triage.",
             "image": "bluequant-qa-copilot.svg",
             "url": "",
             "date": "2026-02-03",
             "outcomes": [
               "Faster QA turnaround",
-              "AI-generated test scenarios",
-              "Smarter defect triage"
+              "Less manual test prep",
+              "Sharper defect triage"
             ],
             "tech_stack": [
               {
@@ -357,24 +362,25 @@
         "company": "APEX Exchange (AlphaPoint)",
         "company_image": "alphapoint-logo.png",
         "position": "Lead Frontend Engineer",
-        "description": "• Developed core features for a nationwide digital service designed to serve over 6 million citizens.\n• Contributed to backend architecture supporting 10k+ TPS at peak usage.",
+        "description": "Led frontend engineering for APEX, AlphaPoint's white-label institutional trading platform, covering trading, margin, and account management across web and mobile.",
         "tasks": [
           "Implemented responsive trading UI (order books, advanced charts, RFQ/OTC) consuming WebSocket feeds and REST APIs.",
           "Integrated account, wallet and multi-asset custody modules with role-based admin and compliance workflows.",
           "Optimized latency and rendering for high-frequency updates (depth, trades, balances) using virtualization and memoization.",
-          "Partnered with product and clients to localize and theme the white-label experience for multiple institutional rollouts."
+          "Partnered with product and clients to localize and theme the white-label experience for multiple institutional rollouts.",
+          "Contributed to backend architecture supporting 10k+ TPS at peak usage."
         ],
         "achievements": [
           {
-            "title": "APEX Exchange",
-            "description": "• Developed core features for a nationwide digital service designed to serve over 6 million citizens.\n• Contributed to backend architecture supporting 10k+ TPS at peak usage.",
+            "title": "Institutional Crypto Trading Platform",
+            "description": "White-label trading platform for institutional clients: order books, advanced charts, and RFQ/OTC flows over real-time WebSocket feeds, with multi-asset custody and compliance workflows.",
             "image": "apex-hero.png",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
             "outcomes": [
               "60% faster trade updates",
               "99.95% uptime",
-              "35% less duplicate code"
+              "10k+ TPS at peak"
             ],
             "tech_stack": [
               {
@@ -482,7 +488,7 @@
         "company": "CHIVO Wallet",
         "company_image": "alphapoint-logo.png",
         "position": "Senior Software Developer",
-        "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint), owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
+        "description": "Led the flagship national Bitcoin wallet of El Salvador (AlphaPoint) — a nationwide digital service built for over 6 million citizens — owning web and mobile experiences for payments, remittances, cash-in/out and merchant POS.",
         "tasks": [
           "Delivered wallet, remittance and on/off-ramp flows in React Native and React, integrating Lightning and on-chain services.",
           "Coordinated releases with product and compliance to keep KYC, cash-in kiosks and merchant POS aligned with regulations.",
@@ -491,8 +497,8 @@
         ],
         "achievements": [
           {
-            "title": "CHIVO Wallet",
-            "description": "Bitcoin/LN wallet with QR payments, remittances, merchant POS, fuel discounts and cash management across 200+ ATMs.",
+            "title": "National Bitcoin Wallet & Merchant POS",
+            "description": "El Salvador's national Bitcoin/Lightning wallet: QR payments, remittances, merchant POS, fuel discounts, and cash-in/out across 200+ ATMs.",
             "image": "chivo2.png",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
@@ -601,7 +607,7 @@
         "achievements": [
           {
             "title": "Angel Ariel Platform",
-            "description": "Web and mobile portal supporting Quedate and Casa Joven programs with dashboards for field staff.",
+            "description": "Web and mobile portal for the Quedate and Casa Joven programs, with dashboards for field staff and automated reporting to international agencies.",
             "image": "angel-ariel.png",
             "url": "https://www.iom.int",
             "date": "2023-06-01",
@@ -630,6 +636,11 @@
               {
                 "name": "Scrum"
               }
+            ],
+            "outcomes": [
+              "Two national programs",
+              "Dashboards for field staff",
+              "Automated agency reporting"
             ]
           }
         ],
@@ -800,14 +811,14 @@
         "achievements": [
           {
             "title": "Location Intelligence Suite",
-            "description": "Web and mobile apps for site analysis with interactive maps.",
+            "description": "Map-based site analysis for retail expansion, built on Google Maps and Mapbox with analytical dashboards for U.S. clients.",
             "image": "bullseye-banner-transparent.png",
             "url": "https://www.bullseyelocations.com/",
             "date": "2022-10-01",
             "outcomes": [
-              "Geospatial site scoring",
-              "Retail expansion planning",
-              "Map-based analytics"
+              "Google Maps + Mapbox analytics",
+              ".NET migrated to React",
+              "New React Native app"
             ],
             "tech_stack": [
               {
@@ -924,14 +935,14 @@
         "achievements": [
           {
             "title": "Regional Agricultural Market",
-            "description": "Platform used across Central America to track prices and supply.",
+            "description": "Regional price and supply platform for Central America and the Caribbean, paired with customs and trade dashboards.",
             "image": "red-regional-banner.svg",
             "url": "https://www.sieca.int",
             "date": "2019-06-01",
             "outcomes": [
-              "Regional market intelligence",
-              "Customs trade analytics",
-              "Multi-country rollout"
+              "Central America + Caribbean",
+              "Customs & trade dashboards",
+              "Multinational team lead"
             ],
             "tech_stack": [
               {
@@ -1000,7 +1011,7 @@
         "company": "FantasyGol",
         "company_image": "fantasygol-logo.svg",
         "position": "Full-Stack Developer",
-        "description": "• Built a fantasy football platform with 10+ international leagues and 10k+ concurrent players.\n• Monetized peer betting with a 10% house fee and grew fast enough to be acquired post-World Cup.",
+        "description": "Built a fantasy football platform spanning 10+ international leagues and 10k+ concurrent players, monetized through a 10% house fee on peer betting and acquired after the World Cup.",
         "tasks": [
           "Designed the platform from zero: data model, ER diagrams, backend services and frontend UI/UX.",
           "Implemented secure payments, prize module and automated fee collection (10% house cut).",
@@ -1011,15 +1022,15 @@
         ],
         "achievements": [
           {
-            "title": "FantasyGol Platform",
-            "description": "Fantasy platform with 10+ international leagues and 10k+ concurrent players; users created their own leagues to play and compete with friends.",
+            "title": "Fantasy Sports Platform",
+            "description": "Fantasy football platform across 10+ international leagues where users ran private leagues against friends, monetized through a 10% house fee on peer betting.",
             "image": "fantasygol-card.png",
             "url": "",
             "date": "2014-12-01",
             "outcomes": [
               "10k+ concurrent players",
               "10+ international leagues",
-              "Monetized betting flows"
+              "Acquired after the World Cup"
             ],
             "tech_stack": [
               {
@@ -1284,5 +1295,7 @@
     "whatsapp": "WhatsApp",
     "whatsapp_desc": "Best for a quick question or to set up a call.",
     "close": "Cancel"
-  }
+  },
+  "close": "Close",
+  "visit_project": "Visit project"
 }
