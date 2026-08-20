@@ -1,8 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { keyframes } from "@mui/system";
 import { memo } from "react";
 import { publicPath } from "../../constants/gloabals";
+import {
+  Reveal,
+  StaggerGroup,
+  StaggerItem,
+  motionize,
+  transitions,
+} from "../motion";
 
 type ServiceItem = {
   title: string;
@@ -16,11 +22,6 @@ type HomeServicesSectionProps = {
   intro: string;
   services: ServiceItem[];
 };
-
-const riseIn = keyframes`
-  0% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0); }
-`;
 
 const ServicesSection = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(4),
@@ -65,9 +66,17 @@ const ServicesList = styled(Box)(() => ({
   gap: "var(--space-4)",
 }));
 
-const ServiceRow = styled(Box, {
-  shouldForwardProp: (prop) => prop !== "delay",
-})<{ delay: number }>(({ delay }) => ({
+const MotionServicesList = motionize(ServicesList);
+
+const ServiceRow = styled(Box)(() => ({
+  position: "relative",
+  overflow: "hidden",
+  "&:hover .service-row-accent": {
+    transform: "scaleY(1)",
+  },
+  "&:hover .service-row-icon": {
+    transform: "scale(1.12)",
+  },
   display: "grid",
   gridTemplateColumns: "auto 1fr",
   gap: "var(--space-4)",
@@ -78,13 +87,9 @@ const ServiceRow = styled(Box, {
   background:
     "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(12,18,28,0.95))",
   boxShadow: "0 16px 36px rgba(0,0,0,0.35)",
-  transition: "transform 0.2s ease, box-shadow 0.2s ease",
-  animation: `${riseIn} 0.6s ease ${delay}s both`,
-  "&:hover": {
-    transform: "translateY(-4px)",
-    boxShadow: "0 22px 45px rgba(0,0,0,0.45)",
-  },
 }));
+
+const MotionServiceRow = motionize(ServiceRow);
 
 const ServiceMeta = styled(Box)(() => ({
   display: "flex",
@@ -95,6 +100,8 @@ const ServiceMeta = styled(Box)(() => ({
 }));
 
 const ServiceIcon = styled("span")(() => ({
+  transform: "scale(1)",
+  transition: "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)",
   width: 34,
   height: 34,
   borderRadius: "50%",
@@ -118,48 +125,90 @@ const ServiceCardTitle = styled(Typography)(() => ({
   marginBottom: 6,
 }));
 
+/** Left accent bar that wipes down as the pointer enters the row. */
+const RowAccent = styled(Box)(() => ({
+  position: "absolute",
+  left: 0,
+  top: 0,
+  bottom: 0,
+  width: 3,
+  transform: "scaleY(0)",
+  transformOrigin: "top",
+  transition: "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+  background: "linear-gradient(180deg, #22d3ee, #a3e635)",
+}));
+
+const rowVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    boxShadow: "0 16px 36px rgba(0,0,0,0.35)",
+    transition: transitions.enter,
+  },
+};
+
+const rowHover = { y: -5, boxShadow: "0 24px 48px rgba(0,0,0,0.5)" };
+
 export const HomeServicesSection = memo(
   ({ kicker, title, intro, services }: HomeServicesSectionProps) => (
-    <ServicesSection>
-      <ServicesLayout>
-        <Box>
-          <ServicesKicker variant='overline'>{kicker}</ServicesKicker>
-          <ServicesTitle variant='h4'>{title}</ServicesTitle>
-          <ServicesIntro variant='body1' color='text.secondary'>
-            {intro}
-          </ServicesIntro>
-        </Box>
-        <ServicesList>
-          {services.map((svc, idx) => (
-            <ServiceRow delay={idx * 0.08} key={`${svc.title}-${idx}`}>
-              <ServiceMeta>
-                <ServiceIcon>
-                  {svc.icon && (
-                    <img
-                      src={`${publicPath}/images/icons/${svc.icon}`}
-                      alt={`${svc.title} icon`}
-                      width={18}
-                      height={18}
-                    />
-                  )}
-                </ServiceIcon>
-                <ServiceIndex variant='overline'>
-                  {String(idx + 1).padStart(2, "0")}
-                </ServiceIndex>
-              </ServiceMeta>
-              <Box>
-                <ServiceCardTitle variant='subtitle1'>
-                  {svc.title}
-                </ServiceCardTitle>
-                <Typography variant='body2' color='text.secondary'>
-                  {svc.desc}
-                </Typography>
-              </Box>
-            </ServiceRow>
-          ))}
-        </ServicesList>
-      </ServicesLayout>
-    </ServicesSection>
+    <Reveal preset='up'>
+      <ServicesSection>
+        <ServicesLayout>
+          <StaggerGroup stagger={0.08}>
+            <StaggerItem>
+              <ServicesKicker variant='overline'>{kicker}</ServicesKicker>
+            </StaggerItem>
+            <StaggerItem preset='up'>
+              <ServicesTitle variant='h4'>{title}</ServicesTitle>
+            </StaggerItem>
+            <StaggerItem>
+              <ServicesIntro variant='body1' color='text.secondary'>
+                {intro}
+              </ServicesIntro>
+            </StaggerItem>
+          </StaggerGroup>
+          <MotionServicesList
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.09 } } }}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.15 }}>
+            {services.map((svc, idx) => (
+              <MotionServiceRow
+                key={`${svc.title}-${idx}`}
+                variants={rowVariants}
+                whileHover={rowHover}
+                transition={transitions.base}>
+                <RowAccent aria-hidden className='service-row-accent' />
+                <ServiceMeta>
+                  <ServiceIcon className='service-row-icon'>
+                    {svc.icon && (
+                      <img
+                        src={`${publicPath}/images/icons/${svc.icon}`}
+                        alt={`${svc.title} icon`}
+                        width={18}
+                        height={18}
+                      />
+                    )}
+                  </ServiceIcon>
+                  <ServiceIndex variant='overline'>
+                    {String(idx + 1).padStart(2, "0")}
+                  </ServiceIndex>
+                </ServiceMeta>
+                <Box>
+                  <ServiceCardTitle variant='subtitle1'>
+                    {svc.title}
+                  </ServiceCardTitle>
+                  <Typography variant='body2' color='text.secondary'>
+                    {svc.desc}
+                  </Typography>
+                </Box>
+              </MotionServiceRow>
+            ))}
+          </MotionServicesList>
+        </ServicesLayout>
+      </ServicesSection>
+    </Reveal>
   )
 );
 

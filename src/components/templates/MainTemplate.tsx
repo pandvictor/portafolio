@@ -6,9 +6,18 @@ import FloatingActionButtons from "../molecules/FloatingActionButtons";
 import { ContactInfo } from "../../types";
 import i18n from "../../utils/i18n";
 import { publicPath, version } from "../../constants/gloabals";
+import {
+  PageTransition,
+  Reveal,
+  ScrollProgress,
+  StaggerGroup,
+  StaggerItem,
+  motionize,
+} from "../motion";
 
 const PageRoot = styled(Box)(() => ({
   minHeight: "100vh",
+  position: "relative",
   backgroundColor: "var(--bg)",
   backgroundImage:
     "radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.18), transparent 42%), radial-gradient(circle at 88% 12%, rgba(163, 230, 53, 0.14), transparent 35%), linear-gradient(180deg, #0b111b 0%, #0c1523 40%, #0a0f18 100%)",
@@ -70,12 +79,26 @@ const FooterLink = styled("a")(() => ({
   background: "rgba(15,23,42,0.6)",
   textDecoration: "none",
   fontWeight: 600,
-  transition: "transform 0.2s ease, border-color 0.2s ease",
+  transition: "border-color 0.2s ease, background-color 0.2s ease",
   "&:hover": {
-    transform: "translateY(-2px)",
     borderColor: "var(--border-strong)",
+    backgroundColor: "rgba(30,41,59,0.75)",
   },
 }));
+
+const MotionFooterLink = motionize(FooterLink);
+
+/** Slow-drifting ambient wash behind the whole page. */
+const AmbientLayer = styled(Box)(() => ({
+  position: "fixed",
+  inset: 0,
+  pointerEvents: "none",
+  zIndex: 0,
+  background:
+    "radial-gradient(680px circle at 78% 8%, rgba(34,211,238,0.07), transparent 60%), radial-gradient(520px circle at 8% 72%, rgba(163,230,53,0.045), transparent 62%)",
+}));
+
+const MotionAmbientLayer = motionize(AmbientLayer);
 
 export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -92,43 +115,68 @@ export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
   );
   return (
     <PageRoot>
-      <DrawerAppBar />
-      <ContentContainer maxWidth='lg'>{children}</ContentContainer>
-      <FloatingActionButtons data={contact_info.slice(2)} />
-      <Container maxWidth='lg'>
-        <FooterRoot>
-          <FooterContent>
-            <Box>
-              <FooterTag variant='overline'>{footerCopy.availability_tag}</FooterTag>
-              <Typography variant='h6'>{footerCopy.availability_title}</Typography>
-              <Typography variant='body2' color='text.secondary'>
-                {footerCopy.availability_desc}
-              </Typography>
-              <Typography variant='caption' color='text.secondary'>
-                {footerCopy.availability_meta}
-              </Typography>
-            </Box>
-            <FooterLinks>
-              {footerLinks.map((item) => (
-                <FooterLink key={item.title} href={item.url} target='_blank' rel='noreferrer'>
-                  <img
-                    src={`${publicPath}/images/icons/${item.icon}`}
-                    width={18}
-                    height={18}
-                    alt={item.title}
-                  />
-                  {item.title}
-                </FooterLink>
-              ))}
-            </FooterLinks>
-          </FooterContent>
-        </FooterRoot>
-      </Container>
-      <VersionRow>
-        <Button color='secondary' variant='contained' size='small'>
-          version: {version}
-        </Button>
-      </VersionRow>
+      <ScrollProgress />
+      <MotionAmbientLayer
+        aria-hidden
+        animate={{ opacity: [0.45, 0.75, 0.45], scale: [1, 1.05, 1] }}
+        transition={{ duration: 20, ease: "easeInOut", repeat: Infinity }}
+      />
+      <Box sx={{ position: "relative", zIndex: 1 }}>
+        <DrawerAppBar />
+        <ContentContainer maxWidth='lg'>
+          <PageTransition>{children}</PageTransition>
+        </ContentContainer>
+        <FloatingActionButtons data={contact_info.slice(2)} />
+        <Container maxWidth='lg'>
+          <FooterRoot>
+            <Reveal preset='up'>
+              <FooterContent>
+                <Box>
+                  <FooterTag variant='overline'>
+                    {footerCopy.availability_tag}
+                  </FooterTag>
+                  <Typography variant='h6'>
+                    {footerCopy.availability_title}
+                  </Typography>
+                  <Typography variant='body2' color='text.secondary'>
+                    {footerCopy.availability_desc}
+                  </Typography>
+                  <Typography variant='caption' color='text.secondary'>
+                    {footerCopy.availability_meta}
+                  </Typography>
+                </Box>
+                <StaggerGroup stagger={0.07}>
+                  <FooterLinks>
+                    {footerLinks.map((item) => (
+                      <StaggerItem key={item.title}>
+                        <MotionFooterLink
+                          href={item.url}
+                          target='_blank'
+                          rel='noreferrer'
+                          whileHover={{ y: -3 }}
+                          whileTap={{ scale: 0.97 }}>
+                          <img
+                            src={`${publicPath}/images/icons/${item.icon}`}
+                            width={18}
+                            height={18}
+                            alt={item.title}
+                          />
+                          {item.title}
+                        </MotionFooterLink>
+                      </StaggerItem>
+                    ))}
+                  </FooterLinks>
+                </StaggerGroup>
+              </FooterContent>
+            </Reveal>
+          </FooterRoot>
+        </Container>
+        <VersionRow>
+          <Button color='secondary' variant='contained' size='small'>
+            version: {version}
+          </Button>
+        </VersionRow>
+      </Box>
     </PageRoot>
   );
 };

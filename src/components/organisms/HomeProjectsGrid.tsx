@@ -1,8 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { memo, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useMemo, useRef } from "react";
 import { CardItem } from "../molecules";
 import { Project, ProjectModalPayload, WorkHistory } from "../../types/types";
+import {
+  Reveal,
+  StaggerGroup,
+  StaggerItem,
+  TiltCard,
+  motionize,
+  transitions,
+} from "../motion";
 
 const ProjectsSection = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(6),
@@ -18,14 +26,12 @@ const ProjectsHeader = styled(Box)(({ theme }) => ({
   },
 }));
 
-
 const ProjectsEyebrow = styled(Typography)(() => ({
   letterSpacing: "0.28em",
   textTransform: "uppercase",
   fontWeight: 700,
   color: "var(--text-secondary)",
 }));
-
 
 const ScrollShell = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -35,6 +41,7 @@ const ScrollShell = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: theme.spacing(2),
   padding: theme.spacing(1, 0, 2),
+  perspective: "1400px",
   scrollSnapType: "x mandatory",
   scrollPaddingLeft: theme.spacing(2),
   scrollBehavior: "smooth",
@@ -51,21 +58,13 @@ const ScrollShell = styled(Box)(({ theme }) => ({
   },
 }));
 
-const SlideItem = styled(Box, {
-  shouldForwardProp: (prop) =>
-    prop !== "visible" && prop !== "delay" && prop !== "active",
-})<{ visible: boolean; delay: number; active: boolean }>(
-  ({ theme, visible, delay, active }) => ({
+const MotionScrollShell = motionize(ScrollShell);
+
+const SlideItem = styled(Box)(({ theme }) => ({
   flex: "0 0 auto",
   width: "min(380px, 86vw)",
   scrollSnapAlign: "start",
-  opacity: visible ? 1 : 0,
-  transform: visible ? (active ? "translateY(-6px)" : "translateY(0)") : "translateY(16px)",
-  boxShadow: active
-    ? "0 0 0 1px rgba(34,211,238,0.35), 0 24px 60px rgba(34,211,238,0.15)"
-    : "none",
   borderRadius: 24,
-  transition: `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms, box-shadow 0.4s ease`,
   [theme.breakpoints.up("sm")]: {
     width: 360,
   },
@@ -73,6 +72,8 @@ const SlideItem = styled(Box, {
     width: 380,
   },
 }));
+
+const MotionSlideItem = motionize(SlideItem);
 
 type SlideData = {
   key: string;
@@ -83,53 +84,6 @@ type SlideData = {
   companyUrl?: string;
 };
 
-type ProjectSlideProps = {
-  data: SlideData;
-  delay: number;
-  rootRef: React.RefObject<HTMLDivElement>;
-  onOpen?: (payload: ProjectModalPayload) => void;
-};
-
-const ProjectSlide = memo(({ data, delay, rootRef, onOpen }: ProjectSlideProps) => {
-  const itemRef = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    const node = itemRef.current;
-    if (!node || visible) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
-        setActive(entry.intersectionRatio >= 0.6);
-      },
-      {
-        root: rootRef.current ?? null,
-        rootMargin: "0px 120px",
-        threshold: [0.25, 0.6],
-      }
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [rootRef]);
-
-  return (
-    <SlideItem ref={itemRef} visible={visible} delay={delay} active={active}>
-      <CardItem
-        data={data.project}
-        companyImage={data.companyImage}
-        companyImages={data.companyImages}
-        companyName={data.companyName}
-        companyUrl={data.companyUrl}
-        onOpen={onOpen}
-      />
-    </SlideItem>
-  );
-});
-ProjectSlide.displayName = "ProjectSlide";
-
 type HomeProjectsGridProps = {
   works: (WorkHistory & { _origIndex: number })[];
   onOpen: (payload: ProjectModalPayload) => void;
@@ -137,6 +91,12 @@ type HomeProjectsGridProps = {
   title: string;
   subtitle: string;
   note?: string;
+};
+
+/** Cards fly in from the right, matching the direction the rail scrolls. */
+const slideVariants = {
+  hidden: { opacity: 0, x: 48, scale: 0.96 },
+  visible: { opacity: 1, x: 0, scale: 1, transition: transitions.enter },
 };
 
 export const HomeProjectsGrid = memo(
@@ -169,31 +129,59 @@ export const HomeProjectsGrid = memo(
 
     return (
       <ProjectsSection>
-        <ProjectsHeader>
-          <ProjectsEyebrow variant='overline'>{kicker}</ProjectsEyebrow>
-          <Typography variant='h4'>{title}</Typography>
-          <Typography variant='body1' color='text.secondary'>
-            {subtitle}
-          </Typography>
-          {note && (
-            <Typography variant='body2' color='text.secondary'>
-              {note}
-            </Typography>
-          )}
-        </ProjectsHeader>
-        <ScrollShell ref={scrollRef}>
-          {slides.map((slide, index) => (
-            <ProjectSlide
-              key={slide.key}
-              data={slide}
-              delay={index * 50}
-              rootRef={scrollRef}
-              onOpen={onOpen}
-            />
-          ))}
-        </ScrollShell>
+        <StaggerGroup stagger={0.07}>
+          <ProjectsHeader>
+            <StaggerItem>
+              <ProjectsEyebrow variant='overline'>{kicker}</ProjectsEyebrow>
+            </StaggerItem>
+            <StaggerItem preset='up'>
+              <Typography variant='h4'>{title}</Typography>
+            </StaggerItem>
+            <StaggerItem>
+              <Typography variant='body1' color='text.secondary'>
+                {subtitle}
+              </Typography>
+            </StaggerItem>
+            {note && (
+              <StaggerItem>
+                <Typography variant='body2' color='text.secondary'>
+                  {note}
+                </Typography>
+              </StaggerItem>
+            )}
+          </ProjectsHeader>
+        </StaggerGroup>
+        <Reveal preset='fade'>
+          <MotionScrollShell
+            ref={scrollRef}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.09 } },
+            }}
+            initial='hidden'
+            whileInView='visible'
+            // The rail is wider than the viewport, so trigger on a thin slice
+            // instead of waiting for the whole row to be on screen.
+            viewport={{ once: true, amount: 0.05 }}>
+            {slides.map((slide) => (
+              <MotionSlideItem key={slide.key} variants={slideVariants}>
+                <TiltCard maxTilt={6} lift={6}>
+                  <CardItem
+                    data={slide.project}
+                    companyImage={slide.companyImage}
+                    companyImages={slide.companyImages}
+                    companyName={slide.companyName}
+                    companyUrl={slide.companyUrl}
+                    onOpen={onOpen}
+                  />
+                </TiltCard>
+              </MotionSlideItem>
+            ))}
+          </MotionScrollShell>
+        </Reveal>
       </ProjectsSection>
     );
   }
 );
+
 HomeProjectsGrid.displayName = "HomeProjectsGrid";

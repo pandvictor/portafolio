@@ -5,6 +5,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { Resume } from "../../types/";
 import { MainTemplate } from "../templates";
 import { PrintButton } from "../molecules";
+import { Reveal, StaggerGroup, StaggerItem } from "../motion";
 import {
   ResumeContactSection,
   ResumeEducationSection,
@@ -44,18 +45,26 @@ export function ResumePage() {
           <ResumeHeaderSection resume={resume} />
 
           <Grid item xs={12} md={9}>
-            <section>
+            <Reveal preset='up' as='section'>
               <Typography paragraph>{resume.summary}</Typography>
-            </section>
+            </Reveal>
 
             <ResumeWorkHistorySection workHistory={workHistory} />
             <ResumeEducationSection resume={resume} />
           </Grid>
 
           <Grid item xs={12} md={3}>
-            <ResumeContactSection contacts={contactInfo} />
-            <ResumeLanguagesSection languages={languages} />
-            <ResumeSkillsSection skills={techSkills} />
+            <StaggerGroup stagger={0.12}>
+              <StaggerItem preset='up'>
+                <ResumeContactSection contacts={contactInfo} />
+              </StaggerItem>
+              <StaggerItem preset='up'>
+                <ResumeLanguagesSection languages={languages} />
+              </StaggerItem>
+              <StaggerItem preset='up'>
+                <ResumeSkillsSection skills={techSkills} />
+              </StaggerItem>
+            </StaggerGroup>
           </Grid>
         </Grid>
 

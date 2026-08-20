@@ -3,6 +3,9 @@ import { memo } from "react";
 import { format, formatDuration, intervalToDuration, parseISO } from "date-fns";
 import { WorkHistory } from "../../types";
 import i18n from "../../utils/i18n";
+import { motionize, transitions } from "../motion";
+
+const MotionPaper = motionize(Paper);
 
 type ResumeWorkCardProps = {
   work: WorkHistory;
@@ -14,7 +17,11 @@ export const ResumeWorkCard = memo(({ work }: ResumeWorkCardProps) => {
   const endLabel = work.is_current ? i18n.t("resume.present") : format(end, "MMM, yy");
 
   return (
-    <Paper elevation={0} sx={{ p: 2.5, mb: 2.5 }}>
+    <MotionPaper
+      elevation={0}
+      sx={{ p: 2.5, mb: 2.5 }}
+      whileHover={{ y: -4, borderColor: "rgba(34,211,238,0.35)" }}
+      transition={transitions.quick}>
       <Stack direction='row' spacing={3} sx={{ flexGrow: 1 }}>
         <div>
           <Typography variant='subtitle1'>
@@ -55,7 +62,7 @@ export const ResumeWorkCard = memo(({ work }: ResumeWorkCardProps) => {
           ))}
         </div>
       </Box>
-    </Paper>
+    </MotionPaper>
   );
 });
 

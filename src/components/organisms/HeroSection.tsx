@@ -11,12 +11,20 @@ import {
 import { Resume, ContactInfo } from "../../types";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import i18n from "../../utils/i18n";
-import { keyframes } from "@mui/system";
-
-const fadeInUp = keyframes`
-  0% { opacity: 0; transform: translateY(18px) scale(0.98); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-`;
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useReducedMotion,
+} from "framer-motion";
+import {
+  MagneticButton,
+  ShimmerText,
+  StaggerItem,
+  createStagger,
+  motionize,
+  transitions,
+} from "../motion";
 
 const HeroRoot = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(5),
@@ -27,7 +35,6 @@ const HeroRoot = styled(Box)(({ theme }) => ({
   background:
     "radial-gradient(circle at 18% 20%, rgba(34,211,238,0.18), transparent 40%), radial-gradient(circle at 82% 10%, rgba(163,230,53,0.16), transparent 38%), linear-gradient(135deg, rgba(12,18,28,0.98), rgba(11,17,27,0.92))",
   boxShadow: "var(--shadow-strong)",
-  animation: `${fadeInUp} 0.6s ease`,
   perspective: "1600px",
   [theme.breakpoints.up("md")]: {
     marginBottom: theme.spacing(7),
@@ -35,39 +42,23 @@ const HeroRoot = styled(Box)(({ theme }) => ({
   },
 }));
 
-const OrbTop = styled(Box)(() => ({
+const MotionHeroRoot = motionize(HeroRoot);
+
+const Orb = styled(Box)(() => ({
   position: "absolute",
-  width: 180,
-  height: 180,
   borderRadius: "50%",
-  top: -50,
-  right: -30,
-  background:
-    "radial-gradient(circle, rgba(34,211,238,0.28) 0%, rgba(34,211,238,0.06) 60%, transparent 70%)",
-  filter: "blur(1px)",
+  pointerEvents: "none",
 }));
 
-const OrbBottom = styled(Box)(() => ({
-  position: "absolute",
-  width: 220,
-  height: 220,
-  borderRadius: "50%",
-  bottom: -60,
-  left: -40,
-  background:
-    "radial-gradient(circle, rgba(163,230,53,0.2) 0%, rgba(163,230,53,0.05) 65%, transparent 75%)",
-  filter: "blur(2px)",
-}));
+const MotionOrb = motionize(Orb);
 
-const FlipGrid = styled(Box, {
-  shouldForwardProp: (prop) => prop !== "flipped" && prop !== "reducedMotion",
-})<{ flipped: boolean; reducedMotion: boolean }>(({ flipped, reducedMotion }) => ({
+const FlipGrid = styled(Box)(() => ({
   position: "relative",
   display: "grid",
   transformStyle: "preserve-3d",
-  transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
-  transition: reducedMotion ? "none" : "transform 0.9s ease",
 }));
+
+const MotionFlipGrid = motionize(FlipGrid);
 
 const FlipFace = styled(Box)(() => ({
   gridArea: "1 / 1",
@@ -86,8 +77,11 @@ const HeroContent = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   gap: theme.spacing(2.5),
   alignItems: "center",
-  padding: theme.spacing(3, 2),
+  // Extra top padding on small screens keeps the first chip row from running
+  // under the absolutely positioned flip button.
+  padding: theme.spacing(7, 2, 3),
   [theme.breakpoints.up("sm")]: {
+    paddingTop: theme.spacing(7),
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
     gap: theme.spacing(3),
@@ -115,6 +109,8 @@ const HeroLeft = styled(Stack)(({ theme }) => ({
   },
 }));
 
+const MotionHeroLeft = motionize(HeroLeft);
+
 const ChipRow = styled(Stack)(({ theme }) => ({
   flexWrap: "wrap",
   justifyContent: "center",
@@ -135,6 +131,8 @@ const GradientChip = styled(Chip)(({ theme }) => ({
     letterSpacing: "0.02em",
   },
 }));
+
+const MotionGradientChip = motionize(GradientChip);
 
 const SecondaryChip = styled(Chip)(() => ({
   fontWeight: 700,
@@ -181,9 +179,10 @@ const BulletDot = styled(Box)(() => ({
   height: 10,
   borderRadius: "50%",
   background: "radial-gradient(circle, #22d3ee 0%, #a3e635 80%)",
-  boxShadow: "0 0 0 6px rgba(34,211,238,0.2)",
   flexShrink: 0,
 }));
+
+const MotionBulletDot = motionize(BulletDot);
 
 const BulletText = styled(Typography)(() => ({
   fontWeight: 600,
@@ -255,6 +254,8 @@ const TagChip = styled(Chip)(() => ({
   borderColor: "var(--border-strong)",
 }));
 
+const MotionTagChip = motionize(TagChip);
+
 const IMPACT_ICON_MAP: Record<string, string> = {
   features: "jira.svg",
   mobile: "react-native.svg",
@@ -282,6 +283,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const flipTimerRef = useRef<number | null>(null);
   const theme = useTheme();
   const isCompact = useMediaQuery(theme.breakpoints.down("sm"));
+  const reduceMotion = useReducedMotion();
+
+  // Cursor spotlight: a soft light that tracks the pointer across the hero.
+  const pointerX = useMotionValue(-400);
+  const pointerY = useMotionValue(-400);
+  const spotlight = useMotionTemplate`radial-gradient(520px circle at ${pointerX}px ${pointerY}px, rgba(34,211,238,0.12), transparent 65%)`;
+
   const contactUrl = contactInfo?.[0]?.url;
   const linkedinUrl = useMemo(
     () =>
@@ -304,10 +312,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     : linkedinUrl
       ? { label: "LinkedIn", href: linkedinUrl, type: "linkedin" }
       : null;
-  const prefersReducedMotion = useMemo(() => {
-    if (typeof window === "undefined" || !window.matchMedia) return false;
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  }, []);
+  const prefersReducedMotion = Boolean(reduceMotion);
   const chipLabels = useMemo(() => i18n.t("hero.chips") as Record<string, string>, [
     language,
   ]);
@@ -361,111 +366,206 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     if (!isPaused) startFlipTimer();
   };
 
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (prefersReducedMotion) return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    pointerX.set(event.clientX - rect.left);
+    pointerY.set(event.clientY - rect.top);
+  };
+
   return (
-    <HeroRoot
+    <MotionHeroRoot
+      initial={{ opacity: 0, y: 28, scale: 0.985 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={() => {
+        pointerX.set(-400);
+        pointerY.set(-400);
+      }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}>
+      <motion.div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: spotlight,
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
       <HeroFlipButton isFlipped={isFlipped} onToggle={handleManualFlip} />
-      <OrbTop />
-      <OrbBottom />
-      <FlipGrid flipped={isFlipped} reducedMotion={prefersReducedMotion}>
+      <MotionOrb
+        aria-hidden
+        sx={{
+          width: 180,
+          height: 180,
+          top: -50,
+          right: -30,
+          background:
+            "radial-gradient(circle, rgba(34,211,238,0.28) 0%, rgba(34,211,238,0.06) 60%, transparent 70%)",
+          filter: "blur(1px)",
+        }}
+        animate={{ y: [0, 22, 0], x: [0, -14, 0], scale: [1, 1.12, 1] }}
+        transition={{ duration: 14, ease: "easeInOut", repeat: Infinity }}
+      />
+      <MotionOrb
+        aria-hidden
+        sx={{
+          width: 220,
+          height: 220,
+          bottom: -60,
+          left: -40,
+          background:
+            "radial-gradient(circle, rgba(163,230,53,0.2) 0%, rgba(163,230,53,0.05) 65%, transparent 75%)",
+          filter: "blur(2px)",
+        }}
+        animate={{ y: [0, -26, 0], x: [0, 18, 0], scale: [1, 1.1, 1] }}
+        transition={{ duration: 18, ease: "easeInOut", repeat: Infinity, delay: 1.5 }}
+      />
+      <MotionFlipGrid
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={
+          prefersReducedMotion
+            ? { duration: 0 }
+            : { duration: 0.95, ease: [0.65, 0, 0.35, 1] }
+        }>
         <FlipFace>
           <HeroContent>
-            <HeroLeft spacing={{ xs: 2, sm: 2.5 }}>
-              <ChipRow direction='row' spacing={1} alignItems='center' useFlexGap>
-                <GradientChip
-                  label={chipLabels.ai}
-                  size='small'
-                />
-                <SecondaryChip
-                  label={chipLabels.sectors}
-                  color='secondary'
-                  size='small'
-                  sx={{ display: { xs: "none", sm: "inline-flex" } }}
-                />
-                <OutlineChip
-                  label={chipLabels.experience}
-                  variant='outlined'
-                  color='default'
-                  size='small'
-                />
-                <OutlineSecondaryChip
-                  label={chipLabels.crypto}
-                  variant='outlined'
-                  color='secondary'
-                  size='small'
-                  sx={{ display: { xs: "none", sm: "inline-flex" } }}
-                />
-              </ChipRow>
-              <HeroName
-                variant='h3'
-                sx={{ fontSize: { xs: "2rem", sm: "2.4rem", md: "3rem" } }}>
-                {resume?.full_name}
-              </HeroName>
-              <HeroRole
-                variant='h5'
-                color='text.secondary'
-                sx={{ fontSize: { xs: "1.05rem", sm: "1.2rem" } }}>
-                {resume?.position}
-              </HeroRole>
-              <Box sx={{ display: { xs: "none", sm: "block" } }}>
-                <SkillIconsRow justify='flex-start' />
-              </Box>
-              <HeroSubtitle variant='body1' color='text.secondary'>
-                {i18n.t("portfolio.subtitle")}
-              </HeroSubtitle>
-              <Stack spacing={1}>
-                {visibleBullets.map((item, idx) => (
-                  <BulletRow
-                    key={`${item}-${idx}`}
-                    direction='row'
-                    spacing={1.5}
-                    alignItems='center'>
-                    <BulletDot />
-                    <BulletText color='text.primary'>{item}</BulletText>
-                  </BulletRow>
-                ))}
-              </Stack>
-              <CtaRow
-                direction={{ xs: "column", sm: "row" }}
-                spacing={1.5}>
-                <PrimaryCtaButton
-                  variant='contained'
-                  color='primary'
-                  size='large'
-                  href={primaryAction.href}>
-                  {primaryAction.label}
-                </PrimaryCtaButton>
-                {secondaryAction?.type === "linkedin" && (
-                  <LinkedInButton
-                    component='a'
-                    variant='outlined'
-                    size='large'
-                    href={secondaryAction.href}
-                    target='_blank'
-                    rel='noreferrer'
-                    sx={{ display: { xs: "none", sm: "inline-flex" } }}
-                    startIcon={
-                      <LinkedInIcon
-                        alt='LinkedIn'
-                        src={`${publicPath}/images/icons/linkedin.svg`}
-                      />
-                    }>
-                    {secondaryAction.label}
-                  </LinkedInButton>
-                )}
-                {secondaryAction?.type === "download" && (
-                  <TalkButton
-                    variant='outlined'
-                    color='inherit'
-                    size='large'
-                    href={secondaryAction.href}
-                    sx={{ display: { xs: "none", sm: "inline-flex" } }}>
-                    {secondaryAction.label}
-                  </TalkButton>
-                )}
-              </CtaRow>
-            </HeroLeft>
+            <MotionHeroLeft
+              spacing={{ xs: 2, sm: 2.5 }}
+              variants={createStagger(0.09, 0.25)}
+              initial='hidden'
+              animate='visible'>
+                <StaggerItem>
+                  <ChipRow direction='row' spacing={1} alignItems='center' useFlexGap>
+                    <MotionGradientChip
+                      label={chipLabels.ai}
+                      size='small'
+                      whileHover={{ scale: 1.06 }}
+                      transition={transitions.quick}
+                    />
+                    <SecondaryChip
+                      label={chipLabels.sectors}
+                      color='secondary'
+                      size='small'
+                      sx={{ display: { xs: "none", sm: "inline-flex" } }}
+                    />
+                    <OutlineChip
+                      label={chipLabels.experience}
+                      variant='outlined'
+                      color='default'
+                      size='small'
+                    />
+                    <OutlineSecondaryChip
+                      label={chipLabels.crypto}
+                      variant='outlined'
+                      color='secondary'
+                      size='small'
+                      sx={{ display: { xs: "none", sm: "inline-flex" } }}
+                    />
+                  </ChipRow>
+                </StaggerItem>
+                <StaggerItem preset='up'>
+                  <HeroName
+                    variant='h3'
+                    sx={{ fontSize: { xs: "2rem", sm: "2.4rem", md: "3rem" } }}>
+                    <ShimmerText>{resume?.full_name}</ShimmerText>
+                  </HeroName>
+                </StaggerItem>
+                <StaggerItem>
+                  <HeroRole
+                    variant='h5'
+                    color='text.secondary'
+                    sx={{ fontSize: { xs: "1.05rem", sm: "1.2rem" } }}>
+                    {resume?.position}
+                  </HeroRole>
+                </StaggerItem>
+                <StaggerItem>
+                  <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                    <SkillIconsRow justify='flex-start' />
+                  </Box>
+                </StaggerItem>
+                <StaggerItem>
+                  <HeroSubtitle variant='body1' color='text.secondary'>
+                    {i18n.t("portfolio.subtitle")}
+                  </HeroSubtitle>
+                </StaggerItem>
+                <StaggerItem>
+                  <Stack spacing={1}>
+                    {visibleBullets.map((item, idx) => (
+                      <BulletRow
+                        key={`${item}-${idx}`}
+                        direction='row'
+                        spacing={1.5}
+                        alignItems='center'>
+                        <MotionBulletDot
+                          animate={{
+                            boxShadow: [
+                              "0 0 0 0 rgba(34,211,238,0.35)",
+                              "0 0 0 8px rgba(34,211,238,0)",
+                              "0 0 0 0 rgba(34,211,238,0)",
+                            ],
+                          }}
+                          transition={{
+                            duration: 2.6,
+                            repeat: Infinity,
+                            delay: idx * 0.4,
+                            ease: "easeOut",
+                          }}
+                        />
+                        <BulletText color='text.primary'>{item}</BulletText>
+                      </BulletRow>
+                    ))}
+                  </Stack>
+                </StaggerItem>
+                <StaggerItem>
+                  <CtaRow direction={{ xs: "column", sm: "row" }} spacing={1.5}>
+                    <MagneticButton>
+                      <PrimaryCtaButton
+                        variant='contained'
+                        color='primary'
+                        size='large'
+                        href={primaryAction.href}>
+                        {primaryAction.label}
+                      </PrimaryCtaButton>
+                    </MagneticButton>
+                    {secondaryAction?.type === "linkedin" && (
+                      <MagneticButton strength={6}>
+                        <LinkedInButton
+                          component='a'
+                          variant='outlined'
+                          size='large'
+                          href={secondaryAction.href}
+                          target='_blank'
+                          rel='noreferrer'
+                          sx={{ display: { xs: "none", sm: "inline-flex" } }}
+                          startIcon={
+                            <LinkedInIcon
+                              alt='LinkedIn'
+                              src={`${publicPath}/images/icons/linkedin.svg`}
+                            />
+                          }>
+                          {secondaryAction.label}
+                        </LinkedInButton>
+                      </MagneticButton>
+                    )}
+                    {secondaryAction?.type === "download" && (
+                      <MagneticButton strength={6}>
+                        <TalkButton
+                          variant='outlined'
+                          color='inherit'
+                          size='large'
+                          href={secondaryAction.href}
+                          sx={{ display: { xs: "none", sm: "inline-flex" } }}>
+                          {secondaryAction.label}
+                        </TalkButton>
+                      </MagneticButton>
+                    )}
+                  </CtaRow>
+                </StaggerItem>
+            </MotionHeroLeft>
             <HeroAvatar
               alt={resume?.full_name}
               src={`${publicPath}/images/vic.jpeg`}
@@ -475,13 +575,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <FlipBackFace>
           <HeroContent>
             <HeroLeft spacing={{ xs: 2, sm: 2.5 }}>
-              <GradientChip
-                label={i18n.t("hero.back.badge")}
-                size='small'
-              />
-              <SectionTitle variant='h4'>
-                {i18n.t("hero.back.title")}
-              </SectionTitle>
+              <GradientChip label={i18n.t("hero.back.badge")} size='small' />
+              <SectionTitle variant='h4'>{i18n.t("hero.back.title")}</SectionTitle>
               <SectionBody variant='body1' color='text.secondary'>
                 {i18n.t("hero.back.summary")}
               </SectionBody>
@@ -489,15 +584,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 {i18n.t("hero.back.impact_line")}
               </SectionBody>
               <TagRow direction='row' useFlexGap>
-                {backTags.map((tag) => (
-                  <TagChip key={tag} label={tag} size='small' variant='outlined' />
+                {backTags.map((tag, idx) => (
+                  <MotionTagChip
+                    key={tag}
+                    label={tag}
+                    size='small'
+                    variant='outlined'
+                    whileHover={{ y: -3, borderColor: "rgba(34,211,238,0.7)" }}
+                    transition={{ ...transitions.quick, delay: idx * 0.01 }}
+                  />
                 ))}
               </TagRow>
             </HeroLeft>
             <HeroImpactPanel cards={impactCards} />
           </HeroContent>
         </FlipBackFace>
-      </FlipGrid>
-    </HeroRoot>
+      </MotionFlipGrid>
+    </MotionHeroRoot>
   );
 };
