@@ -80,7 +80,10 @@
     "projects_prev": "Previous projects",
     "projects_next": "More projects",
     "project_live": "Live site",
-    "project_case": "Overview"
+    "project_case": "Overview",
+    "facts_availability": "Availability",
+    "facts_location": "Based in",
+    "facts_languages": "Languages"
   },
   "hero": {
     "flip": {
@@ -1238,7 +1241,8 @@
     "present": "Present",
     "summary_title": "Summary",
     "print_cv": "Print / Save PDF",
-    "back_to_site": "Back to site"
+    "back_to_site": "Back to site",
+    "location": "Guatemala · Remote (Americas)"
   },
   "cover_letter": {
     "title": "Cover Letter",

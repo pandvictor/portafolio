@@ -106,7 +106,8 @@ export const HomeCredibilitySection = memo(
             viewport={{ once: true, amount: 0.3 }}>
             {parsed.map((stat, idx) => (
               <MotionStatCard
-                key={`${stat.value}-${idx}`}
+                // Index key: the value is translated ("19+ years" / "19+ años").
+                key={idx}
                 variants={{
                   hidden: { opacity: 0, y: 22, scale: 0.97 },
                   visible: { opacity: 1, y: 0, scale: 1 },

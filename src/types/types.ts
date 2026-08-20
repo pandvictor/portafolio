@@ -67,6 +67,8 @@ export type Resume = {
     name:            string;
     full_name:       string;
     position:        string;
+    /** Where he is based, shown in the home page facts bar. */
+    location?:       string;
     experience:      string;
     education:       string;
     languages_title: string;

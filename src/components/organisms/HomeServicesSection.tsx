@@ -128,7 +128,9 @@ export const HomeServicesSection = memo(
           viewport={{ once: true, amount: 0.15 }}>
           {services.map((svc, idx) => (
             <MotionServiceRow
-              key={`${svc.title}-${idx}`}
+              // Index key: the title is translated, and a changing key would
+              // remount the row into a permanently hidden state.
+              key={idx}
               variants={rowVariants}
               whileHover={rowHover}
               transition={transitions.base}>

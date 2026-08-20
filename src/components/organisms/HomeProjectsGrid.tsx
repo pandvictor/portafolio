@@ -165,7 +165,11 @@ export const HomeProjectsGrid = memo(
             : [];
         work.achievements.forEach((project, projectIdx) => {
           items.push({
-            key: `${work.company}-${project.title}-${workIdx}-${projectIdx}`,
+            // Position-based key: titles and company names are translated, so a
+            // content-derived key changes on language switch. That remounts the
+            // card, and because the rail already fired its `once` viewport
+            // trigger, the fresh child stays stuck at `hidden`.
+            key: `${workIdx}-${projectIdx}`,
             project,
             companyImage,
             companyImages,

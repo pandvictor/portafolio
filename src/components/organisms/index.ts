@@ -3,6 +3,7 @@ export * from './DrawerAppBar';
 export * from './HeroSection';
 export * from './HomeCredibilitySection';
 export * from './HomeCtaSection';
+export * from './HomeFactsBar';
 export * from './ContactDialog';
 export * from './HomeFeaturedProjectSection';
 export * from './HomeProjectsGrid';

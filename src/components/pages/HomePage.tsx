@@ -9,6 +9,7 @@ import {
   HeroSection,
   HomeCredibilitySection,
   HomeCtaSection,
+  HomeFactsBar,
   HomeFeaturedProjectSection,
   HomeProjectsGrid,
   HomeServicesSection,
@@ -174,6 +175,10 @@ export default function HomePage() {
         bullets={heroBullets}
         onContact={() => setContactOpen(true)}
       />
+
+      <SectionBlock>
+        <HomeFactsBar resume={resumeData} />
+      </SectionBlock>
 
       <SectionBlock>
         <HomeTrustedSection title={trustedTitle} />

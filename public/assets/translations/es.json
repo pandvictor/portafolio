@@ -80,7 +80,10 @@
     "projects_prev": "Proyectos anteriores",
     "projects_next": "Más proyectos",
     "project_live": "Ver sitio",
-    "project_case": "Detalle"
+    "project_case": "Detalle",
+    "facts_availability": "Disponibilidad",
+    "facts_location": "Ubicación",
+    "facts_languages": "Idiomas"
   },
   "hero": {
     "flip": {
@@ -1238,7 +1241,8 @@
     "present": "Actual",
     "summary_title": "Resumen",
     "print_cv": "Imprimir / Guardar PDF",
-    "back_to_site": "Volver al sitio"
+    "back_to_site": "Volver al sitio",
+    "location": "Guatemala · Remoto (América)"
   },
   "cover_letter": {
     "title": "Carta de presentación",
