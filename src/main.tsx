@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import { MotionConfig } from "framer-motion";
 import "./index.css";
 import HomePage from "./components/pages/HomePage.tsx";
 import { LanguageProvider } from "./context/LanguageContext.tsx";
@@ -124,9 +125,13 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <LanguageProvider>
-        <RouterProvider router={router} />
-      </LanguageProvider>
+      {/* `reducedMotion="user"` makes every framer-motion animation in the app
+          respect the OS "reduce motion" setting without per-component checks. */}
+      <MotionConfig reducedMotion='user'>
+        <LanguageProvider>
+          <RouterProvider router={router} />
+        </LanguageProvider>
+      </MotionConfig>
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -19,13 +19,14 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { keyframes } from "@mui/system";
+import { useScroll, useTransform } from "framer-motion";
 
 import { UserAvatar } from "../molecules";
 import { publicPath } from "../../constants/gloabals";
 import { LinkItem } from "../atoms";
 import { useLanguage } from "../../context/LanguageContext";
 import i18n from "../../utils/i18n";
+import { createStagger, fadeUpSoft, motionize, transitions } from "../motion";
 
 const pages = [
   { key: "resume", path: "resume" },
@@ -35,16 +36,6 @@ const basePath = import.meta.env.BASE_URL || "/";
 
 const getPagePath = (path: string) =>
   `${basePath}/${path}`.replace(/\/{2,}/g, "/");
-
-const fadeInDown = keyframes`
-  0% { opacity: 0; transform: translateY(-10px); }
-  100% { opacity: 1; transform: translateY(0); }
-`;
-
-const fadeInUp = keyframes`
-  0% { opacity: 0; transform: translateY(12px) scale(0.98); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-`;
 
 const DrawerContainer = styled(Box)(({ theme }) => ({
   textAlign: "center",
@@ -58,19 +49,18 @@ const DrawerList = styled(List)(({ theme }) => ({
   marginTop: theme.spacing(2),
 }));
 
-const DrawerNavButton = styled(ListItemButton, {
-  shouldForwardProp: (prop) => prop !== "delay",
-})<{ delay: number }>(({ delay, theme }) => ({
+const MotionDrawerList = motionize(DrawerList);
+
+const DrawerNavButton = styled(ListItemButton)(({ theme }) => ({
   textAlign: "center",
   borderRadius: theme.shape.borderRadius * 2,
-  transition: "background-color 0.2s ease, transform 0.2s ease",
-  opacity: 0,
-  animation: `${fadeInUp} 0.6s ease ${delay}s forwards`,
+  transition: "background-color 0.2s ease",
   "&:hover": {
-    transform: "translateY(-2px)",
     backgroundColor: "rgba(255,255,255,0.06)",
   },
 }));
+
+const MotionDrawerNavButton = motionize(DrawerNavButton);
 
 const DrawerNavText = styled(Typography)(() => ({
   fontWeight: 600,
@@ -84,13 +74,13 @@ const DrawerDownloadButton = styled(Button)(({ theme }) => ({
 }));
 
 const AppBarRoot = styled(AppBar)(() => ({
-  boxShadow: "0 18px 40px rgba(0, 0, 0, 0.4)",
   background:
     "linear-gradient(120deg, rgba(10,15,24,0.92), rgba(14,22,34,0.88))",
   backdropFilter: "blur(16px)",
   borderBottom: "1px solid var(--border-subtle)",
-  animation: `${fadeInDown} 0.6s ease`,
 }));
+
+const MotionAppBarRoot = motionize(AppBarRoot);
 
 const ToolbarRoot = styled(Toolbar)(({ theme }) => ({
   paddingTop: theme.spacing(1),
@@ -104,6 +94,8 @@ const ToolbarRoot = styled(Toolbar)(({ theme }) => ({
     paddingRight: theme.spacing(2.5),
   },
 }));
+
+const MotionToolbarRoot = motionize(ToolbarRoot);
 
 const LogoBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -142,15 +134,14 @@ const NavButton = styled(Button)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius * 2,
   paddingLeft: theme.spacing(2),
   paddingRight: theme.spacing(2),
-  opacity: 0,
-  animation: `${fadeInDown} 0.6s ease 0.2s forwards`,
-  transition: "color 0.2s ease, transform 0.2s ease, background-color 0.2s ease",
+  transition: "color 0.2s ease, background-color 0.2s ease",
   "&:hover": {
     color: theme.palette.primary.main,
     backgroundColor: "rgba(255,255,255,0.06)",
-    transform: "translateY(-2px)",
   },
 }));
+
+const MotionNavLink = motionize(Box);
 
 const ActionsBox = styled(Box)(({ theme }) => ({
   flexGrow: 0,
@@ -210,6 +201,14 @@ const MobileDrawer = styled(Drawer)(({ theme }) => ({
 
 export const DrawerAppBar = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { scrollY } = useScroll();
+  // Condense the bar as soon as the page starts moving.
+  const barShadow = useTransform(
+    scrollY,
+    [0, 80],
+    ["0 0 0 rgba(0,0,0,0)", "0 18px 40px rgba(0, 0, 0, 0.45)"]
+  );
+  const barMinHeight = useTransform(scrollY, [0, 80], [80, 64]);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -265,8 +264,11 @@ export const DrawerAppBar = () => {
   const drawer = (
     <DrawerContainer onClick={handleDrawerToggle}>
       <UserAvatar />
-      <DrawerList>
-        {pages.map((page, idx) => (
+      <MotionDrawerList
+        variants={createStagger(0.09, 0.12)}
+        initial='hidden'
+        animate='visible'>
+        {pages.map((page) => (
           <LinkItem
             key={page.key}
             to={getPagePath(page.path)}
@@ -274,13 +276,16 @@ export const DrawerAppBar = () => {
             relative='path'
             className='nav-link'>
             <ListItem key={page.key} disablePadding>
-              <DrawerNavButton delay={(idx + 1) * 0.08}>
+              <MotionDrawerNavButton
+                variants={fadeUpSoft}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}>
                 <ListItemText
                   primary={
                     <DrawerNavText>{i18n.t(page.key + ".title")}</DrawerNavText>
                   }
                 />
-              </DrawerNavButton>
+              </MotionDrawerNavButton>
             </ListItem>
           </LinkItem>
         ))}
@@ -292,30 +297,43 @@ export const DrawerAppBar = () => {
           href={`${publicPath}/files/resume-victor-hernandez-${language}.pdf`}>
           {i18n.t("download")}
         </DrawerDownloadButton>
-      </DrawerList>
+      </MotionDrawerList>
     </DrawerContainer>
   );
 
   return (
     <>
-      <AppBarRoot color='default' position='fixed'>
+      <MotionAppBarRoot
+        color='default'
+        position='fixed'
+        initial={{ y: -90, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        style={{ boxShadow: barShadow }}>
         <Container maxWidth='xl'>
-          <ToolbarRoot disableGutters>
+          <MotionToolbarRoot disableGutters style={{ minHeight: barMinHeight }}>
             <LogoBox>
               <UserAvatar />
             </LogoBox>
             <NavLinks>
-              {pages.map((page) => (
-                <LinkItem
+              {pages.map((page, idx) => (
+                <MotionNavLink
                   key={page.key}
-                  to={getPagePath(page.path)}
-                  color='inherit'
-                  relative='path'
-                  className='nav-link'>
-                  <NavButton key={page.key} color='inherit'>
-                    {i18n.t(page.key + ".title")}
-                  </NavButton>
-                </LinkItem>
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ ...transitions.base, delay: 0.25 + idx * 0.08 }}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.97 }}>
+                  <LinkItem
+                    to={getPagePath(page.path)}
+                    color='inherit'
+                    relative='path'
+                    className='nav-link'>
+                    <NavButton color='inherit'>
+                      {i18n.t(page.key + ".title")}
+                    </NavButton>
+                  </LinkItem>
+                </MotionNavLink>
               ))}
             </NavLinks>
 
@@ -351,9 +369,9 @@ export const DrawerAppBar = () => {
                 <MenuIcon />
               </MenuToggleButton>
             </ActionsBox>
-          </ToolbarRoot>
+          </MotionToolbarRoot>
         </Container>
-      </AppBarRoot>
+      </MotionAppBarRoot>
       <nav>
         <MobileDrawer
           variant='temporary'

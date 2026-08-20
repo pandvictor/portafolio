@@ -1,6 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { memo } from "react";
+import {
+  AnimatedCounter,
+  Reveal,
+  StaggerGroup,
+  StaggerItem,
+  motionize,
+  transitions,
+} from "../motion";
 
 type StatItem = {
   value: string;
@@ -49,13 +57,30 @@ const StatsGrid = styled(Box)(({ theme }) => ({
   },
 }));
 
+const MotionStatsGrid = motionize(StatsGrid);
+
 const StatCard = styled(Box)(() => ({
+  position: "relative",
+  overflow: "hidden",
   padding: "var(--space-4)",
   borderRadius: 18,
   border: "1px solid var(--border-subtle)",
   background: "rgba(15,23,42,0.6)",
   boxShadow: "0 14px 30px rgba(0,0,0,0.35)",
+  // Accent rail that fills in as the card enters.
+  "&::before": {
+    content: "''",
+    position: "absolute",
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: 3,
+    background: "linear-gradient(180deg, #22d3ee, #a3e635)",
+    opacity: 0.65,
+  },
 }));
+
+const MotionStatCard = motionize(StatCard);
 
 const StatValue = styled(Typography)(() => ({
   fontWeight: 800,
@@ -71,20 +96,45 @@ export const HomeCredibilitySection = memo(
   ({ kicker, title, stats }: HomeCredibilitySectionProps) => {
     if (!stats?.length) return null;
     return (
-      <Section>
-        <Header>
-          <Kicker variant='overline'>{kicker}</Kicker>
-          <Typography variant='h4'>{title}</Typography>
-        </Header>
-        <StatsGrid>
-          {stats.map((stat, idx) => (
-            <StatCard key={`${stat.value}-${idx}`}>
-              <StatValue variant='h4'>{stat.value}</StatValue>
-              <StatLabel variant='body2'>{stat.label}</StatLabel>
-            </StatCard>
-          ))}
-        </StatsGrid>
-      </Section>
+      <Reveal preset='up'>
+        <Section>
+          <StaggerGroup stagger={0.06}>
+            <Header>
+              <StaggerItem>
+                <Kicker variant='overline'>{kicker}</Kicker>
+              </StaggerItem>
+              <StaggerItem preset='up'>
+                <Typography variant='h4'>{title}</Typography>
+              </StaggerItem>
+            </Header>
+          </StaggerGroup>
+          <MotionStatsGrid
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true, amount: 0.3 }}>
+            {stats.map((stat, idx) => (
+              <MotionStatCard
+                key={`${stat.value}-${idx}`}
+                variants={{
+                  hidden: { opacity: 0, y: 22, scale: 0.97 },
+                  visible: { opacity: 1, y: 0, scale: 1 },
+                }}
+                transition={transitions.enter}
+                whileHover={{
+                  y: -6,
+                  borderColor: "rgba(34,211,238,0.45)",
+                  boxShadow: "0 26px 50px rgba(0,0,0,0.5)",
+                }}>
+                <StatValue variant='h4'>
+                  <AnimatedCounter value={stat.value} />
+                </StatValue>
+                <StatLabel variant='body2'>{stat.label}</StatLabel>
+              </MotionStatCard>
+            ))}
+          </MotionStatsGrid>
+        </Section>
+      </Reveal>
     );
   }
 );

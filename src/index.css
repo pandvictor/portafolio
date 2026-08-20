@@ -95,4 +95,13 @@ kbd {
   a {
     color: black;
   }
+
+  /* Scroll-triggered blocks that never entered the viewport would otherwise
+     print at their hidden state. Force everything visible on paper. */
+  * {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
 }

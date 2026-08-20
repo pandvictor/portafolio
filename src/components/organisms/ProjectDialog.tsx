@@ -18,6 +18,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import { publicPath } from "../../constants/gloabals";
 import { ProjectModalPayload } from "../../types/types";
 import { resolveTechIcon } from "../../utils/techIcons";
+import { StaggerGroup, StaggerItem, motionize, transitions } from "../motion";
+import { motion } from "framer-motion";
 
 type Props = {
   open: boolean;
@@ -99,8 +101,27 @@ const DetailMedia = styled("img")(() => ({
   backgroundColor: "rgba(15,23,42,0.6)",
 }));
 
+const MotionTechIconButton = motionize(TechIconButton);
+const MotionOutcomeChip = motionize(OutcomeChip);
+
+/** Framer-driven dialog surface, swapped in for MUI's default Grow transition. */
+const MotionPaper = (props: Record<string, unknown>) => (
+  <motion.div
+    {...props}
+    initial={{ opacity: 0, y: 28, scale: 0.96 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    exit={{ opacity: 0, y: 16, scale: 0.97 }}
+    transition={transitions.enter}
+  />
+);
+
 export const ProjectDialog = ({ open, payload, onClose }: Props) => (
-  <StyledDialog open={open} onClose={onClose} maxWidth='sm' fullWidth>
+  <StyledDialog
+    open={open}
+    onClose={onClose}
+    maxWidth='sm'
+    fullWidth
+    PaperProps={{ component: MotionPaper }}>
     <DialogTitle>
       <Stack direction='row' spacing={1} alignItems='center' justifyContent='space-between'>
         <Stack direction='row' spacing={1} alignItems='center'>
@@ -134,7 +155,13 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
       {payload?.project.outcomes && payload.project.outcomes.length > 0 && (
         <OutcomesRow direction='row' spacing={1} useFlexGap>
           {payload.project.outcomes.map((item, idx) => (
-            <OutcomeChip key={`${item}-${idx}`}>{item}</OutcomeChip>
+            <MotionOutcomeChip
+              key={`${item}-${idx}`}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...transitions.base, delay: 0.1 + idx * 0.05 }}>
+              {item}
+            </MotionOutcomeChip>
           ))}
         </OutcomesRow>
       )}
@@ -144,14 +171,17 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
           return (
             <TechItem key={tech.name} alignItems='center' spacing={0.5}>
               <Tooltip title={tech.name} arrow>
-                <TechIconButton>
+                <MotionTechIconButton
+                  whileHover={{ y: -4, scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={transitions.spring}>
                   <img
                     src={`${publicPath}/images/icons/${icon}`}
                     height={24}
                     width={24}
                     alt={tech.name}
                   />
-                </TechIconButton>
+                </MotionTechIconButton>
               </Tooltip>
               <Typography variant='caption' color='text.secondary' textAlign='center'>
                 {tech.name}
@@ -161,9 +191,11 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
         })}
       </Stack>
       {payload?.project.modal_details && payload.project.modal_details.length > 0 && (
+        <StaggerGroup stagger={0.09} immediate>
         <DetailsGrid container spacing={2}>
           {payload.project.modal_details.map((item, idx) => (
             <Grid item xs={12} key={`${item.image}-${idx}`}>
+              <StaggerItem preset='scale'>
               <Card variant='outlined'>
                 <DetailMedia
                   src={`${publicPath}/images/${item.image}`}
@@ -175,9 +207,11 @@ export const ProjectDialog = ({ open, payload, onClose }: Props) => (
                   </Typography>
                 </CardContent>
               </Card>
+              </StaggerItem>
             </Grid>
           ))}
         </DetailsGrid>
+        </StaggerGroup>
       )}
     </DialogContent>
     <DialogActions>

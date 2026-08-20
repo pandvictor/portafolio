@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import i18n from "../../utils/i18n";
+import { motionize, transitions } from "../motion";
 
 interface RecipeReviewCardProps {
   data: Project;
@@ -138,7 +139,9 @@ const CardRoot = styled(Card)(() => ({
     "linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(10,15,24,0.98) 100%)",
   border: "1px solid var(--border-subtle)",
   boxShadow: "0 20px 50px rgba(0,0,0,0.4)",
-  transition: "transform 0.25s ease, box-shadow 0.25s ease",
+  // Lift + tilt are owned by the framer-motion `TiltCard` wrapper; this element
+  // only handles the surface treatments so the two never fight over `transform`.
+  transition: "box-shadow 0.25s ease, border-color 0.25s ease",
   "&:before": {
     content: "''",
     position: "absolute",
@@ -164,8 +167,8 @@ const CardRoot = styled(Card)(() => ({
     pointerEvents: "none",
   },
   "&:hover": {
-    transform: "translateY(-6px)",
     boxShadow: "0 26px 70px rgba(0,0,0,0.55)",
+    borderColor: "rgba(34,211,238,0.35)",
     "&:before": {
       opacity: 1,
     },
@@ -293,6 +296,8 @@ const MoreInfoButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const MotionMoreInfoButton = motionize(MoreInfoButton);
+
 export const CardItem: React.FC<RecipeReviewCardProps> = ({
   data,
   companyImage,
@@ -378,11 +383,14 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
         )}
       </CardContentRoot>
       <CardActionsRoot disableSpacing>
-        <MoreInfoButton
+        <MotionMoreInfoButton
           size='small'
           fullWidth
           variant='contained'
           color='primary'
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.97 }}
+          transition={transitions.quick}
           onClick={() =>
             onOpen?.({
               project: data,
@@ -393,7 +401,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
             })
           }>
           {i18n.t("more_info")}
-        </MoreInfoButton>
+        </MotionMoreInfoButton>
       </CardActionsRoot>
     </CardRoot>
   );

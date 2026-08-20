@@ -1,9 +1,19 @@
 import { Avatar, Box, Button, Chip, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { memo } from "react";
+import { memo, useRef } from "react";
+import { useScroll, useTransform } from "framer-motion";
 import { Project, ProjectModalPayload } from "../../types/types";
 import { publicPath } from "../../constants/gloabals";
 import { resolveTechIconFromStack } from "../../utils/techIcons";
+import {
+  MagneticButton,
+  Reveal,
+  StaggerGroup,
+  StaggerItem,
+  mediaReveal,
+  motionize,
+  transitions,
+} from "../motion";
 
 type HomeFeaturedProjectSectionProps = {
   kicker: string;
@@ -63,14 +73,18 @@ const MediaFrame = styled(Box)(() => ({
   boxShadow: "0 20px 50px rgba(0,0,0,0.45)",
 }));
 
+const MotionMediaFrame = motionize(MediaFrame);
+
 const MediaImage = styled("img")(() => ({
   position: "absolute",
-  inset: 0,
+  inset: "-6% 0",
   width: "100%",
-  height: "100%",
+  height: "112%",
   objectFit: "cover",
   display: "block",
 }));
+
+const MotionMediaImage = motionize(MediaImage);
 
 const CompanyRow = styled(Stack)(() => ({
   alignItems: "center",
@@ -102,6 +116,8 @@ const OutcomeChip = styled(Chip)(() => ({
   fontWeight: 700,
 }));
 
+const MotionOutcomeChip = motionize(OutcomeChip);
+
 const TechRow = styled(Stack)(() => ({
   flexWrap: "wrap",
 }));
@@ -112,6 +128,8 @@ const TechAvatar = styled(Avatar)(() => ({
   backgroundColor: "rgba(15,23,42,0.65)",
   border: "1px solid var(--border-subtle)",
 }));
+
+const MotionTechAvatar = motionize(TechAvatar);
 
 export const HomeFeaturedProjectSection = memo(
   ({
@@ -132,72 +150,123 @@ export const HomeFeaturedProjectSection = memo(
           ? [companyImage]
           : [];
     const outcomes = project.outcomes ?? [];
+
+    // Slow vertical parallax on the screenshot as the section crosses the viewport.
+    const frameRef = useRef<HTMLDivElement | null>(null);
+    const { scrollYProgress } = useScroll({
+      target: frameRef,
+      offset: ["start end", "end start"],
+    });
+    const imageY = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+
     return (
-      <Section>
-        <Header>
-          <Kicker variant='overline'>{kicker}</Kicker>
-          <Typography variant='h3'>{title}</Typography>
-          <Typography variant='body1' color='text.secondary'>
-            {subtitle}
-          </Typography>
-        </Header>
-        <ContentGrid>
-          <MediaFrame>
-            <MediaImage
-              src={`${publicPath}/images/${project.image}`}
-              alt={project.title}
-            />
-          </MediaFrame>
-          <Stack spacing={2.5}>
-            <CompanyRow direction='row' spacing={1.5}>
-              {logos.map((logo, idx) => (
-                <CompanyLogo
-                  key={`${logo}-${idx}`}
-                  src={`${publicPath}/images/${logo}`}
-                  alt={companyName || project.title}
-                />
-              ))}
-              <Typography variant='h5'>{project.title}</Typography>
-            </CompanyRow>
-            <FeaturedDescription variant='body1' color='text.secondary'>
-              {project.description}
-            </FeaturedDescription>
-            {outcomes.length > 0 && (
-              <OutcomesRow direction='row' spacing={1} useFlexGap>
-                {outcomes.slice(0, 3).map((item, idx) => (
-                  <OutcomeChip key={`${item}-${idx}`} label={item} size='small' variant='outlined' />
-                ))}
-              </OutcomesRow>
-            )}
-            <TechRow direction='row' spacing={1} useFlexGap>
-              {project.tech_stack.slice(0, 6).map((tech, idx) => {
-                const icon = resolveTechIconFromStack(tech);
-                return (
-                  <TechAvatar
-                    key={`${tech.name}-${idx}`}
-                    src={`${publicPath}/images/icons/${icon}`}
-                    alt={tech.name}
-                  />
-                );
-              })}
-            </TechRow>
-            <Button
-              variant='contained'
-              color='primary'
-              size='large'
-              onClick={() =>
-                onOpen?.({
-                  project,
-                  companyImage,
-                  companyImages,
-                  companyName,
-                })
-              }>
-              {cta}
-            </Button>
-          </Stack>
-        </ContentGrid>
-      </Section>
+      <Reveal preset='up'>
+        <Section>
+          <StaggerGroup stagger={0.08}>
+            <Header>
+              <StaggerItem>
+                <Kicker variant='overline'>{kicker}</Kicker>
+              </StaggerItem>
+              <StaggerItem preset='up'>
+                <Typography variant='h3'>{title}</Typography>
+              </StaggerItem>
+              <StaggerItem>
+                <Typography variant='body1' color='text.secondary'>
+                  {subtitle}
+                </Typography>
+              </StaggerItem>
+            </Header>
+          </StaggerGroup>
+          <ContentGrid>
+            <MotionMediaFrame
+              ref={frameRef}
+              variants={mediaReveal}
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true, amount: 0.25 }}
+              whileHover={{ scale: 1.015 }}
+              transition={transitions.base}>
+              <MotionMediaImage
+                style={{ y: imageY }}
+                src={`${publicPath}/images/${project.image}`}
+                alt={project.title}
+              />
+            </MotionMediaFrame>
+            <StaggerGroup stagger={0.07} delayChildren={0.1}>
+              <Stack spacing={2.5}>
+                <StaggerItem>
+                  <CompanyRow direction='row' spacing={1.5}>
+                    {logos.map((logo, idx) => (
+                      <CompanyLogo
+                        key={`${logo}-${idx}`}
+                        src={`${publicPath}/images/${logo}`}
+                        alt={companyName || project.title}
+                      />
+                    ))}
+                    <Typography variant='h5'>{project.title}</Typography>
+                  </CompanyRow>
+                </StaggerItem>
+                <StaggerItem>
+                  <FeaturedDescription variant='body1' color='text.secondary'>
+                    {project.description}
+                  </FeaturedDescription>
+                </StaggerItem>
+                {outcomes.length > 0 && (
+                  <StaggerItem>
+                    <OutcomesRow direction='row' spacing={1} useFlexGap>
+                      {outcomes.slice(0, 3).map((item, idx) => (
+                        <MotionOutcomeChip
+                          key={`${item}-${idx}`}
+                          label={item}
+                          size='small'
+                          variant='outlined'
+                          whileHover={{ y: -3, scale: 1.04 }}
+                          transition={transitions.quick}
+                        />
+                      ))}
+                    </OutcomesRow>
+                  </StaggerItem>
+                )}
+                <StaggerItem>
+                  <TechRow direction='row' spacing={1} useFlexGap>
+                    {project.tech_stack.slice(0, 6).map((tech, idx) => {
+                      const icon = resolveTechIconFromStack(tech);
+                      return (
+                        <MotionTechAvatar
+                          key={`${tech.name}-${idx}`}
+                          src={`${publicPath}/images/icons/${icon}`}
+                          alt={tech.name}
+                          title={tech.name}
+                          whileHover={{ y: -5, scale: 1.12 }}
+                          transition={transitions.spring}
+                        />
+                      );
+                    })}
+                  </TechRow>
+                </StaggerItem>
+                <StaggerItem>
+                  <MagneticButton>
+                    <Button
+                      variant='contained'
+                      color='primary'
+                      size='large'
+                      onClick={() =>
+                        onOpen?.({
+                          project,
+                          companyImage,
+                          companyImages,
+                          companyName,
+                        })
+                      }>
+                      {cta}
+                    </Button>
+                  </MagneticButton>
+                </StaggerItem>
+              </Stack>
+            </StaggerGroup>
+          </ContentGrid>
+        </Section>
+      </Reveal>
     );
   }
 );
