@@ -32,7 +32,7 @@ export function ResumePage() {
 
   return (
     <MainTemplate>
-      <Box sx={{ padding: 0, margin: 0 }}>
+      <Box sx={{ padding: 0, margin: 0 }} className='resume-root'>
         <Grid
           container
           spacing={3}
@@ -44,7 +44,7 @@ export function ResumePage() {
           }}>
           <ResumeHeaderSection resume={resume} />
 
-          <Grid item xs={12} md={9}>
+          <Grid item xs={12} md={9} className='resume-main'>
             <Reveal preset='up' as='section'>
               <Typography paragraph>{resume.summary}</Typography>
             </Reveal>
@@ -53,7 +53,7 @@ export function ResumePage() {
             <ResumeEducationSection resume={resume} />
           </Grid>
 
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={3} className='resume-side'>
             <StaggerGroup stagger={0.12}>
               <StaggerItem preset='up'>
                 <ResumeContactSection contacts={contactInfo} />
@@ -69,10 +69,8 @@ export function ResumePage() {
         </Grid>
 
         <Box
-          sx={{
-            display: { print: "none" },
-            mt: 2,
-          }}>
+          sx={{ mt: 2 }}
+          className='no-print'>
           <PrintButton onClick={handlePrint} />
         </Box>
 

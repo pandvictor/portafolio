@@ -1,7 +1,7 @@
 import { Box, Tooltip } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { ContactInfo } from "../../types/types";
-import { publicPath } from "../../constants/gloabals";
+import { ContactIcon } from "../atoms";
 import { motionize, transitions } from "../motion";
 
 type FloatingActionButtonsProps = {
@@ -21,7 +21,7 @@ const Dock = styled(Box)(({ theme }) => ({
   zIndex: 1000,
   display: "flex",
   flexDirection: "column",
-  gap: theme.spacing(0.75),
+  gap: theme.spacing(0.5),
   padding: theme.spacing(0.75),
   borderRadius: 999,
   border: "1px solid var(--border-subtle)",
@@ -46,22 +46,18 @@ const Dock = styled(Box)(({ theme }) => ({
 const MotionDock = motionize(Dock);
 
 const DockLink = styled("a")(() => ({
-  width: 34,
-  height: 34,
+  width: 44,
+  height: 44,
   borderRadius: "50%",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   border: "1px solid transparent",
+  backgroundColor: "rgba(148,163,184,0.08)",
   transition: "background-color 0.2s ease, border-color 0.2s ease",
   "&:hover": {
-    backgroundColor: "rgba(34,211,238,0.14)",
+    backgroundColor: "rgba(34,211,238,0.16)",
     borderColor: "rgba(34,211,238,0.45)",
-  },
-  "& img": {
-    width: 17,
-    height: 17,
-    objectFit: "contain",
   },
 }));
 
@@ -87,12 +83,7 @@ const FloatingActionButtons = ({ data }: FloatingActionButtonsProps) => {
             whileHover={{ scale: 1.12 }}
             whileTap={{ scale: 0.94 }}
             transition={transitions.spring}>
-            <img
-              src={`${publicPath}/images/icons/${item.icon}`}
-              alt=''
-              aria-hidden
-              loading='lazy'
-            />
+            <ContactIcon icon={item.icon} size={22} />
           </MotionDockLink>
         </Tooltip>
       ))}

@@ -18,6 +18,7 @@ export const ResumeWorkCard = memo(({ work }: ResumeWorkCardProps) => {
 
   return (
     <MotionPaper
+      className='resume-entry'
       elevation={0}
       sx={{ p: 2.5, mb: 2.5 }}
       whileHover={{ y: -4, borderColor: "rgba(34,211,238,0.35)" }}

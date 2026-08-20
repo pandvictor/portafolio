@@ -5,7 +5,8 @@ import { styled } from "@mui/material/styles";
 import FloatingActionButtons from "../molecules/FloatingActionButtons";
 import { ContactInfo } from "../../types";
 import i18n from "../../utils/i18n";
-import { publicPath, version } from "../../constants/gloabals";
+import { version } from "../../constants/gloabals";
+import { ContactIcon } from "../atoms";
 import {
   PageTransition,
   Reveal,
@@ -122,6 +123,7 @@ export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
     <PageRoot>
       <ScrollProgress />
       <MotionAmbientLayer
+        className='ambient-layer'
         aria-hidden
         animate={{ opacity: [0.45, 0.75, 0.45], scale: [1, 1.05, 1] }}
         transition={{ duration: 20, ease: "easeInOut", repeat: Infinity }}
@@ -132,7 +134,7 @@ export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
           <PageTransition>{children}</PageTransition>
         </ContentContainer>
         <FloatingActionButtons data={contact_info.slice(2)} />
-        <Container maxWidth='lg'>
+        <Container maxWidth='lg' className='site-footer'>
           <FooterRoot>
             <Reveal preset='up'>
               <FooterContent>
@@ -160,12 +162,7 @@ export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
                           rel='noreferrer'
                           whileHover={{ y: -3 }}
                           whileTap={{ scale: 0.97 }}>
-                          <img
-                            src={`${publicPath}/images/icons/${item.icon}`}
-                            width={18}
-                            height={18}
-                            alt={item.title}
-                          />
+                          <ContactIcon icon={item.icon} size={18} />
                           {item.title}
                         </MotionFooterLink>
                       </StaggerItem>
@@ -176,7 +173,7 @@ export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
             </Reveal>
           </FooterRoot>
         </Container>
-        <VersionRow>
+        <VersionRow className='site-colophon'>
           <Typography variant='caption' color='text.secondary'>
             © {new Date().getFullYear()} {i18n.t("resume.full_name")}
           </Typography>

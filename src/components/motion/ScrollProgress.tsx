@@ -14,6 +14,7 @@ export const ScrollProgress = () => {
 
   return (
     <motion.div
+      className='scroll-progress'
       aria-hidden
       style={{
         scaleX,

@@ -12,13 +12,13 @@ export const ResumeLanguageToggle = memo(
     const label = i18n.t("resume.change_language");
     return (
       <Stack
+        className='no-print'
         direction={{ xs: "row", md: "column" }}
         sx={{
           position: "fixed",
+          left: "10px",
           bottom: "10px",
-          right: "10px",
           zIndex: 1000,
-          display: { print: "none" },
         }}>
         <Button onClick={onToggle} aria-label={label}>
           <Tooltip title={label} arrow>

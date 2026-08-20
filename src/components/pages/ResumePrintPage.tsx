@@ -23,8 +23,8 @@ export function ResumePrintPage() {
         return <span> {renderStars} </span>;
     };
 
-    const workHistory = resume?.work_history?.map((work) => (
-        <Paper key={work.position} elevation={0} style={{ padding: '20px', marginBottom: '20px' }}>
+    const workHistory = resume?.work_history?.map((work, index) => (
+        <Paper key={`${work.company}-${work.position}-${index}`} elevation={0} style={{ padding: '20px', marginBottom: '20px' }}>
             <Stack direction="row" spacing={3} sx={{ flexGrow: 1 }}>
                 <div>
                     <Typography variant="subtitle1">

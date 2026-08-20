@@ -76,13 +76,57 @@ kbd {
 }
 
 @media print {
-  body {
-    background: white;
-    color: black;
+  @page {
+    margin: 14mm 12mm;
   }
 
-  a {
-    color: black;
+  /* The app is dark-themed end to end; paper needs the opposite. */
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: auto !important;
+    background: #ffffff !important;
+    color: #101828 !important;
+  }
+
+  /* Screen-only chrome. `display: { print: "none" }` in MUI's sx prop is not a
+     real breakpoint and silently does nothing, which is why the nav bar, the
+     print button, and the language toggle used to end up in the PDF. */
+  header.MuiAppBar-root,
+  .no-print,
+  .floating-buttons,
+  .scroll-progress,
+  .ambient-layer,
+  .site-footer,
+  .site-colophon,
+  .MuiTooltip-popper,
+  .MuiDrawer-root,
+  .MuiBackdrop-root {
+    display: none !important;
+  }
+
+  /* Flatten every dark surface, gradient, and glow. */
+  *,
+  *::before,
+  *::after {
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    color: #101828 !important;
+  }
+
+  .MuiPaper-root,
+  .MuiCard-root,
+  .MuiBox-root,
+  section,
+  div {
+    background-color: transparent !important;
   }
 
   /* Scroll-triggered blocks that never entered the viewport would otherwise
@@ -92,5 +136,89 @@ kbd {
     transform: none !important;
     animation: none !important;
     transition: none !important;
+  }
+
+  a {
+    color: #101828 !important;
+    text-decoration: none !important;
+  }
+
+  hr,
+  .MuiDivider-root {
+    border-color: #d0d5dd !important;
+  }
+
+  /* Secondary copy keeps a lighter weight so the hierarchy survives. */
+  .MuiTypography-body2,
+  .MuiTypography-caption,
+  .MuiTypography-subtitle2 {
+    color: #475467 !important;
+  }
+
+  /* Keep the resume two-column: paper is narrower than the `md` breakpoint,
+     so MUI would otherwise stack the sidebar below the whole work history. */
+  .resume-root .MuiGrid-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    border: none !important;
+  }
+
+  .resume-main {
+    flex: 0 0 66% !important;
+    max-width: 66% !important;
+  }
+
+  .resume-side {
+    flex: 0 0 34% !important;
+    max-width: 34% !important;
+  }
+
+  /* A job should never be split across a page boundary. */
+  .resume-entry,
+  .resume-entry-wrap {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .resume-entry {
+    border-bottom: 1px solid #e4e7ec !important;
+    border-radius: 0 !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .MuiTypography-h4,
+  .MuiTypography-h5,
+  .MuiTypography-h6 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  /* Chip-style tags read better as plain outlined labels on paper. */
+  .MuiChip-root {
+    border: 1px solid #d0d5dd !important;
+    background: transparent !important;
+  }
+
+  /* Web links carry their address on paper, where a label alone leads nowhere. */
+  .resume-contact a[data-print-url]::after {
+    content: " · " attr(data-print-url);
+    color: #475467 !important;
+    font-weight: 400;
+    word-break: break-all;
+  }
+
+  /* The sidebar uses generous screen spacing that turns into dead pages here. */
+  .resume-side section {
+    margin-bottom: 1.5em !important;
   }
 }

@@ -73,6 +73,7 @@ export const ResumeWorkHistorySection = memo(
         {workHistory.map((work) => (
           <MotionTimelineEntry
             key={`${work.company}-${work.position}-${work.start_date}`}
+            className='resume-entry-wrap'
             variants={entryVariants}>
             <TimelineDot aria-hidden />
             <ResumeWorkCard work={work} />
