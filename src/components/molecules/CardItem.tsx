@@ -170,6 +170,17 @@ const CardRoot = styled(Card)(() => ({
   },
 }));
 
+/** Placeholder that preserves the media slot for projects without artwork. */
+const MediaFallback = styled(Box)(({ theme }) => ({
+  position: "relative",
+  margin: theme.spacing(1),
+  paddingTop: "56.25%",
+  borderRadius: 18,
+  border: "1px solid var(--border-subtle)",
+  background:
+    "linear-gradient(140deg, rgba(34,211,238,0.10), rgba(163,230,53,0.06)), rgba(9,14,23,0.9)",
+}));
+
 const CardContentRoot = styled(CardContent)(({ theme }) => ({
   flexGrow: 1,
   display: "flex",
@@ -393,15 +404,19 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
 
   return (
     <CardRoot>
-      <ImageIcons
-        actionIcons={null}
-        presentation={getProjectImagePresentation(image)}
-        image={{
-          src: `${publicPath}/images/${image}`,
-          srcSet: "",
-          alt: title,
-        }}
-      />
+      {image ? (
+        <ImageIcons
+          actionIcons={null}
+          presentation={getProjectImagePresentation(image)}
+          image={{
+            src: `${publicPath}/images/${image}`,
+            srcSet: "",
+            alt: title,
+          }}
+        />
+      ) : (
+        <MediaFallback aria-hidden />
+      )}
       <CardContentRoot>
         <MetaRow>
           {logos.map((img, idx) => {

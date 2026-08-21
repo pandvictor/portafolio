@@ -655,7 +655,6 @@
         "end_date": "2023-05-31",
         "is_current": false,
         "company": "WizeDevs",
-        "company_image": "canjeaton2.png",
         "position": "Senior Mobile Developer",
         "description": "Reconstrucción completa de una app móvil heredada, optimizando el rendimiento y la experiencia de usuario.",
         "tasks": [
@@ -668,7 +667,6 @@
           {
             "title": "Reingeniería App Residencial",
             "description": "Lanzamiento de una nueva versión con flujos seguros, notificaciones y soporte OTA.",
-            "image": "canjeaton.png",
             "url": "https://wizedevs.com",
             "date": "2023-05-01",
             "tech_stack": [
@@ -691,7 +689,6 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Asofarma Pharma",
-        "company_image": "payroll.jpg",
         "position": "Tech Lead & Full-Stack",
         "description": "Implementación full-stack y despliegue AWS para la plataforma de quinielas del Mundial Qatar 2022.",
         "tasks": [
@@ -704,7 +701,6 @@
           {
             "title": "Qatar 2022 Pool",
             "description": "Portal empresarial gamificado con autenticación segura y reportes en vivo.",
-            "image": "payroll2.jpg",
             "url": "https://www.asofarma.com",
             "date": "2022-12-01",
             "tech_stack": [
@@ -766,7 +762,6 @@
         "end_date": "2022-10-31",
         "is_current": false,
         "company": "Cognits",
-        "company_image": "10x.png",
         "position": "Senior Full-Stack",
         "description": "Soporte para la plataforma LEND, agregando nuevas funcionalidades y migraciones tecnológicas.",
         "tasks": [
@@ -779,7 +774,6 @@
           {
             "title": "Plataforma LEND",
             "description": "Solución financiera con componentes modulares y despliegues automatizados.",
-            "image": "payroll.jpg",
             "url": "https://www.cognits.co",
             "date": "2022-09-01",
             "tech_stack": [
@@ -887,7 +881,6 @@
         "end_date": "2021-10-31",
         "is_current": false,
         "company": "International Organization for Migration",
-        "company_image": "payroll2.jpg",
         "position": "Tech Lead & Senior Full-Stack",
         "description": "Análisis y rediseño arquitectónico del Sistema de Visas Temporales (IGM).",
         "tasks": [
@@ -1092,7 +1085,6 @@
           {
             "title": "Plataformas multinacionales",
             "description": "Suite de soluciones para ONU con monitoreo en campo y backoffice seguro.",
-            "image": "payroll.jpg",
             "url": "https://www.un.org",
             "date": "2015-05-01",
             "tech_stack": [
@@ -1115,7 +1107,6 @@
         "end_date": "2013-12-31",
         "is_current": false,
         "company": "SAT Guatemala",
-        "company_image": "10x.png",
         "position": "Full-Stack Developer",
         "description": "Modernización de sistemas de impuestos y aduanas usando Java, OAS, Spring y Oracle.",
         "tasks": [
@@ -1128,7 +1119,6 @@
           {
             "title": "Sistemas tributarios",
             "description": "Plataformas internas para declaraciones y seguimiento de impuestos.",
-            "image": "canjeaton.png",
             "url": "https://portal.sat.gob.gt",
             "date": "2013-01-01",
             "tech_stack": [

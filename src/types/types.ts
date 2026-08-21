@@ -36,7 +36,8 @@ export type CoverLetter = {
 export type Project = {
     title:       string;
     description: string;
-    image:       string;
+    /** Optional: a few older entries have no artwork. */
+    image?:      string;
     url:         string;
     date:        string;
     tech_stack:  TechStack[];
@@ -112,7 +113,7 @@ export type WorkHistory = {
     end_date:     string;
     is_current:   boolean;
     company:      string;
-    company_image: string | string[];
+    company_image?: string | string[];
     show_on_home?: boolean;
     home_order?: number;
     position:     string;

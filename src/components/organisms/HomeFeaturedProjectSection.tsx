@@ -153,11 +153,13 @@ export const HomeFeaturedProjectSection = memo(
               viewport={{ once: true, amount: 0.25 }}
               whileHover={{ scale: 1.015 }}
               transition={transitions.base}>
-              <MotionMediaImage
-                style={{ y: imageY }}
-                src={`${publicPath}/images/${project.image}`}
-                alt={project.title}
-              />
+              {project.image && (
+                <MotionMediaImage
+                  style={{ y: imageY }}
+                  src={`${publicPath}/images/${project.image}`}
+                  alt={project.title}
+                />
+              )}
             </MotionMediaFrame>
             <StaggerGroup stagger={0.07} delayChildren={0.1}>
               <Stack spacing={2.5}>
