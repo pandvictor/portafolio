@@ -43,8 +43,12 @@ export const ResumeWorkCard = memo(({ work }: ResumeWorkCardProps) => {
           </Typography>
         </div>
         <div>
-          <Typography variant='h5'>{work.position}</Typography>
-          <Typography variant='h6'>{work.company}</Typography>
+          <Typography variant='h5' component='h3'>
+            {work.position}
+          </Typography>
+          <Typography variant='h6' component='p'>
+            {work.company}
+          </Typography>
         </div>
       </Stack>
       <Box sx={{ ml: { xs: 0, md: "140px" } }}>

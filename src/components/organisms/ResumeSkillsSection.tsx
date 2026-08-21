@@ -12,11 +12,11 @@ type ResumeSkillsSectionProps = {
 
 export const ResumeSkillsSection = memo(({ skills }: ResumeSkillsSectionProps) => (
   <section style={{ marginBottom: "5em" }}>
-    <Typography variant='h5'>{i18n.t("resume.skills")}</Typography>
+    <Typography variant='h5' component='h2'>{i18n.t("resume.skills")}</Typography>
     <hr />
     {skills.map((item, index) => (
       <section key={index} style={{ marginBottom: 30 }}>
-        <Typography variant='h6' sx={{ mb: 1 }}>
+        <Typography variant='h6' component='h3' sx={{ mb: 1 }}>
           {item.title}
           <Stars count={item.stars} />
         </Typography>

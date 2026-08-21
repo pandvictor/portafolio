@@ -366,6 +366,8 @@ export const DrawerAppBar = () => {
               </Tooltip>
               <MenuToggleButton
                 size='small'
+                aria-label={language === "es" ? "Abrir menú" : "Open menu"}
+                aria-expanded={mobileOpen}
                 aria-controls='menu-appbar'
                 aria-haspopup='true'
                 onClick={handleDrawerToggle}

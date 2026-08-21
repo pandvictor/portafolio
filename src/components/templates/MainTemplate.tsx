@@ -142,7 +142,7 @@ export const MainTemplate: React.FC<{ children: React.ReactNode }> = ({
                   <FooterTag variant='overline'>
                     {footerCopy.availability_tag}
                   </FooterTag>
-                  <Typography variant='h6'>
+                  <Typography variant='h6' component='p'>
                     {footerCopy.availability_title}
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>

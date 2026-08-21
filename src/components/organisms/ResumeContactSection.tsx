@@ -26,7 +26,7 @@ const printableUrl = (url?: string) => {
 export const ResumeContactSection = memo(
   ({ contacts }: ResumeContactSectionProps) => (
     <section className='resume-contact' style={{ marginBottom: "5em" }}>
-      <Typography variant='h5'>{i18n.t("resume.contact")}</Typography>
+      <Typography variant='h5' component='h2'>{i18n.t("resume.contact")}</Typography>
       <hr />
       <Stack direction='column' spacing={1}>
         {contacts.map((item, index) => (

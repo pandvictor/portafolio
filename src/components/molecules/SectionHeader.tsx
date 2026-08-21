@@ -87,7 +87,9 @@ export const SectionHeader = memo(
             </KickerRow>
           </StaggerItem>
           <StaggerItem preset='up'>
-            <Typography variant={size === "lead" ? "h3" : "h4"}>{title}</Typography>
+            <Typography variant={size === "lead" ? "h3" : "h4"} component='h2'>
+              {title}
+            </Typography>
           </StaggerItem>
           {subtitle && (
             <StaggerItem>

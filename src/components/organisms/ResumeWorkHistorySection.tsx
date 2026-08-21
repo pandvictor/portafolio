@@ -62,7 +62,7 @@ export const ResumeWorkHistorySection = memo(
   ({ workHistory }: ResumeWorkHistorySectionProps) => (
     <section>
       <Reveal preset='up'>
-        <Typography variant='h5'>{i18n.t("resume.experience")}</Typography>
+        <Typography variant='h5' component='h2'>{i18n.t("resume.experience")}</Typography>
         <hr />
       </Reveal>
       <MotionTimeline

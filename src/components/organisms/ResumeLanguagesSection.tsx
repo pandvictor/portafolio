@@ -10,12 +10,12 @@ type ResumeLanguagesSectionProps = {
 export const ResumeLanguagesSection = memo(
   ({ languages }: ResumeLanguagesSectionProps) => (
     <section style={{ marginBottom: "5em" }}>
-      <Typography variant='h5'>{i18n.t("resume.languages_title")}</Typography>
+      <Typography variant='h5' component='h2'>{i18n.t("resume.languages_title")}</Typography>
       <hr />
       <Stack direction='column' spacing={1}>
         {languages.map((item, index) => (
           <Stack key={index} direction='row' spacing={1} alignItems='center'>
-            <Typography variant='h6'>{item.language}</Typography>
+            <Typography variant='h6' component='p'>{item.language}</Typography>
             <Box
               component='span'
               sx={{

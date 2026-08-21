@@ -42,10 +42,10 @@ export const ResumeHeaderSection = memo(({ resume }: ResumeHeaderSectionProps) =
       <ListItemText
         children={
           <div style={{ flex: 1 }}>
-            <Typography variant='h4' color='text.primary'>
+            <Typography variant='h4' component='h1' color='text.primary'>
               {resume.full_name}
             </Typography>
-            <Typography variant='h6' color='text.secondary'>
+            <Typography variant='h6' component='p' color='text.secondary'>
               {resume.position}
             </Typography>
           </div>

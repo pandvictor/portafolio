@@ -1304,5 +1304,10 @@
     "close": "Cancelar"
   },
   "close": "Cerrar",
-  "visit_project": "Ver proyecto"
+  "visit_project": "Ver proyecto",
+  "not_found": {
+    "title": "Página no encontrada",
+    "desc": "Ese enlace no apunta a nada en este sitio. Los proyectos, el CV y la carta de presentación están a un clic.",
+    "cta": "Volver al inicio"
+  }
 }

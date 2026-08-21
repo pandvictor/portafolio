@@ -109,6 +109,18 @@ const theme = createTheme({
     borderRadius: 14,
   },
   components: {
+    MuiTypography: {
+      defaultProps: {
+        // MUI maps subtitle1/subtitle2 to <h6>, which littered every page
+        // outline with headings that are not section headings.
+        variantMapping: {
+          subtitle1: "p",
+          subtitle2: "p",
+          body1: "p",
+          body2: "p",
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: {
         body: {

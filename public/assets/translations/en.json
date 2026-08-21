@@ -1304,5 +1304,10 @@
     "close": "Cancel"
   },
   "close": "Close",
-  "visit_project": "Visit project"
+  "visit_project": "Visit project",
+  "not_found": {
+    "title": "Page not found",
+    "desc": "That link does not point anywhere on this site. The work, the resume, and the cover letter are all one click away.",
+    "cta": "Back to home"
+  }
 }

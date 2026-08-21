@@ -1,6 +1,7 @@
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
 import { Box, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import type { TypographyProps } from "@mui/material/Typography";
 import { memo } from "react";
 import { publicPath } from "../../constants/gloabals";
 import { ContactInfo, CoverLetter, Resume } from "../../types";
@@ -77,6 +78,9 @@ const Paper = styled(Box)(({ theme }) => ({
   },
 }));
 
+/** Secondary copy on the light paper. `text.secondary` is a dark-theme token. */
+const PAPER_MUTED = "#475467";
+
 const PaperHeader = styled(Box)(({ theme }) => ({
   display: "grid",
   gap: theme.spacing(3),
@@ -104,7 +108,7 @@ const Title = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const Role = styled(Typography)(() => ({
+const Role = styled(Typography)<TypographyProps<"p">>(() => ({
   color: "#334155",
   fontWeight: 600,
 }));
@@ -230,7 +234,9 @@ export const CoverLetterDocument = memo(
         <Intro>
           <Box>
             <Eyebrow variant='overline'>{coverLetter.eyebrow}</Eyebrow>
-            <Typography variant='h3'>{coverLetter.headline}</Typography>
+            <Typography variant='h3' component='h1'>
+              {coverLetter.headline}
+            </Typography>
             <Typography variant='body1' color='text.secondary'>
               {coverLetter.subheadline}
             </Typography>
@@ -254,16 +260,20 @@ export const CoverLetterDocument = memo(
               <Title variant='h2'>
                 {coverLetter.title} | {resume.full_name}
               </Title>
-              <Role variant='h6'>{resume.position}</Role>
+              <Role variant='h6' component='p'>
+                {resume.position}
+              </Role>
               <Typography variant='body1'>{coverLetter.subheadline}</Typography>
             </HeaderCopy>
 
             <ContactCard>
-              <Typography variant='overline' color='text.secondary'>
+              <Typography variant='overline' sx={{ color: PAPER_MUTED }}>
                 {coverLetter.recipient_label}
               </Typography>
-              <Typography variant='h6'>{coverLetter.recipient_value}</Typography>
-              <Typography variant='body2' color='text.secondary'>
+              <Typography variant='h6' component='p'>
+                {coverLetter.recipient_value}
+              </Typography>
+              <Typography variant='body2' sx={{ color: PAPER_MUTED }}>
                 {coverLetter.location}
               </Typography>
               {primaryContacts.map((item) => (
@@ -284,7 +294,7 @@ export const CoverLetterDocument = memo(
                 <SectionBlock key={section.title}>
                   <SectionTitle>{section.title}</SectionTitle>
                   {section.paragraphs?.map((paragraph) => (
-                    <Typography key={paragraph} variant='body1' color='text.secondary'>
+                    <Typography key={paragraph} variant='body1' sx={{ color: PAPER_MUTED }}>
                       {paragraph}
                     </Typography>
                   ))}
@@ -292,7 +302,7 @@ export const CoverLetterDocument = memo(
                     <BulletList>
                       {section.bullets.map((item) => (
                         <li key={item}>
-                          <Typography variant='body1' color='text.secondary'>
+                          <Typography variant='body1' sx={{ color: PAPER_MUTED }}>
                             {item}
                           </Typography>
                         </li>

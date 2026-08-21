@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
 import type { ButtonProps } from "@mui/material/Button";
+import type { TypographyProps } from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import i18n from "../../utils/i18n";
 import { motionize, transitions } from "../motion";
@@ -244,7 +245,7 @@ const YearText = styled(Typography)(() => ({
   letterSpacing: "0.08em",
 }));
 
-const ProjectTitle = styled(Typography)(({ theme }) => ({
+const ProjectTitle = styled(Typography)<TypographyProps<"h3">>(({ theme }) => ({
   fontWeight: 700,
   lineHeight: 1.25,
   color: theme.palette.text.primary,
@@ -431,7 +432,9 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
           {year && <YearText variant='caption'>{year}</YearText>}
         </MetaRow>
 
-        <ProjectTitle variant='h6'>{title}</ProjectTitle>
+        <ProjectTitle variant='h6' component='h3'>
+          {title}
+        </ProjectTitle>
 
         {outcomes.length > 0 && (
           <OutcomesRow direction='row' useFlexGap>

@@ -6,10 +6,10 @@ import { MotionConfig } from "framer-motion";
 import "./index.css";
 import HomePage from "./components/pages/HomePage.tsx";
 import { LanguageProvider } from "./context/LanguageContext.tsx";
-import { MainTemplate } from "./components/templates/index.tsx";
 import {
   CoverLetterPage,
   ExercisePage,
+  NotFoundPage,
   ResumePage,
   ResumePrintPage,
   UsersCrudPage,
@@ -75,49 +75,8 @@ const router = createBrowserRouter([
     element: <ResumePrintPage />,
   },
   {
-    path: "/contact",
-    element: (
-      <MainTemplate>
-        {" "}
-        <div>Contact</div>
-      </MainTemplate>
-    ),
-  },
-  {
-    path: "/terms",
-    element: (
-      <MainTemplate>
-        {" "}
-        <div>Terms and conditions</div>
-      </MainTemplate>
-    ),
-  },
-  {
-    path: "/privacy",
-    element: (
-      <MainTemplate>
-        {" "}
-        <div>Privacy policy</div>
-      </MainTemplate>
-    ),
-  },
-  {
-    path: "/404",
-    element: (
-      <MainTemplate>
-        {" "}
-        <div>Not found</div>
-      </MainTemplate>
-    ),
-  },
-  {
     path: "*",
-    element: (
-      <MainTemplate>
-        {" "}
-        <div>Not found</div>
-      </MainTemplate>
-    ),
+    element: <NotFoundPage />,
   },
 ]);
 

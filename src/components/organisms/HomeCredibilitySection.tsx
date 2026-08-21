@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import type { TypographyProps } from "@mui/material/Typography";
 import { memo, useMemo } from "react";
 import { SectionHeader, SectionSurface } from "../molecules";
 import { AnimatedCounter, Reveal, motionize, transitions } from "../motion";
@@ -59,7 +60,7 @@ const StatCard = styled(Box)(({ theme }) => ({
 
 const MotionStatCard = motionize(StatCard);
 
-const Figure = styled(Typography)(({ theme }) => ({
+const Figure = styled(Typography)<TypographyProps<"p">>(({ theme }) => ({
   fontWeight: 800,
   letterSpacing: "-0.03em",
   lineHeight: 1,
@@ -118,7 +119,7 @@ export const HomeCredibilitySection = memo(
                   borderColor: "rgba(34,211,238,0.45)",
                   boxShadow: "0 26px 50px rgba(0,0,0,0.5)",
                 }}>
-                <Figure variant='h3'>
+                <Figure variant='h3' component='p'>
                   <AnimatedCounter value={stat.figure} />
                 </Figure>
                 {stat.unit && <Unit variant='overline'>{stat.unit}</Unit>}

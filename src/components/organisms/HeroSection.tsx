@@ -1,6 +1,7 @@
 import { Box, Button, Chip, Stack, Typography, useMediaQuery } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import type { ButtonProps } from "@mui/material/Button";
+import type { TypographyProps } from "@mui/material/Typography";
 import { printResumePath, publicPath } from "../../constants/gloabals";
 import {
   HeroAvatar,
@@ -159,13 +160,13 @@ const OutlineSecondaryChip = styled(Chip)(() => ({
   color: "var(--text-primary)",
 }));
 
-const HeroName = styled(Typography)(() => ({
+const HeroName = styled(Typography)<TypographyProps<"h1">>(() => ({
   fontWeight: 800,
   lineHeight: 1.1,
   letterSpacing: "-0.02em",
 }));
 
-const HeroRole = styled(Typography)(() => ({
+const HeroRole = styled(Typography)<TypographyProps<"p">>(() => ({
   fontWeight: 600,
 }));
 
@@ -231,7 +232,7 @@ const LinkedInIcon = styled("img")(() => ({
   height: 18,
 }));
 
-const SectionTitle = styled(Typography)(() => ({
+const SectionTitle = styled(Typography)<TypographyProps<"h2">>(() => ({
   fontWeight: 800,
   lineHeight: 1.1,
   letterSpacing: "-0.02em",
@@ -481,6 +482,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <StaggerItem preset='up'>
                   <HeroName
                     variant='h3'
+                    component='h1'
                     sx={{ fontSize: { xs: "2rem", sm: "2.4rem", md: "3rem" } }}>
                     <ShimmerText>{resume?.full_name}</ShimmerText>
                   </HeroName>
@@ -488,6 +490,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <StaggerItem>
                   <HeroRole
                     variant='h5'
+                    component='p'
                     color='text.secondary'
                     sx={{ fontSize: { xs: "1.05rem", sm: "1.2rem" } }}>
                     {resume?.position}
@@ -588,7 +591,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <HeroContent>
             <HeroLeft spacing={{ xs: 2, sm: 2.5 }}>
               <GradientChip label={i18n.t("hero.back.badge")} size='small' />
-              <SectionTitle variant='h4'>{i18n.t("hero.back.title")}</SectionTitle>
+              <SectionTitle variant='h4' component='h2'>
+                {i18n.t("hero.back.title")}
+              </SectionTitle>
               <SectionBody variant='body1' color='text.secondary'>
                 {i18n.t("hero.back.summary")}
               </SectionBody>

@@ -170,7 +170,9 @@ export const HomeFeaturedProjectSection = memo(
                         alt={companyName || project.title}
                       />
                     ))}
-                    <Typography variant='h5'>{project.title}</Typography>
+                    <Typography variant='h5' component='h3'>
+                      {project.title}
+                    </Typography>
                   </CompanyRow>
                 </StaggerItem>
                 <StaggerItem>
