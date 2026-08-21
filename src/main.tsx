@@ -8,11 +8,9 @@ import HomePage from "./components/pages/HomePage.tsx";
 import { LanguageProvider } from "./context/LanguageContext.tsx";
 import {
   CoverLetterPage,
-  ExercisePage,
   NotFoundPage,
   ResumePage,
   ResumePrintPage,
-  UsersCrudPage,
 } from "./components/pages";
 import theme from "./theme";
 //import App from './App.tsx';
@@ -21,18 +19,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Navigate to="/portafolio" replace />,
-  },
-  {
-    path: "/portafolio/ex",
-    element: <ExercisePage />,
-  },
-  {
-    path: "/users",
-    element: <UsersCrudPage />,
-  },
-  {
-    path: "/portafolio/users",
-    element: <UsersCrudPage />,
   },
   {
     path: "/portafolio",

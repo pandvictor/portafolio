@@ -1,10 +1,11 @@
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, CircularProgress, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import type { TypographyProps } from "@mui/material/Typography";
-import { memo } from "react";
+import { memo, useCallback, useState } from "react";
 import { publicPath } from "../../constants/gloabals";
 import { ContactInfo, CoverLetter, Resume } from "../../types";
+import { downloadCoverLetterPdf } from "../../utils/downloadResumePdf";
 
 type CoverLetterDocumentProps = {
   coverLetter: CoverLetter;
@@ -45,7 +46,10 @@ const ActionStack = styled(Stack)(({ theme }) => ({
   },
 }));
 
-const DownloadButton = styled("a")(({ theme }) => ({
+const DownloadButton = styled("button")(({ theme }) => ({
+  border: "none",
+  cursor: "pointer",
+  font: "inherit",
   display: "inline-flex",
   alignItems: "center",
   gap: theme.spacing(1),
@@ -62,6 +66,11 @@ const DownloadButton = styled("a")(({ theme }) => ({
     transform: "translateY(-2px)",
     boxShadow: "0 22px 44px rgba(0,0,0,0.45)",
     backgroundColor: theme.palette.secondary.dark,
+  },
+  "&:disabled": {
+    opacity: 0.6,
+    cursor: "progress",
+    transform: "none",
   },
 }));
 
@@ -223,6 +232,16 @@ const FooterNote = styled(Typography)(({ theme }) => ({
 
 export const CoverLetterDocument = memo(
   ({ coverLetter, resume, contacts, language }: CoverLetterDocumentProps) => {
+    const [downloading, setDownloading] = useState(false);
+    const handleDownload = useCallback(async () => {
+      setDownloading(true);
+      try {
+        await downloadCoverLetterPdf({ coverLetter, resume, language });
+      } finally {
+        setDownloading(false);
+      }
+    }, [coverLetter, language, resume]);
+
     const primaryContacts = contacts.filter((item) =>
       ["email.svg", "phone.svg", "linkedin.svg"].includes(item.icon)
     );
@@ -243,9 +262,14 @@ export const CoverLetterDocument = memo(
           </Box>
           <ActionStack>
             <DownloadButton
-              download
-              href={`${publicPath}/files/cover-letter-victor-hernandez-${language}.pdf`}>
-              <DownloadRoundedIcon fontSize='small' />
+              type='button'
+              onClick={handleDownload}
+              disabled={downloading}>
+              {downloading ? (
+                <CircularProgress size={16} color='inherit' />
+              ) : (
+                <DownloadRoundedIcon fontSize='small' />
+              )}
               {coverLetter.download_label}
             </DownloadButton>
             <Typography variant='caption' color='text.secondary'>
