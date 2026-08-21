@@ -11,17 +11,17 @@ const marquee = keyframes`
 `;
 
 const defaultLogos: LogoItem[] = [
-  { src: "alphapoint-logo.png", alt: "AlphaPoint" },
+  { src: "alphapoint-logo.webp", alt: "AlphaPoint" },
   { src: "bluequant-wordmark.svg", alt: "BlueQuant" },
-  { src: "sat_logo-transparent.png", alt: "SAT" },
+  { src: "sat_logo-transparent.webp", alt: "SAT" },
   { src: "bullseye.svg", alt: "Bullseye" },
-  { src: "fantasygol-logo.svg", alt: "FantasyGol" },
-  { src: "fao.png", alt: "FAO" },
-  { src: "oim-transparent.png", alt: "OIM" },
-  { src: "sbs.png", alt: "SBS" },
+  { src: "fantasygol-logo.webp", alt: "FantasyGol" },
+  { src: "fao.webp", alt: "FAO" },
+  { src: "oim-transparent.webp", alt: "OIM" },
+  { src: "sbs.webp", alt: "SBS" },
   { src: "sieca.png", alt: "SIECA" },
-  { src: "red-regional-transparent.png", alt: "Red Regional" },
-  { src: "quinielas-live-badge.png", alt: "Quinielas.live" },
+  { src: "red-regional-transparent.webp", alt: "Red Regional" },
+  { src: "quinielas-live-badge.webp", alt: "Quinielas.live" },
 ];
 
 /**

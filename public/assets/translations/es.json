@@ -171,7 +171,7 @@
         "end_date": "",
         "is_current": true,
         "company": "Quinielas.live",
-        "company_image": "quinielas-live-badge.png",
+        "company_image": "quinielas-live-badge.webp",
         "position": "Lead Full-Stack Engineer",
         "description": "Diseñé y lancé una plataforma multi-tenant de quinielas para el Mundial 2026 sobre AWS serverless de bajo costo, combinando entrega white-label, flujos seguros de juego y ejecución asistida por IA.",
         "tasks": [
@@ -188,7 +188,7 @@
           {
             "title": "Plataforma de Quinielas Mundial 2026",
             "description": "Plataforma multi-tenant de quinielas para el Mundial 2026: branding white-label desde un solo codebase, juego seguro y tablas en vivo sobre un stack serverless optimizado en costo.",
-            "image": "quinielas-live-hero.png",
+            "image": "quinielas-live-hero.webp",
             "url": "https://quinielas.live",
             "date": "2026-03-01",
             "outcomes": [
@@ -230,15 +230,15 @@
             ],
             "modal_details": [
               {
-                "image": "quinielas-live-hero.png",
+                "image": "quinielas-live-hero.webp",
                 "description": "Superficie hero para las quinielas del Mundial 2026 con countdowns contextuales, llamados a la acción y un sistema visual de estadio/trofeo preparado para perfiles white-label."
               },
               {
-                "image": "quinielas-live-trophy-hands.png",
+                "image": "quinielas-live-trophy-hands.webp",
                 "description": "Arte de torneo reutilizado en onboarding y campañas para reforzar la energía de día de partido y los estados promocionales de marca."
               },
               {
-                "image": "quinielas-live-wordmark.png",
+                "image": "quinielas-live-wordmark.webp",
                 "description": "Cresta y wordmark principal reutilizados en navegación, cards de quinielas y variantes corporativas desde el mismo codebase compartido."
               }
             ]
@@ -363,7 +363,7 @@
         "end_date": "2025-11-30",
         "is_current": false,
         "company": "APEX Exchange (AlphaPoint)",
-        "company_image": "alphapoint-logo.png",
+        "company_image": "alphapoint-logo.webp",
         "position": "Lead Frontend Engineer",
         "description": "Lideré la ingeniería frontend de APEX, la plataforma de trading institucional white-label de AlphaPoint, cubriendo trading, margen y gestión de cuentas en web y móvil.",
         "tasks": [
@@ -377,7 +377,7 @@
           {
             "title": "Plataforma de Trading Cripto Institucional",
             "description": "Plataforma de trading white-label para clientes institucionales: order books, gráficas avanzadas y flujos RFQ/OTC sobre feeds WebSocket en tiempo real, con custodia multi-activo y flujos de cumplimiento.",
-            "image": "apex-hero.png",
+            "image": "apex-hero.webp",
             "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
             "date": "2024-05-01",
             "outcomes": [
@@ -435,27 +435,27 @@
                 "description": "Experiencia web de trading con libros en tiempo real, gráficos y herramientas de liquidez para clientes institucionales."
               },
               {
-                "image": "apex-mobile.png",
+                "image": "apex-mobile.webp",
                 "description": "App móvil para comprar cripto y hacer trading con gráficos en vivo, profundidad y gestión de órdenes."
               },
               {
-                "image": "apex-trading.png",
+                "image": "apex-trading.webp",
                 "description": "Módulo de trading para múltiples pares cripto con órdenes market/limit/condicionales, TP/SL y apalancamiento."
               },
               {
-                "image": "apex-realtime.png",
+                "image": "apex-realtime.webp",
                 "description": "Compras en tiempo real de múltiples pares cripto con desglose de fees y préstamos."
               },
               {
-                "image": "apex-alerts.png",
+                "image": "apex-alerts.webp",
                 "description": "Alertas y notificaciones en la app para riesgo de portafolio y cambios de balance."
               },
               {
-                "image": "apex-webtrading.png",
+                "image": "apex-webtrading.webp",
                 "description": "Plataforma web de trading para múltiples cripto con order book en vivo, trades y entrada de órdenes avanzada."
               },
               {
-                "image": "apex-admin.png",
+                "image": "apex-admin.webp",
                 "description": "Portal de administración para gestionar usuarios, cuentas, saldos y monitoreo de riesgo."
               }
             ],
@@ -489,7 +489,7 @@
         "end_date": "2024-06-30",
         "is_current": false,
         "company": "CHIVO Wallet",
-        "company_image": "alphapoint-logo.png",
+        "company_image": "alphapoint-logo.webp",
         "position": "Senior Software Developer",
         "description": "Lideré la billetera Bitcoin nacional de El Salvador (AlphaPoint) — un servicio digital nacional construido para más de 6 millones de ciudadanos — tomando la experiencia web y móvil para pagos, remesas, cash-in/out y POS para comercios.",
         "tasks": [
@@ -502,7 +502,7 @@
           {
             "title": "Billetera Bitcoin Nacional y POS",
             "description": "Billetera Bitcoin/Lightning nacional de El Salvador: pagos QR, remesas, POS para comercios, descuentos de combustible y efectivo en más de 200 cajeros.",
-            "image": "chivo2.png",
+            "image": "chivo2.webp",
             "url": "https://www.chivowallet.com",
             "date": "2024-01-01",
             "outcomes": [
@@ -556,15 +556,15 @@
             ],
             "modal_details": [
               {
-                "image": "chivo2.png",
+                "image": "chivo2.webp",
                 "description": "Experiencia móvil para pagos Lightning/on-chain, remesas y flujos QR."
               },
               {
-                "image": "chivo.png",
+                "image": "chivo.webp",
                 "description": "POS para comercios y manejo de efectivo en kioscos/cajeros con flujos alineados a compliance."
               },
               {
-                "image": "chivo-benefits.png",
+                "image": "chivo-benefits.webp",
                 "description": "Beneficios de la billetera nacional: transferencias sin comisión, onboarding sencillo, soporte USD/BTC y retiros de efectivo en cualquier momento."
               },
               {
@@ -572,11 +572,11 @@
                 "description": "Validación de usuarios, onboarding seguro y verificaciones KYC para nuevos registros e ingresos."
               },
               {
-                "image": "chivo-otp.png",
+                "image": "chivo-otp.webp",
                 "description": "Inicio de sesión por teléfono con envío de OTP al usuario para acceso seguro."
               },
               {
-                "image": "chivo-admin.png",
+                "image": "chivo-admin.webp",
                 "description": "Consola web para administrar usuarios, cuentas, saldos y posiciones."
               }
             ],
@@ -597,7 +597,7 @@
         "company": "IOM & Secretaría de Bienestar Social",
         "company_image": [
           "oim.jpeg",
-          "sbs.png"
+          "sbs.webp"
         ],
         "position": "Technical Lead & Senior Developer",
         "description": "Responsable técnico del programa Angel Ariel, coordinando equipos React y Node.js para proyectos gubernamentales.",
@@ -611,7 +611,7 @@
           {
             "title": "Plataforma Angel Ariel",
             "description": "Portal web y móvil para los programas Quedate y Casa Joven, con paneles para personal de campo y reportería automatizada hacia agencias internacionales.",
-            "image": "angel-ariel.png",
+            "image": "angel-ariel.webp",
             "url": "https://www.iom.int",
             "date": "2023-06-01",
             "tech_stack": [
@@ -727,7 +727,7 @@
         "end_date": "2022-12-31",
         "is_current": false,
         "company": "Quinielas.live",
-        "company_image": "quinielas-live-badge.png",
+        "company_image": "quinielas-live-badge.webp",
         "position": "Tech Lead & Full-Stack",
         "description": "Entrega full-stack y despliegue en AWS de la versión original de la plataforma de quinielas para Qatar 2022.",
         "tasks": [
@@ -740,7 +740,7 @@
           {
             "title": "Plataforma de Quinielas Qatar 2022",
             "description": "Primera versión de la plataforma de quinielas con acceso seguro, tablas en vivo y administración de premios para campañas del Mundial.",
-            "image": "quinielas-live-hero.png",
+            "image": "quinielas-live-hero.webp",
             "url": "https://quinielas.live",
             "date": "2022-11-01",
             "tech_stack": [
@@ -815,7 +815,7 @@
           {
             "title": "Suite de Inteligencia de Ubicación",
             "description": "Análisis de ubicaciones para expansión retail, sobre Google Maps y Mapbox con paneles analíticos para clientes en EE. UU.",
-            "image": "bullseye-banner-transparent.png",
+            "image": "bullseye-banner-transparent.webp",
             "url": "https://bullseyeapps.com",
             "date": "2022-10-01",
             "outcomes": [
@@ -857,7 +857,7 @@
             ],
             "modal_details": [
               {
-                "image": "bullseye-locator.png",
+                "image": "bullseye-locator.webp",
                 "description": "Generación automática de locators según solicitud del cliente."
               },
               {
@@ -865,11 +865,11 @@
                 "description": "Ubicación cercana automática según la posición actual del usuario."
               },
               {
-                "image": "bullseye-search.png",
+                "image": "bullseye-search.webp",
                 "description": "Búsqueda de tiendas en mapas con geolocalización y filtros."
               },
               {
-                "image": "bullseye-page.png",
+                "image": "bullseye-page.webp",
                 "description": "Generación de páginas dinámicas a partir de JSON de entrada para crear landing pages de eventos/ubicaciones."
               },
               {
@@ -900,7 +900,7 @@
           {
             "title": "Sistema de Visas Temporales",
             "description": "Modernización del backend y frontoffice con flujos trazables y reportes.",
-            "image": "chivo.png",
+            "image": "chivo.webp",
             "url": "https://www.migracion.gob.gt",
             "date": "2021-08-01",
             "tech_stack": [
@@ -924,7 +924,7 @@
         "is_current": false,
         "company": "FAO ONU & SIECA",
         "company_image": [
-          "fao.png",
+          "fao.webp",
           "sieca.png"
         ],
         "position": "Tech Lead & Senior Full-Stack",
@@ -978,7 +978,7 @@
             ],
             "modal_details": [
               {
-                "image": "simmagro.png",
+                "image": "simmagro.webp",
                 "description": "Portal web para visualizar precios mayoristas en todos los países, con módulos de comercio y producción."
               },
               {
@@ -990,7 +990,7 @@
                 "description": "Comparativa de precios entre países para importaciones y exportaciones por producto y país de origen."
               },
               {
-                "image": "simmagro-charts.png",
+                "image": "simmagro-charts.webp",
                 "description": "Gráficos estadísticos interactivos para comparar precios entre países y productos."
               },
               {
@@ -1012,7 +1012,7 @@
         "end_date": "2014-12-31",
         "is_current": false,
         "company": "FantasyGol",
-        "company_image": "fantasygol-logo.svg",
+        "company_image": "fantasygol-logo.webp",
         "position": "Desarrollador Full-Stack",
         "description": "Construí una plataforma de fútbol de fantasía con 10+ ligas internacionales y más de 10,000 jugadores simultáneos, monetizada con una comisión del 10% sobre apuestas entre pares y adquirida tras el Mundial.",
         "tasks": [
@@ -1027,7 +1027,7 @@
           {
             "title": "Plataforma de Fantasy Sports",
             "description": "Plataforma de fantasy football con 10+ ligas internacionales donde los usuarios creaban ligas privadas para competir con amigos, monetizada con una comisión del 10% sobre apuestas entre pares.",
-            "image": "fantasygol-card.png",
+            "image": "fantasygol-card.webp",
             "url": "",
             "date": "2014-12-01",
             "outcomes": [
@@ -1057,15 +1057,15 @@
             ],
             "modal_details": [
               {
-                "image": "fantasygol-lobby.png",
+                "image": "fantasygol-lobby.webp",
                 "description": "Lobby de ligas de fantasía con filtros, cuotas de entrada, premios y acceso rápido para jugar."
               },
               {
-                "image": "fantasygol-onboarding.png",
+                "image": "fantasygol-onboarding.webp",
                 "description": "Registro con cuentas sociales o correo para unirse a ligas y empezar a jugar en minutos."
               },
               {
-                "image": "fantasygol-team.png",
+                "image": "fantasygol-team.webp",
                 "description": "Constructor de equipos sencillo con salarios, formaciones y datos en vivo para armar tu escuadra."
               }
             ]

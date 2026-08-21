@@ -56,12 +56,12 @@ const PROJECT_IMAGE_PRESENTATION: Record<string, ImagePresentation> = {
     blendMode: "multiply",
     scale: 1.04,
   },
-  "fantasygol-card.png": {
+  "fantasygol-card.webp": {
     fit: "cover",
     padding: 0,
     scale: 1.02,
   },
-  "quinielas-live-hero.png": {
+  "quinielas-live-hero.webp": {
     fit: "cover",
     padding: 0,
     scale: 1.02,
@@ -86,27 +86,22 @@ const LOGO_PRESENTATION: Record<string, LogoPresentation> = {
     filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
     scale: 1.08,
   },
-  "fantasygol-logo-transparent.png": {
+  "fantasygol-logo-transparent.webp": {
     blendMode: "normal",
     filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
     scale: 1.08,
   },
-  "fantasygol-logo.svg": {
+  "fantasygol-logo.webp": {
     blendMode: "normal",
     filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.45)) brightness(1.08)",
     scale: 1.08,
   },
-  "quinielas-live-wordmark.png": {
+  "quinielas-live-wordmark.webp": {
     blendMode: "normal",
     filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.38)) brightness(1.05)",
     scale: 1.04,
   },
-  "quinielas-live-logo-transparent.png": {
-    blendMode: "normal",
-    filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.38)) brightness(1.05)",
-    scale: 1.03,
-  },
-  "quinielas-live-badge.png": {
+  "quinielas-live-badge.webp": {
     blendMode: "normal",
     filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.42)) brightness(1.04)",
     scale: 1.02,
