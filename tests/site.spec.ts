@@ -126,6 +126,43 @@ test.describe("language switching", () => {
   });
 });
 
+test.describe("project dialog", () => {
+  test("gallery swaps the image and its caption", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === "mobile", "rail controls are desktop-only");
+    await page.goto("/");
+    await page.getByRole("button", { name: /^overview$/i }).first().click();
+
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+
+    const thumbs = dialog.getByRole("tab");
+    if ((await thumbs.count()) > 1) {
+      const stage = dialog.getByTestId("project-stage");
+      const before = await stage.getAttribute("src");
+      await thumbs.nth(1).click();
+      await expect.poll(() => stage.getAttribute("src")).not.toBe(before);
+    }
+  });
+
+  // `more_info` was left as the English "Overview" in the Spanish file, so the
+  // card button never translated.
+  test("card and dialog labels translate", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === "mobile", "switcher lives in the drawer");
+    await page.goto("/");
+    await page.locator('header [aria-label="Español"]').click();
+    await page.waitForTimeout(800);
+
+    await expect(
+      page.getByRole("button", { name: /ver detalle/i }).first()
+    ).toBeVisible();
+    await page.getByRole("button", { name: /ver detalle/i }).first().click();
+
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toContainText("Resultados");
+    await expect(dialog.getByRole("link", { name: /ver proyecto/i })).toBeVisible();
+  });
+});
+
 test.describe("generated documents", () => {
   test("the CV downloads as a PDF", async ({ page }) => {
     await page.goto("printResume");

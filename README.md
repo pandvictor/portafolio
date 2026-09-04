@@ -415,6 +415,8 @@ this project actually shipped**:
 | Both PDFs download with the right filename | — |
 | `prefers-reduced-motion` leaves nothing hidden | Reveals could strand content at opacity 0 |
 | Section links scroll correctly, including from another route | — |
+| The project dialog's gallery swaps image and caption | — |
+| Card and dialog labels translate | `more_info` stayed English in the Spanish file, so the card button never translated |
 | One `<h1>` per page | No page had an `<h1>`; the outline started at `<h3>` |
 | No horizontal overflow | The language switcher pushed the mobile toolbar off screen |
 

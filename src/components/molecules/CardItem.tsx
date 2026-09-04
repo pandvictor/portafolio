@@ -501,7 +501,7 @@ export const CardItem: React.FC<RecipeReviewCardProps> = ({
               companyUrl,
             })
           }>
-          {i18n.t("more_info")}
+          {i18n.t("home.project_case")}
         </MotionMoreInfoButton>
         {url && (
           <LiveButton

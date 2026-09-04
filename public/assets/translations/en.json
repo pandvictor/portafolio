@@ -1,6 +1,5 @@
 {
   "download": "Download CV",
-  "more_info": "Overview",
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "I build and scale mobile, web, and backend products for fintech, public-sector, and crypto teams."
@@ -128,7 +127,10 @@
           "desc": "AI pair programming • AI-assisted QA"
         }
       ]
-    }
+    },
+    "project_stack": "Stack",
+    "project_outcomes": "Results",
+    "project_gallery": "Screens"
   },
   "hero": {
     "chips": {

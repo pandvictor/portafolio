@@ -1,6 +1,5 @@
 {
   "download": "Scarica il CV",
-  "more_info": "Panoramica",
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Costruisco e scalo prodotti mobile, web e backend per team fintech, del settore pubblico e crypto."
@@ -128,7 +127,10 @@
           "desc": "Pair programming con IA • QA assistito"
         }
       ]
-    }
+    },
+    "project_stack": "Stack",
+    "project_outcomes": "Risultati",
+    "project_gallery": "Schermate"
   },
   "hero": {
     "chips": {

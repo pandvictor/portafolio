@@ -1,6 +1,5 @@
 {
   "download": "Descargar CV",
-  "more_info": "Overview",
   "portfolio": {
     "title": "Portafolio",
     "subtitle": "Diseño, construyo y escalo productos móviles, web y backend para fintech, sector público y crypto."
@@ -79,7 +78,7 @@
     "projects_prev": "Proyectos anteriores",
     "projects_next": "Más proyectos",
     "project_live": "Ver sitio",
-    "project_case": "Detalle",
+    "project_case": "Ver detalle",
     "facts_availability": "Disponibilidad",
     "facts_location": "Ubicación",
     "facts_languages": "Idiomas",
@@ -128,7 +127,10 @@
           "desc": "Pair programming con IA • QA asistido"
         }
       ]
-    }
+    },
+    "project_stack": "Stack",
+    "project_outcomes": "Resultados",
+    "project_gallery": "Pantallas"
   },
   "hero": {
     "chips": {
