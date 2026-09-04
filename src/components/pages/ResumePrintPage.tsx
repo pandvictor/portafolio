@@ -15,6 +15,7 @@ import { useTranslated } from "../../utils/useTranslated";
 import { Resume, WorkHistory } from "../../types/";
 import { homePath } from "../../constants/gloabals";
 import { useScrollToTop } from "../../utils/useScrollToTop";
+import { useRouteAnalytics } from "../../utils/useRouteAnalytics";
 import { LanguageSwitcher } from "../molecules";
 import { downloadResumePdf } from "../../utils/downloadResumePdf";
 import { isDuplicateText, parseDescription } from "../../utils/resumeText";
@@ -255,6 +256,7 @@ const shortUrl = (url?: string) => {
 export function ResumePrintPage() {
   const { language } = useLanguage();
   useScrollToTop();
+  useRouteAnalytics();
   const resume = useTranslated<Resume>("resume");
   const dateLocale =
     language === "es" ? esLocale : language === "it" ? itLocale : undefined;

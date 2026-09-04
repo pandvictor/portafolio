@@ -462,16 +462,36 @@ Serving from a domain root, or a differently named repo, rather than
 
 ## Analytics (optional)
 
-Nothing third-party loads unless you opt in, so the site ships with no tracking
-and no cookie banner. Set a domain at build time to enable a
-Plausible-compatible script:
+GitHub Pages serves static files with no server-side logs you can read, so a
+visitor counter has to be a small client script reporting to a hosted endpoint.
+Nothing loads unless you configure one, and the four supported providers are all
+cookie-free — no consent banner needed.
+
+| Provider | Cost | `VITE_ANALYTICS_ID` is |
+| --- | --- | --- |
+| `cloudflare` | free, unlimited | the Web Analytics beacon token |
+| `goatcounter` | free for personal use | your site code (`victor` for `victor.goatcounter.com`) |
+| `umami` | free tier / self-host | the website id |
+| `plausible` | paid, 30-day trial | the domain (`pandvictor.github.io`) |
+
+**Locally**
 
 ```bash
-VITE_ANALYTICS_DOMAIN=pandvictor.github.io npm run build
+VITE_ANALYTICS_PROVIDER=cloudflare VITE_ANALYTICS_ID=<token> npm run build
 VITE_ANALYTICS_SRC=https://your-host/script.js   # optional, self-hosted
 ```
 
-See [`src/utils/analytics.ts`](src/utils/analytics.ts).
+**On the deployed site**
+
+Add the same two names under *Settings -> Secrets and variables -> Actions ->
+Variables* (repository **variables**, not secrets — the id ends up in the public
+bundle either way). The next push to `main` rebuilds with the counter on.
+
+Client-side navigations are counted too, via
+[`useRouteAnalytics`](src/utils/useRouteAnalytics.ts) called alongside
+`useScrollToTop`. Cloudflare, Umami and Plausible track `history.pushState`
+themselves, so only GoatCounter is reported manually — otherwise every route
+would count twice. See [`src/utils/analytics.ts`](src/utils/analytics.ts).
 
 ---
 

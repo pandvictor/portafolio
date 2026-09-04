@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import { DURATION, EASE_OUT } from "./tokens";
 import { useScrollToTop } from "../../utils/useScrollToTop";
+import { useRouteAnalytics } from "../../utils/useRouteAnalytics";
 
 type PageTransitionProps = {
   children: ReactNode;
@@ -15,6 +16,7 @@ type PageTransitionProps = {
 export const PageTransition = ({ children }: PageTransitionProps) => {
   const { pathname } = useLocation();
   useScrollToTop();
+  useRouteAnalytics();
 
   return (
     <motion.div

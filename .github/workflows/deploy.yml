@@ -40,6 +40,11 @@ jobs:
         run: npm test
 
       - name: Build site
+        # Repository variables, not secrets: these ids are public in the
+        # shipped bundle anyway. Unset, the analytics script never loads.
+        env:
+          VITE_ANALYTICS_PROVIDER: ${{ vars.VITE_ANALYTICS_PROVIDER }}
+          VITE_ANALYTICS_ID: ${{ vars.VITE_ANALYTICS_ID }}
         run: npm run build
 
       - name: Create SPA fallback
