@@ -304,7 +304,11 @@ export const DrawerAppBar = () => {
                 to={printResumePath}>
                 {i18n.t("download")}
               </TopDownloadButton>
-              <LanguageSwitcher />
+              {/* Three flags plus the avatar block and the menu button do not
+                  fit a phone toolbar; the drawer carries the switcher there. */}
+              <Box sx={{ display: { xs: "none", md: "inline-flex" } }}>
+                <LanguageSwitcher />
+              </Box>
               <MenuToggleButton
                 size='small'
                 aria-label={language === "es" ? "Abrir menú" : "Open menu"}

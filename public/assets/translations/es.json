@@ -145,7 +145,8 @@
           "desc": "Pair programming con IA • QA asistido"
         }
       ]
-    }
+    },
+    "available": "Disponible"
   },
   "footer": {
     "availability_tag": "Disponibilidad",

@@ -145,7 +145,8 @@
           "desc": "AI pair programming • AI-assisted QA"
         }
       ]
-    }
+    },
+    "available": "Open to work"
   },
   "footer": {
     "availability_tag": "Availability",
