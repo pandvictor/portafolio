@@ -184,7 +184,7 @@ export default function HomePage() {
         />
       </SectionBlock>
 
-      <SectionBlock>
+      <SectionBlock id="services">
         <HomeServicesSection
           kicker={servicesKicker}
           title={servicesTitle}
@@ -209,7 +209,7 @@ export default function HomePage() {
         </SectionBlock>
       )}
 
-      <SectionBlock>
+      <SectionBlock id="work">
         <HomeProjectsGrid
           works={works}
           onOpen={handleOpen}
@@ -220,7 +220,7 @@ export default function HomePage() {
         />
       </SectionBlock>
 
-      <SectionBlock>
+      <SectionBlock id="contact">
         <HomeCtaSection
           kicker={ctaCopy.kicker}
           title={ctaCopy.title}

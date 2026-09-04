@@ -10,6 +10,7 @@ type DownloadArgs = {
     education: string;
     languages: string;
     skills: string;
+    certifications: string;
   };
   /** Used to name the file, e.g. "en" → victor-hernandez-cv-en.pdf */
   language: string;

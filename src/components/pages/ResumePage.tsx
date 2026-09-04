@@ -6,6 +6,7 @@ import { MainTemplate } from "../templates";
 import { PrintButton } from "../molecules";
 import { Reveal, StaggerGroup, StaggerItem } from "../motion";
 import {
+  ResumeCertificationsSection,
   ResumeContactSection,
   ResumeEducationSection,
   ResumeHeaderSection,
@@ -56,6 +57,12 @@ export function ResumePage() {
               </StaggerItem>
               <StaggerItem preset='up'>
                 <ResumeSkillsSection skills={techSkills} />
+              </StaggerItem>
+              <StaggerItem preset='up'>
+                <ResumeCertificationsSection
+                  title={resume.certifications_title ?? ""}
+                  certifications={resume.certifications ?? []}
+                />
               </StaggerItem>
             </StaggerGroup>
           </Grid>

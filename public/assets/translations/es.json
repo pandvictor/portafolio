@@ -1233,7 +1233,35 @@
     "back_to_site": "Volver al sitio",
     "location": "Guatemala · Remoto (América)",
     "download_pdf": "Descargar PDF",
-    "print_label": "Imprimir"
+    "print_label": "Imprimir",
+    "certifications_title": "Certificaciones",
+    "certifications": [
+      {
+        "title": "AWS Cloud Practitioner",
+        "issuer": "Amazon AWS",
+        "year": "2022"
+      },
+      {
+        "title": "Using React Hooks",
+        "issuer": "Pluralsight",
+        "year": "2021"
+      },
+      {
+        "title": "Building Applications with React and Redux",
+        "issuer": "Pluralsight",
+        "year": "2021"
+      },
+      {
+        "title": "Building Mobile Apps with React Native",
+        "issuer": "Pluralsight",
+        "year": "2021"
+      },
+      {
+        "title": "Inglés Avanzado",
+        "issuer": "CALUSAC",
+        "year": "2002"
+      }
+    ]
   },
   "cover_letter": {
     "title": "Carta de presentación",
@@ -1298,5 +1326,10 @@
     "title": "Página no encontrada",
     "desc": "Ese enlace no apunta a nada en este sitio. Los proyectos, el CV y la carta de presentación están a un clic.",
     "cta": "Volver al inicio"
+  },
+  "nav": {
+    "work": "Proyectos",
+    "services": "Servicios",
+    "contact": "Contacto"
   }
 }

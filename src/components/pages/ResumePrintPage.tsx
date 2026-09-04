@@ -287,6 +287,7 @@ export function ResumePrintPage() {
           education: i18n.t("resume.education"),
           languages: i18n.t("resume.languages_title"),
           skills: i18n.t("resume.skills"),
+          certifications: i18n.t("resume.certifications_title"),
         },
         language,
       });
@@ -429,6 +430,19 @@ export function ResumePrintPage() {
             </SkillRow>
           </>
         )}
+
+        {resume?.certifications?.length ? (
+          <>
+            <SectionTitle>
+              {(resume.certifications_title ?? "").toUpperCase()}
+            </SectionTitle>
+            {resume.certifications.map((item, index) => (
+              <SkillRow key={index}>
+                <SkillLabel>{item.title}</SkillLabel> — {item.issuer} · {item.year}
+              </SkillRow>
+            ))}
+          </>
+        ) : null}
 
         {resume?.tech_skills?.length > 0 && (
           <>

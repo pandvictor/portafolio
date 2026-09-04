@@ -26,14 +26,39 @@ import { useLanguage } from "../../context/LanguageContext";
 import i18n from "../../utils/i18n";
 import { createStagger, fadeUpSoft, motionize, transitions } from "../motion";
 
-const pages = [
-  { key: "resume", path: "resume" },
-  { key: "cover_letter", path: "cover-letter" },
-];
+/**
+ * Section links point at the home page's landmarks; route links open a page.
+ * The home page is nine sections and roughly 5000px tall, so without these a
+ * visitor after the projects had to scroll blind.
+ */
+const NAV_ITEMS = [
+  { key: "nav.work", anchor: "work" },
+  { key: "nav.services", anchor: "services" },
+  { key: "resume.title", path: "resume" },
+  { key: "cover_letter.title", path: "cover-letter" },
+  { key: "nav.contact", anchor: "contact" },
+] as const;
 const basePath = import.meta.env.BASE_URL || "/";
 
 const getPagePath = (path: string) =>
   `${basePath}/${path}`.replace(/\/{2,}/g, "/");
+
+const getAnchorPath = (anchor: string) =>
+  `${basePath}/`.replace(/\/{2,}/g, "/") + `#${anchor}`;
+
+const navTarget = (item: (typeof NAV_ITEMS)[number]) =>
+  "anchor" in item ? getAnchorPath(item.anchor) : getPagePath(item.path);
+
+/**
+ * NavLink derives "active" from the pathname, and every section link shares the
+ * home pathname, so all of them highlighted at once. Only route links carry the
+ * active state.
+ */
+const navClassName = (item: (typeof NAV_ITEMS)[number]) =>
+  "anchor" in item
+    ? () => "nav-link"
+    : ({ isActive }: { isActive: boolean }) =>
+        isActive ? "nav-link active" : "nav-link";
 
 const DrawerContainer = styled(Box)(({ theme }) => ({
   textAlign: "center",
@@ -222,22 +247,19 @@ export const DrawerAppBar = () => {
         variants={createStagger(0.09, 0.12)}
         initial='hidden'
         animate='visible'>
-        {pages.map((page) => (
+        {NAV_ITEMS.map((item) => (
           <LinkItem
-            key={page.key}
-            to={getPagePath(page.path)}
+            key={item.key}
+            to={navTarget(item)}
             color='inherit'
-            relative='path'
-            className='nav-link'>
-            <ListItem key={page.key} disablePadding>
+            className={navClassName(item)}>
+            <ListItem disablePadding>
               <MotionDrawerNavButton
                 variants={fadeUpSoft}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}>
                 <ListItemText
-                  primary={
-                    <DrawerNavText>{i18n.t(page.key + ".title")}</DrawerNavText>
-                  }
+                  primary={<DrawerNavText>{i18n.t(item.key)}</DrawerNavText>}
                 />
               </MotionDrawerNavButton>
             </ListItem>
@@ -274,22 +296,19 @@ export const DrawerAppBar = () => {
               <UserAvatar />
             </LogoBox>
             <NavLinks>
-              {pages.map((page, idx) => (
+              {NAV_ITEMS.map((item, idx) => (
                 <MotionNavLink
-                  key={page.key}
+                  key={item.key}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ ...transitions.base, delay: 0.25 + idx * 0.08 }}
+                  transition={{ ...transitions.base, delay: 0.25 + idx * 0.07 }}
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.97 }}>
                   <LinkItem
-                    to={getPagePath(page.path)}
+                    to={navTarget(item)}
                     color='inherit'
-                    relative='path'
-                    className='nav-link'>
-                    <NavButton color='inherit'>
-                      {i18n.t(page.key + ".title")}
-                    </NavButton>
+                    className={navClassName(item)}>
+                    <NavButton color='inherit'>{i18n.t(item.key)}</NavButton>
                   </LinkItem>
                 </MotionNavLink>
               ))}

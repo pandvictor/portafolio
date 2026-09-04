@@ -156,6 +156,7 @@ type ResumeDocumentProps = {
     education: string;
     languages: string;
     skills: string;
+    certifications: string;
   };
 };
 
@@ -275,6 +276,20 @@ export const ResumeDocument = ({
             </Text>
           </>
         )}
+
+        {resume?.certifications?.length ? (
+          <>
+            <Text style={styles.sectionTitle}>
+              {labels.certifications.toUpperCase()}
+            </Text>
+            {resume.certifications.map((item, idx) => (
+              <Text key={idx} style={styles.skillRow}>
+                <Text style={styles.skillLabel}>{item.title}</Text>
+                {` — ${item.issuer} · ${item.year}`}
+              </Text>
+            ))}
+          </>
+        ) : null}
 
         {resume?.tech_skills?.length > 0 && (
           <>

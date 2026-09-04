@@ -10,6 +10,7 @@ export * from './HomeFeaturedProjectSection';
 export * from './HomeProjectsGrid';
 export * from './HomeServicesSection';
 export * from './HomeTrustedSection';
+export * from './ResumeCertificationsSection';
 export * from './ResumeContactSection';
 export * from './ResumeEducationSection';
 export * from './ResumeHeaderSection';

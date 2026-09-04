@@ -80,7 +80,15 @@ export type Resume = {
     university:      University;
     tech_skills:     TechSkill[];
     languages:       Language[];
+    certifications?: Certification[];
+    certifications_title?: string;
     contact_info:    ContactInfo[];
+}
+
+export type Certification = {
+    title:  string;
+    issuer: string;
+    year:   string;
 }
 
 export type ContactInfo = {

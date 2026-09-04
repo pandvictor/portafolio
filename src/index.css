@@ -39,6 +39,21 @@ body,
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor targets clear the fixed app bar instead of hiding beneath it. */
+[id] {
+  scroll-margin-top: 104px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
   background: var(--bg);

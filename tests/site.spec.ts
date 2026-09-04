@@ -15,10 +15,13 @@ const revealAll = async (page: Page) => {
     const step = 700;
     const steps = Math.min(Math.ceil(document.body.scrollHeight / step), 30);
     for (let i = 0; i <= steps; i++) {
-      window.scrollTo(0, i * step);
+      // "instant" is required: the site sets scroll-behavior: smooth for the
+      // header's section links, and a smooth sweep never reaches the offsets
+      // in time for the reveals to fire.
+      window.scrollTo({ top: i * step, behavior: "instant" });
       await new Promise((r) => setTimeout(r, 45));
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "instant" });
   });
   await page.waitForTimeout(500);
 };
@@ -158,6 +161,40 @@ test.describe("reduced motion", () => {
       ).length
     );
     expect(stuck).toBe(0);
+  });
+});
+
+test.describe("section navigation", () => {
+  test("header links jump to the right section", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === "mobile", "links live in the drawer");
+    await page.goto("/");
+
+    for (const [label, id] of [["Work", "work"], ["Services", "services"]]) {
+      await page.getByRole("link", { name: label, exact: true }).click();
+      await expect(page).toHaveURL(new RegExp(`#${id}$`));
+      // The fixed app bar is ~80px tall; the target must clear it.
+      await expect
+        .poll(() =>
+          page.evaluate(
+            (sectionId) =>
+              document.getElementById(sectionId)!.getBoundingClientRect().top,
+            id
+          )
+        )
+        .toBeLessThan(140);
+    }
+  });
+
+  test("an anchor works from another route", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === "mobile", "links live in the drawer");
+    await page.goto("resume");
+    await page.getByRole("link", { name: "Work", exact: true }).click();
+    await expect(page).toHaveURL(/#work$/);
+    await expect
+      .poll(() =>
+        page.evaluate(() => document.getElementById("work")!.getBoundingClientRect().top)
+      )
+      .toBeLessThan(140);
   });
 });
 

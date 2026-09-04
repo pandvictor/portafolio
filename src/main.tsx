@@ -1,4 +1,6 @@
-import React from "react";
+/* eslint-disable react-refresh/only-export-components -- entry point:
+   the lazy route components live here by design and nothing imports it. */
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -6,14 +8,34 @@ import { MotionConfig } from "framer-motion";
 import "./index.css";
 import HomePage from "./components/pages/HomePage.tsx";
 import { LanguageProvider } from "./context/LanguageContext.tsx";
-import {
-  CoverLetterPage,
-  NotFoundPage,
-  ResumePage,
-  ResumePrintPage,
-} from "./components/pages";
+// The landing page loads eagerly; the rest are split out so a first visit does
+// not download the resume, the cover letter, and the printable CV as well.
+const ResumePage = lazy(() =>
+  import("./components/pages/ResumePage").then((m) => ({ default: m.ResumePage }))
+);
+const ResumePrintPage = lazy(() =>
+  import("./components/pages/ResumePrintPage").then((m) => ({
+    default: m.ResumePrintPage,
+  }))
+);
+const CoverLetterPage = lazy(() =>
+  import("./components/pages/CoverLetterPage").then((m) => ({
+    default: m.CoverLetterPage,
+  }))
+);
+const NotFoundPage = lazy(() =>
+  import("./components/pages/NotFoundPage").then((m) => ({
+    default: m.NotFoundPage,
+  }))
+);
 import theme from "./theme";
+import { initAnalytics } from "./utils/analytics";
 //import App from './App.tsx';
+
+/** Matches the page background so a split chunk does not flash white. */
+const RouteFallback = () => (
+  <div style={{ minHeight: "100vh", backgroundColor: "#0b111b" }} />
+);
 
 const router = createBrowserRouter([
   {
@@ -66,6 +88,8 @@ const router = createBrowserRouter([
   },
 ]);
 
+initAnalytics();
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
@@ -74,7 +98,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           respect the OS "reduce motion" setting without per-component checks. */}
       <MotionConfig reducedMotion='user'>
         <LanguageProvider>
-          <RouterProvider router={router} />
+          <Suspense fallback={<RouteFallback />}>
+            <RouterProvider router={router} />
+          </Suspense>
         </LanguageProvider>
       </MotionConfig>
     </ThemeProvider>

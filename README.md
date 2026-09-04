@@ -72,9 +72,11 @@ npm run preview    # serves dist/ at http://localhost:4173/portafolio/
 | `npm run dev` | Dev server with hot reload |
 | `npm run build` | `tsc` type-check, then a production build into `dist/` |
 | `npm run preview` | Serve the built `dist/` locally |
+| `npm test` | Playwright end-to-end suite against the production build |
+| `npm run test:ui` | The same suite in Playwright's watch UI |
 | `npm run deploy-github` | Build and publish `dist/` to the `gh-pages` branch |
 | `npm run storybook` | Storybook on port 6006 |
-| `npm run lint` | ESLint — **currently broken**, see [Known issues](#known-issues) |
+| `npm run lint` | ESLint over `src/` |
 
 ---
 
@@ -215,6 +217,9 @@ clicks. Edit the JSON and the next download reflects it — nothing to re-export
 | `/portafolio/cover-letter` | Cover letter |
 | anything else | 404 |
 
+The header also links to sections of the home page — `#work`, `#services`,
+`#contact` — which work from any route.
+
 ---
 
 ## Project structure
@@ -286,11 +291,39 @@ Serving from a domain root, or a differently named repo, rather than
 
 ---
 
+## Tests
+
+`npm test` builds the site and drives it with Playwright on desktop and mobile.
+The suite covers the things a unit test cannot see, and every one of them
+guards a bug this project actually shipped:
+
+- console errors and broken images on all five routes;
+- the print stylesheet hiding screen-only chrome, and paper staying white;
+- all three languages translating without leaving cards stuck invisible;
+- both PDFs downloading with the right filename;
+- `prefers-reduced-motion` leaving nothing at its hidden variant;
+- section links scrolling to the right place, including from another route;
+- no horizontal overflow.
+
+CI runs `npm run lint` and `npm test` before it builds.
+
+---
+
+## Analytics (optional)
+
+Nothing third-party loads unless you opt in, so the site ships with no tracking
+and no cookie banner. Set a domain at build time to enable a
+Plausible-compatible script:
+
+```bash
+VITE_ANALYTICS_DOMAIN=pandvictor.github.io npm run build
+VITE_ANALYTICS_SRC=https://your-host/script.js   # optional, self-hosted
+```
+
+---
+
 ## Known issues
 
-- **`npm run lint` fails on every file** with `Parsing error: The keyword
-  'import' is reserved`. The ESLint setup has no TypeScript parser configured —
-  `package.json` only extends the Storybook plugin and there is no `.eslintrc`.
-  This predates the current codebase. Use `npm run build` (which runs `tsc`) as
-  the type gate until it is fixed.
-- Storybook still contains the default template stories in `src/stories/`.
+- Three projects — Bullseye, Regional Agricultural Market, and Angel Ariel —
+  show a logo where the others show product UI, because no screenshot exists.
+  Angel Ariel also has no `modal_details`, so its dialog is text only.
