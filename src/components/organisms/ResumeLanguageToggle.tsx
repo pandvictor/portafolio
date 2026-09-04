@@ -1,33 +1,28 @@
-import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
-import { Button, Stack, Tooltip } from "@mui/material";
+import { Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { memo } from "react";
-import i18n from "../../utils/i18n";
+import { LanguageSwitcher } from "../molecules";
 
-type ResumeLanguageToggleProps = {
-  onToggle: () => void;
-};
+/**
+ * Floating language control for the resume page.
+ *
+ * Replaces a button that flipped between two languages — with three shipped,
+ * a flag switcher shows what is available instead of hiding it behind a cycle.
+ */
+const Dock = styled(Box)(({ theme }) => ({
+  position: "fixed",
+  left: theme.spacing(1.5),
+  bottom: theme.spacing(3),
+  zIndex: 1000,
+  "@media print": {
+    display: "none",
+  },
+}));
 
-export const ResumeLanguageToggle = memo(
-  ({ onToggle }: ResumeLanguageToggleProps) => {
-    const label = i18n.t("resume.change_language");
-    return (
-      <Stack
-        className='no-print'
-        direction={{ xs: "row", md: "column" }}
-        sx={{
-          position: "fixed",
-          left: "10px",
-          bottom: "10px",
-          zIndex: 1000,
-        }}>
-        <Button onClick={onToggle} aria-label={label}>
-          <Tooltip title={label} arrow>
-            <TranslateRoundedIcon sx={{ fontSize: 26 }} />
-          </Tooltip>
-        </Button>
-      </Stack>
-    );
-  }
-);
+export const ResumeLanguageToggle = memo(() => (
+  <Dock className='no-print'>
+    <LanguageSwitcher />
+  </Dock>
+));
 
 ResumeLanguageToggle.displayName = "ResumeLanguageToggle";

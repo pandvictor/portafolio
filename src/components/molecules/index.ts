@@ -11,3 +11,4 @@ export * from './HeroAvatar';
 export * from './HeroImpactPanel';
 export * from './SectionHeader';
 export * from './SectionSurface';
+export * from './LanguageSwitcher';

@@ -17,12 +17,8 @@ import {
 } from "../organisms";
 
 export function ResumePage() {
-  const { setLanguage, language } = useLanguage();
+  const { language } = useLanguage();
   const resume = useMemo(() => i18n.t("resume") as Resume, [language]);
-
-  const handleLanguageChange = (newLanguage: string) => {
-    setLanguage(newLanguage);
-  };
 
   const workHistory = useMemo(() => resume?.work_history || [], [resume]);
   const contactInfo = useMemo(() => resume?.contact_info || [], [resume]);
@@ -73,9 +69,7 @@ export function ResumePage() {
           <PrintButton />
         </Box>
 
-        <ResumeLanguageToggle
-          onToggle={() => handleLanguageChange(language === "en" ? "es" : "en")}
-        />
+        <ResumeLanguageToggle />
       </Box>
     </MainTemplate>
   );

@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import type { TypographyProps } from "@mui/material/Typography";
 import { memo, useMemo } from "react";
 import { format, formatDuration, intervalToDuration, parseISO } from "date-fns";
-import { es as esLocale } from "date-fns/locale";
+import { es as esLocale, it as itLocale } from "date-fns/locale";
 import { WorkHistory } from "../../types";
 import i18n from "../../utils/i18n";
 import { useLanguage } from "../../context/LanguageContext";
@@ -79,7 +79,8 @@ type ResumeWorkCardProps = {
 
 export const ResumeWorkCard = memo(({ work }: ResumeWorkCardProps) => {
   const { language } = useLanguage();
-  const dateLocale = language === "es" ? esLocale : undefined;
+  const dateLocale =
+    language === "es" ? esLocale : language === "it" ? itLocale : undefined;
 
   const { range, tenure } = useMemo(() => {
     const start = parseISO(work.start_date);

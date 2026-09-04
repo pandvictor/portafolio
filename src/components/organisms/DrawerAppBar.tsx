@@ -1,6 +1,5 @@
 import * as React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
 import {
   AppBar,
   Box,
@@ -11,17 +10,14 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Menu,
-  MenuItem,
   Toolbar,
   Button,
-  Tooltip,
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useScroll, useTransform } from "framer-motion";
 
-import { UserAvatar } from "../molecules";
+import { LanguageSwitcher, UserAvatar } from "../molecules";
 import { Link as RouterLink } from "react-router-dom";
 import type { ButtonProps } from "@mui/material/Button";
 import { printResumePath } from "../../constants/gloabals";
@@ -49,6 +45,12 @@ const DrawerContainer = styled(Box)(({ theme }) => ({
 
 const DrawerList = styled(List)(({ theme }) => ({
   marginTop: theme.spacing(2),
+  // LinkItem is inline-flex for the desktop nav, which made the drawer entries
+  // sit side by side instead of stacking.
+  "& > a": {
+    display: "flex",
+    width: "100%",
+  },
 }));
 
 const MotionDrawerList = motionize(DrawerList);
@@ -175,10 +177,6 @@ const ToolbarIconButton = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-const LanguageIcon = styled(TranslateRoundedIcon)(() => ({
-  fontSize: 22,
-}));
-
 const MenuToggleButton = styled(ToolbarIconButton)(({ theme }) => ({
   display: "inline-flex",
   [theme.breakpoints.up("md")]: {
@@ -211,57 +209,11 @@ export const DrawerAppBar = () => {
     ["0 0 0 rgba(0,0,0,0)", "0 18px 40px rgba(0, 0, 0, 0.45)"]
   );
   const barMinHeight = useTransform(scrollY, [0, 80], [80, 64]);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    React.useState<null | HTMLElement>(null);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const { setLanguage, language } = useLanguage();
-
-  const handleLanguageChange = (newLanguage: string) => {
-    handleMobileMenuClose();
-    setLanguage(newLanguage);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
+  const { language } = useLanguage();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}>
-      <MenuItem>
-        <Button color='inherit' onClick={() => handleLanguageChange("en")}>
-          English
-        </Button>
-      </MenuItem>
-      <MenuItem>
-        <Button color='inherit' onClick={() => handleLanguageChange("es")}>
-          Español
-        </Button>
-      </MenuItem>
-    </Menu>
-  );
 
   const drawer = (
     <DrawerContainer onClick={handleDrawerToggle}>
@@ -291,6 +243,9 @@ export const DrawerAppBar = () => {
             </ListItem>
           </LinkItem>
         ))}
+        <Box sx={{ px: 1, pt: 2 }}>
+          <LanguageSwitcher variant='wide' />
+        </Box>
         <DrawerDownloadButton
           fullWidth
           variant='contained'
@@ -349,21 +304,7 @@ export const DrawerAppBar = () => {
                 to={printResumePath}>
                 {i18n.t("download")}
               </TopDownloadButton>
-              <Tooltip
-                title={language === "es" ? "Cambiar idioma" : "Change language"}
-                arrow>
-                <ToolbarIconButton
-                  size='large'
-                  aria-label={
-                    language === "es" ? "Cambiar idioma" : "Change language"
-                  }
-                  aria-controls={mobileMenuId}
-                  aria-haspopup='true'
-                  onClick={handleMobileMenuOpen}
-                  color='inherit'>
-                  <LanguageIcon />
-                </ToolbarIconButton>
-              </Tooltip>
+              <LanguageSwitcher />
               <MenuToggleButton
                 size='small'
                 aria-label={language === "es" ? "Abrir menú" : "Open menu"}
@@ -389,7 +330,6 @@ export const DrawerAppBar = () => {
           {drawer}
         </MobileDrawer>
       </nav>
-      {renderMobileMenu}
     </>
   );
 };

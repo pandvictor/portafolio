@@ -1,14 +1,14 @@
 # Portfolio — Victor Hernández
 
-Bilingual (EN/ES) developer portfolio built with React, TypeScript, Vite, and
-MUI, animated with framer-motion.
+Trilingual (EN/ES/IT) developer portfolio built with React, TypeScript, Vite,
+and MUI, animated with framer-motion.
 
 **Live:** https://pandvictor.github.io/portafolio/
 
 Almost everything you see — projects, resume, cover letter, section copy — is
-data, not markup. Two JSON files drive the whole site, and the CV and cover
-letter PDFs are generated from those same files at download time, so they can
-never drift out of sync with the pages.
+data, not markup. One JSON file per language drives the whole site, and the CV
+and cover letter PDFs are generated from those same files at download time, so
+they can never drift out of sync with the pages.
 
 ---
 
@@ -84,18 +84,33 @@ npm run preview    # serves dist/ at http://localhost:4173/portafolio/
 public/assets/
 ├── translations/
 │   ├── en.json          ← all English copy + resume data
-│   └── es.json          ← the same shape, in Spanish
+│   ├── es.json          ← the same shape, in Spanish
+│   └── it.json          ← the same shape, in Italian
 └── images/
     ├── *.webp|png|svg   ← project artwork and company logos
+    ├── flags/           ← flags for the language switcher
     └── icons/           ← tech-stack and contact icons
 ```
 
-Both translation files must have **the same keys**. If a key exists in one and
-not the other, that string renders blank when the visitor switches language.
+All translation files must have **the same keys**. If a key exists in one and
+not the others, that string renders blank when the visitor switches language.
 
 Copy is loaded through [`i18n-js`](https://github.com/fnando/i18n-js); the
 active language lives in
 [`LanguageContext`](src/context/LanguageContext.tsx) and defaults to English.
+
+### Adding a language
+
+1. Copy `en.json` to `public/assets/translations/<code>.json` and translate the
+   values, keeping every key.
+2. Add a flag SVG at `public/assets/images/flags/<code>.svg`.
+3. Register it in `LANGUAGES` in
+   [`constants/gloabals.ts`](src/constants/gloabals.ts) — the header switcher,
+   the mobile drawer, and both CV pages read from that one list.
+4. If the language needs localised dates, map its `date-fns` locale in
+   [`ResumeWorkCard`](src/components/molecules/ResumeWorkCard.tsx) and
+   [`ResumePrintPage`](src/components/pages/ResumePrintPage.tsx). Without it,
+   `date-fns` silently falls back to English.
 
 ### Adding a job
 

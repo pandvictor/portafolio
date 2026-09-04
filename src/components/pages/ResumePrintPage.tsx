@@ -1,6 +1,5 @@
 import { Box, Button, Stack, Tooltip, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import TranslateRoundedIcon from "@mui/icons-material/TranslateRounded";
 import PrintIcon from "@mui/icons-material/Print";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
@@ -8,13 +7,14 @@ import { CircularProgress } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import type { ButtonProps } from "@mui/material/Button";
 import { format, parseISO } from "date-fns";
-import { es as esLocale } from "date-fns/locale";
+import { es as esLocale, it as itLocale } from "date-fns/locale";
 import { useCallback, useMemo, useState } from "react";
 import i18n from "../../utils/i18n";
 import { useLanguage } from "../../context/LanguageContext";
 import { Resume, WorkHistory } from "../../types/";
 import { homePath } from "../../constants/gloabals";
 import { useScrollToTop } from "../../utils/useScrollToTop";
+import { LanguageSwitcher } from "../molecules";
 import { downloadResumePdf } from "../../utils/downloadResumePdf";
 import { isDuplicateText, parseDescription } from "../../utils/resumeText";
 
@@ -252,10 +252,11 @@ const shortUrl = (url?: string) => {
 };
 
 export function ResumePrintPage() {
-  const { setLanguage, language } = useLanguage();
+  const { language } = useLanguage();
   useScrollToTop();
   const resume = useMemo(() => i18n.t("resume") as Resume, [language]);
-  const dateLocale = language === "es" ? esLocale : undefined;
+  const dateLocale =
+    language === "es" ? esLocale : language === "it" ? itLocale : undefined;
 
   const formatRange = useCallback(
     (work: WorkHistory) => {
@@ -299,7 +300,6 @@ export function ResumePrintPage() {
     // wa.me/<number> repeats the phone line verbatim in the header.
     return all.filter((item) => !(hasPhone && item.icon === "whatsapp.svg"));
   }, [resume]);
-  const toggleLabel = i18n.t("resume.change_language");
 
   return (
     <Screen>
@@ -335,13 +335,7 @@ export function ResumePrintPage() {
               <ButtonLabel>{i18n.t("resume.print_label")}</ButtonLabel>
             </ToolbarButton>
           </Tooltip>
-          <Tooltip title={toggleLabel} arrow>
-            <ToolbarButton
-              aria-label={toggleLabel}
-              onClick={() => setLanguage(language === "en" ? "es" : "en")}>
-              <TranslateRoundedIcon sx={{ fontSize: 20 }} />
-            </ToolbarButton>
-          </Tooltip>
+          <LanguageSwitcher />
         </ToolbarGroup>
       </Toolbar>
 

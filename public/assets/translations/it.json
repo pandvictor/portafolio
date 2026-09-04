@@ -1,0 +1,1307 @@
+{
+  "hello": "Ciao!",
+  "download": "Scarica il CV",
+  "more_info": "Panoramica",
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Costruisco e scalo prodotti mobile, web e backend per team fintech, del settore pubblico e crypto."
+  },
+  "home": {
+    "trusted_by": "Hanno lavorato con me",
+    "services_title": "Come posso aiutarti",
+    "services_kicker": "Servizi",
+    "services_intro": "Leadership tecnica ed esecuzione diretta per team che hanno bisogno di software di livello produttivo consegnato in fretta — dall'architettura e lo sviluppo fino al lancio, all'osservabilità e alla reperibilità.",
+    "projects_kicker": "Progetti",
+    "projects_title": "Lavori selezionati",
+    "projects_subtitle": "Casi studio tra piattaforme fintech, governative e crypto.",
+    "projects_note": "Apri un progetto per vedere ambito, stack e risultati.",
+    "featured_kicker": "In evidenza",
+    "featured_title": "Un caso studio con impatto misurabile",
+    "featured_subtitle": "Uno sguardo ravvicinato a una piattaforma dove risultati, scala e consegna sono evidenti.",
+    "featured_cta": "Vedi il caso studio",
+    "projects_hint": "Scorri ->",
+    "credibility_kicker": "Credibilità",
+    "credibility_title": "Consegna affidabile su larga scala",
+    "credibility_stats": [
+      {
+        "value": "19+ anni",
+        "label": "Prodotti mission-critical in produzione"
+      },
+      {
+        "value": "500k+ utenti",
+        "label": "Wallet e piattaforme di pagamento"
+      },
+      {
+        "value": "10k+ TPS",
+        "label": "Throughput di picco nel trading"
+      },
+      {
+        "value": "200+ ATM",
+        "label": "Copertura di prelievo e deposito"
+      }
+    ],
+    "hero_bullets": [
+      "19+ anni di piattaforme fintech e del settore pubblico in produzione",
+      "Consegna full-stack su mobile, web e backend",
+      "Flussi di lavoro assistiti dall'IA per accelerare pianificazione, QA e cicli di rilascio"
+    ],
+    "services": [
+      {
+        "title": "Consegna di prodotto",
+        "desc": "Funzionalità ad alto impatto, dall'ambito al lancio, su mobile e web.",
+        "icon": "jira.svg"
+      },
+      {
+        "title": "Piattaforma e API",
+        "desc": "Servizi Node/TypeScript, Firebase e .NET pensati per scalare.",
+        "icon": "nodejs.svg"
+      },
+      {
+        "title": "Performance e affidabilità",
+        "desc": "Ottimizzazione della latenza, osservabilità e prontezza agli incidenti.",
+        "icon": "kubernetes.svg"
+      },
+      {
+        "title": "Leadership tecnica",
+        "desc": "Indirizzo architetturale, mentoring e standard di consegna.",
+        "icon": "scrum.svg"
+      },
+      {
+        "title": "Consegna assistita dall'IA",
+        "desc": "Pair programming con IA e QA assistito, con le decisioni di architettura e qualità sotto revisione umana.",
+        "icon": "openai.svg"
+      }
+    ],
+    "cta_kicker": "Prossimo passo",
+    "cta_title": "Hai una piattaforma da costruire o scalare?",
+    "cta_desc": "Raccontami cosa stai lanciando e ti rispondo con ambito, rischi e un piano di consegna.",
+    "cta_primary": "Iniziamo a parlarne",
+    "cta_secondary": "Scarica il CV",
+    "projects_prev": "Progetti precedenti",
+    "projects_next": "Altri progetti",
+    "project_live": "Sito live",
+    "project_case": "Panoramica",
+    "facts_availability": "Disponibilità",
+    "facts_location": "Con base a",
+    "facts_languages": "Lingue"
+  },
+  "hero": {
+    "flip": {
+      "aria": "Gira la sezione",
+      "view_profile": "Vedi il profilo",
+      "view_ai": "Vedi l'IA"
+    },
+    "chips": {
+      "ai": "IA • LLM in produzione",
+      "sectors": "Fintech • Pubblica amministrazione • Crypto",
+      "experience": "19+ anni",
+      "crypto": "Bitcoin • Lightning"
+    },
+    "cta": {
+      "talk": "Parliamone"
+    },
+    "back": {
+      "badge": "Consegna assistita dall'IA",
+      "title": "Consegnare in settimane, non in trimestri",
+      "summary": "Unisco l'esecuzione assistita dall'IA a 19+ anni di esperienza in produzione. Le decisioni di architettura, sicurezza e qualità restano sotto controllo umano.",
+      "impact_line": "L'ultimo caso: una piattaforma multi-tenant per i Mondiali progettata, costruita e lanciata in ~2 settimane.",
+      "tags": [
+        "Fintech",
+        "Bitcoin e Lightning",
+        "Piattaforme di trading",
+        "Settore pubblico",
+        "AWS serverless",
+        "React Native"
+      ],
+      "cards": [
+        {
+          "key": "features",
+          "title": "Consegna di prodotto",
+          "desc": "Dall'ambito al lancio su mobile e web"
+        },
+        {
+          "key": "mobile",
+          "title": "Mobile",
+          "desc": "React Native • Expo • iOS e Android"
+        },
+        {
+          "key": "frontend",
+          "title": "Frontend",
+          "desc": "React • Next.js • UI in tempo reale"
+        },
+        {
+          "key": "backend",
+          "title": "Backend e cloud",
+          "desc": "Node.js • Python • AWS serverless"
+        },
+        {
+          "key": "reliability",
+          "title": "Affidabilità",
+          "desc": "99,95% di uptime • osservabilità • reperibilità"
+        },
+        {
+          "key": "experiments",
+          "title": "Consegna con IA",
+          "desc": "Pair programming con IA • QA assistito"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "availability_tag": "Disponibilità",
+    "availability_title": "Disponibile per consulenza e ruoli di leadership",
+    "availability_desc": "Consegna end-to-end su mobile, web e backend.",
+    "availability_meta": "Da remoto · Fusi orari delle Americhe"
+  },
+  "resume": {
+    "title": "CV",
+    "name": "Victor",
+    "full_name": "Victor Hernández",
+    "position": "Lead Software Engineer",
+    "experience": "Esperienza",
+    "education": "Formazione",
+    "languages_title": "Lingue",
+    "skills": "Competenze",
+    "change_language": "Cambia lingua",
+    "contact": "Contatti",
+    "summary": "Engineering Leader con 19+ anni di esperienza nella costruzione di piattaforme mission-critical su larga scala in ambito fintech, crypto e settore pubblico. Ho guidato lo sviluppo end-to-end di CHIVO Wallet e della piattaforma di trading APEX, migliorando scalabilità, prestazioni in tempo reale e affidabilità di sistema per milioni di utenti. Esperto di React Native, React, Node.js e AWS, con un solido percorso nella guida di team di ingegneria, nella definizione dell'architettura e nella consegna di prodotti ad alto impatto in contesti dinamici e ad alta posta in gioco. Di recente ho lanciato Quinielas.live, piattaforma multi-tenant per i Mondiali 2026 su uno stack AWS serverless ottimizzato nei costi, consegnata in ~2 settimane con pair programming assistito dall'IA.",
+    "work_history": [
+      {
+        "start_date": "2026-03-01",
+        "end_date": "",
+        "is_current": true,
+        "company": "Quinielas.live",
+        "company_image": "quinielas-live-badge.webp",
+        "position": "Lead Full-Stack Engineer",
+        "description": "Ho progettato e lanciato una piattaforma multi-tenant di pronostici per i Mondiali 2026 su AWS serverless a basso costo, unendo consegna di prodotto white-label, flussi di gioco sicuri ed esecuzione assistita dall'IA.",
+        "tasks": [
+          "Ho progettato e implementato un'architettura AWS serverless multi-tenant con Lambda Node 20 ARM64, DynamoDB single-table con 3 GSI, HTTP API, CloudFront, S3 e ACM, ottimizzata per un costo a riposo vicino allo zero in condizioni normali.",
+          "Ho costruito il frontend in Next.js 12, React e MUI con branding white-label guidato dai profili, capace di servire più varianti aziendali da un unico codebase senza duplicazioni.",
+          "Ho implementato l'autenticazione JWT HS256 con bcrypt cost-12, validazione doppia client/server, ruoli IAM a privilegio minimo e policy CORS rigorose.",
+          "Ho realizzato 3 Lambda e 13 endpoint REST per CRUD dei tornei, pronostici, classifiche e flussi di leaderboard.",
+          "Ho estratto e normalizzato l'intero calendario dei Mondiali 2026 (48 squadre, 104 partite) con uno scraper Python e caricamento idempotente su DynamoDB.",
+          "Ho guidato l'iterazione UX/UI sulla base del feedback visivo, affinando banner hero, conto alla rovescia contestuali, stati per il podio e gradienti coerenti con il profilo.",
+          "Ho configurato quinielas.live con GoDaddy + ACM, SSL automatico e deploy idempotenti via AWS CLI senza Route 53, per contenere i costi di infrastruttura.",
+          "Ho adottato il pair programming assistito dall'IA con Claude Code per comprimere una finestra di consegna tipica di 3-4 mesi in ~2 settimane, mantenendo sotto controllo umano le decisioni di architettura, prodotto e qualità."
+        ],
+        "achievements": [
+          {
+            "title": "Piattaforma di Pronostici Mondiali 2026",
+            "description": "Piattaforma multi-tenant di pronostici per i Mondiali 2026: branding white-label da un unico codebase, gioco sicuro e classifiche in tempo reale su uno stack serverless ottimizzato nei costi.",
+            "image": "quinielas-live-hero.webp",
+            "url": "https://quinielas.live",
+            "date": "2026-03-01",
+            "outcomes": [
+              "~2 settimane da zero al lancio",
+              "Costo AWS a riposo quasi nullo",
+              "White-label multi-tenant"
+            ],
+            "tech_stack": [
+              {
+                "name": "Next.js 12"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "MUI"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS Lambda"
+              },
+              {
+                "name": "DynamoDB"
+              },
+              {
+                "name": "CloudFront"
+              },
+              {
+                "name": "S3"
+              },
+              {
+                "name": "Python"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "quinielas-live-hero.webp",
+                "description": "Superficie hero per i tornei dei Mondiali 2026 con conto alla rovescia contestuali, call to action brandizzate e un sistema visivo stadio/trofeo calibrato sui profili white-label."
+              },
+              {
+                "image": "quinielas-live-trophy-hands.webp",
+                "description": "Artwork di ingresso al torneo riutilizzato nei flussi di onboarding e nelle campagne, per rafforzare l'energia della giornata di gara e gli stati promozionali brandizzati."
+              },
+              {
+                "image": "quinielas-live-wordmark.webp",
+                "description": "Stemma e wordmark principali adattati a navigazione, schede dei tornei e varianti con brand aziendale a partire dallo stesso codebase condiviso."
+              }
+            ]
+          }
+        ],
+        "home_order": 0,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2026-01-20",
+        "end_date": "",
+        "is_current": true,
+        "company": "BlueQuant",
+        "company_image": "bluequant-wordmark.svg",
+        "position": "Lead Full-Stack Engineer",
+        "description": "Guido la consegna di prodotto assistita dall'IA tra frontend React, servizi Python, database, ambienti Docker e flussi di QA.",
+        "tasks": [
+          "Costruisco flussi di prodotto interni con React e Python, collegando le esigenze di business a funzionalità pronte per la produzione.",
+          "Uso flussi assistiti dall'IA per accelerare la scoperta tecnica, il supporto all'implementazione, la documentazione e la preparazione del QA.",
+          "Coordino il lavoro sui database, gli ambienti basati su Docker e i checkpoint di QA, così i rilasci avanzano più in fretta con meno lavoro manuale.",
+          "Definisco standard di revisione pratici per l'output generato dall'IA, mantenendo alta la velocità di consegna senza indebolire la qualità."
+        ],
+        "achievements": [
+          {
+            "title": "AI Delivery Workspace",
+            "description": "Workspace interno che accelera la scoperta tecnica, il supporto all'implementazione e la documentazione lungo tutto il flusso di consegna.",
+            "image": "bluequant-ai-studio.svg",
+            "url": "",
+            "date": "2026-01-20",
+            "outcomes": [
+              "Scoperta tecnica più rapida",
+              "Meno passaggi manuali",
+              "Standard di revisione per l'output IA"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Python",
+                "icon": "python.svg"
+              },
+              {
+                "name": "OpenAI / LLMs",
+                "icon": "openai.svg"
+              },
+              {
+                "name": "PostgreSQL",
+                "icon": "postgresql.svg"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "QA",
+                "icon": "jira.svg"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bluequant-ai-studio.svg",
+                "description": "Workspace assistito dall'IA per definire l'ambito, comporre gli artefatti di consegna e standardizzare i passaggi di implementazione."
+              },
+              {
+                "image": "bluequant-qa-copilot.svg",
+                "description": "Vista operativa per il triage, la prontezza al rilascio e l'accelerazione del QA, con prompt condivisi e checkpoint di revisione."
+              }
+            ]
+          },
+          {
+            "title": "QA Intelligence Pipeline",
+            "description": "Flusso di QA e rilascio supportato dall'IA che riduce la preparazione manuale dei test e affina il triage dei difetti.",
+            "image": "bluequant-qa-copilot.svg",
+            "url": "",
+            "date": "2026-02-03",
+            "outcomes": [
+              "QA più rapido",
+              "Meno preparazione manuale dei test",
+              "Triage dei difetti più preciso"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Python",
+                "icon": "python.svg"
+              },
+              {
+                "name": "OpenAI / LLMs",
+                "icon": "openai.svg"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "PostgreSQL",
+                "icon": "postgresql.svg"
+              },
+              {
+                "name": "QA",
+                "icon": "jira.svg"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bluequant-qa-copilot.svg",
+                "description": "Workspace di QA supportato dall'IA per generare percorsi di test, organizzare i riscontri e rafforzare la prontezza al rilascio."
+              },
+              {
+                "image": "bluequant-ai-studio.svg",
+                "description": "Contesto di consegna condiviso che collega attività di implementazione, ambito del rilascio e follow-up di QA in un unico flusso operativo."
+              }
+            ]
+          }
+        ],
+        "home_order": 1,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2024-07-01",
+        "end_date": "2025-11-30",
+        "is_current": false,
+        "company": "APEX Exchange (AlphaPoint)",
+        "company_image": "alphapoint-logo.webp",
+        "position": "Lead Frontend Engineer",
+        "description": "Ho guidato l'ingegneria frontend di APEX, la piattaforma di trading istituzionale white-label di AlphaPoint, coprendo trading, margine e gestione dei conti su web e mobile.",
+        "tasks": [
+          "Ho implementato un'interfaccia di trading responsive (order book, grafici avanzati, RFQ/OTC) alimentata da feed WebSocket e API REST.",
+          "Ho integrato i moduli di conto, wallet e custodia multi-asset con flussi di amministrazione basati sui ruoli e di compliance.",
+          "Ho ottimizzato latenza e rendering per aggiornamenti ad alta frequenza (profondità, scambi, saldi) usando virtualizzazione e memoizzazione.",
+          "Ho collaborato con prodotto e clienti per localizzare e personalizzare l'esperienza white-label in più rollout istituzionali.",
+          "Ho contribuito all'architettura backend che sostiene oltre 10.000 transazioni al secondo nei momenti di picco."
+        ],
+        "achievements": [
+          {
+            "title": "Piattaforma di Trading Cripto Istituzionale",
+            "description": "Piattaforma di trading white-label per clienti istituzionali: order book, grafici avanzati e flussi RFQ/OTC su feed WebSocket in tempo reale, con custodia multi-asset e flussi di compliance.",
+            "image": "apex-hero.webp",
+            "url": "https://alphapoint.com/product/alphapoint-exchange-software/",
+            "date": "2024-05-01",
+            "outcomes": [
+              "Aggiornamenti più rapidi del 60%",
+              "99,95% di uptime",
+              "10k+ TPS di picco"
+            ],
+            "tech_stack": [
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "alphapoint.png",
+                "description": "Esperienza di trading web con order book in tempo reale, grafici e strumenti di liquidità per clienti istituzionali."
+              },
+              {
+                "image": "apex-mobile.webp",
+                "description": "App di trading mobile per acquistare cripto ed eseguire operazioni con grafici live, profondità e gestione degli ordini."
+              },
+              {
+                "image": "apex-trading.webp",
+                "description": "Modulo di trading per più coppie cripto con ordini a mercato, limite e condizionati, TP/SL e leva."
+              },
+              {
+                "image": "apex-realtime.webp",
+                "description": "Acquisti a mercato in tempo reale su più coppie cripto con dettaglio di commissioni e costi di prestito."
+              },
+              {
+                "image": "apex-alerts.webp",
+                "description": "Avvisi e notifiche in-app per il rischio di portafoglio e le variazioni di saldo."
+              },
+              {
+                "image": "apex-webtrading.webp",
+                "description": "Piattaforma di trading web per più cripto con order book live, scambi e inserimento ordini avanzato."
+              },
+              {
+                "image": "apex-admin.webp",
+                "description": "Console web per gestire utenti, conti, saldi e monitoraggio del rischio."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              },
+              {
+                "name": "XRP"
+              },
+              {
+                "name": "USDT"
+              },
+              {
+                "name": "ETH"
+              },
+              {
+                "name": "DASH"
+              },
+              {
+                "name": "ADA"
+              }
+            ]
+          }
+        ],
+        "home_order": 2,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2023-06-01",
+        "end_date": "2024-06-30",
+        "is_current": false,
+        "company": "CHIVO Wallet",
+        "company_image": "alphapoint-logo.webp",
+        "position": "Senior Software Developer",
+        "description": "Ho guidato il wallet Bitcoin nazionale di El Salvador (AlphaPoint) — un servizio digitale nazionale costruito per oltre 6 milioni di cittadini — occupandomi delle esperienze web e mobile per pagamenti, rimesse, prelievi/depositi e POS per esercenti.",
+        "tasks": [
+          "Ho realizzato i flussi di wallet, rimesse e on/off-ramp in React Native e React, integrando servizi Lightning e on-chain.",
+          "Ho coordinato i rilasci con prodotto e compliance per mantenere KYC, chioschi di deposito e POS allineati alle normative.",
+          "Ho costruito componenti UI condivisi, monitoraggio degli errori e baseline di performance per i client mobile e web.",
+          "Ho fatto mentoring su TypeScript, testing e osservabilità, curando al contempo backlog e debito tecnico."
+        ],
+        "achievements": [
+          {
+            "title": "Wallet Bitcoin Nazionale e POS",
+            "description": "Il wallet Bitcoin/Lightning nazionale di El Salvador: pagamenti con QR, rimesse, POS per esercenti, sconti carburante e prelievi/depositi in oltre 200 ATM.",
+            "image": "chivo2.webp",
+            "url": "https://www.chivowallet.com",
+            "date": "2024-01-01",
+            "outcomes": [
+              "500k+ utenti attivi",
+              "10k+ transazioni giornaliere",
+              "200+ ATM"
+            ],
+            "tech_stack": [
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "RTK Query"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              },
+              {
+                "name": "Scrum"
+              },
+              {
+                "name": "iOS"
+              },
+              {
+                "name": "Android"
+              },
+              {
+                "name": "TypeScript"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Bitcoin"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "chivo2.webp",
+                "description": "Esperienza mobile per pagamenti Lightning e on-chain, rimesse e flussi con QR."
+              },
+              {
+                "image": "chivo.webp",
+                "description": "POS per esercenti e gestione del contante tra chioschi e ATM, con flussi pronti per la compliance."
+              },
+              {
+                "image": "chivo-benefits.webp",
+                "description": "Vantaggi per l'utente del wallet nazionale: trasferimenti senza commissioni, onboarding semplice, supporto USD/BTC e prelievo di contante in qualsiasi momento."
+              },
+              {
+                "image": "chivo-login.png",
+                "description": "Validazione dell'utente, onboarding sicuro e controlli KYC per nuove registrazioni e accessi."
+              },
+              {
+                "image": "chivo-otp.webp",
+                "description": "Accesso tramite numero di telefono con OTP inviato all'utente per un ingresso sicuro."
+              },
+              {
+                "image": "chivo-admin.webp",
+                "description": "Console web per amministrare utenti, conti, saldi e posizioni."
+              }
+            ],
+            "coins": [
+              {
+                "name": "Bitcoin"
+              }
+            ]
+          }
+        ],
+        "home_order": 3,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2022-12-01",
+        "end_date": "2023-12-31",
+        "is_current": false,
+        "company": "IOM & Social Welfare Secretariat",
+        "company_image": [
+          "oim.jpeg",
+          "sbs.webp"
+        ],
+        "position": "Technical Lead & Senior Developer",
+        "description": "Responsabile tecnico del programma Angel Ariel, con il coordinamento di team React e Node.js su progetti governativi.",
+        "tasks": [
+          "Ho definito architettura e linee guida di sviluppo per le piattaforme sociali.",
+          "Ho gestito gli stakeholder e il follow-up funzionale con le agenzie internazionali.",
+          "Ho fatto mentoring ai team e supportato i deploy realizzati con React e Node.js.",
+          "Ho automatizzato la reportistica e le integrazioni con i servizi cloud."
+        ],
+        "achievements": [
+          {
+            "title": "Piattaforma Angel Ariel",
+            "description": "Portale web e mobile per i programmi Quedate e Casa Joven, con dashboard per il personale sul campo e reportistica automatizzata verso le agenzie internazionali.",
+            "image": "angel-ariel.webp",
+            "url": "https://www.iom.int",
+            "date": "2023-06-01",
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "MongoDB"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Scrum"
+              }
+            ],
+            "outcomes": [
+              "Due programmi nazionali",
+              "Dashboard per il personale sul campo",
+              "Reportistica automatizzata"
+            ]
+          }
+        ],
+        "home_order": 6,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2023-01-01",
+        "end_date": "2023-05-31",
+        "is_current": false,
+        "company": "WizeDevs",
+        "position": "Senior Mobile Developer",
+        "description": "Ricostruzione completa di un'applicazione mobile legacy con importanti miglioramenti di UX e prestazioni.",
+        "tasks": [
+          "Ho rifattorizzato l'intero codebase seguendo le best practice di React Native.",
+          "Ho integrato le serrature smart Linka tramite il loro SDK.",
+          "Ho ottimizzato i layout per più risoluzioni e per la modalità scura.",
+          "Ho automatizzato il QA e i rilasci sugli store."
+        ],
+        "achievements": [
+          {
+            "title": "Rilancio della Sicurezza Residenziale",
+            "description": "Ho rilasciato una nuova versione con flussi sicuri, notifiche e aggiornamenti OTA.",
+            "url": "https://wizedevs.com",
+            "date": "2023-05-01",
+            "tech_stack": [
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "Expo"
+              },
+              {
+                "name": "Redux"
+              }
+            ]
+          }
+        ],
+        "show_on_home": false
+      },
+      {
+        "start_date": "2022-10-01",
+        "end_date": "2022-12-31",
+        "is_current": false,
+        "company": "Asofarma Pharma",
+        "position": "Tech Lead & Full-Stack",
+        "description": "Implementazione full-stack e deploy su AWS della piattaforma di pronostici per i Mondiali di Qatar 2022.",
+        "tasks": [
+          "Ho costruito i moduli frontend e backend per l'amministrazione dei tabelloni.",
+          "Ho automatizzato l'infrastruttura con servizi gestiti AWS.",
+          "Ho fornito supporto operativo e monitoraggio durante il torneo.",
+          "Ho prodotto la documentazione tecnica per i team regionali."
+        ],
+        "achievements": [
+          {
+            "title": "Pronostici Qatar 2022",
+            "description": "Portale aziendale gamificato con autenticazione sicura e reportistica in tempo reale.",
+            "url": "https://www.asofarma.com",
+            "date": "2022-12-01",
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
+            ]
+          }
+        ],
+        "show_on_home": false
+      },
+      {
+        "start_date": "2022-08-01",
+        "end_date": "2022-12-31",
+        "is_current": false,
+        "company": "Quinielas.live",
+        "company_image": "quinielas-live-badge.webp",
+        "position": "Tech Lead & Full-Stack",
+        "description": "Consegna full-stack e deploy su AWS della prima piattaforma di concorsi live per Qatar 2022.",
+        "tasks": [
+          "Ho costruito i moduli frontend e backend per l'amministrazione dei tornei e la partecipazione live.",
+          "Ho automatizzato l'infrastruttura con servizi gestiti AWS e script di deploy.",
+          "Ho mantenuto l'osservabilità e il supporto operativo per tutta la durata del torneo.",
+          "Ho documentato i flussi tecnici per gli operatori regionali e i team di supporto."
+        ],
+        "achievements": [
+          {
+            "title": "Piattaforma di Concorsi Live Qatar 2022",
+            "description": "Prima release della piattaforma di tornei live con accesso sicuro, classifiche in tempo reale e gestione dei premi per le campagne dei Mondiali.",
+            "image": "quinielas-live-hero.webp",
+            "url": "https://quinielas.live",
+            "date": "2022-11-01",
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Docker"
+              }
+            ]
+          }
+        ],
+        "show_on_home": false
+      },
+      {
+        "start_date": "2022-02-01",
+        "end_date": "2022-10-31",
+        "is_current": false,
+        "company": "Cognits",
+        "position": "Senior Full-Stack",
+        "description": "Ho supportato la piattaforma LEND aggiungendo nuove funzionalità, migrazioni tecnologiche e miglioramenti agli ambienti Dev/QA.",
+        "tasks": [
+          "Ho implementato componenti React e flussi di prestito.",
+          "Ho migrato moduli Jython verso stack moderni.",
+          "Ho migliorato gli ambienti di QA e DevOps.",
+          "Ho promosso le code review e le best practice."
+        ],
+        "achievements": [
+          {
+            "title": "Piattaforma LEND",
+            "description": "Soluzione finanziaria con componenti modulari e deploy automatizzati.",
+            "url": "https://www.cognits.co",
+            "date": "2022-09-01",
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "Docker"
+              }
+            ]
+          }
+        ],
+        "show_on_home": false
+      },
+      {
+        "start_date": "2022-01-01",
+        "end_date": "2022-12-31",
+        "is_current": false,
+        "company": "Bullseye Locations",
+        "company_image": "bullseye.svg",
+        "position": "Senior Full-Stack Engineer",
+        "description": "Ho sviluppato applicazioni basate su mappe con Google Maps e Mapbox per clienti del retail.",
+        "tasks": [
+          "Ho integrato dati geospaziali e dashboard analitiche.",
+          "Ho migrato moduli .NET verso React e React Native.",
+          "Ho avviato lo sviluppo mobile con React Native.",
+          "Mi sono coordinato direttamente con gli stakeholder di business negli Stati Uniti."
+        ],
+        "achievements": [
+          {
+            "title": "Suite di Location Intelligence",
+            "description": "Analisi di localizzazione per l'espansione retail, su Google Maps e Mapbox con dashboard analitiche per clienti statunitensi.",
+            "image": "bullseye-banner-transparent.webp",
+            "url": "https://www.bullseyelocations.com/",
+            "date": "2022-10-01",
+            "outcomes": [
+              "Analitica con Google Maps + Mapbox",
+              "Migrazione da .NET a React",
+              "Nuova app in React Native"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Redux"
+              },
+              {
+                "name": "React Native"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "C#"
+              },
+              {
+                "name": ".NET Core"
+              },
+              {
+                "name": "IIS"
+              },
+              {
+                "name": "SQL Server"
+              },
+              {
+                "name": "Jira"
+              },
+              {
+                "name": "Scrum"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "bullseye-locator.webp",
+                "description": "Generazione automatica di localizzatori guidata dalle richieste dei clienti, per trovare negozi e chioschi sulla mappa."
+              },
+              {
+                "image": "bullseye-nearby.png",
+                "description": "Individuazione automatica delle sedi vicine in base alla posizione attuale dell'utente."
+              },
+              {
+                "image": "bullseye-search.webp",
+                "description": "Ricerca di punti vendita sulla mappa con geolocalizzazione e filtri."
+              },
+              {
+                "image": "bullseye-page.webp",
+                "description": "Generazione dinamica di pagine a partire da JSON in ingresso per creare landing page di eventi e sedi."
+              },
+              {
+                "image": "bullseye-form.png",
+                "description": "Generazione dinamica di moduli a partire da input JSON per le richieste di cerimonie e punti vendita."
+              }
+            ]
+          }
+        ],
+        "home_order": 4,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2021-05-01",
+        "end_date": "2021-10-31",
+        "is_current": false,
+        "company": "International Organization for Migration",
+        "position": "Tech Lead & Senior Full-Stack",
+        "description": "Ho analizzato e riprogettato il Sistema di Visti Temporanei (IGM), coordinando team e documentazione.",
+        "tasks": [
+          "Ho guidato team ibridi in Guatemala e da remoto.",
+          "Ho prodotto la documentazione funzionale e tecnica dei processi migratori.",
+          "Ho integrato servizi governativi e pipeline di analisi dei dati.",
+          "Ho supportato gli audit di sicurezza e la conformità."
+        ],
+        "achievements": [
+          {
+            "title": "Sistema di Visti Temporanei",
+            "description": "Backend e front office modernizzati con flussi tracciabili e reportistica.",
+            "image": "chivo.webp",
+            "url": "https://www.migracion.gob.gt",
+            "date": "2021-08-01",
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Node.js"
+              },
+              {
+                "name": "AWS"
+              }
+            ]
+          }
+        ],
+        "show_on_home": false
+      },
+      {
+        "start_date": "2016-01-01",
+        "end_date": "2020-12-31",
+        "is_current": false,
+        "company": "FAO UN & SIECA",
+        "company_image": [
+          "fao.webp",
+          "sieca.png"
+        ],
+        "position": "Tech Lead & Senior Full-Stack",
+        "description": "Ho realizzato piattaforme regionali per il mercato agricolo e dashboard doganali per l'America Centrale e i Caraibi.",
+        "tasks": [
+          "Ho coordinato team multinazionali e rollout regionali.",
+          "Ho progettato dashboard per commercio e logistica.",
+          "Ho sviluppato portali web e mobile multi-piattaforma.",
+          "Ho mantenuto i sistemi FYDUCA e la reportistica RFID."
+        ],
+        "achievements": [
+          {
+            "title": "Mercato Agricolo Regionale",
+            "description": "Piattaforma regionale di prezzi e offerta per l'America Centrale e i Caraibi, affiancata da dashboard doganali e commerciali.",
+            "image": "red-regional-banner.svg",
+            "url": "https://www.sieca.int",
+            "date": "2019-06-01",
+            "outcomes": [
+              "America Centrale + Caraibi",
+              "Dashboard doganali e commerciali",
+              "Guida di team multinazionali"
+            ],
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Docker"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "Java"
+              },
+              {
+                "name": "IIS"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "MongoDB"
+              },
+              {
+                "name": ".NET"
+              },
+              {
+                "name": "C#"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "simmagro.webp",
+                "description": "Portale web per visualizzare i prezzi all'ingrosso tra i vari paesi, con moduli per commercio e produzione."
+              },
+              {
+                "image": "simmagro-search.png",
+                "description": "Ricerca avanzata con filtri per periodo, flusso, paese, partner e prodotti per l'analisi del commercio regionale."
+              },
+              {
+                "image": "simmagro-compare.png",
+                "description": "Confronto dei prezzi tra paesi per import ed export, per prodotto e origine."
+              },
+              {
+                "image": "simmagro-charts.webp",
+                "description": "Grafici statistici interattivi che confrontano i prezzi tra paesi e prodotti."
+              },
+              {
+                "image": "simmagro-alerts.png",
+                "description": "Avvisi in tempo reale e controlli di aggiornamento sui prezzi nei diversi mercati."
+              },
+              {
+                "image": "simmagro-timeline.png",
+                "description": "Serie storiche dei prezzi per paese con confronti affiancati tra mercati."
+              }
+            ]
+          }
+        ],
+        "home_order": 4,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2013-01-01",
+        "end_date": "2014-12-31",
+        "is_current": false,
+        "company": "FantasyGol",
+        "company_image": "fantasygol-logo.webp",
+        "position": "Full-Stack Developer",
+        "description": "Ho costruito una piattaforma di fantacalcio con oltre 10 campionati internazionali e 10k+ giocatori in contemporanea, monetizzata con una commissione del 10% sulle scommesse tra utenti e acquisita dopo i Mondiali.",
+        "tasks": [
+          "Ho progettato la piattaforma da zero: modello dati, diagrammi ER, servizi backend e UI/UX frontend.",
+          "Ho implementato pagamenti sicuri, il modulo premi e la riscossione automatica della commissione (10% per la casa).",
+          "Ho integrato feed di dati live delle partite per formazioni, quote e punteggi in tempo reale.",
+          "Ho costruito l'infrastruttura AWS (calcolo, storage, rete) con CI/CD per rilasci rapidi.",
+          "Ho creato landing page ottimizzate per la SEO per aumentare l'acquisizione organica.",
+          "Ho ottimizzato le prestazioni per sostenere oltre 10.000 utenti in contemporanea nei picchi di traffico dei Mondiali."
+        ],
+        "achievements": [
+          {
+            "title": "Piattaforma di Fantasy Sports",
+            "description": "Piattaforma di fantacalcio su oltre 10 campionati internazionali, dove gli utenti creavano leghe private per sfidare gli amici, monetizzata con una commissione del 10% sulle scommesse tra utenti.",
+            "image": "fantasygol-card.webp",
+            "url": "",
+            "date": "2014-12-01",
+            "outcomes": [
+              "10k+ giocatori in contemporanea",
+              "10+ campionati internazionali",
+              "Acquisita dopo i Mondiali"
+            ],
+            "tech_stack": [
+              {
+                "name": "PHP"
+              },
+              {
+                "name": "PayPal"
+              },
+              {
+                "name": "AWS"
+              },
+              {
+                "name": "MySQL"
+              },
+              {
+                "name": "Git"
+              },
+              {
+                "name": "GitLab"
+              }
+            ],
+            "modal_details": [
+              {
+                "image": "fantasygol-lobby.webp",
+                "description": "Lobby delle leghe fantasy con filtri, quote di iscrizione, premi e accesso rapido al gioco."
+              },
+              {
+                "image": "fantasygol-onboarding.webp",
+                "description": "Registrazione con account social o email per entrare nelle leghe e iniziare a giocare in pochi minuti."
+              },
+              {
+                "image": "fantasygol-team.webp",
+                "description": "Costruttore di squadre semplice, con budget, moduli e dati live delle partite per schierare la formazione."
+              }
+            ]
+          }
+        ],
+        "home_order": 4,
+        "show_on_home": true
+      },
+      {
+        "start_date": "2012-01-01",
+        "end_date": "2016-12-31",
+        "is_current": false,
+        "company": "IOM",
+        "company_image": "oim.jpeg",
+        "position": "Full-Stack Developer",
+        "description": "Ho realizzato piattaforme per statistiche, sondaggi, ecommerce, app mobile, dashboard e sistemi nutrizionali per programmi delle Nazioni Unite.",
+        "tasks": [
+          "Ho sviluppato app mobile, dashboard e servizi di inventario.",
+          "Ho integrato moduli di sondaggio e di pagamento per progetti internazionali.",
+          "Ho mantenuto soluzioni Java + PHP + Oracle.",
+          "Ho implementato servizi dati e API di reportistica."
+        ],
+        "achievements": [
+          {
+            "title": "Piattaforme multinazionali",
+            "description": "Suite di soluzioni ONU con monitoraggio sul campo e backoffice sicuro.",
+            "url": "https://www.un.org",
+            "date": "2015-05-01",
+            "tech_stack": [
+              {
+                "name": "React"
+              },
+              {
+                "name": "Laravel"
+              },
+              {
+                "name": "MySQL"
+              }
+            ]
+          }
+        ],
+        "show_on_home": false
+      },
+      {
+        "start_date": "2006-01-01",
+        "end_date": "2013-12-31",
+        "is_current": false,
+        "company": "SAT Guatemala",
+        "position": "Full-Stack Developer",
+        "description": "Ho modernizzato i sistemi fiscali e doganali usando Java, OAS, Spring e Oracle.",
+        "tasks": [
+          "Ho sviluppato applicazioni fiscali interne.",
+          "Ho integrato web service e flussi di autenticazione.",
+          "Ho migrato moduli legacy verso architetture web.",
+          "Ho fornito supporto continuo agli utenti chiave."
+        ],
+        "achievements": [
+          {
+            "title": "Sistemi tributari",
+            "description": "Piattaforme interne per la dichiarazione e il tracciamento delle informazioni fiscali.",
+            "url": "https://portal.sat.gob.gt",
+            "date": "2013-01-01",
+            "tech_stack": [
+              {
+                "name": "Java"
+              },
+              {
+                "name": "SQL"
+              },
+              {
+                "name": "Linux"
+              }
+            ]
+          }
+        ],
+        "show_on_home": false
+      }
+    ],
+    "university": {
+      "start_date": "2002",
+      "end_date": "2006",
+      "title": "Ingegneria Informatica",
+      "school": "Universidad de San Carlos de Guatemala"
+    },
+    "tech_skills": [
+      {
+        "title": "Frontend e Mobile",
+        "tools": [
+          "React",
+          "React Native",
+          "TypeScript",
+          "Redux",
+          "Expo"
+        ],
+        "stars": 5
+      },
+      {
+        "title": "Backend e Cloud",
+        "tools": [
+          "Node.js",
+          "Python",
+          "Java",
+          ".NET",
+          "AWS",
+          "Docker"
+        ],
+        "stars": 4
+      },
+      {
+        "title": "Database",
+        "tools": [
+          "MySQL",
+          "PostgreSQL",
+          "MongoDB",
+          "DynamoDB",
+          "Oracle"
+        ],
+        "stars": 4
+      },
+      {
+        "title": "Strumenti e DevOps",
+        "tools": [
+          "GitLab",
+          "Bitbucket",
+          "Jira",
+          "AWS Amplify",
+          "CloudFormation",
+          "QA"
+        ],
+        "stars": 4
+      }
+    ],
+    "languages": [
+      {
+        "language": "Spagnolo",
+        "level": "Madrelingua"
+      },
+      {
+        "language": "Inglese",
+        "level": "Avanzato"
+      },
+      {
+        "language": "Italiano",
+        "level": "Base"
+      }
+    ],
+    "contact_info": [
+      {
+        "title": "avihergo@gmail.com",
+        "icon": "email.svg",
+        "url": "mailto:avihergo@gmail.com"
+      },
+      {
+        "title": "+50255286714",
+        "icon": "phone.svg",
+        "url": "tel:+50255286714"
+      },
+      {
+        "title": "LinkedIn",
+        "icon": "linkedin.svg",
+        "url": "https://www.linkedin.com/in/avihergo/"
+      },
+      {
+        "title": "WhatsApp",
+        "icon": "whatsapp.svg",
+        "url": "https://wa.me/50255286714"
+      },
+      {
+        "title": "GitHub",
+        "icon": "github.svg",
+        "url": "https://github.com/pandvictor"
+      }
+    ],
+    "present": "Attuale",
+    "summary_title": "Profilo",
+    "print_cv": "Stampa / Salva PDF",
+    "back_to_site": "Torna al sito",
+    "location": "Guatemala · Da remoto (Americhe)",
+    "download_pdf": "Scarica PDF",
+    "print_label": "Stampa"
+  },
+  "cover_letter": {
+    "title": "Lettera di presentazione",
+    "eyebrow": "Lettera di presentazione",
+    "headline": "Consegna end-to-end per team che vogliono velocità di prodotto e profondità tecnica",
+    "subheadline": "Una visione sintetica di come lavoro tra mobile, web, backend ed esecuzione assistita dall'IA.",
+    "recipient_label": "Aperto a",
+    "recipient_value": "Ruoli lead, senior, di consulenza e di prodotto abilitati dall'IA",
+    "download_label": "Scarica la lettera",
+    "download_note": "Versione PDF per recruiter e hiring manager.",
+    "location": "Da remoto · Fusi orari delle Americhe",
+    "sections": [
+      {
+        "title": "INTRODUZIONE E PERCORSO",
+        "paragraphs": [
+          "Sono un Lead Software Engineer con 19+ anni di esperienza nella modernizzazione di prodotti digitali in settori altamente regolamentati, tra cui fintech e pubblica amministrazione — più di recente CHIVO Wallet, il wallet Bitcoin nazionale di El Salvador, e APEX, la piattaforma di trading istituzionale di AlphaPoint. Sono un ingegnere versatile che si muove con disinvoltura su tutto lo stack: dallo sviluppo di front-end intuitivi in React e React Native all'ingegnerizzazione di API robuste in Python/Node e database PostgreSQL. La mia leadership va oltre il codice: ho solida esperienza in deployment con Docker, strategia di QA e gestione dell'intero ciclo di vita del software per garantire rilasci ad alte prestazioni."
+        ]
+      },
+      {
+        "title": "COMPETENZE CHIAVE E RUOLI TARGET",
+        "paragraphs": [
+          "Ruoli target: Lead Full-Stack Engineer, Staff Software Engineer o Technical Consultant. Do il meglio in contesti ad alta responsabilità dove servono esecuzione approfondita e supervisione architetturale."
+        ],
+        "bullets": [
+          "Consegna a ciclo completo: esperienza nella consegna di prodotto end-to-end, tra Mobile (React Native), Web (React) e architetture backend robuste (Python/Node.js).",
+          "Stack principale: padronanza avanzata di TypeScript, PostgreSQL, ambienti basati su Docker e gestione dei rilasci con CI/CD.",
+          "Efficienza guidata dall'IA: uso strategico di strumenti di IA per accelerare la pianificazione dei sistemi, automatizzare i protocolli di QA e garantire documentazione e coerenza di consegna di alto livello."
+        ]
+      },
+      {
+        "title": "RETRIBUZIONE E DISPONIBILITÀ",
+        "paragraphs": [
+          "Retribuzione: aperta al confronto in base all'ambito del ruolo, al livello di responsabilità e all'impatto complessivo. Cerco una collaborazione che rifletta 19+ anni di competenza tecnica.",
+          "Preavviso: flessibile. La data di inizio può allinearsi alle esigenze immediate del progetto o del team."
+        ]
+      },
+      {
+        "title": "PREFERENZE DI LAVORO E SEDE",
+        "paragraphs": [
+          "Sede: cerco principalmente opportunità da remoto nelle Americhe. Lavoro meglio in culture che valorizzano la comunicazione diretta, la responsabilità piena e i risultati misurabili.",
+          "Ibrido / trasferte strategiche: aperto alla collaborazione ibrida o a visite on-site quando sono strategicamente utili per le milestone del progetto o l'allineamento del team."
+        ]
+      }
+    ],
+    "sidebar_groups": [],
+    "closing": "Se il tuo team cerca un ingegnere esperto capace di colmare il divario tra architettura di alto livello e dettaglio dell'esecuzione, sarò felice di conoscerci.",
+    "closing_title": "IN CHIUSURA",
+    "footer_note": "Grazie per il tempo e l'attenzione. Do valore alla chiarezza, alla responsabilità e al lavoro che conta davvero."
+  },
+  "contact_dialog": {
+    "title": "Come preferisci contattarmi?",
+    "desc": "Scegli il canale che ti è più comodo — rispondo su entrambi.",
+    "email": "Email",
+    "email_desc": "Ideale per brief dettagliati, ambito e allegati.",
+    "whatsapp": "WhatsApp",
+    "whatsapp_desc": "Ideale per una domanda veloce o per fissare una call.",
+    "close": "Annulla"
+  },
+  "close": "Chiudi",
+  "visit_project": "Vai al progetto",
+  "not_found": {
+    "title": "Pagina non trovata",
+    "desc": "Questo link non porta da nessuna parte su questo sito. I lavori, il CV e la lettera di presentazione sono a un clic di distanza.",
+    "cta": "Torna alla home"
+  }
+}
