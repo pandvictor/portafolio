@@ -11,6 +11,7 @@ import { es as esLocale, it as itLocale } from "date-fns/locale";
 import { useCallback, useMemo, useState } from "react";
 import i18n from "../../utils/i18n";
 import { useLanguage } from "../../context/LanguageContext";
+import { useTranslated } from "../../utils/useTranslated";
 import { Resume, WorkHistory } from "../../types/";
 import { homePath } from "../../constants/gloabals";
 import { useScrollToTop } from "../../utils/useScrollToTop";
@@ -254,7 +255,7 @@ const shortUrl = (url?: string) => {
 export function ResumePrintPage() {
   const { language } = useLanguage();
   useScrollToTop();
-  const resume = useMemo(() => i18n.t("resume") as Resume, [language]);
+  const resume = useTranslated<Resume>("resume");
   const dateLocale =
     language === "es" ? esLocale : language === "it" ? itLocale : undefined;
 

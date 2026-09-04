@@ -1,3 +1,6 @@
+/* eslint-disable react-refresh/only-export-components -- the provider and
+   its `useLanguage` hook are one unit; splitting them to satisfy fast
+   refresh would churn every consumer for no runtime benefit. */
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import i18n from '../utils/i18n';
 

@@ -1,8 +1,8 @@
 import { MainTemplate } from "../templates";
 import { ContactInfo, ProjectModalPayload, Resume, WorkHistory } from "../../types/types";
-import { useLanguage } from "../../context/LanguageContext";
 import i18n from "../../utils/i18n";
 import { useCallback, useMemo, useState } from "react";
+import { useTranslated, useTranslatedList } from "../../utils/useTranslated";
 import { ProjectDialog } from "../organisms/ProjectDialog";
 import { ContactDialog } from "../organisms";
 import {
@@ -30,19 +30,12 @@ type ServiceItem = {
 const EMPTY_CONTACTS: ContactInfo[] = [];
 
 export default function HomePage() {
-  const { language } = useLanguage();
   const [selected, setSelected] = useState<ModalPayload | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
-  const resumeData = useMemo(() => i18n.t("resume") as Resume, [language]);
+  const resumeData = useTranslated<Resume>("resume");
   const contactInfo = resumeData?.contact_info ?? EMPTY_CONTACTS;
-  const heroBullets = useMemo(() => {
-    const bullets = i18n.t("home.hero_bullets") as unknown;
-    return Array.isArray(bullets) ? bullets : [];
-  }, [language]);
-  const services = useMemo(() => {
-    const list = i18n.t("home.services") as unknown;
-    return Array.isArray(list) ? (list as ServiceItem[]) : [];
-  }, [language]);
+  const heroBullets = useTranslatedList<string>("home.hero_bullets");
+  const services = useTranslatedList<ServiceItem>("home.services");
   const trustedTitle = i18n.t("home.trusted_by");
   const servicesTitle = i18n.t("home.services_title");
   const servicesKicker = i18n.t("home.services_kicker");
@@ -74,24 +67,18 @@ export default function HomePage() {
         }),
     [worksRaw]
   );
-  const ctaCopy = useMemo(
-    () => ({
-      kicker: i18n.t("home.cta_kicker"),
-      title: i18n.t("home.cta_title"),
-      desc: i18n.t("home.cta_desc"),
-      primary: i18n.t("home.cta_primary"),
-      secondary: i18n.t("home.cta_secondary"),
-    }),
-    [language]
-  );
+  const ctaCopy = {
+    kicker: i18n.t("home.cta_kicker"),
+    title: i18n.t("home.cta_title"),
+    desc: i18n.t("home.cta_desc"),
+    primary: i18n.t("home.cta_primary"),
+    secondary: i18n.t("home.cta_secondary"),
+  };
   const credibilityKicker = i18n.t("home.credibility_kicker");
   const credibilityTitle = i18n.t("home.credibility_title");
-  const credibilityStats = useMemo(() => {
-    const list = i18n.t("home.credibility_stats") as unknown;
-    return Array.isArray(list)
-      ? (list as { value: string; label: string }[])
-      : [];
-  }, [language]);
+  const credibilityStats = useTranslatedList<{ value: string; label: string }>(
+    "home.credibility_stats"
+  );
   const featuredProject = useMemo(() => {
     const preferredWork = works.find((work) =>
       work.company.toLowerCase().includes("alphapoint")

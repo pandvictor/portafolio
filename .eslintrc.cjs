@@ -1,0 +1,27 @@
+/**
+ * The project shipped without a parser configured, so `npm run lint` failed on
+ * every file with "Parsing error: The keyword 'import' is reserved".
+ */
+module.exports = {
+  root: true,
+  env: { browser: true, es2022: true },
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  plugins: ["react-refresh"],
+  ignorePatterns: ["dist", "node_modules", "*.cjs"],
+  rules: {
+    "react-refresh/only-export-components": [
+      "warn",
+      { allowConstantExport: true },
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+    ],
+  },
+};

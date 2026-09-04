@@ -7,7 +7,7 @@ import { HeroAvatar, SkillIconsRow } from "../molecules";
 import { Resume, ContactInfo } from "../../types";
 import { useMemo } from "react";
 import i18n from "../../utils/i18n";
-import { useLanguage } from "../../context/LanguageContext";
+import { useTranslated } from "../../utils/useTranslated";
 import { Link as RouterLink } from "react-router-dom";
 import {
   motion,
@@ -220,7 +220,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   bullets,
   onContact,
 }) => {
-  const { language } = useLanguage();
   const theme = useTheme();
   const isCompact = useMediaQuery(theme.breakpoints.down("sm"));
   const reduceMotion = useReducedMotion();
@@ -247,9 +246,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       ? { label: "LinkedIn", href: linkedinUrl, type: "linkedin" }
       : null;
   const prefersReducedMotion = Boolean(reduceMotion);
-  const chipLabels = useMemo(() => i18n.t("hero.chips") as Record<string, string>, [
-    language,
-  ]);
+  const chipLabels = useTranslated<Record<string, string>>("hero.chips");
   const visibleBullets = useMemo(
     () => (isCompact ? bullets.slice(0, 2) : bullets),
     [bullets, isCompact]

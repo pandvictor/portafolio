@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { Box, Grid, Typography } from "@mui/material";
-import i18n from "../../utils/i18n";
-import { useLanguage } from "../../context/LanguageContext";
+import { useTranslated } from "../../utils/useTranslated";
 import { Resume } from "../../types/";
 import { MainTemplate } from "../templates";
 import { PrintButton } from "../molecules";
@@ -17,8 +16,7 @@ import {
 } from "../organisms";
 
 export function ResumePage() {
-  const { language } = useLanguage();
-  const resume = useMemo(() => i18n.t("resume") as Resume, [language]);
+  const resume = useTranslated<Resume>("resume");
 
   const workHistory = useMemo(() => resume?.work_history || [], [resume]);
   const contactInfo = useMemo(() => resume?.contact_info || [], [resume]);

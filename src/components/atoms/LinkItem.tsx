@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom'
 
-export const LinkItem = styled(NavLink)(({ }) => ({
+export const LinkItem = styled(NavLink)(() => ({
     textDecoration: 'none',
     color: 'inherit', // Ensures the link color inherits from its parent
     display: 'inline-flex',
