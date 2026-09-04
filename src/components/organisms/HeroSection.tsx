@@ -3,14 +3,9 @@ import { styled, useTheme } from "@mui/material/styles";
 import type { ButtonProps } from "@mui/material/Button";
 import type { TypographyProps } from "@mui/material/Typography";
 import { printResumePath, publicPath } from "../../constants/gloabals";
-import {
-  HeroAvatar,
-  HeroFlipButton,
-  HeroImpactPanel,
-  SkillIconsRow,
-} from "../molecules";
+import { HeroAvatar, SkillIconsRow } from "../molecules";
 import { Resume, ContactInfo } from "../../types";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useMemo } from "react";
 import i18n from "../../utils/i18n";
 import { useLanguage } from "../../context/LanguageContext";
 import { Link as RouterLink } from "react-router-dom";
@@ -55,36 +50,15 @@ const Orb = styled(Box)(() => ({
 
 const MotionOrb = motionize(Orb);
 
-const FlipGrid = styled(Box)(() => ({
-  position: "relative",
-  display: "grid",
-  transformStyle: "preserve-3d",
-}));
-
-const MotionFlipGrid = motionize(FlipGrid);
-
-const FlipFace = styled(Box)(() => ({
-  gridArea: "1 / 1",
-  backfaceVisibility: "hidden",
-}));
-
-const FlipBackFace = styled(Box)(() => ({
-  gridArea: "1 / 1",
-  transform: "rotateY(180deg)",
-  backfaceVisibility: "hidden",
-}));
-
 const HeroContent = styled(Box)(({ theme }) => ({
   position: "relative",
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(2.5),
   alignItems: "center",
-  // Extra top padding on small screens keeps the first chip row from running
-  // under the absolutely positioned flip button.
-  padding: theme.spacing(7, 2, 3),
+  padding: theme.spacing(4, 2, 3),
   [theme.breakpoints.up("sm")]: {
-    paddingTop: theme.spacing(7),
+    paddingTop: theme.spacing(5),
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
     gap: theme.spacing(3),
@@ -232,52 +206,6 @@ const LinkedInIcon = styled("img")(() => ({
   height: 18,
 }));
 
-const SectionTitle = styled(Typography)<TypographyProps<"h2">>(() => ({
-  fontWeight: 800,
-  lineHeight: 1.1,
-  letterSpacing: "-0.02em",
-}));
-
-const SectionBody = styled(Typography)(() => ({
-  maxWidth: 700,
-}));
-
-const TagRow = styled(Stack)(({ theme }) => ({
-  display: "flex",
-  flexWrap: "wrap",
-  gap: theme.spacing(1),
-  justifyContent: "center",
-  [theme.breakpoints.down("sm")]: {
-    display: "none",
-  },
-  [theme.breakpoints.up("md")]: {
-    justifyContent: "flex-start",
-  },
-}));
-
-const TagChip = styled(Chip)(() => ({
-  borderRadius: 999,
-  fontWeight: 700,
-  borderColor: "var(--border-strong)",
-}));
-
-const MotionTagChip = motionize(TagChip);
-
-const IMPACT_ICON_MAP: Record<string, string> = {
-  features: "jira.svg",
-  mobile: "react-native.svg",
-  frontend: "react.svg",
-  backend: "nodejs.svg",
-  reliability: "kubernetes.svg",
-  experiments: "openai.svg",
-};
-
-/**
- * Long enough that the panel is unlikely to change while someone is mid-sentence.
- * The previous 20s swapped the hero out from under a reader.
- */
-const AUTO_FLIP_INTERVAL_MS = 45000;
-
 type HeroSectionProps = {
   resume: Resume;
   contactInfo: ContactInfo[];
@@ -293,12 +221,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onContact,
 }) => {
   const { language } = useLanguage();
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  // Once the visitor flips the panel themselves they have taken control, and
-  // swapping the content out from under them again is hostile to reading.
-  const [autoFlipStopped, setAutoFlipStopped] = useState(false);
-  const flipTimerRef = useRef<number | null>(null);
   const theme = useTheme();
   const isCompact = useMediaQuery(theme.breakpoints.down("sm"));
   const reduceMotion = useReducedMotion();
@@ -328,55 +250,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const chipLabels = useMemo(() => i18n.t("hero.chips") as Record<string, string>, [
     language,
   ]);
-  const backTags = useMemo(() => i18n.t("hero.back.tags") as string[], [language]);
-  const impactCardsCopy = useMemo(
-    () => i18n.t("hero.back.cards") as { key: string; title: string; desc: string }[],
-    [language]
-  );
-  const impactCards = useMemo(
-    () =>
-      impactCardsCopy.map((card) => ({
-        ...card,
-        icon: IMPACT_ICON_MAP[card.key] ?? "react.svg",
-      })),
-    [impactCardsCopy]
-  );
   const visibleBullets = useMemo(
     () => (isCompact ? bullets.slice(0, 2) : bullets),
     [bullets, isCompact]
   );
-
-  const startFlipTimer = useCallback(() => {
-    if (prefersReducedMotion || typeof window === "undefined") return;
-    if (flipTimerRef.current) {
-      window.clearInterval(flipTimerRef.current);
-    }
-    flipTimerRef.current = window.setInterval(() => {
-      setIsFlipped((prev) => !prev);
-    }, AUTO_FLIP_INTERVAL_MS);
-  }, [prefersReducedMotion]);
-
-  useEffect(() => {
-    if (prefersReducedMotion || isPaused || autoFlipStopped) {
-      if (flipTimerRef.current) {
-        window.clearInterval(flipTimerRef.current);
-        flipTimerRef.current = null;
-      }
-      return;
-    }
-    startFlipTimer();
-    return () => {
-      if (flipTimerRef.current) {
-        window.clearInterval(flipTimerRef.current);
-        flipTimerRef.current = null;
-      }
-    };
-  }, [autoFlipStopped, isPaused, prefersReducedMotion, startFlipTimer]);
-
-  const handleManualFlip = () => {
-    setIsFlipped((prev) => !prev);
-    setAutoFlipStopped(true);
-  };
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     if (prefersReducedMotion) return;
@@ -395,8 +272,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         pointerX.set(-400);
         pointerY.set(-400);
       }}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}>
+>
       <motion.div
         aria-hidden
         style={{
@@ -407,7 +283,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           zIndex: 0,
         }}
       />
-      <HeroFlipButton isFlipped={isFlipped} onToggle={handleManualFlip} />
       <MotionOrb
         aria-hidden
         sx={{
@@ -436,14 +311,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         animate={{ y: [0, -26, 0], x: [0, 18, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 18, ease: "easeInOut", repeat: Infinity, delay: 1.5 }}
       />
-      <MotionFlipGrid
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={
-          prefersReducedMotion
-            ? { duration: 0 }
-            : { duration: 0.95, ease: [0.65, 0, 0.35, 1] }
-        }>
-        <FlipFace>
           <HeroContent>
             <MotionHeroLeft
               spacing={{ xs: 2, sm: 2.5 }}
@@ -586,37 +453,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               src={`${publicPath}/images/vic.jpeg`}
             />
           </HeroContent>
-        </FlipFace>
-        <FlipBackFace>
-          <HeroContent>
-            <HeroLeft spacing={{ xs: 2, sm: 2.5 }}>
-              <GradientChip label={i18n.t("hero.back.badge")} size='small' />
-              <SectionTitle variant='h4' component='h2'>
-                {i18n.t("hero.back.title")}
-              </SectionTitle>
-              <SectionBody variant='body1' color='text.secondary'>
-                {i18n.t("hero.back.summary")}
-              </SectionBody>
-              <SectionBody variant='body2' color='text.secondary'>
-                {i18n.t("hero.back.impact_line")}
-              </SectionBody>
-              <TagRow direction='row' useFlexGap>
-                {backTags.map((tag, idx) => (
-                  <MotionTagChip
-                    key={tag}
-                    label={tag}
-                    size='small'
-                    variant='outlined'
-                    whileHover={{ y: -3, borderColor: "rgba(34,211,238,0.7)" }}
-                    transition={{ ...transitions.quick, delay: idx * 0.01 }}
-                  />
-                ))}
-              </TagRow>
-            </HeroLeft>
-            <HeroImpactPanel cards={impactCards} />
-          </HeroContent>
-        </FlipBackFace>
-      </MotionFlipGrid>
     </MotionHeroRoot>
   );
 };

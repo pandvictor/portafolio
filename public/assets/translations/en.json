@@ -83,25 +83,9 @@
     "project_case": "Overview",
     "facts_availability": "Availability",
     "facts_location": "Based in",
-    "facts_languages": "Languages"
-  },
-  "hero": {
-    "flip": {
-      "aria": "Flip section",
-      "view_profile": "View profile",
-      "view_ai": "View AI"
-    },
-    "chips": {
-      "ai": "AI • LLMs in production",
-      "sectors": "Fintech • Government • Crypto",
-      "experience": "19+ years",
-      "crypto": "Bitcoin • Lightning"
-    },
-    "cta": {
-      "talk": "Let's talk"
-    },
-    "back": {
-      "badge": "AI-assisted delivery",
+    "facts_languages": "Languages",
+    "capabilities": {
+      "kicker": "AI-assisted delivery",
       "title": "Ship in weeks, not quarters",
       "summary": "I pair AI-assisted execution with 19+ years of production judgement. Architecture, security, and quality decisions stay under human control.",
       "impact_line": "Most recently: a multi-tenant World Cup platform designed, built, and launched in ~2 weeks.",
@@ -145,6 +129,17 @@
           "desc": "AI pair programming • AI-assisted QA"
         }
       ]
+    }
+  },
+  "hero": {
+    "chips": {
+      "ai": "AI • LLMs in production",
+      "sectors": "Fintech • Government • Crypto",
+      "experience": "19+ years",
+      "crypto": "Bitcoin • Lightning"
+    },
+    "cta": {
+      "talk": "Let's talk"
     },
     "available": "Open to work"
   },

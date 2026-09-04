@@ -83,25 +83,9 @@
     "project_case": "Detalle",
     "facts_availability": "Disponibilidad",
     "facts_location": "Ubicación",
-    "facts_languages": "Idiomas"
-  },
-  "hero": {
-    "flip": {
-      "aria": "Girar sección",
-      "view_profile": "Ver perfil",
-      "view_ai": "Ver IA"
-    },
-    "chips": {
-      "ai": "IA • LLMs en producción",
-      "sectors": "Fintech • Gobierno • Crypto",
-      "experience": "19+ años",
-      "crypto": "Bitcoin • Lightning"
-    },
-    "cta": {
-      "talk": "Hablemos"
-    },
-    "back": {
-      "badge": "Entrega asistida por IA",
+    "facts_languages": "Idiomas",
+    "capabilities": {
+      "kicker": "Entrega asistida por IA",
       "title": "Entregar en semanas, no en trimestres",
       "summary": "Combino ejecución asistida por IA con 19+ años de criterio en producción. Las decisiones de arquitectura, seguridad y calidad quedan bajo control humano.",
       "impact_line": "Lo más reciente: una plataforma multi-tenant del Mundial diseñada, construida y lanzada en ~2 semanas.",
@@ -145,6 +129,17 @@
           "desc": "Pair programming con IA • QA asistido"
         }
       ]
+    }
+  },
+  "hero": {
+    "chips": {
+      "ai": "IA • LLMs en producción",
+      "sectors": "Fintech • Gobierno • Crypto",
+      "experience": "19+ años",
+      "crypto": "Bitcoin • Lightning"
+    },
+    "cta": {
+      "talk": "Hablemos"
     },
     "available": "Disponible"
   },

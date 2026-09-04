@@ -83,25 +83,9 @@
     "project_case": "Panoramica",
     "facts_availability": "Disponibilità",
     "facts_location": "Con base a",
-    "facts_languages": "Lingue"
-  },
-  "hero": {
-    "flip": {
-      "aria": "Gira la sezione",
-      "view_profile": "Vedi il profilo",
-      "view_ai": "Vedi l'IA"
-    },
-    "chips": {
-      "ai": "IA • LLM in produzione",
-      "sectors": "Fintech • Pubblica amministrazione • Crypto",
-      "experience": "19+ anni",
-      "crypto": "Bitcoin • Lightning"
-    },
-    "cta": {
-      "talk": "Parliamone"
-    },
-    "back": {
-      "badge": "Consegna assistita dall'IA",
+    "facts_languages": "Lingue",
+    "capabilities": {
+      "kicker": "Consegna assistita dall'IA",
       "title": "Consegnare in settimane, non in trimestri",
       "summary": "Unisco l'esecuzione assistita dall'IA a 19+ anni di esperienza in produzione. Le decisioni di architettura, sicurezza e qualità restano sotto controllo umano.",
       "impact_line": "L'ultimo caso: una piattaforma multi-tenant per i Mondiali progettata, costruita e lanciata in ~2 settimane.",
@@ -145,6 +129,17 @@
           "desc": "Pair programming con IA • QA assistito"
         }
       ]
+    }
+  },
+  "hero": {
+    "chips": {
+      "ai": "IA • LLM in produzione",
+      "sectors": "Fintech • Pubblica amministrazione • Crypto",
+      "experience": "19+ anni",
+      "crypto": "Bitcoin • Lightning"
+    },
+    "cta": {
+      "talk": "Parliamone"
     },
     "available": "Disponibile"
   },

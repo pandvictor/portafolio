@@ -7,6 +7,7 @@ import { ProjectDialog } from "../organisms/ProjectDialog";
 import { ContactDialog } from "../organisms";
 import {
   HeroSection,
+  HomeCapabilitiesSection,
   HomeCredibilitySection,
   HomeCtaSection,
   HomeFactsBar,
@@ -178,6 +179,10 @@ export default function HomePage() {
 
       <SectionBlock>
         <HomeFactsBar resume={resumeData} />
+      </SectionBlock>
+
+      <SectionBlock>
+        <HomeCapabilitiesSection />
       </SectionBlock>
 
       <SectionBlock>
